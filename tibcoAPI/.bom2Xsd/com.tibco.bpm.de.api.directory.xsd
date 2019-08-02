@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://directory.api.de.bpm.tibco.com" xmlns:tns2="http://directory.api.de.bpm.tibco.com"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:tns5="http://base.api.de.bpm.tibco.com"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://directory.api.de.bpm.tibco.com">
+  <xsd:annotation>
+    <xsd:documentation>BOMORIGIN::/tibcoAPI/Generated Business Objects/com.tibco.bpm.de.api.directory.bom</xsd:documentation>
+  </xsd:annotation>
+  <xsd:import namespace="http://base.api.de.bpm.tibco.com" schemaLocation="com.tibco.bpm.de.api.base.xsd"/>
+  <xsd:element abstract="false" name="saveContainer" nillable="false" type="tns5:XmlContainer"/>
+  <xsd:element abstract="false" name="listContainers" nillable="false">
+    <xsd:complexType ecore:name="listContainersType" id="com.tibco.bpm.de.api.directorylistContainersType"
+        mixed="false"/>
+  </xsd:element>
+  <xsd:element abstract="false" name="listContainersResponse" nillable="false">
+    <xsd:complexType ecore:name="listContainersResponseType" id="com.tibco.bpm.de.api.directorylistContainersResponseType"
+        mixed="false">
+      <xsd:annotation>
+        <xsd:documentation>A list of the configured LDAP Containers. </xsd:documentation>
+      </xsd:annotation>
+      <xsd:sequence>
+        <xsd:element ecore:name="ldapcontainer" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="ldap-container" type="tns5:XmlContainer"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:simpleType name="long_StudioGeneratedTemplate">
+    <xsd:restriction base="xsd:integer">
+      <xsd:minInclusive value="-9223372036854775808"/>
+      <xsd:maxInclusive value="9223372036854775807"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element abstract="false" name="saveContainerResponse" nillable="false">
+    <xsd:complexType ecore:name="saveContainerResponseType" id="com.tibco.bpm.de.api.directorysaveContainerResponseType"
+        mixed="false">
+      <xsd:attribute ecore:name="containerid" id="saveContainerResponseTypecontainer-id"
+          form="unqualified" name="container-id" type="tns2:long_StudioGeneratedTemplate"
+          use="required">
+        <xsd:annotation>
+          <xsd:documentation>Unique ID of the newly-created or updated LDAP container.
+
+(This value is returned only if the LDAP container was successfully saved.) </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="deleteContainer" nillable="false">
+    <xsd:complexType ecore:name="deleteContainerType" id="com.tibco.bpm.de.api.directorydeleteContainerType"
+        mixed="false">
+      <xsd:attribute ecore:name="containerid" id="deleteContainerTypecontainer-id"
+          form="unqualified" name="container-id" type="tns2:long_StudioGeneratedTemplate"
+          use="required">
+        <xsd:annotation>
+          <xsd:documentation>Unique ID of the LDAP container to be deleted. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="deleteresources" id="deleteContainerTypedelete-resources"
+          default="false" form="unqualified" name="delete-resources" type="xsd:boolean"
+          use="optional">
+        <xsd:annotation>
+          <xsd:documentation>Indicates whether the resources derived from the LDAP container should also be deleted. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="deleteContainerResponse" nillable="false">
+    <xsd:complexType ecore:name="deleteContainerResponseType" id="com.tibco.bpm.de.api.directorydeleteContainerResponseType"
+        mixed="false">
+      <xsd:attribute ecore:name="successful" id="deleteContainerResponseTypesuccessful"
+          form="unqualified" name="successful" type="xsd:boolean" use="required">
+        <xsd:annotation>
+          <xsd:documentation>Boolean value that indicates whether the LDAP container was successfully deleted (TRUE) or not (FALSE). </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="listLdapConnections" nillable="false">
+    <xsd:complexType ecore:name="listLdapConnectionsType" id="com.tibco.bpm.de.api.directorylistLdapConnectionsType"
+        mixed="false"/>
+  </xsd:element>
+  <xsd:element abstract="false" name="listLdapConnectionsResponse" nillable="false">
+    <xsd:complexType ecore:name="listLdapConnectionsResponseType" id="com.tibco.bpm.de.api.directorylistLdapConnectionsResponseType"
+        mixed="false">
+      <xsd:sequence>
+        <xsd:element ecore:name="ldapconnection" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="ldap-connection">
+          <xsd:complexType ecore:name="ldapconnectionType" id="com.tibco.bpm.de.api.directoryldap-connectionType"
+              mixed="false">
+            <xsd:attribute ecore:name="ldapalias" id="ldap-connectionTypeldap-alias"
+                form="unqualified" name="ldap-alias" type="xsd:string" use="required">
+              <xsd:annotation>
+                <xsd:documentation>The name (or alias) by which a configured LDAP connection shared resource is identified.
+
+LDAP connection shared resource are named with the prefix &quot;ldap/de/&quot; in order to indicate that they are intended for Directory Engine use. The alias given here is that name without the &quot;ldap/de/&quot; prefix. </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute ecore:name="providerurl" id="ldap-connectionTypeprovider-url"
+                form="unqualified" name="provider-url" type="xsd:string" use="required">
+              <xsd:annotation>
+                <xsd:documentation>The URL (including any base DN) to which configured LDAP connection shared resource is connected. </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="executeLdapQuery" nillable="false">
+    <xsd:complexType ecore:name="executeLdapQueryType" id="com.tibco.bpm.de.api.directoryexecuteLdapQueryType"
+        mixed="false">
+      <xsd:attribute ecore:name="ldapalias" id="executeLdapQueryTypeldap-alias" form="unqualified"
+          name="ldap-alias" type="xsd:string" use="required">
+        <xsd:annotation>
+          <xsd:documentation>Identifies the LDAP connection shared resource on which the LDAP query is to be evaluated.
+
+LDAP connection shared resource are named with the prefix &quot;ldap/de/&quot; in order to indicate that they are  intended for Directory Engine use. The alias given here is that name without the &quot;ldap/de/&quot; prefix. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="basedn" id="executeLdapQueryTypebase-dn" form="unqualified"
+          name="base-dn" type="xsd:string" use="optional">
+        <xsd:annotation>
+          <xsd:documentation>The base DN to which the query is to be restricted. This will be relative, and in  addition to, any base DN specified in the LDAP connection shared resource's URL. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="ldapquery" id="executeLdapQueryTypeldap-query" form="unqualified"
+          name="ldap-query" type="xsd:string" use="required">
+        <xsd:annotation>
+          <xsd:documentation>The LDAP query to be evaluated. The query must conform to the RFC 2254 LDAP Search Filter standard. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="searchscope" id="executeLdapQueryTypesearch-scope"
+          form="unqualified" name="search-scope" type="tns5:XmlLdapSearchScope" use="optional">
+        <xsd:annotation>
+          <xsd:documentation>The Search Scope determines the depth to which the search will be performed. By default the search will be SUBTREE. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="pagesize" id="executeLdapQueryTypepage-size" form="unqualified"
+          name="page-size" type="xsd:int" use="optional">
+        <xsd:annotation>
+          <xsd:documentation>Requested page size for paged result sets. If not specified then paging will not be used. To be specified on every paging request. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="bookmark" id="executeLdapQueryTypebookmark" form="unqualified"
+          name="bookmark" type="xsd:string" use="optional">
+        <xsd:annotation>
+          <xsd:documentation>Opaque marker for progress through a paged result set. Not specified on the first paging request. Only specified on subsequent paging requests. Content must be Base64 encoded. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="executeLdapQueryResponse" nillable="false">
+    <xsd:complexType ecore:name="executeLdapQueryResponseType" id="com.tibco.bpm.de.api.directoryexecuteLdapQueryResponseType"
+        mixed="false">
+      <xsd:sequence>
+        <xsd:element ecore:name="ldapentry" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="ldap-entry">
+          <xsd:complexType ecore:name="ldapentryType" id="com.tibco.bpm.de.api.directoryldap-entryType"
+              mixed="false">
+            <xsd:attribute ecore:name="ldapdn" id="ldap-entryTypeldap-dn" form="unqualified"
+                name="ldap-dn" type="xsd:string" use="required"/>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+      <xsd:attribute ecore:name="ldapalias" id="executeLdapQueryResponseTypeldap-alias"
+          form="unqualified" name="ldap-alias" type="xsd:string" use="required">
+        <xsd:annotation>
+          <xsd:documentation>Identifies the LDAP connection shared resource on which the LDAP query was evaluated.
+
+LDAP connection shared Resource are named with the prefix &quot;ldap/de/&quot; in order to indicate that they are 
+intended for Directory Engine use. The alias given here is that name without the &quot;ldap/de/&quot; prefix. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="basedn" id="executeLdapQueryResponseTypebase-dn"
+          form="unqualified" name="base-dn" type="xsd:string" use="optional">
+        <xsd:annotation>
+          <xsd:documentation>The base DN to which the query was restricted. This will be relative, and in additition to, any base DN specified in the LDAP connection shared resource's rURL. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="ldapquery" id="executeLdapQueryResponseTypeldap-query"
+          form="unqualified" name="ldap-query" type="xsd:string" use="required">
+        <xsd:annotation>
+          <xsd:documentation>The LDAP query that was evaluated. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="searchscope" id="executeLdapQueryResponseTypesearch-scope"
+          form="unqualified" name="search-scope" type="tns5:XmlLdapSearchScope" use="optional">
+        <xsd:annotation>
+          <xsd:documentation>The Search Scope determines the depth to which the search will be performed. By default the search will be SUBTREE. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="estimatedsize" id="executeLdapQueryResponseTypeestimated-size"
+          form="unqualified" name="estimated-size" type="xsd:int" use="optional">
+        <xsd:annotation>
+          <xsd:documentation>Estimated size of all results from LDAP server. Only specified if paged result sets are requested, and only if supported by the LDAP server. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="bookmark" id="executeLdapQueryResponseTypebookmark"
+          form="unqualified" name="bookmark" type="xsd:string" use="optional">
+        <xsd:annotation>
+          <xsd:documentation>Opaque marker for progress through a paged result set. Specified but empty if there are no more results left in the paged result set. Response will be Base64 encoded. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="getLdapEntry" nillable="false">
+    <xsd:complexType ecore:name="getLdapEntryType">
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="tns5:XmlLdapEntryId">
+          <xsd:sequence>
+            <xsd:element ecore:name="attribute" id="getLdapEntryTypeattributeType"
+                form="unqualified" maxOccurs="unbounded" minOccurs="0" name="attribute">
+              <xsd:complexType ecore:name="attributeType" id="com.tibco.bpm.de.api.directoryattributeType"
+                  mixed="false">
+                <xsd:attribute ecore:name="name" id="attributeTypename" form="unqualified"
+                    name="name" type="xsd:string" use="required"/>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="getLdapEntryResponse" nillable="false">
+    <xsd:complexType ecore:name="getLdapEntryResponseType">
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="tns5:XmlLdapEntry">
+          <xsd:attribute ecore:name="ldapalias" id="getLdapEntryResponseTypeldap-alias"
+              form="unqualified" name="ldap-alias" type="xsd:string" use="required">
+            <xsd:annotation>
+              <xsd:documentation>Identifies the LDAP connection shared resource from which the entry was read.
+
+LDAP connection shared resource are named with the prefix &quot;ldap/de/&quot; in order to indicate that they are intended for Directory Engine use. The alias given here is that name without the &quot;ldap/de/&quot; prefix. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:attribute>
+          <xsd:attribute ecore:name="notfound" id="getLdapEntryResponseTypenot-found"
+              default="false" form="unqualified" name="not-found" type="xsd:boolean"
+              use="optional">
+            <xsd:annotation>
+              <xsd:documentation>Indicates that the identified LDAP entry cannot be found. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:attribute>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="listAttributeNames" nillable="false">
+    <xsd:complexType ecore:name="listAttributeNamesType" id="com.tibco.bpm.de.api.directorylistAttributeNamesType"
+        mixed="false">
+      <xsd:attribute ecore:name="ldapalias" id="listAttributeNamesTypeldap-alias"
+          form="unqualified" name="ldap-alias" type="xsd:string" use="required">
+        <xsd:annotation>
+          <xsd:documentation>Identifies the LDAP connection shared resource on which the LDAP query is to be evaluated.
+
+LDAP connection shared resource are named with the prefix &quot;ldap/de/&quot; in order to indicate that they are intended for Directory Engine use. The alias given here is that name without the &quot;ldap/de/&quot; prefix. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="basedn" id="listAttributeNamesTypebase-dn" form="unqualified"
+          name="base-dn" type="xsd:string" use="optional">
+        <xsd:annotation>
+          <xsd:documentation>The base DN to which the query is to be restricted. This will be relative to, and in  addition to, any base DN specified in the LDAP connection shared resource's URL. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="ldapquery" id="listAttributeNamesTypeldap-query"
+          form="unqualified" name="ldap-query" type="xsd:string" use="required">
+        <xsd:annotation>
+          <xsd:documentation>The LDAP query to be evaluated. The query must conform to the RFC 2254 LDAP Search Filter standard. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="searchscope" id="listAttributeNamesTypesearch-scope"
+          form="unqualified" name="search-scope" type="tns5:XmlLdapSearchScope" use="optional">
+        <xsd:annotation>
+          <xsd:documentation>The Search Scope determines the depth to which the search will be performed. By default the search will be SUBTREE. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="samplesize" id="listAttributeNamesTypesample-size"
+          default="0" form="unqualified" name="sample-size" type="xsd:int" use="optional">
+        <xsd:annotation>
+          <xsd:documentation>The maximum number of random example LDAP entries to be returned. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="listAttributeNamesResponse" nillable="false">
+    <xsd:complexType ecore:name="listAttributeNamesResponseType" id="com.tibco.bpm.de.api.directorylistAttributeNamesResponseType"
+        mixed="false">
+      <xsd:sequence>
+        <xsd:element ecore:name="attribute" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="attribute" type="tns5:XmlLdapAttribute"/>
+        <xsd:element ecore:name="sampleentry" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="sample-entry" type="tns5:XmlLdapEntry"/>
+      </xsd:sequence>
+      <xsd:attribute ecore:name="ldapalias" id="listAttributeNamesResponseTypeldap-alias"
+          form="unqualified" name="ldap-alias" type="xsd:string" use="required">
+        <xsd:annotation>
+          <xsd:documentation>Identifies the LDAP connection shared resource on which the LDAP query was evaluated.
+
+LDAP connection shared resources are named with the prefix &quot;ldap/de/&quot; in order to indicate that they are intended for Directory Engine use. The alias given here is that name without the &quot;ldap/de/&quot; prefix. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="basedn" id="listAttributeNamesResponseTypebase-dn"
+          form="unqualified" name="base-dn" type="xsd:string" use="optional">
+        <xsd:annotation>
+          <xsd:documentation>The base DN to which the query was restricted. This will be relative to, and in  addition to, any base DN specified in the LDAP Connection Shared Resource's URL. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="ldapquery" id="listAttributeNamesResponseTypeldap-query"
+          form="unqualified" name="ldap-query" type="xsd:string" use="required">
+        <xsd:annotation>
+          <xsd:documentation>The LDAP query that was evaluated. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="searchscope" id="listAttributeNamesResponseTypesearch-scope"
+          form="unqualified" name="search-scope" type="tns5:XmlLdapSearchScope" use="optional">
+        <xsd:annotation>
+          <xsd:documentation>The Search Scope determines the depth to which the search will be performed. By default the search will be SUBTREE. This is only returned if it was specified in the request. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="entrycount" id="listAttributeNamesResponseTypeentry-count"
+          form="unqualified" name="entry-count" type="xsd:int" use="required">
+        <xsd:annotation>
+          <xsd:documentation>The number of LDAP entries encountered in the search. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="listCandidateResources" nillable="false">
+    <xsd:complexType ecore:name="listCandidateResourcesType" id="com.tibco.bpm.de.api.directorylistCandidateResourcesType"
+        mixed="false">
+      <xsd:attribute ecore:name="containerid" id="listCandidateResourcesTypecontainer-id"
+          form="unqualified" name="container-id" type="tns2:long_StudioGeneratedTemplate"
+          use="required">
+        <xsd:annotation>
+          <xsd:documentation>Identifies the LDAP container from which the candidates are to be resolved. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="include" id="listCandidateResourcesTypeinclude" default="ALL"
+          form="unqualified" name="include" type="tns5:XmlCandidateChoice" use="optional">
+        <xsd:annotation>
+          <xsd:documentation>Determines what entries should be included in the response. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="pagesize" id="listCandidateResourcesTypepage-size"
+          form="unqualified" name="page-size" type="xsd:int" use="optional">
+        <xsd:annotation>
+          <xsd:documentation>Requested page size for paged result sets. If not specified then paging will not be used. To be specified on every paging request. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="bookmark" id="listCandidateResourcesTypebookmark"
+          form="unqualified" name="bookmark" type="xsd:string" use="optional">
+        <xsd:annotation>
+          <xsd:documentation>Opaque marker for progress through a paged result set. Not specified on the first paging request. Only specified on subsequent paging requests. Content must be Base64 encoded. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="listCandidateResourcesResponse" nillable="false">
+    <xsd:complexType ecore:name="listCandidateResourcesResponseType" id="com.tibco.bpm.de.api.directorylistCandidateResourcesResponseType"
+        mixed="false">
+      <xsd:sequence>
+        <xsd:element ecore:name="candidate" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="candidate" type="tns5:XmlResourceCandidate"/>
+      </xsd:sequence>
+      <xsd:attribute ecore:name="containerid" id="listCandidateResourcesResponseTypecontainer-id"
+          form="unqualified" name="container-id" type="tns2:long_StudioGeneratedTemplate"
+          use="required">
+        <xsd:annotation>
+          <xsd:documentation>Identifies the LDAP container from which the candidates were resolved. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="include" id="listCandidateResourcesResponseTypeinclude"
+          default="ALL" form="unqualified" name="include" type="tns5:XmlCandidateChoice"
+          use="optional">
+        <xsd:annotation>
+          <xsd:documentation>Indicates what entries are be included in the collection of candidate entries. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="estimatedsize" id="listCandidateResourcesResponseTypeestimated-size"
+          form="unqualified" name="estimated-size" type="xsd:int" use="optional">
+        <xsd:annotation>
+          <xsd:documentation>Estimated size of all results from LDAP server. Only specified if paged result sets are requested, and only if supported by the LDAP server. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="bookmark" id="listCandidateResourcesResponseTypebookmark"
+          form="unqualified" name="bookmark" type="xsd:string" use="optional">
+        <xsd:annotation>
+          <xsd:documentation>Opaque marker for progress through a paged result set. Specified but empty if there are no more results left in the paged result set. Response will be Base64 encoded. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="getCandidateDetail" nillable="false">
+    <xsd:complexType ecore:name="getCandidateDetailType">
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="tns5:XmlLdapContainerEntry">
+          <xsd:attribute ecore:name="containerid" id="getCandidateDetailTypecontainer-id"
+              form="unqualified" name="container-id" type="tns2:long_StudioGeneratedTemplate"
+              use="required">
+            <xsd:annotation>
+              <xsd:documentation>Identifies the LDAP container from which the candidate was resolved. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:attribute>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="getCandidateDetailResponse" nillable="false">
+    <xsd:complexType ecore:name="getCandidateDetailResponseType">
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="tns5:XmlLdapContainerEntry">
+          <xsd:sequence>
+            <xsd:element ecore:name="attribute" id="getCandidateDetailResponseTypeattribute"
+                maxOccurs="unbounded" minOccurs="0" name="attribute" type="tns5:XmlMappedAttributeValue"/>
+          </xsd:sequence>
+          <xsd:attribute ecore:name="containerid" id="getCandidateDetailResponseTypecontainer-id"
+              form="unqualified" name="container-id" type="tns2:long_StudioGeneratedTemplate"
+              use="required">
+            <xsd:annotation>
+              <xsd:documentation>Identifies the LDAP container from which the candidate was resolved. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:attribute>
+          <xsd:attribute ecore:name="guid" id="getCandidateDetailResponseTypeguid"
+              form="unqualified" name="guid" type="xsd:string" use="optional">
+            <xsd:annotation>
+              <xsd:documentation>If the candidate is one for which a resource already exists, the GUID of that existing resource is given. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:attribute>
+          <xsd:attribute ecore:name="name" id="getCandidateDetailResponseTypename"
+              form="unqualified" name="name" type="xsd:string" use="required">
+            <xsd:annotation>
+              <xsd:documentation>The name of the existing resource, or the name that will be assigned (by default) to the resource created from this candidate entry. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:attribute>
+          <xsd:attribute ecore:name="startdate" id="getCandidateDetailResponseTypestart-date"
+              form="unqualified" name="start-date" type="xsd:dateTime" use="optional">
+            <xsd:annotation>
+              <xsd:documentation>If the candidate is one for which a resource already exists, this optional date and time shows when the resource's presence begins. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:attribute>
+          <xsd:attribute ecore:name="enddate" id="getCandidateDetailResponseTypeend-date"
+              form="unqualified" name="end-date" type="xsd:dateTime" use="optional">
+            <xsd:annotation>
+              <xsd:documentation>If the candidate is one for which a resource already exists, this optional date and time shows when the resource's presence ends. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:attribute>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

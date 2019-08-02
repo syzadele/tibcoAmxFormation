@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://admin.api.de.n2.tibco.com" targetNamespace="http://admin.api.de.n2.tibco.com" version="1.0">
+	<xs:annotation>
+		<xs:documentation>
+      A note on the naming conventions used:
+      Element types from which Java classes are generated should be named using the
+      same convention as Java classes (i.e. camel-casing). They should also have the
+      prefix "Xml" in order to avoid any conflict with any POJO classes of the same
+      name.
+      Attributes, and the name of sub-elements, are in lower-case, with hyphens used
+      to separate words. For example, "first-name", "primary-attribute" and "parent-id".
+      Sub-element names should also be singular; e.g. "child" and not "children",
+      "property" and not "properties".
+        </xs:documentation>
+	</xs:annotation>
+	<xs:element name="deleteOrphanReferences">
+		<xs:annotation>
+			<xs:documentation>Request parameter for deleteOrphanReferences operation. This service deletes references
+      to non-existent org-model entities. Such references are normally the result of the org-model getting out
+      of sync due to administrator intervention.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType/>
+	</xs:element>
+	<xs:element name="deleteOrphanReferencesResponse">
+		<xs:annotation>
+			<xs:documentation>Response parameter for deleteOrphanReferences operation. This will return the GUIDs of
+      those org-model entities that no longer exist but are identified by association records within the
+      database. Those 'orphan' references will have been deleted.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="group-guid" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>The GUID of a non-existent Group identified as belonging to an association.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="org-guid" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>The GUID of a non-existent Organization identified as belonging to an association.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="position-guid" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>The GUID of a non-existent Position identified as belonging to an association.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="capability-guid" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>The GUID of a non-existent Capability identified as belonging to an association.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="attribute-guid" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>The GUID of a non-existent Attribute identified as belonging to an association.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="candidate-query-guid" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>The GUID of the holder of a non-existent Candidate Query identified as belonging to an association.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="extension-point-guid">
+					<xs:annotation>
+						<xs:documentation>The GUID of the holder of a non-existent Extension Point identified as belonging to an association.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="model-version" type="xs:int" use="required">
+									<xs:annotation>
+										<xs:documentation>Major version number of the organization model in which the extension point resided. </xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

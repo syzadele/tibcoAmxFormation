@@ -1,0 +1,16 @@
+
+/**
+ * Forms 3.1.0 V12 compliant.
+ */
+    .f6ec1798e-2259-4bef-b5c5-df1d654b699d .pane_toolbar > .label {
+        display:none !important;
+    }
+    .f6ec1798e-2259-4bef-b5c5-df1d654b699d .pane_ListeDesEntretiens__add_delete > .label {
+        display:none !important;
+    }
+    .f6ec1798e-2259-4bef-b5c5-df1d654b699d .pane_content > .label {
+        
+display:block !important;    }
+    .f6ec1798e-2259-4bef-b5c5-df1d654b699d .pane_messages > .label {
+        display:none !important;
+    }

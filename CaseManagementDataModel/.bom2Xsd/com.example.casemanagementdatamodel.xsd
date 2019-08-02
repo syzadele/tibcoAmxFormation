@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://example.com/casemanagementdatamodel" xmlns:tns1="http://example.com/casemanagementdatamodel"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://example.com/casemanagementdatamodel">
+  <xsd:annotation>
+    <xsd:documentation>BOMORIGIN::/CaseManagementDataModel/Business Objects/CaseManagementDataModel.bom</xsd:documentation>
+  </xsd:annotation>
+  <xsd:simpleType ecore:name="PoleConcerne" id="_YBlKoLINEemj-ayD1bfv5w" name="PoleConcerne">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration ecore:name="POLE1" value="POLE1"/>
+      <xsd:enumeration ecore:name="POLE2" value="POLE2"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType ecore:name="AvisProposition" id="_4gJuwLINEemj-ayD1bfv5w" name="AvisProposition">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration ecore:name="ACCEPTE" value="ACCEPTE"/>
+      <xsd:enumeration ecore:name="REFUSE" value="REFUSE"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType ecore:name="Statut" id="_TMDwsLIOEemj-ayD1bfv5w" name="Statut">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration ecore:name="CREE" value="CREE"/>
+      <xsd:enumeration ecore:name="APPEL" value="APPEL"/>
+      <xsd:enumeration ecore:name="PLANNIFICATIONENTRETIEN" value="PLANNIFICATIONENTRETIEN"/>
+      <xsd:enumeration ecore:name="ENTRETIEN" value="ENTRETIEN"/>
+      <xsd:enumeration ecore:name="DONNERAVISFINALE" value="DONNERAVISFINALE"/>
+      <xsd:enumeration ecore:name="VALIDE" value="VALIDE"/>
+      <xsd:enumeration ecore:name="TERMINE" value="TERMINE"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType ecore:name="AvisFinale" id="_DwiBYLIPEemj-ayD1bfv5w" name="AvisFinale">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration ecore:name="POSITIVE" value="POSITIVE"/>
+      <xsd:enumeration ecore:name="NEGATIVE" value="NEGATIVE"/>
+      <xsd:enumeration ecore:name="INDECISE" value="INDECISE"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType ecore:name="Candidature" id="_2oBk8LIMEemj-ayD1bfv5w" name="Candidature">
+    <xsd:sequence>
+      <xsd:element ecore:name="CID_candidature" id="_A-fCcLINEemj-ayD1bfv5w" maxOccurs="1"
+          minOccurs="0" name="CID_candidature">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="19"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element ecore:name="nom" id="_5HPZYLIMEemj-ayD1bfv5w" maxOccurs="1" minOccurs="0"
+          name="nom">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element ecore:name="prenom" id="_78E4gLIMEemj-ayD1bfv5w" maxOccurs="1"
+          minOccurs="0" name="prenom">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element ecore:name="dateCreation" id="_qMzk8LINEemj-ayD1bfv5w" maxOccurs="1"
+          minOccurs="0" name="dateCreation" type="xsd:date"/>
+      <xsd:element ecore:name="mail" id="_JHei0LINEemj-ayD1bfv5w" maxOccurs="1" minOccurs="0"
+          name="mail">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element ecore:name="portable" id="_KgPFgLINEemj-ayD1bfv5w" maxOccurs="1"
+          minOccurs="0" name="portable">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element ecore:name="adresse" id="_Lz2CcLINEemj-ayD1bfv5w" maxOccurs="1"
+          minOccurs="0" name="adresse">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element ecore:name="interesseParEntretien" id="_PYi4QLINEemj-ayD1bfv5w"
+          maxOccurs="1" minOccurs="0" name="interesseParEntretien" type="xsd:boolean"/>
+      <xsd:element ecore:name="avisProposition" id="_SKMggLINEemj-ayD1bfv5w" maxOccurs="1"
+          minOccurs="0" name="avisProposition" type="tns1:AvisProposition"/>
+      <xsd:element ecore:name="avisFinale" id="_7evxYLIOEemj-ayD1bfv5w" maxOccurs="1"
+          minOccurs="0" name="avisFinale" type="tns1:AvisFinale"/>
+      <xsd:element ecore:name="entretiens" id="_NkMT0rIPEemj-ayD1bfv5w" maxOccurs="unbounded"
+          minOccurs="0" name="entretiens" type="Entretien"/>
+      <xsd:element ecore:name="sauterRecrutement" id="_FsJ5MLISEemj-ayD1bfv5w" maxOccurs="1"
+          minOccurs="0" name="sauterRecrutement" type="xsd:boolean"/>
+      <xsd:element ecore:name="statut" id="_d9uHALIPEemj-ayD1bfv5w" maxOccurs="1"
+          minOccurs="0" name="statut" type="tns1:Statut"/>
+      <xsd:element ecore:name="poleConcerne" id="_pmwVgLKlEemV1ZxU_L0F9A" maxOccurs="1"
+          minOccurs="0" name="poleConcerne" type="tns1:PoleConcerne"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="Entretien" id="_jYsz4LINEemj-ayD1bfv5w" name="Entretien">
+    <xsd:sequence>
+      <xsd:element ecore:name="date" id="_lPn5QLINEemj-ayD1bfv5w" maxOccurs="1" minOccurs="0"
+          name="date" type="xsd:date"/>
+      <xsd:element ecore:name="nomCollaborateur" id="_yd4qULINEemj-ayD1bfv5w" maxOccurs="1"
+          minOccurs="0" name="nomCollaborateur">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element ecore:name="avis" id="_1WkusLINEemj-ayD1bfv5w" maxOccurs="1" minOccurs="0"
+          name="avis" type="tns1:AvisFinale"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="PoleConcerneElement">
+    <xsd:simpleType>
+      <xsd:restriction base="tns1:PoleConcerne"/>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="AvisPropositionElement">
+    <xsd:simpleType>
+      <xsd:restriction base="tns1:AvisProposition"/>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="StatutElement">
+    <xsd:simpleType>
+      <xsd:restriction base="tns1:Statut"/>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="AvisFinaleElement">
+    <xsd:simpleType>
+      <xsd:restriction base="tns1:AvisFinale"/>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="CandidatureElement" type="Candidature"/>
+  <xsd:element name="EntretienElement" type="Entretien"/>
+</xsd:schema>

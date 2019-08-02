@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:PrimitiveTypeFacets="http:///schemas/PrimitiveTypeFacets/_8TmTUMtlEdy7K9XeCH7Hrw/0" xmlns:XsdNotationProfile="http:///schemas/XsdNotationProfile/_LmHW0PHtEd2z3-vLsCwuEg/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/PrimitiveTypeFacets/_8TmTUMtlEdy7K9XeCH7Hrw/0 pathmap://BOM_TYPES/PrimitiveTypeFacets.profile.uml#_8TmTUstlEdy7K9XeCH7Hrw http:///schemas/XsdNotationProfile/_LmHW0PHtEd2z3-vLsCwuEg/1 pathmap://XSD_NOTATION_TYPES/XsdNotation.profile.uml#_LmHW0fHtEd2z3-vLsCwuEg">
+  <uml:Model xmi:id="com.tibco.n2.de.api.exporter" name="com.tibco.n2.de.api.exporter">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oTZR0q1jEem1vK-kP1bIqQ" source="model.metadata">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oTZR061jEem1vK-kP1bIqQ" key="author" value="YSong"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oTZR1K1jEem1vK-kP1bIqQ" key="created" value="1563897902957"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oTZR1a1jEem1vK-kP1bIqQ" key="version" value="5"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_osKXIK1jEem1vK-kP1bIqQ" key="checksum" value="1728592610"/>
+    </eAnnotations>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.exporterExportResource" name="ExportResource">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_nmkoEK1jEem1vK-kP1bIqQ" body="Type definition for the complete exported object details. "/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="ExportResourcemodel-version" name="modelversion" aggregation="composite">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_BRY7wHvBEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aInteger?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nfS7Yq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nfS7Y61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="ExportResourcecontainer" name="container" aggregation="composite" association="com.tibco.n2.de.api.exporterComposition113?com.tibco.n2.de.api.exporter%3a%3aComposition113?">
+        <type xmi:type="uml:Class" href="com.tibco.n2.de.api.ldap.bom#com.tibco.n2.de.api.ldapXmlLdapContainerExport?com.tibco.n2.de.api.ldap%3a%3aXmlLdapContainerExport?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nfaQIa1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nfaQIq1jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="ExportResourceresource" name="resource" type="com.tibco.n2.de.api.exporterResourceDetail?com.tibco.n2.de.api.exporter%3a%3aResourceDetail?" aggregation="composite" association="com.tibco.n2.de.api.exporterComposition122?com.tibco.n2.de.api.exporter%3a%3aComposition122?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nlJrw61jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nlJrxK1jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="ExportResourcepush-destination" name="pushdestination" type="com.tibco.n2.de.api.exporterPushDestinationDetail?com.tibco.n2.de.api.exporter%3a%3aPushDestinationDetail?" aggregation="composite" association="com.tibco.n2.de.api.exporterComposition124?com.tibco.n2.de.api.exporter%3a%3aComposition124?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nmiy461jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nmiy5K1jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="com.tibco.n2.de.api.exporterComposition113" name="Composition113" memberEnd="ExportResourcecontainer?com.tibco.n2.de.api.exporter%3a%3aExportResource%3a%3acontainer? Composition113exportresource?com.tibco.n2.de.api.exporter%3a%3aComposition113%3a%3aexportresource?">
+      <ownedEnd xmi:type="uml:Property" xmi:id="Composition113exportresource" name="exportresource" type="com.tibco.n2.de.api.exporterExportResource?com.tibco.n2.de.api.exporter%3a%3aExportResource?" association="com.tibco.n2.de.api.exporterComposition113?com.tibco.n2.de.api.exporter%3a%3aComposition113?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nfaQJK1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nfaQJa1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.exporterResourceDetail" name="ResourceDetail">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_nlJEsK1jEem1vK-kP1bIqQ" body="Base type definition for the exported resource details. "/>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_nlJrwK1jEem1vK-kP1bIqQ" body="Details of all resource mappings that are currently configured in Directory Engine. (This also includes resources that have been created as users but not mapped to any positions or groups.)&#xA;&#xA;Note that these resource definitions contain:&#xA;&#xA;- organization model entity references (unique IDs). If the same organization model entity references do not exist on the import environment runtime errors will occur.&#xA;&#xA;-  LDAP references (ldapalias and ldapdn). If the same LDAP references are not available on the import environment runtime errors will occur. "/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="ResourceDetailid" name="id" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nfpgsa1jEem1vK-kP1bIqQ" body="Unique ID of the resource. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nfo5oq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nfo5o61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="ResourceDetailname" name="name" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nfz4wK1jEem1vK-kP1bIqQ" body="Name of the resource. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nfzRsq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nfzRs61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="ResourceDetaillabel" name="label" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nf9pwa1jEem1vK-kP1bIqQ" body="The name of the resource used for display purposes. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nf9Csq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nf9Cs61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="ResourceDetailstartDate" name="startDate" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_ngIB0K1jEem1vK-kP1bIqQ" body="Date/time at which the resource becomes available. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AMizkHvBEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aDateTime?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ngHawq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ngHaw61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="ResourceDetailendDate" name="endDate" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_ngRy0K1jEem1vK-kP1bIqQ" body="Date/time at which the resource becomes unavailable. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AMizkHvBEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aDateTime?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ngRLwq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ngRLw61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="ResourceDetaillocationId" name="locationId" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_ngbj0q1jEem1vK-kP1bIqQ" body="ID of the location associated with this resource. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nga8wq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ngbj0K1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="ResourceDetailresourceType" name="resourceType" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_ngl74a1jEem1vK-kP1bIqQ" body="Type of this resource. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nglU0q1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nglU061jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="ResourceDetailldapalias" name="ldapalias" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_ngwT8K1jEem1vK-kP1bIqQ" body="LDAP alias associated with this resource (only for resources whose resourceType is human). "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ngvs4q1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ngvs461jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="ResourceDetailldapdn" name="ldapdn" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_ng6E8a1jEem1vK-kP1bIqQ" body="LDAP DN associated with this resource (only for resources whose resourceType is human). "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ng5d4q1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ng5d461jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="ResourceDetailldapcontainer" name="ldapcontainer" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nhD19K1jEem1vK-kP1bIqQ" body="LDAP container name associated with this resource (only if this LDAP container is part of this export). "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nhD18a1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nhD18q1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="ResourceDetailresourceCapabilityType" name="resourceCapability" type="com.tibco.n2.de.api.exporterresourceCapabilityType?com.tibco.n2.de.api.exporter%3a%3aresourceCapabilityType?" aggregation="composite" association="com.tibco.n2.de.api.exporterComposition115?com.tibco.n2.de.api.exporter%3a%3aComposition115?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nhhwAq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nhhwA61jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="ResourceDetailpositionHeldType" name="positionHeld" type="com.tibco.n2.de.api.exporterpositionHeldType?com.tibco.n2.de.api.exporter%3a%3apositionHeldType?" aggregation="composite" association="com.tibco.n2.de.api.exporterComposition116?com.tibco.n2.de.api.exporter%3a%3aComposition116?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_niHl4q1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_niHl461jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="ResourceDetailresourceGroupType" name="resourceGroup" type="com.tibco.n2.de.api.exporterresourceGroupType?com.tibco.n2.de.api.exporter%3a%3aresourceGroupType?" aggregation="composite" association="com.tibco.n2.de.api.exporterComposition117?com.tibco.n2.de.api.exporter%3a%3aComposition117?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nis0sq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nis0s61jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="ResourceDetailparameterType" name="parameter" type="com.tibco.n2.de.api.exporterparameterType?com.tibco.n2.de.api.exporter%3a%3aparameterType?" aggregation="composite" association="com.tibco.n2.de.api.exporterComposition120?com.tibco.n2.de.api.exporter%3a%3aComposition120?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nkrKoq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nkrKo61jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="ResourceDetailsecondary-ldapType" name="secondaryldap" type="com.tibco.n2.de.api.exportersecondary-ldapType?com.tibco.n2.de.api.exporter%3a%3asecondaryldapType?" aggregation="composite" association="com.tibco.n2.de.api.exporterComposition121?com.tibco.n2.de.api.exporter%3a%3aComposition121?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nlHPga1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nlHPgq1jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.exporterresourceCapabilityType" name="resourceCapabilityType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="resourceCapabilityTypecapabilityId" name="capabilityId" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nhO1FK1jEem1vK-kP1bIqQ" body="Unique ID of the capability. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nhO1Ea1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nhO1Eq1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="resourceCapabilityTypequalifierType" name="qualifier" type="com.tibco.n2.de.api.exporterqualifierType?com.tibco.n2.de.api.exporter%3a%3aqualifierType?" aggregation="composite" association="com.tibco.n2.de.api.exporterComposition114?com.tibco.n2.de.api.exporter%3a%3aComposition114?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nheFoq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nheFo61jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.exporterqualifierType" name="qualifierType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="qualifierTypevalue" name="value" aggregation="composite">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nhabQK1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nhabQa1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="com.tibco.n2.de.api.exporterComposition114" name="Composition114" memberEnd="resourceCapabilityTypequalifierType?com.tibco.n2.de.api.exporter%3a%3aresourceCapabilityType%3a%3aqualifier? Composition114resourcecapabilitytype?com.tibco.n2.de.api.exporter%3a%3aComposition114%3a%3aresourcecapabilitytype?">
+      <ownedEnd xmi:type="uml:Property" xmi:id="Composition114resourcecapabilitytype" name="resourcecapabilitytype" type="com.tibco.n2.de.api.exporterresourceCapabilityType?com.tibco.n2.de.api.exporter%3a%3aresourceCapabilityType?" association="com.tibco.n2.de.api.exporterComposition114?com.tibco.n2.de.api.exporter%3a%3aComposition114?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nheFpa1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nheFpq1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="com.tibco.n2.de.api.exporterComposition115" name="Composition115" memberEnd="ResourceDetailresourceCapabilityType?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aresourceCapability? Composition115resourcedetail?com.tibco.n2.de.api.exporter%3a%3aComposition115%3a%3aresourcedetail?">
+      <ownedEnd xmi:type="uml:Property" xmi:id="Composition115resourcedetail" name="resourcedetail" type="com.tibco.n2.de.api.exporterResourceDetail?com.tibco.n2.de.api.exporter%3a%3aResourceDetail?" association="com.tibco.n2.de.api.exporterComposition115?com.tibco.n2.de.api.exporter%3a%3aComposition115?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nhiXEa1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nhiXEq1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.exporterpositionHeldType" name="positionHeldType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="positionHeldTypepositionId" name="positionId" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nhukUK1jEem1vK-kP1bIqQ" body="Unique ID of the position. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nht9Qq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nht9Q61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="positionHeldTypestartDate" name="startDate" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nh5jcK1jEem1vK-kP1bIqQ" body="Date/time at which the user starts to hold the position. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AMizkHvBEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aDateTime?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nh48Yq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nh48Y61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="positionHeldTypeendDate" name="endDate" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_niEikK1jEem1vK-kP1bIqQ" body="Date/time at which the user ceases to hold the position. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AMizkHvBEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aDateTime?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_niD7gq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_niD7g61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="com.tibco.n2.de.api.exporterComposition116" name="Composition116" memberEnd="ResourceDetailpositionHeldType?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3apositionHeld? Composition116resourcedetail?com.tibco.n2.de.api.exporter%3a%3aComposition116%3a%3aresourcedetail?">
+      <ownedEnd xmi:type="uml:Property" xmi:id="Composition116resourcedetail" name="resourcedetail" type="com.tibco.n2.de.api.exporterResourceDetail?com.tibco.n2.de.api.exporter%3a%3aResourceDetail?" association="com.tibco.n2.de.api.exporterComposition116?com.tibco.n2.de.api.exporter%3a%3aComposition116?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_niHl5a1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_niHl5q1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.exporterresourceGroupType" name="resourceGroupType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="resourceGroupTypegroupId" name="groupId" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_niTzIa1jEem1vK-kP1bIqQ" body="Unique ID of the group. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_niTMEq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_niTME61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="resourceGroupTypestartDate" name="startDate" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nieyQK1jEem1vK-kP1bIqQ" body="Date/time at which the user becomes a member of the group. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AMizkHvBEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aDateTime?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nieLMq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nieLM61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="resourceGroupTypeendDate" name="endDate" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nipKU61jEem1vK-kP1bIqQ" body="Date/time at which the user ceases to be a member of the group. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AMizkHvBEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aDateTime?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nipKUa1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nipKUq1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="com.tibco.n2.de.api.exporterComposition117" name="Composition117" memberEnd="ResourceDetailresourceGroupType?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aresourceGroup? Composition117resourcedetail?com.tibco.n2.de.api.exporter%3a%3aComposition117%3a%3aresourcedetail?">
+      <ownedEnd xmi:type="uml:Property" xmi:id="Composition117resourcedetail" name="resourcedetail" type="com.tibco.n2.de.api.exporterResourceDetail?com.tibco.n2.de.api.exporter%3a%3aResourceDetail?" association="com.tibco.n2.de.api.exporterComposition117?com.tibco.n2.de.api.exporter%3a%3aComposition117?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nis0ta1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nis0tq1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.exporterparameterType" name="parameterType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="parameterTypedescriptor" name="descriptor" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_ni5pAK1jEem1vK-kP1bIqQ" body="Unique identifier of the parameter descriptor that describes the resource attribute. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ni5B8a1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ni5B8q1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="parameterTypevalue" name="value" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_njEoIK1jEem1vK-kP1bIqQ" body="Value of the resource attribute.&#xA;&#xA;This will be set only for locally held resource attribute values - that is, where the parameter is not mapped to an external LDAP attribute. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_w5Q_kB_WEeC4u6LGdGphwA?BomPrimitiveTypes%3a%3aObject?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_njEBEq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_njEBE61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="parameterTypeldapdn" name="ldapdn" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_njPnQq1jEem1vK-kP1bIqQ" body="For non-locally held resource attribute values, the DN of the LDAP entry from which the attribute's value is read.  "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_njPAMq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_njPnQK1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="parameterTypeldapalias" name="ldapalias" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_njbNcK1jEem1vK-kP1bIqQ" body="For non-locally held resource attribute values, the alias by which the LDAP connection is registered within Directory Engine.  "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_njamYa1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_njamYq1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="parameterTypeldapattribute" name="ldapattribute" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_njmzoK1jEem1vK-kP1bIqQ" body="For non-locally held resource attribute values, the name of the LDAP attribute from which the attribute's value is read.  "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_njmMka1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_njmMkq1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="parameterTypeenumSetType" name="enumSet" type="com.tibco.n2.de.api.exporterenumSetType?com.tibco.n2.de.api.exporter%3a%3aenumSetType?" aggregation="composite" association="com.tibco.n2.de.api.exporterComposition119?com.tibco.n2.de.api.exporter%3a%3aComposition119?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nkchIq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nkchI61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="parameterTypevalue1" name="value1" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nkoHUK1jEem1vK-kP1bIqQ" body="Value of the resource attribute. A past bug meant that exports carried their value in sub-elements rather than as an attribute of the main element. To maintain compatibility, we must now support that format. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_w5Q_kB_WEeC4u6LGdGphwA?BomPrimitiveTypes%3a%3aObject?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nkngQq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nkngQ61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.exporterenumSetType" name="enumSetType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="enumSetTypeenumValueType" name="enumValue" type="com.tibco.n2.de.api.exporterenumValueType?com.tibco.n2.de.api.exporter%3a%3aenumValueType?" aggregation="composite" association="com.tibco.n2.de.api.exporterComposition118?com.tibco.n2.de.api.exporter%3a%3aComposition118?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nkYPsq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nkYPs61jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.exporterenumValueType" name="enumValueType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="enumValueTypevalue" name="value" aggregation="composite">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_w5Q_kB_WEeC4u6LGdGphwA?BomPrimitiveTypes%3a%3aObject?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nkGi4q1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nkHJ8K1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="enumValueTypevalue1" name="value1" aggregation="composite">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_w5Q_kB_WEeC4u6LGdGphwA?BomPrimitiveTypes%3a%3aObject?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nkT-Qq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nkT-Q61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="com.tibco.n2.de.api.exporterComposition118" name="Composition118" memberEnd="enumSetTypeenumValueType?com.tibco.n2.de.api.exporter%3a%3aenumSetType%3a%3aenumValue? Composition118enumsettype?com.tibco.n2.de.api.exporter%3a%3aComposition118%3a%3aenumsettype?">
+      <ownedEnd xmi:type="uml:Property" xmi:id="Composition118enumsettype" name="enumsettype" type="com.tibco.n2.de.api.exporterenumSetType?com.tibco.n2.de.api.exporter%3a%3aenumSetType?" association="com.tibco.n2.de.api.exporterComposition118?com.tibco.n2.de.api.exporter%3a%3aComposition118?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nkYPta1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nkYPtq1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="com.tibco.n2.de.api.exporterComposition119" name="Composition119" memberEnd="parameterTypeenumSetType?com.tibco.n2.de.api.exporter%3a%3aparameterType%3a%3aenumSet? Composition119parametertype?com.tibco.n2.de.api.exporter%3a%3aComposition119%3a%3aparametertype?">
+      <ownedEnd xmi:type="uml:Property" xmi:id="Composition119parametertype" name="parametertype" type="com.tibco.n2.de.api.exporterparameterType?com.tibco.n2.de.api.exporter%3a%3aparameterType?" association="com.tibco.n2.de.api.exporterComposition119?com.tibco.n2.de.api.exporter%3a%3aComposition119?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nkchJa1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nkchJq1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="com.tibco.n2.de.api.exporterComposition120" name="Composition120" memberEnd="ResourceDetailparameterType?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aparameter? Composition120resourcedetail?com.tibco.n2.de.api.exporter%3a%3aComposition120%3a%3aresourcedetail?">
+      <ownedEnd xmi:type="uml:Property" xmi:id="Composition120resourcedetail" name="resourcedetail" type="com.tibco.n2.de.api.exporterResourceDetail?com.tibco.n2.de.api.exporter%3a%3aResourceDetail?" association="com.tibco.n2.de.api.exporterComposition120?com.tibco.n2.de.api.exporter%3a%3aComposition120?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nkrKpa1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nkrKpq1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.exportersecondary-ldapType" name="secondaryldapType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="secondary-ldapTypeldapalias" name="ldapalias" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nk3-8q1jEem1vK-kP1bIqQ" body="LDAP alias of the secondary LDAP source from which this resource is derived. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nk3X4q1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nk3-8K1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="secondary-ldapTypeldapdn" name="ldapdn" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nlDlIK1jEem1vK-kP1bIqQ" body="LDAP DN of the secondary LDAP source from which this resource is derived. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nlC-Eq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nlC-E61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="com.tibco.n2.de.api.exporterComposition121" name="Composition121" memberEnd="ResourceDetailsecondary-ldapType?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3asecondaryldap? Composition121resourcedetail?com.tibco.n2.de.api.exporter%3a%3aComposition121%3a%3aresourcedetail?">
+      <ownedEnd xmi:type="uml:Property" xmi:id="Composition121resourcedetail" name="resourcedetail" type="com.tibco.n2.de.api.exporterResourceDetail?com.tibco.n2.de.api.exporter%3a%3aResourceDetail?" association="com.tibco.n2.de.api.exporterComposition121?com.tibco.n2.de.api.exporter%3a%3aComposition121?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nlHPhK1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nlHPha1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="com.tibco.n2.de.api.exporterComposition122" name="Composition122" memberEnd="ExportResourceresource?com.tibco.n2.de.api.exporter%3a%3aExportResource%3a%3aresource? Composition122exportresource?com.tibco.n2.de.api.exporter%3a%3aComposition122%3a%3aexportresource?">
+      <ownedEnd xmi:type="uml:Property" xmi:id="Composition122exportresource" name="exportresource" type="com.tibco.n2.de.api.exporterExportResource?com.tibco.n2.de.api.exporter%3a%3aExportResource?" association="com.tibco.n2.de.api.exporterComposition122?com.tibco.n2.de.api.exporter%3a%3aComposition122?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nlJrxq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nlJrx61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.exporterPushDestinationDetail" name="PushDestinationDetail">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_nmg9sa1jEem1vK-kP1bIqQ" body="Definition of a push destination. "/>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_nmiy4K1jEem1vK-kP1bIqQ" body="Details of all push destinations that are currently configured in Directory Engine. "/>
+      <generalization xmi:type="uml:Generalization" xmi:id="_nmiL0K1jEem1vK-kP1bIqQ">
+        <general xmi:type="uml:Class" href="com.tibco.n2.common.organisation.api.bom#com.tibco.n2.common.organisation.apiXmlModelEntityId?com.tibco.n2.common.organisation.api%3a%3aXmlModelEntityId?"/>
+      </generalization>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="PushDestinationDetailXMLPushDestinationType" name="XMLPushDestination" type="com.tibco.n2.de.api.exporterXMLPushDestinationType?com.tibco.n2.de.api.exporter%3a%3aXMLPushDestinationType?" aggregation="composite" association="com.tibco.n2.de.api.exporterComposition123?com.tibco.n2.de.api.exporter%3a%3aComposition123?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nmfvkq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nmfvk61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.exporterXMLPushDestinationType" name="XMLPushDestinationType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="XMLPushDestinationTypename" name="name" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nlfC8K1jEem1vK-kP1bIqQ" body="Unique name of this push destination. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nleb4K1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nleb4a1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="XMLPushDestinationTypechannel-type" name="channeltype" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nlqpIa1jEem1vK-kP1bIqQ" body="Enumerated type defining the presentation technology used by the channel associated with this push destination. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nlqCEq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nlqCE61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="XMLPushDestinationTypechannel-ID" name="channelID" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nl2PUK1jEem1vK-kP1bIqQ" body="Unique ID of the channel associated with this push destination. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nl1oQq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nl1oQ61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="XMLPushDestinationTypeenabled" name="enabled" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nmB1gK1jEem1vK-kP1bIqQ" body="Boolean value indicating whether this push destination is currently enabled (TRUE) or not (FALSE). "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_pSJ7cHvAEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aBoolean?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nmBOcq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nmBOc61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="XMLPushDestinationTypetarget" name="target" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nmP38a1jEem1vK-kP1bIqQ" body="Value to be used for this push destination. This is only supplied if the value is not retrieved from a parameter descriptor (defined in param-descriptor). "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nmPQ4q1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nmPQ461jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="XMLPushDestinationTypeparam-descriptor" name="paramdescriptor" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nmcFMa1jEem1vK-kP1bIqQ" body="Unique ID of a prameter descriptor whose value should be used for the push destination.  "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nmbeIq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nmbeI61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="com.tibco.n2.de.api.exporterComposition123" name="Composition123" memberEnd="PushDestinationDetailXMLPushDestinationType?com.tibco.n2.de.api.exporter%3a%3aPushDestinationDetail%3a%3aXMLPushDestination? Composition123pushdestinationdetail?com.tibco.n2.de.api.exporter%3a%3aComposition123%3a%3apushdestinationdetail?">
+      <ownedEnd xmi:type="uml:Property" xmi:id="Composition123pushdestinationdetail" name="pushdestinationdetail" type="com.tibco.n2.de.api.exporterPushDestinationDetail?com.tibco.n2.de.api.exporter%3a%3aPushDestinationDetail?" association="com.tibco.n2.de.api.exporterComposition123?com.tibco.n2.de.api.exporter%3a%3aComposition123?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nmfvla1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nmfvlq1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="com.tibco.n2.de.api.exporterComposition124" name="Composition124" memberEnd="ExportResourcepush-destination?com.tibco.n2.de.api.exporter%3a%3aExportResource%3a%3apushdestination? Composition124exportresource?com.tibco.n2.de.api.exporter%3a%3aComposition124%3a%3aexportresource?">
+      <ownedEnd xmi:type="uml:Property" xmi:id="Composition124exportresource" name="exportresource" type="com.tibco.n2.de.api.exporterExportResource?com.tibco.n2.de.api.exporter%3a%3aExportResource?" association="com.tibco.n2.de.api.exporterComposition124?com.tibco.n2.de.api.exporter%3a%3aComposition124?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nmiy5q1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nmiy561jEem1vK-kP1bIqQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="com.tibco.n2.de.api.exporterimportResourcesResponse" name="importResourcesResponseType">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_nmo5gK1jEem1vK-kP1bIqQ" body="Response element for the importResources operation.&#xA;&#xA;If the import operation fails, an InvalidModelImport fault will be returned listing any errors found in the imported document.       "/>
+      <generalization xmi:type="uml:Generalization" xmi:id="_nmoSca1jEem1vK-kP1bIqQ">
+        <general xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_pSJ7cHvAEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aBoolean?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.exporterexportResourcesRequestType" name="exportResourcesRequestType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_nnTn4K1jEem1vK-kP1bIqQ">
+        <general xmi:type="uml:Class" href="com.tibco.n2.common.organisation.api.bom#com.tibco.n2.common.organisation.apiXmlOrgModelVersion?com.tibco.n2.common.organisation.api%3a%3aXmlOrgModelVersion?"/>
+      </generalization>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="exportResourcesRequestTypeexport-ldap-containers" name="exportldapcontainers" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nm5YMq1jEem1vK-kP1bIqQ" body="Boolean value specifying whether LDAP containers will be exported (TRUE or not set) or not (FALSE). "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_pSJ7cHvAEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aBoolean?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nm4xIq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nm5YMK1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="exportResourcesRequestTypeexport-resources" name="exportresources" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nnFlcq1jEem1vK-kP1bIqQ" body="Boolean value specifying whether Directory Engine resource mappings will be exported (TRUE or not set) or not (FALSE). "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_pSJ7cHvAEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aBoolean?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nnE-Yq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nnFlcK1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="exportResourcesRequestTypeexport-push-destinations" name="exportpushdestinations" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nnSZwK1jEem1vK-kP1bIqQ" body="Boolean value specifying whether push destinations will be exported (TRUE or not set) or not (FALSE). "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_pSJ7cHvAEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aBoolean?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nnRysa1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nnRysq1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_neqpQa1jEem1vK-kP1bIqQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_neqpQq1jEem1vK-kP1bIqQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://XSD_NOTATION_TYPES/XsdNotation.profile.uml#_LmHW0fHtEd2z3-vLsCwuEg"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://XSD_NOTATION_TYPES/XsdNotation.profile.uml#_rcgvMcXQEd24G-GaruVVqA?XsdNotationProfile?"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_neqpQ61jEem1vK-kP1bIqQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_neqpRK1jEem1vK-kP1bIqQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://BOM_TYPES/PrimitiveTypeFacets.profile.uml#_8TmTUstlEdy7K9XeCH7Hrw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://BOM_TYPES/PrimitiveTypeFacets.profile.uml#_3A574HcJEdytQ9AWEvOuug?PrimitiveTypeFacets?"/>
+    </profileApplication>
+  </uml:Model>
+  <XsdNotationProfile:XsdBasedModel xmi:id="_neqpRa1jEem1vK-kP1bIqQ" base_Package="com.tibco.n2.de.api.exporter?com.tibco.n2.de.api.exporter?" xsdTargetNamespace="http://exporter.api.de.n2.tibco.com" xsdSchemaLocation="de.wsdl;de-exporter-service.xsd" xsdAttributeForm="unqualified" xsdElementForm="unqualified" xsdStudioVersion="4.0.0.003" bomWsdlSources="de.wsdl"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_nfJxcK1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.exporterExportResource?com.tibco.n2.de.api.exporter%3a%3aExportResource?" xsdName="ExportResource" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true">
+    <xsdSequenceList xmi:type="XsdNotationProfile:XsdSequence" xmi:id="_nmkBAK1jEem1vK-kP1bIqQ" name="MS1_1_1"/>
+  </XsdNotationProfile:XsdBasedClass>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nfS7Ya1jEem1vK-kP1bIqQ" base_Property="ExportResourcemodel-version?com.tibco.n2.de.api.exporter%3a%3aExportResource%3a%3amodelversion?" xsdName="model-version" xsdForm="unqualified" xsdDefault="-1" xsdUse="optional" xsdType="int" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nfTicK1jEem1vK-kP1bIqQ" integerDefaultValue="-1" base_Property="ExportResourcemodel-version?com.tibco.n2.de.api.exporter%3a%3aExportResource%3a%3amodelversion?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedRestriction xmi:id="_nfTica1jEem1vK-kP1bIqQ" base_Property="ExportResourcemodel-version?com.tibco.n2.de.api.exporter%3a%3aExportResource%3a%3amodelversion?"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nfaQJq1jEem1vK-kP1bIqQ" base_Property="ExportResourcecontainer?com.tibco.n2.de.api.exporter%3a%3aExportResource%3a%3acontainer?" xsdName="container" xsdForm="unqualified" xsdType="XmlLdapContainerExport" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_nmkBAK1jEem1vK-kP1bIqQ" xsdMinOccurs="0" xsdMaxOccurs="-1"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_nffvsK1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.exporterResourceDetail?com.tibco.n2.de.api.exporter%3a%3aResourceDetail?" xsdName="ResourceDetail" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true">
+    <xsdSequenceList xmi:type="XsdNotationProfile:XsdSequence" xmi:id="_nlH2kK1jEem1vK-kP1bIqQ" name="MS1_1_1"/>
+  </XsdNotationProfile:XsdBasedClass>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nfo5oa1jEem1vK-kP1bIqQ" base_Property="ResourceDetailid?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aid?" xsdName="id" xsdForm="unqualified" xsdUse="required" xsdType="string" xsdIsAttribute="true"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nfpgsK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="ResourceDetailid?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aid?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nfzRsa1jEem1vK-kP1bIqQ" base_Property="ResourceDetailname?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aname?" xsdName="name" xsdForm="unqualified" xsdUse="required" xsdType="string" xsdIsAttribute="true"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nfzRtK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="ResourceDetailname?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aname?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nf9Csa1jEem1vK-kP1bIqQ" base_Property="ResourceDetaillabel?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3alabel?" xsdName="label" xsdForm="unqualified" xsdUse="optional" xsdType="string" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nf9pwK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="ResourceDetaillabel?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3alabel?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_ngHawa1jEem1vK-kP1bIqQ" base_Property="ResourceDetailstartDate?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3astartDate?" xsdName="startDate" xsdForm="unqualified" xsdUse="optional" xsdType="dateTime" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_ngRLwa1jEem1vK-kP1bIqQ" base_Property="ResourceDetailendDate?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aendDate?" xsdName="endDate" xsdForm="unqualified" xsdUse="optional" xsdType="dateTime" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nga8wa1jEem1vK-kP1bIqQ" base_Property="ResourceDetaillocationId?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3alocationId?" xsdName="locationId" xsdForm="unqualified" xsdUse="optional" xsdType="string" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_ngbj0a1jEem1vK-kP1bIqQ" textLength="-1" base_Property="ResourceDetaillocationId?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3alocationId?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nglU0a1jEem1vK-kP1bIqQ" base_Property="ResourceDetailresourceType?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aresourceType?" xsdName="resourceType" xsdForm="unqualified" xsdUse="optional" xsdType="string" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_ngl74K1jEem1vK-kP1bIqQ" textLength="-1" base_Property="ResourceDetailresourceType?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aresourceType?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_ngvs4a1jEem1vK-kP1bIqQ" base_Property="ResourceDetailldapalias?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aldapalias?" xsdName="ldapalias" xsdForm="unqualified" xsdUse="optional" xsdType="string" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_ngvs5K1jEem1vK-kP1bIqQ" textLength="-1" base_Property="ResourceDetailldapalias?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aldapalias?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_ng5d4a1jEem1vK-kP1bIqQ" base_Property="ResourceDetailldapdn?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aldapdn?" xsdName="ldapdn" xsdForm="unqualified" xsdUse="optional" xsdType="string" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_ng6E8K1jEem1vK-kP1bIqQ" textLength="-1" base_Property="ResourceDetailldapdn?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aldapdn?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nhD18K1jEem1vK-kP1bIqQ" base_Property="ResourceDetailldapcontainer?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aldapcontainer?" xsdName="ldapcontainer" xsdForm="unqualified" xsdUse="optional" xsdType="string" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nhD1861jEem1vK-kP1bIqQ" textLength="-1" base_Property="ResourceDetailldapcontainer?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aldapcontainer?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_nhFEEa1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.exporterresourceCapabilityType?com.tibco.n2.de.api.exporter%3a%3aresourceCapabilityType?" xsdName="resourceCapability" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true">
+    <xsdSequenceList xmi:type="XsdNotationProfile:XsdSequence" xmi:id="_nhessK1jEem1vK-kP1bIqQ" name="MS1_1_1"/>
+  </XsdNotationProfile:XsdBasedClass>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nhO1EK1jEem1vK-kP1bIqQ" base_Property="resourceCapabilityTypecapabilityId?com.tibco.n2.de.api.exporter%3a%3aresourceCapabilityType%3a%3acapabilityId?" xsdName="capabilityId" xsdForm="unqualified" xsdUse="required" xsdType="string" xsdIsAttribute="true"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nhO1E61jEem1vK-kP1bIqQ" textLength="-1" base_Property="resourceCapabilityTypecapabilityId?com.tibco.n2.de.api.exporter%3a%3aresourceCapabilityType%3a%3acapabilityId?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_nhQDMa1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.exporterqualifierType?com.tibco.n2.de.api.exporter%3a%3aqualifierType?" xsdName="qualifier" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nhZ0Ma1jEem1vK-kP1bIqQ" base_Property="qualifierTypevalue?com.tibco.n2.de.api.exporter%3a%3aqualifierType%3a%3avalue?" xsdName="value" xsdForm="unqualified" xsdUse="required" xsdType="string" xsdIsAttribute="true"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nhabQq1jEem1vK-kP1bIqQ" textLength="-1" base_Property="qualifierTypevalue?com.tibco.n2.de.api.exporter%3a%3aqualifierType%3a%3avalue?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nheFp61jEem1vK-kP1bIqQ" base_Property="resourceCapabilityTypequalifierType?com.tibco.n2.de.api.exporter%3a%3aresourceCapabilityType%3a%3aqualifier?" xsdName="qualifier" xsdForm="unqualified" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_nhessK1jEem1vK-kP1bIqQ" xsdMinOccurs="0" xsdMaxOccurs="-1"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nhiXE61jEem1vK-kP1bIqQ" base_Property="ResourceDetailresourceCapabilityType?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aresourceCapability?" xsdName="resourceCapability" xsdForm="unqualified" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_nlH2kK1jEem1vK-kP1bIqQ" xsdMinOccurs="0" xsdMaxOccurs="-1"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_nhi-Ia1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.exporterpositionHeldType?com.tibco.n2.de.api.exporter%3a%3apositionHeldType?" xsdName="positionHeld" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nht9Qa1jEem1vK-kP1bIqQ" base_Property="positionHeldTypepositionId?com.tibco.n2.de.api.exporter%3a%3apositionHeldType%3a%3apositionId?" xsdName="positionId" xsdForm="unqualified" xsdUse="required" xsdType="string" xsdIsAttribute="true"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nht9RK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="positionHeldTypepositionId?com.tibco.n2.de.api.exporter%3a%3apositionHeldType%3a%3apositionId?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nh48Ya1jEem1vK-kP1bIqQ" base_Property="positionHeldTypestartDate?com.tibco.n2.de.api.exporter%3a%3apositionHeldType%3a%3astartDate?" xsdName="startDate" xsdForm="unqualified" xsdUse="optional" xsdType="dateTime" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_niD7ga1jEem1vK-kP1bIqQ" base_Property="positionHeldTypeendDate?com.tibco.n2.de.api.exporter%3a%3apositionHeldType%3a%3aendDate?" xsdName="endDate" xsdForm="unqualified" xsdUse="optional" xsdType="dateTime" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_niHl561jEem1vK-kP1bIqQ" base_Property="ResourceDetailpositionHeldType?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3apositionHeld?" xsdName="positionHeld" xsdForm="unqualified" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_nlH2kK1jEem1vK-kP1bIqQ" xsdMinOccurs="0" xsdMaxOccurs="-1"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_niI0Aa1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.exporterresourceGroupType?com.tibco.n2.de.api.exporter%3a%3aresourceGroupType?" xsdName="resourceGroup" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_niTMEa1jEem1vK-kP1bIqQ" base_Property="resourceGroupTypegroupId?com.tibco.n2.de.api.exporter%3a%3aresourceGroupType%3a%3agroupId?" xsdName="groupId" xsdForm="unqualified" xsdUse="required" xsdType="string" xsdIsAttribute="true"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_niTzIK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="resourceGroupTypegroupId?com.tibco.n2.de.api.exporter%3a%3aresourceGroupType%3a%3agroupId?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nieLMa1jEem1vK-kP1bIqQ" base_Property="resourceGroupTypestartDate?com.tibco.n2.de.api.exporter%3a%3aresourceGroupType%3a%3astartDate?" xsdName="startDate" xsdForm="unqualified" xsdUse="optional" xsdType="dateTime" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nipKUK1jEem1vK-kP1bIqQ" base_Property="resourceGroupTypeendDate?com.tibco.n2.de.api.exporter%3a%3aresourceGroupType%3a%3aendDate?" xsdName="endDate" xsdForm="unqualified" xsdUse="optional" xsdType="dateTime" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nis0t61jEem1vK-kP1bIqQ" base_Property="ResourceDetailresourceGroupType?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aresourceGroup?" xsdName="resourceGroup" xsdForm="unqualified" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_nlH2kK1jEem1vK-kP1bIqQ" xsdMinOccurs="0" xsdMaxOccurs="-1"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_niuC0a1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.exporterparameterType?com.tibco.n2.de.api.exporter%3a%3aparameterType?" xsdName="parameter" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true">
+    <xsdSequenceList xmi:type="XsdNotationProfile:XsdSequence" xmi:id="_nkoHUa1jEem1vK-kP1bIqQ" name="MS1_1_1" minOccurs="0" isChoice="true"/>
+  </XsdNotationProfile:XsdBasedClass>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_ni5B8K1jEem1vK-kP1bIqQ" base_Property="parameterTypedescriptor?com.tibco.n2.de.api.exporter%3a%3aparameterType%3a%3adescriptor?" xsdName="descriptor" xsdForm="unqualified" xsdUse="required" xsdType="string" xsdIsAttribute="true"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_ni5B861jEem1vK-kP1bIqQ" textLength="-1" base_Property="parameterTypedescriptor?com.tibco.n2.de.api.exporter%3a%3aparameterType%3a%3adescriptor?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_njEBEa1jEem1vK-kP1bIqQ" base_Property="parameterTypevalue?com.tibco.n2.de.api.exporter%3a%3aparameterType%3a%3avalue?" xsdName="value" xsdForm="unqualified" xsdUse="optional" xsdType="anySimpleType" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_njEBFK1jEem1vK-kP1bIqQ" base_Property="parameterTypevalue?com.tibco.n2.de.api.exporter%3a%3aparameterType%3a%3avalue?" objectSubType="xsdAnySimpleType" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_njPAMa1jEem1vK-kP1bIqQ" base_Property="parameterTypeldapdn?com.tibco.n2.de.api.exporter%3a%3aparameterType%3a%3aldapdn?" xsdName="ldapdn" xsdForm="unqualified" xsdUse="optional" xsdType="string" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_njPnQa1jEem1vK-kP1bIqQ" textLength="-1" base_Property="parameterTypeldapdn?com.tibco.n2.de.api.exporter%3a%3aparameterType%3a%3aldapdn?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_njamYK1jEem1vK-kP1bIqQ" base_Property="parameterTypeldapalias?com.tibco.n2.de.api.exporter%3a%3aparameterType%3a%3aldapalias?" xsdName="ldapalias" xsdForm="unqualified" xsdUse="optional" xsdType="string" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_njamY61jEem1vK-kP1bIqQ" textLength="-1" base_Property="parameterTypeldapalias?com.tibco.n2.de.api.exporter%3a%3aparameterType%3a%3aldapalias?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_njmMkK1jEem1vK-kP1bIqQ" base_Property="parameterTypeldapattribute?com.tibco.n2.de.api.exporter%3a%3aparameterType%3a%3aldapattribute?" xsdName="ldapattribute" xsdForm="unqualified" xsdUse="optional" xsdType="string" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_njmMk61jEem1vK-kP1bIqQ" textLength="-1" base_Property="parameterTypeldapattribute?com.tibco.n2.de.api.exporter%3a%3aparameterType%3a%3aldapattribute?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_njoBwK1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.exporterenumSetType?com.tibco.n2.de.api.exporter%3a%3aenumSetType?" xsdName="enumSet" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true">
+    <xsdSequenceList xmi:type="XsdNotationProfile:XsdSequence" xmi:id="_nkY2wK1jEem1vK-kP1bIqQ" name="MS1_1_1" maxOccurs="-1"/>
+  </XsdNotationProfile:XsdBasedClass>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_nj8K0K1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.exporterenumValueType?com.tibco.n2.de.api.exporter%3a%3aenumValueType?" xsdName="enumValue" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true">
+    <xsdSequenceList xmi:type="XsdNotationProfile:XsdSequence" xmi:id="_nkVMYK1jEem1vK-kP1bIqQ" name="MS1_1_1"/>
+  </XsdNotationProfile:XsdBasedClass>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nkGi4a1jEem1vK-kP1bIqQ" base_Property="enumValueTypevalue?com.tibco.n2.de.api.exporter%3a%3aenumValueType%3a%3avalue?" xsdName="value" xsdForm="unqualified" xsdUse="optional" xsdType="anySimpleType" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nkHJ8a1jEem1vK-kP1bIqQ" base_Property="enumValueTypevalue?com.tibco.n2.de.api.exporter%3a%3aenumValueType%3a%3avalue?" objectSubType="xsdAnySimpleType" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nkT-Qa1jEem1vK-kP1bIqQ" base_Property="enumValueTypevalue1?com.tibco.n2.de.api.exporter%3a%3aenumValueType%3a%3avalue1?" xsdName="value1" xsdForm="unqualified" xsdType="anySimpleType" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nkT-RK1jEem1vK-kP1bIqQ" base_Property="enumValueTypevalue1?com.tibco.n2.de.api.exporter%3a%3aenumValueType%3a%3avalue1?" objectSubType="xsdAnySimpleType" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nkYPt61jEem1vK-kP1bIqQ" base_Property="enumSetTypeenumValueType?com.tibco.n2.de.api.exporter%3a%3aenumSetType%3a%3aenumValue?" xsdName="enumValue" xsdForm="unqualified" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_nkY2wK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nkchJ61jEem1vK-kP1bIqQ" base_Property="parameterTypeenumSetType?com.tibco.n2.de.api.exporter%3a%3aparameterType%3a%3aenumSet?" xsdName="enumSet" xsdForm="unqualified" xsdExplicitGroupHierarchy="C1" xsdParentSequence="_nkoHUa1jEem1vK-kP1bIqQ" xsdMinOccurs="0"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nkngQa1jEem1vK-kP1bIqQ" base_Property="parameterTypevalue1?com.tibco.n2.de.api.exporter%3a%3aparameterType%3a%3avalue1?" xsdName="value1" xsdForm="unqualified" xsdType="anySimpleType" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nkngRK1jEem1vK-kP1bIqQ" base_Property="parameterTypevalue1?com.tibco.n2.de.api.exporter%3a%3aparameterType%3a%3avalue1?" objectSubType="xsdAnySimpleType" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nkrxsK1jEem1vK-kP1bIqQ" base_Property="ResourceDetailparameterType?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aparameter?" xsdName="parameter" xsdForm="unqualified" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_nlH2kK1jEem1vK-kP1bIqQ" xsdMinOccurs="0" xsdMaxOccurs="-1"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_nksYwa1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.exportersecondary-ldapType?com.tibco.n2.de.api.exporter%3a%3asecondaryldapType?" xsdName="secondary-ldap" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nk3X4a1jEem1vK-kP1bIqQ" base_Property="secondary-ldapTypeldapalias?com.tibco.n2.de.api.exporter%3a%3asecondaryldapType%3a%3aldapalias?" xsdName="ldapalias" xsdForm="unqualified" xsdUse="optional" xsdType="string" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nk3-8a1jEem1vK-kP1bIqQ" textLength="-1" base_Property="secondary-ldapTypeldapalias?com.tibco.n2.de.api.exporter%3a%3asecondaryldapType%3a%3aldapalias?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nlC-Ea1jEem1vK-kP1bIqQ" base_Property="secondary-ldapTypeldapdn?com.tibco.n2.de.api.exporter%3a%3asecondaryldapType%3a%3aldapdn?" xsdName="ldapdn" xsdForm="unqualified" xsdUse="optional" xsdType="string" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nlC-FK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="secondary-ldapTypeldapdn?com.tibco.n2.de.api.exporter%3a%3asecondaryldapType%3a%3aldapdn?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nlHPhq1jEem1vK-kP1bIqQ" base_Property="ResourceDetailsecondary-ldapType?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3asecondaryldap?" xsdName="secondary-ldap" xsdForm="unqualified" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_nlH2kK1jEem1vK-kP1bIqQ" xsdMinOccurs="0" xsdMaxOccurs="-1"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nlKS0K1jEem1vK-kP1bIqQ" base_Property="ExportResourceresource?com.tibco.n2.de.api.exporter%3a%3aExportResource%3a%3aresource?" xsdName="resource" xsdForm="unqualified" xsdType="ResourceDetail" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_nmkBAK1jEem1vK-kP1bIqQ" xsdMinOccurs="0" xsdMaxOccurs="-1"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_nlRnkK1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.exporterPushDestinationDetail?com.tibco.n2.de.api.exporter%3a%3aPushDestinationDetail?" xsdName="PushDestinationDetail" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true">
+    <xsdSequenceList xmi:type="XsdNotationProfile:XsdSequence" xmi:id="_nmg9sK1jEem1vK-kP1bIqQ" name="MS1_1_1"/>
+  </XsdNotationProfile:XsdBasedClass>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_nlS1sK1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.exporterXMLPushDestinationType?com.tibco.n2.de.api.exporter%3a%3aXMLPushDestinationType?" xsdName="XMLPushDestination" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true">
+    <xsdSequenceList xmi:type="XsdNotationProfile:XsdSequence" xmi:id="_nmcsQK1jEem1vK-kP1bIqQ" name="MS1_1_1" isChoice="true"/>
+  </XsdNotationProfile:XsdBasedClass>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nld00a1jEem1vK-kP1bIqQ" base_Property="XMLPushDestinationTypename?com.tibco.n2.de.api.exporter%3a%3aXMLPushDestinationType%3a%3aname?" xsdName="name" xsdForm="unqualified" xsdUse="required" xsdType="string" xsdIsAttribute="true"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nleb4q1jEem1vK-kP1bIqQ" textLength="-1" base_Property="XMLPushDestinationTypename?com.tibco.n2.de.api.exporter%3a%3aXMLPushDestinationType%3a%3aname?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nlqCEa1jEem1vK-kP1bIqQ" base_Property="XMLPushDestinationTypechannel-type?com.tibco.n2.de.api.exporter%3a%3aXMLPushDestinationType%3a%3achanneltype?" xsdName="channel-type" xsdForm="unqualified" xsdUse="required" xsdType="string" xsdIsAttribute="true"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nlqpIK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="XMLPushDestinationTypechannel-type?com.tibco.n2.de.api.exporter%3a%3aXMLPushDestinationType%3a%3achanneltype?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nl1oQa1jEem1vK-kP1bIqQ" base_Property="XMLPushDestinationTypechannel-ID?com.tibco.n2.de.api.exporter%3a%3aXMLPushDestinationType%3a%3achannelID?" xsdName="channel-ID" xsdForm="unqualified" xsdUse="required" xsdType="string" xsdIsAttribute="true"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nl1oRK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="XMLPushDestinationTypechannel-ID?com.tibco.n2.de.api.exporter%3a%3aXMLPushDestinationType%3a%3achannelID?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nmBOca1jEem1vK-kP1bIqQ" base_Property="XMLPushDestinationTypeenabled?com.tibco.n2.de.api.exporter%3a%3aXMLPushDestinationType%3a%3aenabled?" xsdName="enabled" xsdForm="unqualified" xsdUse="required" xsdType="boolean" xsdIsAttribute="true"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nmPQ4a1jEem1vK-kP1bIqQ" base_Property="XMLPushDestinationTypetarget?com.tibco.n2.de.api.exporter%3a%3aXMLPushDestinationType%3a%3atarget?" xsdName="target" xsdForm="unqualified" xsdType="string" xsdExplicitGroupHierarchy="C1" xsdParentSequence="_nmcsQK1jEem1vK-kP1bIqQ" xsdMaxOccurs="*"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nmP38K1jEem1vK-kP1bIqQ" textLength="-1" base_Property="XMLPushDestinationTypetarget?com.tibco.n2.de.api.exporter%3a%3aXMLPushDestinationType%3a%3atarget?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nmbeIa1jEem1vK-kP1bIqQ" base_Property="XMLPushDestinationTypeparam-descriptor?com.tibco.n2.de.api.exporter%3a%3aXMLPushDestinationType%3a%3aparamdescriptor?" xsdName="param-descriptor" xsdForm="unqualified" xsdType="string" xsdExplicitGroupHierarchy="C1" xsdParentSequence="_nmcsQK1jEem1vK-kP1bIqQ"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nmcFMK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="XMLPushDestinationTypeparam-descriptor?com.tibco.n2.de.api.exporter%3a%3aXMLPushDestinationType%3a%3aparamdescriptor?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nmgWoK1jEem1vK-kP1bIqQ" base_Property="PushDestinationDetailXMLPushDestinationType?com.tibco.n2.de.api.exporter%3a%3aPushDestinationDetail%3a%3aXMLPushDestination?" xsdName="XMLPushDestination" xsdForm="unqualified" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_nmg9sK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nmjZ8K1jEem1vK-kP1bIqQ" base_Property="ExportResourcepush-destination?com.tibco.n2.de.api.exporter%3a%3aExportResource%3a%3apushdestination?" xsdName="push-destination" xsdForm="unqualified" xsdType="PushDestinationDetail" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_nmkBAK1jEem1vK-kP1bIqQ" xsdMinOccurs="0" xsdMaxOccurs="-1"/>
+  <XsdNotationProfile:XsdBasedPrimitiveType xmi:id="_nmoScq1jEem1vK-kP1bIqQ" base_PrimitiveType="com.tibco.n2.de.api.exporterimportResourcesResponse?com.tibco.n2.de.api.exporter%3a%3aimportResourcesResponseType?" xsdSimpleTypeName="importResourcesResponse" xsdRestrictionId="" xsdRestrictionBase="boolean"/>
+  <XsdNotationProfile:TopLevelElements xmi:id="_nmo5ga1jEem1vK-kP1bIqQ" base_Package="com.tibco.n2.de.api.exporter?com.tibco.n2.de.api.exporter?">
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_nmo5gq1jEem1vK-kP1bIqQ" name="importResourcesResponse" type="com.tibco.n2.de.api.exporterimportResourcesResponse?com.tibco.n2.de.api.exporter%3a%3aimportResourcesResponseType?" isBaseXSDType="true" targetNamespace="http://exporter.api.de.n2.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_nmqusK1jEem1vK-kP1bIqQ" name="exportResourcesResponse" type="com.tibco.n2.de.api.exporterExportResource?com.tibco.n2.de.api.exporter%3a%3aExportResource?" targetNamespace="http://exporter.api.de.n2.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_nmsj4K1jEem1vK-kP1bIqQ" name="importResourcesRequest" type="com.tibco.n2.de.api.exporterExportResource?com.tibco.n2.de.api.exporter%3a%3aExportResource?" targetNamespace="http://exporter.api.de.n2.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_nnTn4a1jEem1vK-kP1bIqQ" name="exportResourcesRequest" type="com.tibco.n2.de.api.exporterexportResourcesRequestType?com.tibco.n2.de.api.exporter%3a%3aexportResourcesRequestType?" isAnonymous="true" targetNamespace="http://exporter.api.de.n2.tibco.com" substitutionGroup=""/>
+  </XsdNotationProfile:TopLevelElements>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_nmtyAK1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.exporterexportResourcesRequestType?com.tibco.n2.de.api.exporter%3a%3aexportResourcesRequestType?" xsdName="exportResourcesRequest" xsdMixed="false" xsdIsComplexType="true" xsdIsAnonType="true"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nm4xIa1jEem1vK-kP1bIqQ" base_Property="exportResourcesRequestTypeexport-ldap-containers?com.tibco.n2.de.api.exporter%3a%3aexportResourcesRequestType%3a%3aexportldapcontainers?" xsdName="export-ldap-containers" xsdForm="unqualified" xsdDefault="true" xsdUse="optional" xsdType="boolean" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nm5YMa1jEem1vK-kP1bIqQ" base_Property="exportResourcesRequestTypeexport-ldap-containers?com.tibco.n2.de.api.exporter%3a%3aexportResourcesRequestType%3a%3aexportldapcontainers?" booleanDefaultValue="true"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nnE-Ya1jEem1vK-kP1bIqQ" base_Property="exportResourcesRequestTypeexport-resources?com.tibco.n2.de.api.exporter%3a%3aexportResourcesRequestType%3a%3aexportresources?" xsdName="export-resources" xsdForm="unqualified" xsdDefault="true" xsdUse="optional" xsdType="boolean" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nnFlca1jEem1vK-kP1bIqQ" base_Property="exportResourcesRequestTypeexport-resources?com.tibco.n2.de.api.exporter%3a%3aexportResourcesRequestType%3a%3aexportresources?" booleanDefaultValue="true"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nnRysK1jEem1vK-kP1bIqQ" base_Property="exportResourcesRequestTypeexport-push-destinations?com.tibco.n2.de.api.exporter%3a%3aexportResourcesRequestType%3a%3aexportpushdestinations?" xsdName="export-push-destinations" xsdForm="unqualified" xsdDefault="true" xsdUse="optional" xsdType="boolean" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nnRys61jEem1vK-kP1bIqQ" base_Property="exportResourcesRequestTypeexport-push-destinations?com.tibco.n2.de.api.exporter%3a%3aexportResourcesRequestType%3a%3aexportpushdestinations?" booleanDefaultValue="true"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_novLQK1jEem1vK-kP1bIqQ" base_Element="_nhabQK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_novyUK1jEem1vK-kP1bIqQ" base_Element="_nlDlIK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_novyUa1jEem1vK-kP1bIqQ" base_Element="_nfzRsq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_novyUq1jEem1vK-kP1bIqQ" base_Element="resourceCapabilityTypequalifierType?com.tibco.n2.de.api.exporter%3a%3aresourceCapabilityType%3a%3aqualifier?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_novyU61jEem1vK-kP1bIqQ" base_Element="Composition124exportresource?com.tibco.n2.de.api.exporter%3a%3aComposition124%3a%3aexportresource?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_novyVK1jEem1vK-kP1bIqQ" base_Element="Composition118enumsettype?com.tibco.n2.de.api.exporter%3a%3aComposition118%3a%3aenumsettype?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_novyVa1jEem1vK-kP1bIqQ" base_Element="_nht9Qq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_novyVq1jEem1vK-kP1bIqQ" base_Element="_niHl5q1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_novyV61jEem1vK-kP1bIqQ" base_Element="_nfS7Y61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_novyWK1jEem1vK-kP1bIqQ" base_Element="ResourceDetailstartDate?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3astartDate?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_novyWa1jEem1vK-kP1bIqQ" base_Element="_ngHaw61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_novyWq1jEem1vK-kP1bIqQ" base_Element="_ng5d461jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_novyW61jEem1vK-kP1bIqQ" base_Element="_niHl5a1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_novyXK1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.exporterResourceDetail?com.tibco.n2.de.api.exporter%3a%3aResourceDetail?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nowZYK1jEem1vK-kP1bIqQ" base_Element="_nheFpa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nowZYa1jEem1vK-kP1bIqQ" base_Element="ResourceDetailresourceGroupType?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aresourceGroup?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nowZYq1jEem1vK-kP1bIqQ" base_Element="_nkchJq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nowZY61jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.exporterimportResourcesResponse?com.tibco.n2.de.api.exporter%3a%3aimportResourcesResponseType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nowZZK1jEem1vK-kP1bIqQ" base_Element="_nkrKo61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nowZZa1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.exporterComposition117?com.tibco.n2.de.api.exporter%3a%3aComposition117?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nowZZq1jEem1vK-kP1bIqQ" base_Element="Composition115resourcedetail?com.tibco.n2.de.api.exporter%3a%3aComposition115%3a%3aresourcedetail?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nowZZ61jEem1vK-kP1bIqQ" base_Element="_njbNcK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nowZaK1jEem1vK-kP1bIqQ" base_Element="_njmMkq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nowZaa1jEem1vK-kP1bIqQ" base_Element="_nf9Cs61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nowZaq1jEem1vK-kP1bIqQ" base_Element="_nipKUa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nowZa61jEem1vK-kP1bIqQ" base_Element="_nmiy461jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nowZbK1jEem1vK-kP1bIqQ" base_Element="_nieyQK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxAcK1jEem1vK-kP1bIqQ" base_Element="ResourceDetailendDate?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aendDate?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxAca1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.exporterenumSetType?com.tibco.n2.de.api.exporter%3a%3aenumSetType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxAcq1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.exporterenumValueType?com.tibco.n2.de.api.exporter%3a%3aenumValueType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxAc61jEem1vK-kP1bIqQ" base_Element="ResourceDetailresourceCapabilityType?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aresourceCapability?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxAdK1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.exporterComposition118?com.tibco.n2.de.api.exporter%3a%3aComposition118?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxAda1jEem1vK-kP1bIqQ" base_Element="_nlqCEq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxAdq1jEem1vK-kP1bIqQ" base_Element="resourceGroupTypestartDate?com.tibco.n2.de.api.exporter%3a%3aresourceGroupType%3a%3astartDate?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxAd61jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.exporterComposition119?com.tibco.n2.de.api.exporter%3a%3aComposition119?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxAeK1jEem1vK-kP1bIqQ" base_Element="_nieLM61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxAea1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.exporterComposition123?com.tibco.n2.de.api.exporter%3a%3aComposition123?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxAeq1jEem1vK-kP1bIqQ" base_Element="Composition123pushdestinationdetail?com.tibco.n2.de.api.exporter%3a%3aComposition123%3a%3apushdestinationdetail?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxAe61jEem1vK-kP1bIqQ" base_Element="_nhO1FK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxAfK1jEem1vK-kP1bIqQ" base_Element="_nfz4wK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxAfa1jEem1vK-kP1bIqQ" base_Element="_nfo5oq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxngK1jEem1vK-kP1bIqQ" base_Element="_njPAMq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxnga1jEem1vK-kP1bIqQ" base_Element="_nfaQIa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxngq1jEem1vK-kP1bIqQ" base_Element="_nfo5o61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxng61jEem1vK-kP1bIqQ" base_Element="_nleb4a1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxnhK1jEem1vK-kP1bIqQ" base_Element="enumSetTypeenumValueType?com.tibco.n2.de.api.exporter%3a%3aenumSetType%3a%3aenumValue?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxnha1jEem1vK-kP1bIqQ" base_Element="Composition119parametertype?com.tibco.n2.de.api.exporter%3a%3aComposition119%3a%3aparametertype?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxnhq1jEem1vK-kP1bIqQ" base_Element="_nl1oQq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxnh61jEem1vK-kP1bIqQ" base_Element="_nga8wq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxniK1jEem1vK-kP1bIqQ" base_Element="positionHeldTypestartDate?com.tibco.n2.de.api.exporter%3a%3apositionHeldType%3a%3astartDate?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxnia1jEem1vK-kP1bIqQ" base_Element="_nis0s61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxniq1jEem1vK-kP1bIqQ" base_Element="_nl2PUK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxni61jEem1vK-kP1bIqQ" base_Element="_nnE-Yq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxnjK1jEem1vK-kP1bIqQ" base_Element="_ngRLwq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxnja1jEem1vK-kP1bIqQ" base_Element="Composition121resourcedetail?com.tibco.n2.de.api.exporter%3a%3aComposition121%3a%3aresourcedetail?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noxnjq1jEem1vK-kP1bIqQ" base_Element="_nmP38a1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noyOkK1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.exporterExportResource?com.tibco.n2.de.api.exporter%3a%3aExportResource?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noyOka1jEem1vK-kP1bIqQ" base_Element="_ng6E8a1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noyOkq1jEem1vK-kP1bIqQ" base_Element="_nh5jcK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noyOk61jEem1vK-kP1bIqQ" base_Element="ResourceDetailldapdn?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aldapdn?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noyOlK1jEem1vK-kP1bIqQ" base_Element="resourceCapabilityTypecapabilityId?com.tibco.n2.de.api.exporter%3a%3aresourceCapabilityType%3a%3acapabilityId?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noyOla1jEem1vK-kP1bIqQ" base_Element="_nnRysa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noyOlq1jEem1vK-kP1bIqQ" base_Element="_ngbj0K1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noyOl61jEem1vK-kP1bIqQ" base_Element="XMLPushDestinationTypetarget?com.tibco.n2.de.api.exporter%3a%3aXMLPushDestinationType%3a%3atarget?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noyOmK1jEem1vK-kP1bIqQ" base_Element="_niHl4q1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noyOma1jEem1vK-kP1bIqQ" base_Element="Composition114resourcecapabilitytype?com.tibco.n2.de.api.exporter%3a%3aComposition114%3a%3aresourcecapabilitytype?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noyOmq1jEem1vK-kP1bIqQ" base_Element="parameterTypeenumSetType?com.tibco.n2.de.api.exporter%3a%3aparameterType%3a%3aenumSet?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noyOm61jEem1vK-kP1bIqQ" base_Element="_ngl74a1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noyOnK1jEem1vK-kP1bIqQ" base_Element="resourceGroupTypegroupId?com.tibco.n2.de.api.exporter%3a%3aresourceGroupType%3a%3agroupId?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noyOna1jEem1vK-kP1bIqQ" base_Element="XMLPushDestinationTypeenabled?com.tibco.n2.de.api.exporter%3a%3aXMLPushDestinationType%3a%3aenabled?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noy1oK1jEem1vK-kP1bIqQ" base_Element="_nhiXEa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noy1oa1jEem1vK-kP1bIqQ" base_Element="_njamYa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noy1oq1jEem1vK-kP1bIqQ" base_Element="_ngHawq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noy1o61jEem1vK-kP1bIqQ" base_Element="_njPnQq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noy1pK1jEem1vK-kP1bIqQ" base_Element="_nlHPhK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noy1pa1jEem1vK-kP1bIqQ" base_Element="_ngIB0K1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noy1pq1jEem1vK-kP1bIqQ" base_Element="_nkchJa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noy1p61jEem1vK-kP1bIqQ" base_Element="_nmiy5q1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noy1qK1jEem1vK-kP1bIqQ" base_Element="ResourceDetailsecondary-ldapType?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3asecondaryldap?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noy1qa1jEem1vK-kP1bIqQ" base_Element="_nlJrxq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noy1qq1jEem1vK-kP1bIqQ" base_Element="_ngvs461jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noy1q61jEem1vK-kP1bIqQ" base_Element="_nhabQa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noy1rK1jEem1vK-kP1bIqQ" base_Element="_nlJrw61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noy1ra1jEem1vK-kP1bIqQ" base_Element="_niD7gq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_noy1rq1jEem1vK-kP1bIqQ" base_Element="_nkYPsq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nozcsK1jEem1vK-kP1bIqQ" base_Element="_nglU061jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nozcsa1jEem1vK-kP1bIqQ" base_Element="_nis0ta1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nozcsq1jEem1vK-kP1bIqQ" base_Element="_nmBOcq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nozcs61jEem1vK-kP1bIqQ" base_Element="_nmPQ461jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nozctK1jEem1vK-kP1bIqQ" base_Element="enumValueTypevalue?com.tibco.n2.de.api.exporter%3a%3aenumValueType%3a%3avalue?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nozcta1jEem1vK-kP1bIqQ" base_Element="_nlfC8K1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nozctq1jEem1vK-kP1bIqQ" base_Element="ResourceDetailldapcontainer?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aldapcontainer?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nozct61jEem1vK-kP1bIqQ" base_Element="_nk3X4q1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nozcuK1jEem1vK-kP1bIqQ" base_Element="_ngbj0q1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nozcua1jEem1vK-kP1bIqQ" base_Element="parameterTypeldapalias?com.tibco.n2.de.api.exporter%3a%3aparameterType%3a%3aldapalias?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nozcuq1jEem1vK-kP1bIqQ" base_Element="_nfpgsa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nozcu61jEem1vK-kP1bIqQ" base_Element="_neqpQ61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nozcvK1jEem1vK-kP1bIqQ" base_Element="_ngvs4q1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nozcva1jEem1vK-kP1bIqQ" base_Element="XMLPushDestinationTypechannel-type?com.tibco.n2.de.api.exporter%3a%3aXMLPushDestinationType%3a%3achanneltype?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nozcvq1jEem1vK-kP1bIqQ" base_Element="_nhD19K1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0DwK1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.exporterComposition114?com.tibco.n2.de.api.exporter%3a%3aComposition114?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0Dwa1jEem1vK-kP1bIqQ" base_Element="_nkngQ61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0Dwq1jEem1vK-kP1bIqQ" base_Element="_nmbeI61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0Dw61jEem1vK-kP1bIqQ" base_Element="parameterTypevalue1?com.tibco.n2.de.api.exporter%3a%3aparameterType%3a%3avalue1?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0DxK1jEem1vK-kP1bIqQ" base_Element="_njPnQK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0Dxa1jEem1vK-kP1bIqQ" base_Element="_nheFpq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0Dxq1jEem1vK-kP1bIqQ" base_Element="XMLPushDestinationTypeparam-descriptor?com.tibco.n2.de.api.exporter%3a%3aXMLPushDestinationType%3a%3aparamdescriptor?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0Dx61jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.exporterComposition124?com.tibco.n2.de.api.exporter%3a%3aComposition124?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0DyK1jEem1vK-kP1bIqQ" base_Element="_nipKU61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0Dya1jEem1vK-kP1bIqQ" base_Element="_nm5YMK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0Dyq1jEem1vK-kP1bIqQ" base_Element="_ngRy0K1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0Dy61jEem1vK-kP1bIqQ" base_Element="_nmfvk61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0DzK1jEem1vK-kP1bIqQ" base_Element="_nmPQ4q1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0Dza1jEem1vK-kP1bIqQ" base_Element="_nhhwA61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0q0K1jEem1vK-kP1bIqQ" base_Element="_ngwT8K1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0q0a1jEem1vK-kP1bIqQ" base_Element="_nnFlcK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0q0q1jEem1vK-kP1bIqQ" base_Element="Composition116resourcedetail?com.tibco.n2.de.api.exporter%3a%3aComposition116%3a%3aresourcedetail?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0q061jEem1vK-kP1bIqQ" base_Element="parameterTypedescriptor?com.tibco.n2.de.api.exporter%3a%3aparameterType%3a%3adescriptor?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0q1K1jEem1vK-kP1bIqQ" base_Element="ResourceDetailname?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aname?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0q1a1jEem1vK-kP1bIqQ" base_Element="_njEBE61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0q1q1jEem1vK-kP1bIqQ" base_Element="_nmg9sa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0q161jEem1vK-kP1bIqQ" base_Element="_nleb4K1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0q2K1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.exporterComposition122?com.tibco.n2.de.api.exporter%3a%3aComposition122?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0q2a1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.exporterresourceCapabilityType?com.tibco.n2.de.api.exporter%3a%3aresourceCapabilityType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0q2q1jEem1vK-kP1bIqQ" base_Element="_nhD18q1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0q261jEem1vK-kP1bIqQ" base_Element="_nkT-Qq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0q3K1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.exporterqualifierType?com.tibco.n2.de.api.exporter%3a%3aqualifierType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0q3a1jEem1vK-kP1bIqQ" base_Element="_nkGi4q1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no0q3q1jEem1vK-kP1bIqQ" base_Element="_nm5YMq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no1R4K1jEem1vK-kP1bIqQ" base_Element="_nmfvkq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no1R4a1jEem1vK-kP1bIqQ" base_Element="_nlHPgq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no1R4q1jEem1vK-kP1bIqQ" base_Element="ResourceDetailresourceType?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aresourceType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no1R461jEem1vK-kP1bIqQ" base_Element="_nmo5gK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no1R5K1jEem1vK-kP1bIqQ" base_Element="Composition120resourcedetail?com.tibco.n2.de.api.exporter%3a%3aComposition120%3a%3aresourcedetail?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no1R5a1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.exporterXMLPushDestinationType?com.tibco.n2.de.api.exporter%3a%3aXMLPushDestinationType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no1R5q1jEem1vK-kP1bIqQ" base_Element="exportResourcesRequestTypeexport-ldap-containers?com.tibco.n2.de.api.exporter%3a%3aexportResourcesRequestType%3a%3aexportldapcontainers?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no1R561jEem1vK-kP1bIqQ" base_Element="_nf9Csq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no1R6K1jEem1vK-kP1bIqQ" base_Element="parameterTypevalue?com.tibco.n2.de.api.exporter%3a%3aparameterType%3a%3avalue?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no1R6a1jEem1vK-kP1bIqQ" base_Element="_nkchIq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no1R6q1jEem1vK-kP1bIqQ" base_Element="_nkrKoq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no1R661jEem1vK-kP1bIqQ" base_Element="_nipKUq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no1R7K1jEem1vK-kP1bIqQ" base_Element="_nkchI61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no1R7a1jEem1vK-kP1bIqQ" base_Element="_nlqpIa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no148K1jEem1vK-kP1bIqQ" base_Element="_nmiy5K1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no148a1jEem1vK-kP1bIqQ" base_Element="ResourceDetailldapalias?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aldapalias?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no148q1jEem1vK-kP1bIqQ" base_Element="_nheFo61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no14861jEem1vK-kP1bIqQ" base_Element="_nmiL0K1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no149K1jEem1vK-kP1bIqQ" base_Element="_nlC-Eq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no149a1jEem1vK-kP1bIqQ" base_Element="_nh48Y61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no149q1jEem1vK-kP1bIqQ" base_Element="_ni5B8q1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no14961jEem1vK-kP1bIqQ" base_Element="_nfaQIq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no14-K1jEem1vK-kP1bIqQ" base_Element="_niD7g61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no14-a1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.exporterpositionHeldType?com.tibco.n2.de.api.exporter%3a%3apositionHeldType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no14-q1jEem1vK-kP1bIqQ" base_Element="_njamYq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no14-61jEem1vK-kP1bIqQ" base_Element="_nhiXEq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no14_K1jEem1vK-kP1bIqQ" base_Element="ResourceDetailid?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aid?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no14_a1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.exporterComposition120?com.tibco.n2.de.api.exporter%3a%3aComposition120?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no2gAK1jEem1vK-kP1bIqQ" base_Element="_nfS7Yq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no2gAa1jEem1vK-kP1bIqQ" base_Element="_nkYPta1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no2gAq1jEem1vK-kP1bIqQ" base_Element="Composition122exportresource?com.tibco.n2.de.api.exporter%3a%3aComposition122%3a%3aexportresource?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no2gA61jEem1vK-kP1bIqQ" base_Element="ResourceDetaillocationId?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3alocationId?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no2gBK1jEem1vK-kP1bIqQ" base_Element="exportResourcesRequestTypeexport-push-destinations?com.tibco.n2.de.api.exporter%3a%3aexportResourcesRequestType%3a%3aexportpushdestinations?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no2gBa1jEem1vK-kP1bIqQ" base_Element="_njmMka1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no2gBq1jEem1vK-kP1bIqQ" base_Element="_nkYPs61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no2gB61jEem1vK-kP1bIqQ" base_Element="ExportResourcecontainer?com.tibco.n2.de.api.exporter%3a%3aExportResource%3a%3acontainer?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no2gCK1jEem1vK-kP1bIqQ" base_Element="enumValueTypevalue1?com.tibco.n2.de.api.exporter%3a%3aenumValueType%3a%3avalue1?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no2gCa1jEem1vK-kP1bIqQ" base_Element="_nnTn4K1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no2gCq1jEem1vK-kP1bIqQ" base_Element="_nlJrwK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no2gC61jEem1vK-kP1bIqQ" base_Element="_niHl461jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no2gDK1jEem1vK-kP1bIqQ" base_Element="_nhukUK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no2gDa1jEem1vK-kP1bIqQ" base_Element="_ng5d4q1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no2gDq1jEem1vK-kP1bIqQ" base_Element="exportResourcesRequestTypeexport-resources?com.tibco.n2.de.api.exporter%3a%3aexportResourcesRequestType%3a%3aexportresources?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3HEK1jEem1vK-kP1bIqQ" base_Element="Composition113exportresource?com.tibco.n2.de.api.exporter%3a%3aComposition113%3a%3aexportresource?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3HEa1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.exporterComposition116?com.tibco.n2.de.api.exporter%3a%3aComposition116?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3HEq1jEem1vK-kP1bIqQ" base_Element="_neqpQa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3HE61jEem1vK-kP1bIqQ" base_Element="_nhD18a1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3HFK1jEem1vK-kP1bIqQ" base_Element="_nheFoq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3HFa1jEem1vK-kP1bIqQ" base_Element="_niTMEq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3HFq1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.exporterComposition121?com.tibco.n2.de.api.exporter%3a%3aComposition121?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3HF61jEem1vK-kP1bIqQ" base_Element="XMLPushDestinationTypechannel-ID?com.tibco.n2.de.api.exporter%3a%3aXMLPushDestinationType%3a%3achannelID?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3HGK1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.exporterexportResourcesRequestType?com.tibco.n2.de.api.exporter%3a%3aexportResourcesRequestType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3HGa1jEem1vK-kP1bIqQ" base_Element="_niEikK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3HGq1jEem1vK-kP1bIqQ" base_Element="_nlJrxK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3HG61jEem1vK-kP1bIqQ" base_Element="resourceGroupTypeendDate?com.tibco.n2.de.api.exporter%3a%3aresourceGroupType%3a%3aendDate?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3HHK1jEem1vK-kP1bIqQ" base_Element="parameterTypeldapdn?com.tibco.n2.de.api.exporter%3a%3aparameterType%3a%3aldapdn?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3HHa1jEem1vK-kP1bIqQ" base_Element="_nlC-E61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3uIK1jEem1vK-kP1bIqQ" base_Element="PushDestinationDetailXMLPushDestinationType?com.tibco.n2.de.api.exporter%3a%3aPushDestinationDetail%3a%3aXMLPushDestination?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3uIa1jEem1vK-kP1bIqQ" base_Element="ExportResourceresource?com.tibco.n2.de.api.exporter%3a%3aExportResource%3a%3aresource?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3uIq1jEem1vK-kP1bIqQ" base_Element="_nglU0q1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3uI61jEem1vK-kP1bIqQ" base_Element="_niTzIa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3uJK1jEem1vK-kP1bIqQ" base_Element="_nkHJ8K1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3uJa1jEem1vK-kP1bIqQ" base_Element="_nnSZwK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3uJq1jEem1vK-kP1bIqQ" base_Element="_nmfvla1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3uJ61jEem1vK-kP1bIqQ" base_Element="_nlJEsK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3uKK1jEem1vK-kP1bIqQ" base_Element="_njEBEq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3uKa1jEem1vK-kP1bIqQ" base_Element="_nlJrx61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3uKq1jEem1vK-kP1bIqQ" base_Element="_nnFlcq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3uK61jEem1vK-kP1bIqQ" base_Element="_nmBOc61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3uLK1jEem1vK-kP1bIqQ" base_Element="_nhO1Eq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3uLa1jEem1vK-kP1bIqQ" base_Element="_nlHPha1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no3uLq1jEem1vK-kP1bIqQ" base_Element="positionHeldTypepositionId?com.tibco.n2.de.api.exporter%3a%3apositionHeldType%3a%3apositionId?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no4VMK1jEem1vK-kP1bIqQ" base_Element="_nkYPtq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no4VMa1jEem1vK-kP1bIqQ" base_Element="secondary-ldapTypeldapdn?com.tibco.n2.de.api.exporter%3a%3asecondaryldapType%3a%3aldapdn?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no4VMq1jEem1vK-kP1bIqQ" base_Element="_nmoSca1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no4VM61jEem1vK-kP1bIqQ" base_Element="_nnRysq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no4VNK1jEem1vK-kP1bIqQ" base_Element="_nhhwAq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no4VNa1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.exporterPushDestinationDetail?com.tibco.n2.de.api.exporter%3a%3aPushDestinationDetail?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no4VNq1jEem1vK-kP1bIqQ" base_Element="ResourceDetaillabel?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3alabel?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no4VN61jEem1vK-kP1bIqQ" base_Element="_nlqCE61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no4VOK1jEem1vK-kP1bIqQ" base_Element="_nmbeIq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no4VOa1jEem1vK-kP1bIqQ" base_Element="_nk3-8K1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no4VOq1jEem1vK-kP1bIqQ" base_Element="qualifierTypevalue?com.tibco.n2.de.api.exporter%3a%3aqualifierType%3a%3avalue?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no4VO61jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.exportersecondary-ldapType?com.tibco.n2.de.api.exporter%3a%3asecondaryldapType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no4VPK1jEem1vK-kP1bIqQ" base_Element="_nk3-8q1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no4VPa1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.exporterparameterType?com.tibco.n2.de.api.exporter%3a%3aparameterType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no48QK1jEem1vK-kP1bIqQ" base_Element="_nlHPga1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no48Qa1jEem1vK-kP1bIqQ" base_Element="XMLPushDestinationTypename?com.tibco.n2.de.api.exporter%3a%3aXMLPushDestinationType%3a%3aname?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no48Qq1jEem1vK-kP1bIqQ" base_Element="_nf9pwa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no48Q61jEem1vK-kP1bIqQ" base_Element="_niTME61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no48RK1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.exporterresourceGroupType?com.tibco.n2.de.api.exporter%3a%3aresourceGroupType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no48Ra1jEem1vK-kP1bIqQ" base_Element="_nkoHUK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no48Rq1jEem1vK-kP1bIqQ" base_Element="_nmB1gK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no48R61jEem1vK-kP1bIqQ" base_Element="ExportResourcemodel-version?com.tibco.n2.de.api.exporter%3a%3aExportResource%3a%3amodelversion?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no48SK1jEem1vK-kP1bIqQ" base_Element="positionHeldTypeendDate?com.tibco.n2.de.api.exporter%3a%3apositionHeldType%3a%3aendDate?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no48Sa1jEem1vK-kP1bIqQ" base_Element="_ni5B8a1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no48Sq1jEem1vK-kP1bIqQ" base_Element="_nht9Q61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no48S61jEem1vK-kP1bIqQ" base_Element="_nhO1Ea1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no5jUK1jEem1vK-kP1bIqQ" base_Element="_nmiy4K1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no5jUa1jEem1vK-kP1bIqQ" base_Element="ExportResourcepush-destination?com.tibco.n2.de.api.exporter%3a%3aExportResource%3a%3apushdestination?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no5jUq1jEem1vK-kP1bIqQ" base_Element="_nkngQq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no5jU61jEem1vK-kP1bIqQ" base_Element="_nfaQJa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no5jVK1jEem1vK-kP1bIqQ" base_Element="secondary-ldapTypeldapalias?com.tibco.n2.de.api.exporter%3a%3asecondaryldapType%3a%3aldapalias?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no5jVa1jEem1vK-kP1bIqQ" base_Element="_nmkoEK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no5jVq1jEem1vK-kP1bIqQ" base_Element="_nfaQJK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no5jV61jEem1vK-kP1bIqQ" base_Element="_ngRLw61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no5jWK1jEem1vK-kP1bIqQ" base_Element="_nfzRs61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no5jWa1jEem1vK-kP1bIqQ" base_Element="_nkT-Q61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no5jWq1jEem1vK-kP1bIqQ" base_Element="_nmcFMa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no5jW61jEem1vK-kP1bIqQ" base_Element="_nkrKpa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no5jXK1jEem1vK-kP1bIqQ" base_Element="_nis0sq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no5jXa1jEem1vK-kP1bIqQ" base_Element="_nm4xIq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no6KYK1jEem1vK-kP1bIqQ" base_Element="_nh48Yq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no6KYa1jEem1vK-kP1bIqQ" base_Element="parameterTypeldapattribute?com.tibco.n2.de.api.exporter%3a%3aparameterType%3a%3aldapattribute?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no6KYq1jEem1vK-kP1bIqQ" base_Element="_njEoIK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no6KY61jEem1vK-kP1bIqQ" base_Element="ResourceDetailparameterType?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aparameter?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no6KZK1jEem1vK-kP1bIqQ" base_Element="_njmzoK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no6KZa1jEem1vK-kP1bIqQ" base_Element="_nl1oQ61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no6KZq1jEem1vK-kP1bIqQ" base_Element="_nis0tq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no6KZ61jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.exporterComposition115?com.tibco.n2.de.api.exporter%3a%3aComposition115?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no6KaK1jEem1vK-kP1bIqQ" base_Element="_nieLMq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no6Kaa1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.exporterComposition113?com.tibco.n2.de.api.exporter%3a%3aComposition113?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no6Kaq1jEem1vK-kP1bIqQ" base_Element="Composition117resourcedetail?com.tibco.n2.de.api.exporter%3a%3aComposition117%3a%3aresourcedetail?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no6Ka61jEem1vK-kP1bIqQ" base_Element="_nmfvlq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no6KbK1jEem1vK-kP1bIqQ" base_Element="ResourceDetailpositionHeldType?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3apositionHeld?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no6Kba1jEem1vK-kP1bIqQ" base_Element="_nmiy561jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no6Kbq1jEem1vK-kP1bIqQ" base_Element="_ni5pAK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_no6xcK1jEem1vK-kP1bIqQ" base_Element="_nkrKpq1jEem1vK-kP1bIqQ"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTIzIK1jEem1vK-kP1bIqQ" displayLabel="ExportResource" base_NamedElement="com.tibco.n2.de.api.exporterExportResource?com.tibco.n2.de.api.exporter%3a%3aExportResource?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTIzIa1jEem1vK-kP1bIqQ" displayLabel="PushDestinationDetail" base_NamedElement="com.tibco.n2.de.api.exporterPushDestinationDetail?com.tibco.n2.de.api.exporter%3a%3aPushDestinationDetail?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTJaMK1jEem1vK-kP1bIqQ" displayLabel="ResourceDetail" base_NamedElement="com.tibco.n2.de.api.exporterResourceDetail?com.tibco.n2.de.api.exporter%3a%3aResourceDetail?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTJaMa1jEem1vK-kP1bIqQ" displayLabel="exportResourcesRequestType" base_NamedElement="com.tibco.n2.de.api.exporterexportResourcesRequestType?com.tibco.n2.de.api.exporter%3a%3aexportResourcesRequestType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTJaMq1jEem1vK-kP1bIqQ" displayLabel="importResourcesResponse" base_NamedElement="com.tibco.n2.de.api.exporterimportResourcesResponse?com.tibco.n2.de.api.exporter%3a%3aimportResourcesResponseType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTKBQK1jEem1vK-kP1bIqQ" displayLabel="container" base_NamedElement="ExportResourcecontainer?com.tibco.n2.de.api.exporter%3a%3aExportResource%3a%3acontainer?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTKBQa1jEem1vK-kP1bIqQ" displayLabel="push-destination" base_NamedElement="ExportResourcepush-destination?com.tibco.n2.de.api.exporter%3a%3aExportResource%3a%3apushdestination?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTKoUK1jEem1vK-kP1bIqQ" displayLabel="resource" base_NamedElement="ExportResourceresource?com.tibco.n2.de.api.exporter%3a%3aExportResource%3a%3aresource?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTKoUa1jEem1vK-kP1bIqQ" displayLabel="model-version" base_NamedElement="ExportResourcemodel-version?com.tibco.n2.de.api.exporter%3a%3aExportResource%3a%3amodelversion?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTLPYK1jEem1vK-kP1bIqQ" displayLabel="XMLPushDestination" base_NamedElement="PushDestinationDetailXMLPushDestinationType?com.tibco.n2.de.api.exporter%3a%3aPushDestinationDetail%3a%3aXMLPushDestination?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTLPYa1jEem1vK-kP1bIqQ" displayLabel="XMLPushDestinationType" base_NamedElement="com.tibco.n2.de.api.exporterXMLPushDestinationType?com.tibco.n2.de.api.exporter%3a%3aXMLPushDestinationType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTL2cK1jEem1vK-kP1bIqQ" displayLabel="param-descriptor" base_NamedElement="XMLPushDestinationTypeparam-descriptor?com.tibco.n2.de.api.exporter%3a%3aXMLPushDestinationType%3a%3aparamdescriptor?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTL2ca1jEem1vK-kP1bIqQ" displayLabel="target" base_NamedElement="XMLPushDestinationTypetarget?com.tibco.n2.de.api.exporter%3a%3aXMLPushDestinationType%3a%3atarget?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTMdgK1jEem1vK-kP1bIqQ" displayLabel="channel-ID" base_NamedElement="XMLPushDestinationTypechannel-ID?com.tibco.n2.de.api.exporter%3a%3aXMLPushDestinationType%3a%3achannelID?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTMdga1jEem1vK-kP1bIqQ" displayLabel="channel-type" base_NamedElement="XMLPushDestinationTypechannel-type?com.tibco.n2.de.api.exporter%3a%3aXMLPushDestinationType%3a%3achanneltype?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTNEkK1jEem1vK-kP1bIqQ" displayLabel="enabled" base_NamedElement="XMLPushDestinationTypeenabled?com.tibco.n2.de.api.exporter%3a%3aXMLPushDestinationType%3a%3aenabled?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTNEka1jEem1vK-kP1bIqQ" displayLabel="name" base_NamedElement="XMLPushDestinationTypename?com.tibco.n2.de.api.exporter%3a%3aXMLPushDestinationType%3a%3aname?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTNroK1jEem1vK-kP1bIqQ" displayLabel="parameter" base_NamedElement="ResourceDetailparameterType?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aparameter?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTOSsK1jEem1vK-kP1bIqQ" displayLabel="positionHeld" base_NamedElement="ResourceDetailpositionHeldType?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3apositionHeld?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTOSsa1jEem1vK-kP1bIqQ" displayLabel="resourceCapability" base_NamedElement="ResourceDetailresourceCapabilityType?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aresourceCapability?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTOSsq1jEem1vK-kP1bIqQ" displayLabel="resourceGroup" base_NamedElement="ResourceDetailresourceGroupType?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aresourceGroup?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTO5wK1jEem1vK-kP1bIqQ" displayLabel="secondary-ldap" base_NamedElement="ResourceDetailsecondary-ldapType?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3asecondaryldap?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTO5wa1jEem1vK-kP1bIqQ" displayLabel="endDate" base_NamedElement="ResourceDetailendDate?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aendDate?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTO5wq1jEem1vK-kP1bIqQ" displayLabel="id" base_NamedElement="ResourceDetailid?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aid?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTPg0K1jEem1vK-kP1bIqQ" displayLabel="label" base_NamedElement="ResourceDetaillabel?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3alabel?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTPg0a1jEem1vK-kP1bIqQ" displayLabel="ldapalias" base_NamedElement="ResourceDetailldapalias?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aldapalias?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTQH4K1jEem1vK-kP1bIqQ" displayLabel="ldapcontainer" base_NamedElement="ResourceDetailldapcontainer?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aldapcontainer?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTQH4a1jEem1vK-kP1bIqQ" displayLabel="ldapdn" base_NamedElement="ResourceDetailldapdn?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aldapdn?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTQH4q1jEem1vK-kP1bIqQ" displayLabel="locationId" base_NamedElement="ResourceDetaillocationId?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3alocationId?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTQu8K1jEem1vK-kP1bIqQ" displayLabel="name" base_NamedElement="ResourceDetailname?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aname?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTQu8a1jEem1vK-kP1bIqQ" displayLabel="resourceType" base_NamedElement="ResourceDetailresourceType?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3aresourceType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTRWAK1jEem1vK-kP1bIqQ" displayLabel="startDate" base_NamedElement="ResourceDetailstartDate?com.tibco.n2.de.api.exporter%3a%3aResourceDetail%3a%3astartDate?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTRWAa1jEem1vK-kP1bIqQ" displayLabel="parameterType" base_NamedElement="com.tibco.n2.de.api.exporterparameterType?com.tibco.n2.de.api.exporter%3a%3aparameterType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTR9EK1jEem1vK-kP1bIqQ" displayLabel="enumSet" base_NamedElement="parameterTypeenumSetType?com.tibco.n2.de.api.exporter%3a%3aparameterType%3a%3aenumSet?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTR9Ea1jEem1vK-kP1bIqQ" displayLabel="descriptor" base_NamedElement="parameterTypedescriptor?com.tibco.n2.de.api.exporter%3a%3aparameterType%3a%3adescriptor?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTR9Eq1jEem1vK-kP1bIqQ" displayLabel="ldapalias" base_NamedElement="parameterTypeldapalias?com.tibco.n2.de.api.exporter%3a%3aparameterType%3a%3aldapalias?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTSkIK1jEem1vK-kP1bIqQ" displayLabel="ldapattribute" base_NamedElement="parameterTypeldapattribute?com.tibco.n2.de.api.exporter%3a%3aparameterType%3a%3aldapattribute?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTSkIa1jEem1vK-kP1bIqQ" displayLabel="ldapdn" base_NamedElement="parameterTypeldapdn?com.tibco.n2.de.api.exporter%3a%3aparameterType%3a%3aldapdn?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTSkIq1jEem1vK-kP1bIqQ" displayLabel="value1" base_NamedElement="parameterTypevalue1?com.tibco.n2.de.api.exporter%3a%3aparameterType%3a%3avalue1?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTTLMK1jEem1vK-kP1bIqQ" displayLabel="value" base_NamedElement="parameterTypevalue?com.tibco.n2.de.api.exporter%3a%3aparameterType%3a%3avalue?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTTLMa1jEem1vK-kP1bIqQ" displayLabel="enumSetType" base_NamedElement="com.tibco.n2.de.api.exporterenumSetType?com.tibco.n2.de.api.exporter%3a%3aenumSetType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTTyQK1jEem1vK-kP1bIqQ" displayLabel="enumValue" base_NamedElement="enumSetTypeenumValueType?com.tibco.n2.de.api.exporter%3a%3aenumSetType%3a%3aenumValue?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTTyQa1jEem1vK-kP1bIqQ" displayLabel="enumValueType" base_NamedElement="com.tibco.n2.de.api.exporterenumValueType?com.tibco.n2.de.api.exporter%3a%3aenumValueType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTTyQq1jEem1vK-kP1bIqQ" displayLabel="value1" base_NamedElement="enumValueTypevalue1?com.tibco.n2.de.api.exporter%3a%3aenumValueType%3a%3avalue1?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTUZUK1jEem1vK-kP1bIqQ" displayLabel="value" base_NamedElement="enumValueTypevalue?com.tibco.n2.de.api.exporter%3a%3aenumValueType%3a%3avalue?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTUZUa1jEem1vK-kP1bIqQ" displayLabel="positionHeldType" base_NamedElement="com.tibco.n2.de.api.exporterpositionHeldType?com.tibco.n2.de.api.exporter%3a%3apositionHeldType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTVAYK1jEem1vK-kP1bIqQ" displayLabel="endDate" base_NamedElement="positionHeldTypeendDate?com.tibco.n2.de.api.exporter%3a%3apositionHeldType%3a%3aendDate?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTVAYa1jEem1vK-kP1bIqQ" displayLabel="positionId" base_NamedElement="positionHeldTypepositionId?com.tibco.n2.de.api.exporter%3a%3apositionHeldType%3a%3apositionId?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTVAYq1jEem1vK-kP1bIqQ" displayLabel="startDate" base_NamedElement="positionHeldTypestartDate?com.tibco.n2.de.api.exporter%3a%3apositionHeldType%3a%3astartDate?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTVncK1jEem1vK-kP1bIqQ" displayLabel="resourceCapabilityType" base_NamedElement="com.tibco.n2.de.api.exporterresourceCapabilityType?com.tibco.n2.de.api.exporter%3a%3aresourceCapabilityType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTVnca1jEem1vK-kP1bIqQ" displayLabel="qualifier" base_NamedElement="resourceCapabilityTypequalifierType?com.tibco.n2.de.api.exporter%3a%3aresourceCapabilityType%3a%3aqualifier?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTWOgK1jEem1vK-kP1bIqQ" displayLabel="capabilityId" base_NamedElement="resourceCapabilityTypecapabilityId?com.tibco.n2.de.api.exporter%3a%3aresourceCapabilityType%3a%3acapabilityId?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTWOga1jEem1vK-kP1bIqQ" displayLabel="qualifierType" base_NamedElement="com.tibco.n2.de.api.exporterqualifierType?com.tibco.n2.de.api.exporter%3a%3aqualifierType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTW1kK1jEem1vK-kP1bIqQ" displayLabel="value" base_NamedElement="qualifierTypevalue?com.tibco.n2.de.api.exporter%3a%3aqualifierType%3a%3avalue?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTW1ka1jEem1vK-kP1bIqQ" displayLabel="resourceGroupType" base_NamedElement="com.tibco.n2.de.api.exporterresourceGroupType?com.tibco.n2.de.api.exporter%3a%3aresourceGroupType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTXcoK1jEem1vK-kP1bIqQ" displayLabel="endDate" base_NamedElement="resourceGroupTypeendDate?com.tibco.n2.de.api.exporter%3a%3aresourceGroupType%3a%3aendDate?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTXcoa1jEem1vK-kP1bIqQ" displayLabel="groupId" base_NamedElement="resourceGroupTypegroupId?com.tibco.n2.de.api.exporter%3a%3aresourceGroupType%3a%3agroupId?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTYDsK1jEem1vK-kP1bIqQ" displayLabel="startDate" base_NamedElement="resourceGroupTypestartDate?com.tibco.n2.de.api.exporter%3a%3aresourceGroupType%3a%3astartDate?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTYDsa1jEem1vK-kP1bIqQ" displayLabel="secondaryldapType" base_NamedElement="com.tibco.n2.de.api.exportersecondary-ldapType?com.tibco.n2.de.api.exporter%3a%3asecondaryldapType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTYDsq1jEem1vK-kP1bIqQ" displayLabel="ldapalias" base_NamedElement="secondary-ldapTypeldapalias?com.tibco.n2.de.api.exporter%3a%3asecondaryldapType%3a%3aldapalias?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTYqwK1jEem1vK-kP1bIqQ" displayLabel="ldapdn" base_NamedElement="secondary-ldapTypeldapdn?com.tibco.n2.de.api.exporter%3a%3asecondaryldapType%3a%3aldapdn?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTYqwa1jEem1vK-kP1bIqQ" displayLabel="export-ldap-containers" base_NamedElement="exportResourcesRequestTypeexport-ldap-containers?com.tibco.n2.de.api.exporter%3a%3aexportResourcesRequestType%3a%3aexportldapcontainers?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTZR0K1jEem1vK-kP1bIqQ" displayLabel="export-push-destinations" base_NamedElement="exportResourcesRequestTypeexport-push-destinations?com.tibco.n2.de.api.exporter%3a%3aexportResourcesRequestType%3a%3aexportpushdestinations?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oTZR0a1jEem1vK-kP1bIqQ" displayLabel="export-resources" base_NamedElement="exportResourcesRequestTypeexport-resources?com.tibco.n2.de.api.exporter%3a%3aexportResourcesRequestType%3a%3aexportresources?"/>
+  <notation:Diagram xmi:id="_oTZR1q1jEem1vK-kP1bIqQ" type="Business Object Model" element="com.tibco.n2.de.api.exporter?com.tibco.n2.de.api.exporter?" name="com.tibco.n2.de.api.exporter" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_oTZR161jEem1vK-kP1bIqQ"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_oTZR2K1jEem1vK-kP1bIqQ"/>
+  </notation:Diagram>
+</xmi:XMI>

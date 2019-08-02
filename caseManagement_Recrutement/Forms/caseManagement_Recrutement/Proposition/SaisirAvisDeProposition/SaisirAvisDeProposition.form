@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:et="http://www.tibco.com/forms/model/elemtypes" xmlns:form="http://www.tibco.com/forms/model/form" xmlns:gwt="http://www.tibco.com/forms/model/gwt" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmlns:xpdl2="http://www.wfmc.org/2008/XPDL2.1" generated="true" generatorSource="caseManagement_Recrutement.xpdl#_lZXn1bOREemwzsImCRebZQ?p=caseManagement_Recrutement%26s=Process%20Packages%26t=xpdl2%3aActivity%26q=caseManagement_Recrutement%3a%3aProposition%26n=SaisirAvisDeProposition?" formatVersion="4.0.0">
+  <form:externalResources>
+    <form:externalResource name="resource.common" uri="pathmap://FORMS_RESOURCES/common.properties" internal="true" localized="true"/>
+    <form:externalResource name="resource.form" uri="caseManagement_Recrutement/Proposition/SaisirAvisDeProposition/SaisirAvisDeProposition.properties" sfRelative="true" internal="true" localized="true"/>
+  </form:externalResources>
+  <form:dataModel>
+    <form:parameter generated="true" name="data.Candidature" label="Candidature" dataType="uml:Class CaseManagementDataModel.bom#_2oBk8LIMEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aClass%26q=com.example.casemanagementdatamodel%26n=Candidature?" type="com.example.casemanagementdatamodel::Candidature" inout="INOUT"/>
+  </form:dataModel>
+  <form:services/>
+  <form:actions/>
+  <form:conditions/>
+  <form:rules>
+    <form:rule generated="true" name="rule.cancel" label="Cancel">
+      <form:event source="#control.cancel" eventType="pathmap://FORMS_LIBRARIES/Standard.library.elemtypes#select" subject="form.control.cancel.select"/>
+      <form:action ref="pathmap://FORMS_LIBRARIES/Standard.library.elemtypes#action.cancel"/>
+    </form:rule>
+    <form:rule generated="true" name="rule.submit" label="Submit">
+      <form:event source="#control.submit" eventType="pathmap://FORMS_LIBRARIES/Standard.library.elemtypes#select" subject="form.control.submit.select"/>
+      <form:action ref="pathmap://FORMS_LIBRARIES/Standard.library.elemtypes#action.submit"/>
+    </form:rule>
+  </form:rules>
+  <form:bindings>
+    <form:binding generated="true" direction="bothways" name="_TO-ZQLRoEem0F8GCydzZ8w">
+      <form:source target="data.Candidature" feature="http://www.tibco.com/forms/model/form#//Datum/value" data="form.data.Candidature.value"></form:source>
+      <form:destination target="pane.Candidature" feature="http://www.tibco.com/forms/model/elemtypes#//SingletonPanePropertySet/value" data="form.pane.Candidature.value"></form:destination>
+    </form:binding>
+    <form:binding generated="true" direction="sourceToDest" name="_TPuAILRoEem0F8GCydzZ8w">
+      <form:source target="pane.Candidature" feature="http://www.tibco.com/forms/model/elemtypes#//SingletonPanePropertySet/value CaseManagementDataModel.bom#_A-fCcLINEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=CID_candidature?" data="form.pane.Candidature.value.CID_candidature"></form:source>
+      <form:destination target="control.Candidature_CID_candidature" feature="http://www.tibco.com/forms/model/form#//Control/value" data="form.control.Candidature_CID_candidature.value"></form:destination>
+    </form:binding>
+    <form:binding generated="true" direction="bothways" name="_TQHowLRoEem0F8GCydzZ8w">
+      <form:source target="pane.Candidature" feature="http://www.tibco.com/forms/model/elemtypes#//SingletonPanePropertySet/value CaseManagementDataModel.bom#_5HPZYLIMEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=nom?" data="form.pane.Candidature.value.nom"></form:source>
+      <form:destination target="control.Candidature_nom" feature="http://www.tibco.com/forms/model/form#//Control/value" data="form.control.Candidature_nom.value"></form:destination>
+    </form:binding>
+    <form:binding generated="true" direction="bothways" name="_TQhRYLRoEem0F8GCydzZ8w">
+      <form:source target="pane.Candidature" feature="http://www.tibco.com/forms/model/elemtypes#//SingletonPanePropertySet/value CaseManagementDataModel.bom#_78E4gLIMEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=prenom?" data="form.pane.Candidature.value.prenom"></form:source>
+      <form:destination target="control.Candidature_prenom" feature="http://www.tibco.com/forms/model/form#//Control/value" data="form.control.Candidature_prenom.value"></form:destination>
+    </form:binding>
+    <form:binding generated="true" direction="bothways" name="_TQ7hELRoEem0F8GCydzZ8w">
+      <form:source target="pane.Candidature" feature="http://www.tibco.com/forms/model/elemtypes#//SingletonPanePropertySet/value CaseManagementDataModel.bom#_qMzk8LINEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=dateCreation?" data="form.pane.Candidature.value.dateCreation"></form:source>
+      <form:destination target="control.Candidature_dateCreation" feature="http://www.tibco.com/forms/model/form#//Control/value" data="form.control.Candidature_dateCreation.value"></form:destination>
+    </form:binding>
+    <form:binding generated="true" direction="bothways" name="_TRVwwLRoEem0F8GCydzZ8w">
+      <form:source target="pane.Candidature" feature="http://www.tibco.com/forms/model/elemtypes#//SingletonPanePropertySet/value CaseManagementDataModel.bom#_JHei0LINEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=mail?" data="form.pane.Candidature.value.mail"></form:source>
+      <form:destination target="control.Candidature_mail" feature="http://www.tibco.com/forms/model/form#//Control/value" data="form.control.Candidature_mail.value"></form:destination>
+    </form:binding>
+    <form:binding generated="true" direction="bothways" name="_TRxOkLRoEem0F8GCydzZ8w">
+      <form:source target="pane.Candidature" feature="http://www.tibco.com/forms/model/elemtypes#//SingletonPanePropertySet/value CaseManagementDataModel.bom#_KgPFgLINEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=portable?" data="form.pane.Candidature.value.portable"></form:source>
+      <form:destination target="control.Candidature_portable" feature="http://www.tibco.com/forms/model/form#//Control/value" data="form.control.Candidature_portable.value"></form:destination>
+    </form:binding>
+    <form:binding generated="true" direction="bothways" name="_TSLeQLRoEem0F8GCydzZ8w">
+      <form:source target="pane.Candidature" feature="http://www.tibco.com/forms/model/elemtypes#//SingletonPanePropertySet/value CaseManagementDataModel.bom#_Lz2CcLINEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=adresse?" data="form.pane.Candidature.value.adresse"></form:source>
+      <form:destination target="control.Candidature_adresse" feature="http://www.tibco.com/forms/model/form#//Control/value" data="form.control.Candidature_adresse.value"></form:destination>
+    </form:binding>
+    <form:binding generated="true" direction="bothways" name="_TSlt8LRoEem0F8GCydzZ8w">
+      <form:source target="pane.Candidature" feature="http://www.tibco.com/forms/model/elemtypes#//SingletonPanePropertySet/value CaseManagementDataModel.bom#_PYi4QLINEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=interesseParEntretien?" data="form.pane.Candidature.value.interesseParEntretien"></form:source>
+      <form:destination target="control.Candidature_interesseParEntretien" feature="http://www.tibco.com/forms/model/form#//Control/value" data="form.control.Candidature_interesseParEntretien.value"></form:destination>
+    </form:binding>
+    <form:binding generated="true" syncFlags="2048" direction="destToSource" name="_TTBLwLRoEem0F8GCydzZ8w">
+      <form:source target="data.Candidature" feature="http://www.tibco.com/forms/model/form#//Datum/value CaseManagementDataModel.bom#_SKMggLINEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=avisProposition?" data="form.data.Candidature.value.avisProposition"></form:source>
+      <form:destination target="control.Candidature_avisProposition" feature="http://www.tibco.com/forms/model/form#//Control/value" data="form.control.Candidature_avisProposition.value"></form:destination>
+    </form:binding>
+    <form:binding generated="true" direction="bothways" name="_TTcCgLRoEem0F8GCydzZ8w">
+      <form:source target="pane.Candidature" feature="http://www.tibco.com/forms/model/elemtypes#//SingletonPanePropertySet/value CaseManagementDataModel.bom#_7evxYLIOEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=avisFinale?" data="form.pane.Candidature.value.avisFinale"></form:source>
+      <form:destination target="control.Candidature_avisFinale" feature="http://www.tibco.com/forms/model/form#//Control/value" data="form.control.Candidature_avisFinale.value"></form:destination>
+    </form:binding>
+    <form:binding generated="true" direction="bothways" name="_TTklYLRoEem0F8GCydzZ8w">
+      <form:source target="pane.Candidature" feature="http://www.tibco.com/forms/model/elemtypes#//SingletonPanePropertySet/value CaseManagementDataModel.bom#_NkMT0rIPEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=entretiens?" data="form.pane.Candidature.value.entretiens"></form:source>
+      <form:destination target="pane.Candidature_entretiens" feature="http://www.tibco.com/forms/model/elemtypes#//CollectionPanePropertySet/value" data="form.pane.Candidature_entretiens.value"></form:destination>
+    </form:binding>
+    <form:binding generated="true" direction="bothways" name="_TULCULRoEem0F8GCydzZ8w">
+      <form:source target="pane.Candidature_entretiens" feature="http://www.tibco.com/forms/model/elemtypes#//CollectionPanePropertySet/value CaseManagementDataModel.bom#_lPn5QLINEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aEntretien%26n=date?" data="form.pane.Candidature_entretiens.value.date"></form:source>
+      <form:destination target="control.Candidature_entretiens_date" feature="http://www.tibco.com/forms/model/form#//Control/value" data="form.control.Candidature_entretiens_date.value"></form:destination>
+    </form:binding>
+    <form:binding generated="true" direction="bothways" name="_TUkq8LRoEem0F8GCydzZ8w">
+      <form:source target="pane.Candidature_entretiens" feature="http://www.tibco.com/forms/model/elemtypes#//CollectionPanePropertySet/value CaseManagementDataModel.bom#_yd4qULINEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aEntretien%26n=nomCollaborateur?" data="form.pane.Candidature_entretiens.value.nomCollaborateur"></form:source>
+      <form:destination target="control.Candidature_entretiens_nomCollaborateur" feature="http://www.tibco.com/forms/model/form#//Control/value" data="form.control.Candidature_entretiens_nomCollaborateur.value"></form:destination>
+    </form:binding>
+    <form:binding generated="true" direction="bothways" name="_TU-6oLRoEem0F8GCydzZ8w">
+      <form:source target="pane.Candidature_entretiens" feature="http://www.tibco.com/forms/model/elemtypes#//CollectionPanePropertySet/value CaseManagementDataModel.bom#_1WkusLINEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aEntretien%26n=avis?" data="form.pane.Candidature_entretiens.value.avis"></form:source>
+      <form:destination target="control.Candidature_entretiens_avis" feature="http://www.tibco.com/forms/model/form#//Control/value" data="form.control.Candidature_entretiens_avis.value"></form:destination>
+    </form:binding>
+    <form:binding generated="true" direction="bothways" name="_TVX8MLRoEem0F8GCydzZ8w">
+      <form:source target="pane.Candidature" feature="http://www.tibco.com/forms/model/elemtypes#//SingletonPanePropertySet/value CaseManagementDataModel.bom#_FsJ5MLISEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=sauterRecrutement?" data="form.pane.Candidature.value.sauterRecrutement"></form:source>
+      <form:destination target="control.Candidature_sauterRecrutement" feature="http://www.tibco.com/forms/model/form#//Control/value" data="form.control.Candidature_sauterRecrutement.value"></form:destination>
+    </form:binding>
+    <form:binding generated="true" direction="bothways" name="_TVyL4LRoEem0F8GCydzZ8w">
+      <form:source target="pane.Candidature" feature="http://www.tibco.com/forms/model/elemtypes#//SingletonPanePropertySet/value CaseManagementDataModel.bom#_d9uHALIPEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=statut?" data="form.pane.Candidature.value.statut"></form:source>
+      <form:destination target="control.Candidature_statut" feature="http://www.tibco.com/forms/model/form#//Control/value" data="form.control.Candidature_statut.value"></form:destination>
+    </form:binding>
+    <form:binding generated="true" direction="bothways" name="_TWMbkLRoEem0F8GCydzZ8w">
+      <form:source target="pane.Candidature" feature="http://www.tibco.com/forms/model/elemtypes#//SingletonPanePropertySet/value CaseManagementDataModel.bom#_pmwVgLKlEemV1ZxU_L0F9A?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=poleConcerne?" data="form.pane.Candidature.value.poleConcerne"></form:source>
+      <form:destination target="control.Candidature_poleConcerne" feature="http://www.tibco.com/forms/model/form#//Control/value" data="form.control.Candidature_poleConcerne.value"></form:destination>
+    </form:binding>
+    <form:binding generated="true" direction="bothways" name="_KgFlALUBEem5hsd0YHllbg">
+      <form:source target="pane.Candidature" feature="http://www.tibco.com/forms/model/elemtypes#//SingletonPanePropertySet/value CaseManagementDataModel.bom#_SKMggLINEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=avisProposition?" data="form.pane.Candidature.value.avisProposition"></form:source>
+      <form:destination target="control.optionlist1" feature="http://www.tibco.com/forms/model/form#//Control/value" data="form.control.optionlist1.value"></form:destination>
+    </form:binding>
+  </form:bindings>
+  <form:targets>
+    <form:target ref="iProcessWorkspace_10.7"/>
+  </form:targets>
+  <form:defaults>
+    <form:labelProperties position="top"/>
+  </form:defaults>
+  <form:pane elementType="form:PaneType pathmap://FORMS_UI_ELEMENT_TYPES/UIElementTypes.library.elemtypes#com.tibco.forms.panes.vertical" name="pane.content" paneType="com.tibco.forms.panes.vertical">
+    <form:label>Saisir Avis De Proposition</form:label>
+    <form:visible>true</form:visible>
+    <form:enabled>true</form:enabled>
+    <form:labelProperties visible="true"/>
+    <form:defaults>
+      <form:labelProperties position="top"/>
+    </form:defaults>
+    <form:pane generated="true" generatorSource="caseManagement_Recrutement.xpdl#_lZYO9bOREemwzsImCRebZQ?p=caseManagement_Recrutement%26s=Process%20Packages%26t=xpdl2%3aDataField%26q=caseManagement_Recrutement%3a%3aProposition%26n=Candidature?" syncFlags="16384" elementType="form:PaneType pathmap://FORMS_UI_ELEMENT_TYPES/UIElementTypes.library.elemtypes#com.tibco.forms.panes.vertical" dataType="uml:Class CaseManagementDataModel.bom#_2oBk8LIMEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aClass%26q=com.example.casemanagementdatamodel%26n=Candidature?" readOnly="true" name="pane.Candidature" paneType="com.tibco.forms.panes.vertical">
+      <form:label>Candidature</form:label>
+      <form:hint></form:hint>
+      <form:visible>false</form:visible>
+      <form:enabled>true</form:enabled>
+      <form:defaults>
+        <form:labelProperties position="left"/>
+      </form:defaults>
+      <form:control generated="true" generatorSource="CaseManagementDataModel.bom#_A-fCcLINEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=CID_candidature?" elementType="form:ControlType pathmap://FORMS_UI_ELEMENT_TYPES/UIElementTypes.library.elemtypes#com.tibco.forms.controls.textinput" readOnly="true" controlType="com.tibco.forms.controls.textinput" name="control.Candidature_CID_candidature">
+        <form:propertySet xsi:type="et:TextPropertySet">
+          <et:displayLength>20</et:displayLength>
+          <et:maxLength>19</et:maxLength>
+          <et:numeric>true</et:numeric>
+          <et:formatRef>resource.common.format_integer</et:formatRef>
+        </form:propertySet>
+        <form:label>CID_candidature</form:label>
+        <form:hint></form:hint>
+        <form:visible>true</form:visible>
+        <form:enabled>true</form:enabled>
+        <form:required>false</form:required>
+      </form:control>
+      <form:control generated="true" generatorSource="CaseManagementDataModel.bom#_5HPZYLIMEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=nom?" elementType="form:ControlType pathmap://FORMS_UI_ELEMENT_TYPES/UIElementTypes.library.elemtypes#com.tibco.forms.controls.textinput" controlType="com.tibco.forms.controls.textinput" name="control.Candidature_nom">
+        <form:propertySet xsi:type="et:TextPropertySet">
+          <et:displayLength>40</et:displayLength>
+          <et:maxLength>50</et:maxLength>
+        </form:propertySet>
+        <form:label>nom</form:label>
+        <form:hint></form:hint>
+        <form:visible>true</form:visible>
+        <form:enabled>true</form:enabled>
+        <form:required>false</form:required>
+      </form:control>
+      <form:control generated="true" generatorSource="CaseManagementDataModel.bom#_78E4gLIMEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=prenom?" elementType="form:ControlType pathmap://FORMS_UI_ELEMENT_TYPES/UIElementTypes.library.elemtypes#com.tibco.forms.controls.textinput" controlType="com.tibco.forms.controls.textinput" name="control.Candidature_prenom">
+        <form:propertySet xsi:type="et:TextPropertySet">
+          <et:displayLength>40</et:displayLength>
+          <et:maxLength>50</et:maxLength>
+        </form:propertySet>
+        <form:label>prenom</form:label>
+        <form:hint></form:hint>
+        <form:visible>true</form:visible>
+        <form:enabled>true</form:enabled>
+        <form:required>false</form:required>
+      </form:control>
+      <form:control generated="true" generatorSource="CaseManagementDataModel.bom#_qMzk8LINEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=dateCreation?" elementType="form:ControlType pathmap://FORMS_UI_ELEMENT_TYPES/UIElementTypes.library.elemtypes#com.tibco.forms.controls.date" controlType="com.tibco.forms.controls.date" name="control.Candidature_dateCreation">
+        <form:propertySet xsi:type="et:DatePropertySet">
+          <et:minRelative>true</et:minRelative>
+          <et:maxRelative>true</et:maxRelative>
+          <et:year min="-20" max="20"/>
+        </form:propertySet>
+        <form:label>dateCreation</form:label>
+        <form:hint></form:hint>
+        <form:visible>true</form:visible>
+        <form:enabled>true</form:enabled>
+        <form:required>false</form:required>
+      </form:control>
+      <form:control generated="true" generatorSource="CaseManagementDataModel.bom#_JHei0LINEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=mail?" elementType="form:ControlType pathmap://FORMS_UI_ELEMENT_TYPES/UIElementTypes.library.elemtypes#com.tibco.forms.controls.textinput" controlType="com.tibco.forms.controls.textinput" name="control.Candidature_mail">
+        <form:propertySet xsi:type="et:TextPropertySet">
+          <et:displayLength>40</et:displayLength>
+          <et:maxLength>50</et:maxLength>
+        </form:propertySet>
+        <form:label>mail</form:label>
+        <form:hint></form:hint>
+        <form:visible>true</form:visible>
+        <form:enabled>true</form:enabled>
+        <form:required>false</form:required>
+      </form:control>
+      <form:control generated="true" generatorSource="CaseManagementDataModel.bom#_KgPFgLINEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=portable?" elementType="form:ControlType pathmap://FORMS_UI_ELEMENT_TYPES/UIElementTypes.library.elemtypes#com.tibco.forms.controls.textinput" controlType="com.tibco.forms.controls.textinput" name="control.Candidature_portable">
+        <form:propertySet xsi:type="et:TextPropertySet">
+          <et:displayLength>40</et:displayLength>
+          <et:maxLength>50</et:maxLength>
+        </form:propertySet>
+        <form:label>portable</form:label>
+        <form:hint></form:hint>
+        <form:visible>true</form:visible>
+        <form:enabled>true</form:enabled>
+        <form:required>false</form:required>
+      </form:control>
+      <form:control generated="true" generatorSource="CaseManagementDataModel.bom#_Lz2CcLINEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=adresse?" elementType="form:ControlType pathmap://FORMS_UI_ELEMENT_TYPES/UIElementTypes.library.elemtypes#com.tibco.forms.controls.textinput" controlType="com.tibco.forms.controls.textinput" name="control.Candidature_adresse">
+        <form:propertySet xsi:type="et:TextPropertySet">
+          <et:displayLength>40</et:displayLength>
+          <et:maxLength>50</et:maxLength>
+        </form:propertySet>
+        <form:label>adresse</form:label>
+        <form:hint></form:hint>
+        <form:visible>true</form:visible>
+        <form:enabled>true</form:enabled>
+        <form:required>false</form:required>
+      </form:control>
+      <form:control generated="true" generatorSource="CaseManagementDataModel.bom#_PYi4QLINEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=interesseParEntretien?" elementType="form:ControlType pathmap://FORMS_UI_ELEMENT_TYPES/UIElementTypes.library.elemtypes#com.tibco.forms.controls.checkbox" controlType="com.tibco.forms.controls.checkbox" name="control.Candidature_interesseParEntretien">
+        <form:label>interesseParEntretien</form:label>
+        <form:hint></form:hint>
+        <form:visible>true</form:visible>
+        <form:enabled>true</form:enabled>
+        <form:required>false</form:required>
+      </form:control>
+      <form:control generated="true" generatorSource="CaseManagementDataModel.bom#_7evxYLIOEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=avisFinale?" elementType="form:ControlType pathmap://FORMS_UI_ELEMENT_TYPES/UIElementTypes.library.elemtypes#com.tibco.forms.controls.optionlist" controlType="com.tibco.forms.controls.optionlist" name="control.Candidature_avisFinale">
+        <form:propertySet xsi:type="et:MultiChoicePropertySet">
+          <et:choiceType>enumeration</et:choiceType>
+          <et:choiceEnumeration>CaseManagementDataModel.bom#_DwiBYLIPEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aEnumeration%26q=com.example.casemanagementdatamodel%26n=AvisFinale?</et:choiceEnumeration>
+        </form:propertySet>
+        <form:label>avisFinale</form:label>
+        <form:hint></form:hint>
+        <form:visible>true</form:visible>
+        <form:enabled>true</form:enabled>
+        <form:required>false</form:required>
+      </form:control>
+      <form:pane generated="true" generatorSource="CaseManagementDataModel.bom#_NkMT0rIPEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=entretiens?" elementType="form:PaneType pathmap://FORMS_UI_ELEMENT_TYPES/UIElementTypes.library.elemtypes#com.tibco.forms.panes.grid" dataType="uml:Class CaseManagementDataModel.bom#_jYsz4LINEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aClass%26q=com.example.casemanagementdatamodel%26n=Entretien?" name="pane.Candidature_entretiens" paneType="com.tibco.forms.panes.grid">
+        <form:propertySet xsi:type="et:GridPanePropertySet">
+          <et:showNavigator>false</et:showNavigator>
+          <et:supportAddOperation>true</et:supportAddOperation>
+          <et:supportDeleteOperation>true</et:supportDeleteOperation>
+          <et:editable>true</et:editable>
+          <et:sortable>true</et:sortable>
+          <et:rowLabel>{0}</et:rowLabel>
+        </form:propertySet>
+        <form:label>entretiens</form:label>
+        <form:hint></form:hint>
+        <form:visible>true</form:visible>
+        <form:enabled>true</form:enabled>
+        <form:defaults>
+          <form:labelProperties position="top"/>
+        </form:defaults>
+        <form:control generated="true" generatorSource="CaseManagementDataModel.bom#_lPn5QLINEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aEntretien%26n=date?" elementType="form:ControlType pathmap://FORMS_UI_ELEMENT_TYPES/UIElementTypes.library.elemtypes#com.tibco.forms.controls.date" controlType="com.tibco.forms.controls.date" name="control.Candidature_entretiens_date">
+          <form:propertySet xsi:type="et:DatePropertySet">
+            <et:minRelative>true</et:minRelative>
+            <et:maxRelative>true</et:maxRelative>
+            <et:year min="-20" max="20"/>
+          </form:propertySet>
+          <form:label>date</form:label>
+          <form:hint></form:hint>
+          <form:visible>true</form:visible>
+          <form:enabled>true</form:enabled>
+          <form:required>false</form:required>
+        </form:control>
+        <form:control generated="true" generatorSource="CaseManagementDataModel.bom#_yd4qULINEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aEntretien%26n=nomCollaborateur?" elementType="form:ControlType pathmap://FORMS_UI_ELEMENT_TYPES/UIElementTypes.library.elemtypes#com.tibco.forms.controls.textinput" controlType="com.tibco.forms.controls.textinput" name="control.Candidature_entretiens_nomCollaborateur">
+          <form:propertySet xsi:type="et:TextPropertySet">
+            <et:displayLength>40</et:displayLength>
+            <et:maxLength>50</et:maxLength>
+          </form:propertySet>
+          <form:label>nomCollaborateur</form:label>
+          <form:hint></form:hint>
+          <form:visible>true</form:visible>
+          <form:enabled>true</form:enabled>
+          <form:required>false</form:required>
+        </form:control>
+        <form:control generated="true" generatorSource="CaseManagementDataModel.bom#_1WkusLINEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aEntretien%26n=avis?" elementType="form:ControlType pathmap://FORMS_UI_ELEMENT_TYPES/UIElementTypes.library.elemtypes#com.tibco.forms.controls.optionlist" controlType="com.tibco.forms.controls.optionlist" name="control.Candidature_entretiens_avis">
+          <form:propertySet xsi:type="et:MultiChoicePropertySet">
+            <et:choiceType>enumeration</et:choiceType>
+            <et:choiceEnumeration>CaseManagementDataModel.bom#_DwiBYLIPEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aEnumeration%26q=com.example.casemanagementdatamodel%26n=AvisFinale?</et:choiceEnumeration>
+          </form:propertySet>
+          <form:label>avis</form:label>
+          <form:hint></form:hint>
+          <form:visible>true</form:visible>
+          <form:enabled>true</form:enabled>
+          <form:required>false</form:required>
+        </form:control>
+      </form:pane>
+      <form:control generated="true" generatorSource="CaseManagementDataModel.bom#_FsJ5MLISEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=sauterRecrutement?" elementType="form:ControlType pathmap://FORMS_UI_ELEMENT_TYPES/UIElementTypes.library.elemtypes#com.tibco.forms.controls.checkbox" controlType="com.tibco.forms.controls.checkbox" name="control.Candidature_sauterRecrutement">
+        <form:label>sauterRecrutement</form:label>
+        <form:hint></form:hint>
+        <form:visible>true</form:visible>
+        <form:enabled>true</form:enabled>
+        <form:required>false</form:required>
+      </form:control>
+      <form:control generated="true" generatorSource="CaseManagementDataModel.bom#_d9uHALIPEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=statut?" elementType="form:ControlType pathmap://FORMS_UI_ELEMENT_TYPES/UIElementTypes.library.elemtypes#com.tibco.forms.controls.optionlist" controlType="com.tibco.forms.controls.optionlist" name="control.Candidature_statut">
+        <form:propertySet xsi:type="et:MultiChoicePropertySet">
+          <et:choiceType>enumeration</et:choiceType>
+          <et:choiceEnumeration>CaseManagementDataModel.bom#_TMDwsLIOEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aEnumeration%26q=com.example.casemanagementdatamodel%26n=Statut?</et:choiceEnumeration>
+        </form:propertySet>
+        <form:label>Statut</form:label>
+        <form:hint></form:hint>
+        <form:visible>true</form:visible>
+        <form:enabled>true</form:enabled>
+        <form:required>false</form:required>
+      </form:control>
+      <form:control generated="true" generatorSource="CaseManagementDataModel.bom#_pmwVgLKlEemV1ZxU_L0F9A?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=poleConcerne?" elementType="form:ControlType pathmap://FORMS_UI_ELEMENT_TYPES/UIElementTypes.library.elemtypes#com.tibco.forms.controls.optionlist" controlType="com.tibco.forms.controls.optionlist" name="control.Candidature_poleConcerne">
+        <form:propertySet xsi:type="et:MultiChoicePropertySet">
+          <et:choiceType>enumeration</et:choiceType>
+          <et:choiceEnumeration>CaseManagementDataModel.bom#_YBlKoLINEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aEnumeration%26q=com.example.casemanagementdatamodel%26n=PoleConcerne?</et:choiceEnumeration>
+        </form:propertySet>
+        <form:label>poleConcerne</form:label>
+        <form:hint></form:hint>
+        <form:visible>true</form:visible>
+        <form:enabled>true</form:enabled>
+        <form:required>false</form:required>
+      </form:control>
+      <form:control generated="true" generatorSource="CaseManagementDataModel.bom#_SKMggLINEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=avisProposition?" elementType="form:ControlType pathmap://FORMS_UI_ELEMENT_TYPES/UIElementTypes.library.elemtypes#com.tibco.forms.controls.optionlist" controlType="com.tibco.forms.controls.optionlist" name="control.optionlist1">
+        <form:propertySet xsi:type="et:MultiChoicePropertySet">
+          <et:choiceType>enumeration</et:choiceType>
+          <et:choiceEnumeration>CaseManagementDataModel.bom#_4gJuwLINEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aEnumeration%26q=com.example.casemanagementdatamodel%26n=AvisProposition?</et:choiceEnumeration>
+        </form:propertySet>
+        <form:label>Optionlist 1</form:label>
+        <form:hint></form:hint>
+        <form:visible>true</form:visible>
+        <form:enabled>true</form:enabled>
+        <form:required>false</form:required>
+      </form:control>
+    </form:pane>
+    <form:control generated="true" generatorSource="CaseManagementDataModel.bom#_SKMggLINEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aProperty%26q=com.example.casemanagementdatamodel%3a%3aCandidature%26n=avisProposition?" syncFlags="65536" elementType="form:ControlType pathmap://FORMS_UI_ELEMENT_TYPES/UIElementTypes.library.elemtypes#com.tibco.forms.controls.optionlist" controlType="com.tibco.forms.controls.optionlist" name="control.Candidature_avisProposition">
+      <form:propertySet xsi:type="et:MultiChoicePropertySet">
+        <et:choiceType>enumeration</et:choiceType>
+        <et:choiceEnumeration>CaseManagementDataModel.bom#_4gJuwLINEemj-ayD1bfv5w?p=CaseManagementDataModel%26s=Business%20Objects%26t=uml%3aEnumeration%26q=com.example.casemanagementdatamodel%26n=AvisProposition?</et:choiceEnumeration>
+      </form:propertySet>
+      <form:label>Avis de proposition du candidat</form:label>
+      <form:hint></form:hint>
+      <form:visible>true</form:visible>
+      <form:enabled>true</form:enabled>
+      <form:required>false</form:required>
+    </form:control>
+  </form:pane>
+  <form:pane gwt:toolbar="true" styleClass="toolbar" elementType="form:PaneType pathmap://FORMS_UI_ELEMENT_TYPES/UIElementTypes.library.elemtypes#com.tibco.forms.panes.horizontal" name="pane.toolbar" paneType="com.tibco.forms.panes.horizontal">
+    <form:label>Toolbar</form:label>
+    <form:visible>true</form:visible>
+    <form:enabled>true</form:enabled>
+    <form:labelProperties visible="false"/>
+    <form:control elementType="form:ControlType pathmap://FORMS_UI_ELEMENT_TYPES/UIElementTypes.library.elemtypes#com.tibco.forms.controls.button" controlType="com.tibco.forms.controls.button" name="control.cancel">
+      <form:propertySet xsi:type="et:ButtonPropertySet"/>
+      <form:label>Cancel</form:label>
+      <form:visible>true</form:visible>
+      <form:enabled>true</form:enabled>
+      <form:required>false</form:required>
+    </form:control>
+    <form:control elementType="form:ControlType pathmap://FORMS_UI_ELEMENT_TYPES/UIElementTypes.library.elemtypes#com.tibco.forms.controls.button" controlType="com.tibco.forms.controls.button" name="control.submit">
+      <form:propertySet xsi:type="et:ButtonPropertySet">
+        <et:type>primary</et:type>
+      </form:propertySet>
+      <form:label>Submit</form:label>
+      <form:visible>true</form:visible>
+      <form:enabled>true</form:enabled>
+      <form:required>false</form:required>
+    </form:control>
+  </form:pane>
+  <form:pane elementType="form:PaneType pathmap://FORMS_UI_ELEMENT_TYPES/UIElementTypes.library.elemtypes#com.tibco.forms.panes.messages" name="pane.messages" paneType="com.tibco.forms.panes.messages">
+    <form:propertySet xsi:type="et:MessagesPanePropertySet"/>
+    <form:label>Invalid Entries</form:label>
+    <form:visible>true</form:visible>
+    <form:enabled>true</form:enabled>
+    <form:labelProperties visible="false"/>
+  </form:pane>
+</form:form>

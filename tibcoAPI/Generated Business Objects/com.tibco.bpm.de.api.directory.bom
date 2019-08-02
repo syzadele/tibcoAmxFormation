@@ -1,0 +1,936 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:PrimitiveTypeFacets="http:///schemas/PrimitiveTypeFacets/_8TmTUMtlEdy7K9XeCH7Hrw/0" xmlns:XsdNotationProfile="http:///schemas/XsdNotationProfile/_LmHW0PHtEd2z3-vLsCwuEg/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/PrimitiveTypeFacets/_8TmTUMtlEdy7K9XeCH7Hrw/0 pathmap://BOM_TYPES/PrimitiveTypeFacets.profile.uml#_8TmTUstlEdy7K9XeCH7Hrw http:///schemas/XsdNotationProfile/_LmHW0PHtEd2z3-vLsCwuEg/1 pathmap://XSD_NOTATION_TYPES/XsdNotation.profile.uml#_LmHW0fHtEd2z3-vLsCwuEg">
+  <uml:Model xmi:id="com.tibco.bpm.de.api.directory" name="com.tibco.bpm.de.api.directory">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_qmhyEa1jEem1vK-kP1bIqQ" source="model.metadata">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_qmhyEq1jEem1vK-kP1bIqQ" key="author" value="YSong"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_qmhyE61jEem1vK-kP1bIqQ" key="created" value="1563897918385"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_qmhyFK1jEem1vK-kP1bIqQ" key="version" value="5"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_qyfKcK1jEem1vK-kP1bIqQ" key="checksum" value="645143226"/>
+    </eAnnotations>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.bpm.de.api.directorylistContainersType" name="listContainersType"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.bpm.de.api.directorylistContainersResponseType" name="listContainersResponseType">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_qUWc8K1jEem1vK-kP1bIqQ" body="A list of the configured LDAP Containers. "/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="listContainersResponseTypeldap-container" name="ldapcontainer" aggregation="composite" association="com.tibco.bpm.de.api.directoryComposition157?com.tibco.bpm.de.api.directory%3a%3aComposition157?">
+        <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.base.bom#com.tibco.bpm.de.api.baseXmlContainer?com.tibco.bpm.de.api.base%3a%3aXmlContainer?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qUVO0q1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qUVO061jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="com.tibco.bpm.de.api.directoryComposition157" name="Composition157" memberEnd="listContainersResponseTypeldap-container?com.tibco.bpm.de.api.directory%3a%3alistContainersResponseType%3a%3aldapcontainer? Composition157listcontainersresponsetype?com.tibco.bpm.de.api.directory%3a%3aComposition157%3a%3alistcontainersresponsetype?">
+      <ownedEnd xmi:type="uml:Property" xmi:id="Composition157listcontainersresponsetype" name="listcontainersresponsetype" type="com.tibco.bpm.de.api.directorylistContainersResponseType?com.tibco.bpm.de.api.directory%3a%3alistContainersResponseType?" association="com.tibco.bpm.de.api.directoryComposition157?com.tibco.bpm.de.api.directory%3a%3aComposition157?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qUVO1a1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qUVO1q1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.bpm.de.api.directorysaveContainerResponseType" name="saveContainerResponseType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="saveContainerResponseTypecontainer-id" name="containerid" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qUiDIK1jEem1vK-kP1bIqQ" body="Unique ID of the newly-created or updated LDAP container.&#xA;&#xA;(This value is returned only if the LDAP container was successfully saved.) "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_BRY7wHvBEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aInteger?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qUhcEa1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qUhcEq1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.bpm.de.api.directorydeleteContainerType" name="deleteContainerType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="deleteContainerTypecontainer-id" name="containerid" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qUtpUa1jEem1vK-kP1bIqQ" body="Unique ID of the LDAP container to be deleted. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_BRY7wHvBEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aInteger?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qUtCQq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qUtCQ61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="deleteContainerTypedelete-resources" name="deleteresources" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qU4ocK1jEem1vK-kP1bIqQ" body="Indicates whether the resources derived from the LDAP container should also be deleted. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_pSJ7cHvAEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aBoolean?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qU4BYq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qU4BY61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.bpm.de.api.directorydeleteContainerResponseType" name="deleteContainerResponseType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="deleteContainerResponseTypesuccessful" name="successful" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qVEOoK1jEem1vK-kP1bIqQ" body="Boolean value that indicates whether the LDAP container was successfully deleted (TRUE) or not (FALSE). "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_pSJ7cHvAEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aBoolean?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qVDnkq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qVDnk61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.bpm.de.api.directorylistLdapConnectionsType" name="listLdapConnectionsType"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.bpm.de.api.directorylistLdapConnectionsResponseType" name="listLdapConnectionsResponseType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="listLdapConnectionsResponseTypeldap-connectionType" name="ldapconnection" type="com.tibco.bpm.de.api.directoryldap-connectionType?com.tibco.bpm.de.api.directory%3a%3aldapconnectionType?" aggregation="composite" association="com.tibco.bpm.de.api.directoryComposition158?com.tibco.bpm.de.api.directory%3a%3aComposition158?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qVgTgq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qVgTg61jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.bpm.de.api.directoryldap-connectionType" name="ldapconnectionType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="ldap-connectionTypeldap-alias" name="ldapalias" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qVSREK1jEem1vK-kP1bIqQ" body="The name (or alias) by which a configured LDAP connection shared resource is identified.&#xA;&#xA;LDAP connection shared resource are named with the prefix &quot;ldap/de/&quot; in order to indicate that they are intended for Directory Engine use. The alias given here is that name without the &quot;ldap/de/&quot; prefix. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qVRqAq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qVRqA61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="ldap-connectionTypeprovider-url" name="providerurl" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qVdQMK1jEem1vK-kP1bIqQ" body="The URL (including any base DN) to which configured LDAP connection shared resource is connected. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qVcpIq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qVcpI61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="com.tibco.bpm.de.api.directoryComposition158" name="Composition158" memberEnd="listLdapConnectionsResponseTypeldap-connectionType?com.tibco.bpm.de.api.directory%3a%3alistLdapConnectionsResponseType%3a%3aldapconnection? Composition158listldapconnectionsresponsetype?com.tibco.bpm.de.api.directory%3a%3aComposition158%3a%3alistldapconnectionsresponsetype?">
+      <ownedEnd xmi:type="uml:Property" xmi:id="Composition158listldapconnectionsresponsetype" name="listldapconnectionsresponsetype" type="com.tibco.bpm.de.api.directorylistLdapConnectionsResponseType?com.tibco.bpm.de.api.directory%3a%3alistLdapConnectionsResponseType?" association="com.tibco.bpm.de.api.directoryComposition158?com.tibco.bpm.de.api.directory%3a%3aComposition158?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qVg6kK1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qVg6ka1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.bpm.de.api.directoryexecuteLdapQueryType" name="executeLdapQueryType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="executeLdapQueryTypeldap-alias" name="ldapalias" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qVuV8K1jEem1vK-kP1bIqQ" body="Identifies the LDAP connection shared resource on which the LDAP query is to be evaluated.&#xA;&#xA;LDAP connection shared resource are named with the prefix &quot;ldap/de/&quot; in order to indicate that they are  intended for Directory Engine use. The alias given here is that name without the &quot;ldap/de/&quot; prefix. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qVtu4a1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qVtu4q1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="executeLdapQueryTypebase-dn" name="basedn" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qV58IK1jEem1vK-kP1bIqQ" body="The base DN to which the query is to be restricted. This will be relative, and in  addition to, any base DN specified in the LDAP connection shared resource's URL. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qV5VEq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qV5VE61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="executeLdapQueryTypeldap-query" name="ldapquery" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qWE7Qa1jEem1vK-kP1bIqQ" body="The LDAP query to be evaluated. The query must conform to the RFC 2254 LDAP Search Filter standard. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qWEUMq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qWEUM61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="executeLdapQueryTypesearch-scope" name="searchscope" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qWH-k61jEem1vK-kP1bIqQ" body="The Search Scope determines the depth to which the search will be performed. By default the search will be SUBTREE. "/>
+        <type xmi:type="uml:Enumeration" href="com.tibco.bpm.de.api.base.bom#com.tibco.bpm.de.api.baseXmlLdapSearchScope?com.tibco.bpm.de.api.base%3a%3aXmlLdapSearchScope?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qWH-ka1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qWH-kq1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="executeLdapQueryTypepage-size" name="pagesize" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qWTkwK1jEem1vK-kP1bIqQ" body="Requested page size for paged result sets. If not specified then paging will not be used. To be specified on every paging request. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_BRY7wHvBEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aInteger?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qWS9sa1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qWS9sq1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="executeLdapQueryTypebookmark" name="bookmark" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qWej4K1jEem1vK-kP1bIqQ" body="Opaque marker for progress through a paged result set. Not specified on the first paging request. Only specified on subsequent paging requests. Content must be Base64 encoded. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qWd80q1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qWd8061jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.bpm.de.api.directoryexecuteLdapQueryResponseType" name="executeLdapQueryResponseType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="executeLdapQueryResponseTypeldap-alias" name="ldapalias" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qWrYNK1jEem1vK-kP1bIqQ" body="Identifies the LDAP connection shared resource on which the LDAP query was evaluated.&#xA;&#xA;LDAP connection shared Resource are named with the prefix &quot;ldap/de/&quot; in order to indicate that they are &#xA;intended for Directory Engine use. The alias given here is that name without the &quot;ldap/de/&quot; prefix. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qWrYMa1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qWrYMq1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="executeLdapQueryResponseTypebase-dn" name="basedn" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qW2XVK1jEem1vK-kP1bIqQ" body="The base DN to which the query was restricted. This will be relative, and in additition to, any base DN specified in the LDAP connection shared resource's rURL. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qW2XUa1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qW2XUq1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="executeLdapQueryResponseTypeldap-query" name="ldapquery" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qXBWdK1jEem1vK-kP1bIqQ" body="The LDAP query that was evaluated. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qXBWca1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qXBWcq1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="executeLdapQueryResponseTypesearch-scope" name="searchscope" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qXEZxK1jEem1vK-kP1bIqQ" body="The Search Scope determines the depth to which the search will be performed. By default the search will be SUBTREE. "/>
+        <type xmi:type="uml:Enumeration" href="com.tibco.bpm.de.api.base.bom#com.tibco.bpm.de.api.baseXmlLdapSearchScope?com.tibco.bpm.de.api.base%3a%3aXmlLdapSearchScope?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qXEZwq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qXEZw61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="executeLdapQueryResponseTypeestimated-size" name="estimatedsize" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qXWtoK1jEem1vK-kP1bIqQ" body="Estimated size of all results from LDAP server. Only specified if paged result sets are requested, and only if supported by the LDAP server. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_BRY7wHvBEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aInteger?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qXWGkq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qXWGk61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="executeLdapQueryResponseTypebookmark" name="bookmark" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qXiT061jEem1vK-kP1bIqQ" body="Opaque marker for progress through a paged result set. Specified but empty if there are no more results left in the paged result set. Response will be Base64 encoded. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qXiT0K1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qXiT0a1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="executeLdapQueryResponseTypeldap-entryType" name="ldapentry" type="com.tibco.bpm.de.api.directoryldap-entryType?com.tibco.bpm.de.api.directory%3a%3aldapentryType?" aggregation="composite" association="com.tibco.bpm.de.api.directoryComposition159?com.tibco.bpm.de.api.directory%3a%3aComposition159?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qXyygq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qXyyg61jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.bpm.de.api.directoryldap-entryType" name="ldapentryType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="ldap-entryTypeldap-dn" name="ldapdn" aggregation="composite">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qXuhEq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qXuhE61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="com.tibco.bpm.de.api.directoryComposition159" name="Composition159" memberEnd="executeLdapQueryResponseTypeldap-entryType?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType%3a%3aldapentry? Composition159executeldapqueryresponsetype?com.tibco.bpm.de.api.directory%3a%3aComposition159%3a%3aexecuteldapqueryresponsetype?">
+      <ownedEnd xmi:type="uml:Property" xmi:id="Composition159executeldapqueryresponsetype" name="executeldapqueryresponsetype" type="com.tibco.bpm.de.api.directoryexecuteLdapQueryResponseType?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType?" association="com.tibco.bpm.de.api.directoryComposition159?com.tibco.bpm.de.api.directory%3a%3aComposition159?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qXyyha1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qXyyhq1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.bpm.de.api.directorygetLdapEntryType" name="getLdapEntryType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_qYG7ka1jEem1vK-kP1bIqQ">
+        <general xmi:type="uml:Class" href="com.tibco.bpm.de.api.base.bom#com.tibco.bpm.de.api.baseXmlLdapEntryId?com.tibco.bpm.de.api.base%3a%3aXmlLdapEntryId?"/>
+      </generalization>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="getLdapEntryTypeattributeType" name="attribute" type="com.tibco.bpm.de.api.directoryattributeType?com.tibco.bpm.de.api.directory%3a%3aattributeType?" aggregation="composite" association="com.tibco.bpm.de.api.directoryComposition160?com.tibco.bpm.de.api.directory%3a%3aComposition160?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qYFGYq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qYFGY61jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.bpm.de.api.directoryattributeType" name="attributeType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="attributeTypename" name="name" aggregation="composite">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qYA08q1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qYA0861jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="com.tibco.bpm.de.api.directoryComposition160" name="Composition160" memberEnd="getLdapEntryTypeattributeType?com.tibco.bpm.de.api.directory%3a%3agetLdapEntryType%3a%3aattribute? Composition160getldapentrytype?com.tibco.bpm.de.api.directory%3a%3aComposition160%3a%3agetldapentrytype?">
+      <ownedEnd xmi:type="uml:Property" xmi:id="Composition160getldapentrytype" name="getldapentrytype" type="com.tibco.bpm.de.api.directorygetLdapEntryType?com.tibco.bpm.de.api.directory%3a%3agetLdapEntryType?" association="com.tibco.bpm.de.api.directoryComposition160?com.tibco.bpm.de.api.directory%3a%3aComposition160?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qYFGZa1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qYFGZq1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.bpm.de.api.directorygetLdapEntryResponseType" name="getLdapEntryResponseType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_qYgkMK1jEem1vK-kP1bIqQ">
+        <general xmi:type="uml:Class" href="com.tibco.bpm.de.api.base.bom#com.tibco.bpm.de.api.baseXmlLdapEntry?com.tibco.bpm.de.api.base%3a%3aXmlLdapEntry?"/>
+      </generalization>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="getLdapEntryResponseTypeldap-alias" name="ldapalias" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qYTI061jEem1vK-kP1bIqQ" body="Identifies the LDAP connection shared resource from which the entry was read.&#xA;&#xA;LDAP connection shared resource are named with the prefix &quot;ldap/de/&quot; in order to indicate that they are intended for Directory Engine use. The alias given here is that name without the &quot;ldap/de/&quot; prefix. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qYTI0K1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qYTI0a1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="getLdapEntryResponseTypenot-found" name="notfound" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qYfWEK1jEem1vK-kP1bIqQ" body="Indicates that the identified LDAP entry cannot be found. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_pSJ7cHvAEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aBoolean?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qYevAq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qYevA61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.bpm.de.api.directorylistAttributeNamesType" name="listAttributeNamesType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="listAttributeNamesTypeldap-alias" name="ldapalias" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qYsxcK1jEem1vK-kP1bIqQ" body="Identifies the LDAP connection shared resource on which the LDAP query is to be evaluated.&#xA;&#xA;LDAP connection shared resource are named with the prefix &quot;ldap/de/&quot; in order to indicate that they are intended for Directory Engine use. The alias given here is that name without the &quot;ldap/de/&quot; prefix. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qYsKYq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qYsKY61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="listAttributeNamesTypebase-dn" name="basedn" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qY4XoK1jEem1vK-kP1bIqQ" body="The base DN to which the query is to be restricted. This will be relative to, and in  addition to, any base DN specified in the LDAP connection shared resource's URL. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qY3wkq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qY3wk61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="listAttributeNamesTypeldap-query" name="ldapquery" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qZD90K1jEem1vK-kP1bIqQ" body="The LDAP query to be evaluated. The query must conform to the RFC 2254 LDAP Search Filter standard. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qZDWwq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qZDWw61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="listAttributeNamesTypesearch-scope" name="searchscope" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qZHBIK1jEem1vK-kP1bIqQ" body="The Search Scope determines the depth to which the search will be performed. By default the search will be SUBTREE. "/>
+        <type xmi:type="uml:Enumeration" href="com.tibco.bpm.de.api.base.bom#com.tibco.bpm.de.api.baseXmlLdapSearchScope?com.tibco.bpm.de.api.base%3a%3aXmlLdapSearchScope?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qZGaEq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qZGaE61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="listAttributeNamesTypesample-size" name="samplesize" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qZSnUK1jEem1vK-kP1bIqQ" body="The maximum number of random example LDAP entries to be returned. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_BRY7wHvBEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aInteger?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qZSAQq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qZSAQ61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.bpm.de.api.directorylistAttributeNamesResponseType" name="listAttributeNamesResponseType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="listAttributeNamesResponseTypeldap-alias" name="ldapalias" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qZgCsa1jEem1vK-kP1bIqQ" body="Identifies the LDAP connection shared resource on which the LDAP query was evaluated.&#xA;&#xA;LDAP connection shared resources are named with the prefix &quot;ldap/de/&quot; in order to indicate that they are intended for Directory Engine use. The alias given here is that name without the &quot;ldap/de/&quot; prefix. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qZfboq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qZfbo61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="listAttributeNamesResponseTypebase-dn" name="basedn" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qZro4a1jEem1vK-kP1bIqQ" body="The base DN to which the query was restricted. This will be relative to, and in  addition to, any base DN specified in the LDAP Connection Shared Resource's URL. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qZrB0q1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qZrB061jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="listAttributeNamesResponseTypeldap-query" name="ldapquery" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qZ32IK1jEem1vK-kP1bIqQ" body="The LDAP query that was evaluated. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qZ3PEq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qZ3PE61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="listAttributeNamesResponseTypesearch-scope" name="searchscope" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qZ65c61jEem1vK-kP1bIqQ" body="The Search Scope determines the depth to which the search will be performed. By default the search will be SUBTREE. This is only returned if it was specified in the request. "/>
+        <type xmi:type="uml:Enumeration" href="com.tibco.bpm.de.api.base.bom#com.tibco.bpm.de.api.baseXmlLdapSearchScope?com.tibco.bpm.de.api.base%3a%3aXmlLdapSearchScope?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qZ65ca1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qZ65cq1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="listAttributeNamesResponseTypeentry-count" name="entrycount" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qaHGsq1jEem1vK-kP1bIqQ" body="The number of LDAP entries encountered in the search. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_BRY7wHvBEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aInteger?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qaGfoq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qaGfo61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="listAttributeNamesResponseTypeattribute" name="attribute" aggregation="composite" association="com.tibco.bpm.de.api.directoryComposition161?com.tibco.bpm.de.api.directory%3a%3aComposition161?">
+        <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.base.bom#com.tibco.bpm.de.api.baseXmlLdapAttribute?com.tibco.bpm.de.api.base%3a%3aXmlLdapAttribute?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qaSs4q1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qaSs461jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="listAttributeNamesResponseTypesample-entry" name="sampleentry" aggregation="composite" association="com.tibco.bpm.de.api.directoryComposition162?com.tibco.bpm.de.api.directory%3a%3aComposition162?">
+        <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.base.bom#com.tibco.bpm.de.api.baseXmlLdapEntry?com.tibco.bpm.de.api.base%3a%3aXmlLdapEntry?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qae6I61jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qae6JK1jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="com.tibco.bpm.de.api.directoryComposition161" name="Composition161" memberEnd="listAttributeNamesResponseTypeattribute?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType%3a%3aattribute? Composition161listattributenamesresponsetype?com.tibco.bpm.de.api.directory%3a%3aComposition161%3a%3alistattributenamesresponsetype?">
+      <ownedEnd xmi:type="uml:Property" xmi:id="Composition161listattributenamesresponsetype" name="listattributenamesresponsetype" type="com.tibco.bpm.de.api.directorylistAttributeNamesResponseType?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType?" association="com.tibco.bpm.de.api.directoryComposition161?com.tibco.bpm.de.api.directory%3a%3aComposition161?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qaSs5a1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qaSs5q1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="com.tibco.bpm.de.api.directoryComposition162" name="Composition162" memberEnd="listAttributeNamesResponseTypesample-entry?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType%3a%3asampleentry? Composition162listattributenamesresponsetype?com.tibco.bpm.de.api.directory%3a%3aComposition162%3a%3alistattributenamesresponsetype?">
+      <ownedEnd xmi:type="uml:Property" xmi:id="Composition162listattributenamesresponsetype" name="listattributenamesresponsetype" type="com.tibco.bpm.de.api.directorylistAttributeNamesResponseType?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType?" association="com.tibco.bpm.de.api.directoryComposition162?com.tibco.bpm.de.api.directory%3a%3aComposition162?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qae6Jq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qae6J61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.bpm.de.api.directorylistCandidateResourcesType" name="listCandidateResourcesType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="listCandidateResourcesTypecontainer-id" name="containerid" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qatjo61jEem1vK-kP1bIqQ" body="Identifies the LDAP container from which the candidates are to be resolved. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_BRY7wHvBEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aInteger?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qas8kq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qatjoK1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="listCandidateResourcesTypeinclude" name="include" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qawm9K1jEem1vK-kP1bIqQ" body="Determines what entries should be included in the response. "/>
+        <type xmi:type="uml:Enumeration" href="com.tibco.bpm.de.api.base.bom#com.tibco.bpm.de.api.baseXmlCandidateChoice?com.tibco.bpm.de.api.base%3a%3aXmlCandidateChoice?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qawm8q1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qawm861jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="listCandidateResourcesTypepage-size" name="pagesize" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qa9bQK1jEem1vK-kP1bIqQ" body="Requested page size for paged result sets. If not specified then paging will not be used. To be specified on every paging request. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_BRY7wHvBEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aInteger?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qa80Mq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qa80M61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="listCandidateResourcesTypebookmark" name="bookmark" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qbJogK1jEem1vK-kP1bIqQ" body="Opaque marker for progress through a paged result set. Not specified on the first paging request. Only specified on subsequent paging requests. Content must be Base64 encoded. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qbJBcq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qbJBc61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.bpm.de.api.directorylistCandidateResourcesResponseType" name="listCandidateResourcesResponseType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="listCandidateResourcesResponseTypecontainer-id" name="containerid" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qbXq8K1jEem1vK-kP1bIqQ" body="Identifies the LDAP container from which the candidates were resolved. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_BRY7wHvBEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aInteger?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qbXD4q1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qbXD461jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="listCandidateResourcesResponseTypeinclude" name="include" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qbauQK1jEem1vK-kP1bIqQ" body="Indicates what entries are be included in the collection of candidate entries. "/>
+        <type xmi:type="uml:Enumeration" href="com.tibco.bpm.de.api.base.bom#com.tibco.bpm.de.api.baseXmlCandidateChoice?com.tibco.bpm.de.api.base%3a%3aXmlCandidateChoice?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qbaHMq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qbaHM61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="listCandidateResourcesResponseTypeestimated-size" name="estimatedsize" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qbm7gK1jEem1vK-kP1bIqQ" body="Estimated size of all results from LDAP server. Only specified if paged result sets are requested, and only if supported by the LDAP server. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_BRY7wHvBEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aInteger?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qbmUcq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qbmUc61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="listCandidateResourcesResponseTypebookmark" name="bookmark" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qbzv0K1jEem1vK-kP1bIqQ" body="Opaque marker for progress through a paged result set. Specified but empty if there are no more results left in the paged result set. Response will be Base64 encoded. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qbzIwq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qbzIw61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="listCandidateResourcesResponseTypecandidate" name="candidate" aggregation="composite" association="com.tibco.bpm.de.api.directoryComposition163?com.tibco.bpm.de.api.directory%3a%3aComposition163?">
+        <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.base.bom#com.tibco.bpm.de.api.baseXmlResourceCandidate?com.tibco.bpm.de.api.base%3a%3aXmlResourceCandidate?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qb_WAq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qb_WA61jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="com.tibco.bpm.de.api.directoryComposition163" name="Composition163" memberEnd="listCandidateResourcesResponseTypecandidate?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesResponseType%3a%3acandidate? Composition163listcandidateresourcesresponsetype?com.tibco.bpm.de.api.directory%3a%3aComposition163%3a%3alistcandidateresourcesresponsetype?">
+      <ownedEnd xmi:type="uml:Property" xmi:id="Composition163listcandidateresourcesresponsetype" name="listcandidateresourcesresponsetype" type="com.tibco.bpm.de.api.directorylistCandidateResourcesResponseType?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesResponseType?" association="com.tibco.bpm.de.api.directoryComposition163?com.tibco.bpm.de.api.directory%3a%3aComposition163?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qb_WBa1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qb_WBq1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.bpm.de.api.directorygetCandidateDetailType" name="getCandidateDetailType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_qcPNoa1jEem1vK-kP1bIqQ">
+        <general xmi:type="uml:Class" href="com.tibco.bpm.de.api.base.bom#com.tibco.bpm.de.api.baseXmlLdapContainerEntry?com.tibco.bpm.de.api.base%3a%3aXmlLdapContainerEntry?"/>
+      </generalization>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="getCandidateDetailTypecontainer-id" name="containerid" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qcN_gq1jEem1vK-kP1bIqQ" body="Identifies the LDAP container from which the candidate was resolved. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_BRY7wHvBEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aInteger?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qcNYcq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qcNYc61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.bpm.de.api.directorygetCandidateDetailResponseType" name="getCandidateDetailResponseType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_qdntsK1jEem1vK-kP1bIqQ">
+        <general xmi:type="uml:Class" href="com.tibco.bpm.de.api.base.bom#com.tibco.bpm.de.api.baseXmlLdapContainerEntry?com.tibco.bpm.de.api.base%3a%3aXmlLdapContainerEntry?"/>
+      </generalization>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="getCandidateDetailResponseTypecontainer-id" name="containerid" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qcdQEa1jEem1vK-kP1bIqQ" body="Identifies the LDAP container from which the candidate was resolved. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_BRY7wHvBEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aInteger?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qccpAq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qccpA61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="getCandidateDetailResponseTypeguid" name="guid" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qcqrcK1jEem1vK-kP1bIqQ" body="If the candidate is one for which a resource already exists, the GUID of that existing resource is given. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qcqEYq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qcqEY61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="getCandidateDetailResponseTypename" name="name" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qc4G0a1jEem1vK-kP1bIqQ" body="The name of the existing resource, or the name that will be assigned (by default) to the resource created from this candidate entry. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qc3fwq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qc3fw61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="getCandidateDetailResponseTypestart-date" name="startdate" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qdNeAK1jEem1vK-kP1bIqQ" body="If the candidate is one for which a resource already exists, this optional date and time shows when the resource's presence begins. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AMizkHvBEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aDateTime?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qdM28q1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qdM2861jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="getCandidateDetailResponseTypeend-date" name="enddate" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qda5YK1jEem1vK-kP1bIqQ" body="If the candidate is one for which a resource already exists, this optional date and time shows when the resource's presence ends. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AMizkHvBEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aDateTime?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qdaSUq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qdaSU61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="getCandidateDetailResponseTypeattribute" name="attribute" aggregation="composite" association="com.tibco.bpm.de.api.directoryComposition164?com.tibco.bpm.de.api.directory%3a%3aComposition164?">
+        <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.base.bom#com.tibco.bpm.de.api.baseXmlMappedAttributeValue?com.tibco.bpm.de.api.base%3a%3aXmlMappedAttributeValue?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qdmfk61jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qdmflK1jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="com.tibco.bpm.de.api.directoryComposition164" name="Composition164" memberEnd="getCandidateDetailResponseTypeattribute?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType%3a%3aattribute? Composition164getcandidatedetailresponsetype?com.tibco.bpm.de.api.directory%3a%3aComposition164%3a%3agetcandidatedetailresponsetype?">
+      <ownedEnd xmi:type="uml:Property" xmi:id="Composition164getcandidatedetailresponsetype" name="getcandidatedetailresponsetype" type="com.tibco.bpm.de.api.directorygetCandidateDetailResponseType?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType?" association="com.tibco.bpm.de.api.directoryComposition164?com.tibco.bpm.de.api.directory%3a%3aComposition164?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qdmflq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qdmfl61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_qTkZ0a1jEem1vK-kP1bIqQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_qTkZ0q1jEem1vK-kP1bIqQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://XSD_NOTATION_TYPES/XsdNotation.profile.uml#_LmHW0fHtEd2z3-vLsCwuEg"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://XSD_NOTATION_TYPES/XsdNotation.profile.uml#_rcgvMcXQEd24G-GaruVVqA?XsdNotationProfile?"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_qTkZ061jEem1vK-kP1bIqQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_qTkZ1K1jEem1vK-kP1bIqQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://BOM_TYPES/PrimitiveTypeFacets.profile.uml#_8TmTUstlEdy7K9XeCH7Hrw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://BOM_TYPES/PrimitiveTypeFacets.profile.uml#_3A574HcJEdytQ9AWEvOuug?PrimitiveTypeFacets?"/>
+    </profileApplication>
+  </uml:Model>
+  <XsdNotationProfile:XsdBasedModel xmi:id="_qTkZ1a1jEem1vK-kP1bIqQ" base_Package="com.tibco.bpm.de.api.directory?com.tibco.bpm.de.api.directory?" xsdTargetNamespace="http://directory.api.de.bpm.tibco.com" xsdSchemaLocation="de-services.wsdl;de-directory-service.xsd" xsdAttributeForm="unqualified" xsdElementForm="unqualified" xsdStudioVersion="4.0.0.003" bomWsdlSources="de-services.wsdl"/>
+  <XsdNotationProfile:TopLevelElements xmi:id="_qUJBkK1jEem1vK-kP1bIqQ" base_Package="com.tibco.bpm.de.api.directory?com.tibco.bpm.de.api.directory?">
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_qUJooK1jEem1vK-kP1bIqQ" name="saveContainer" targetNamespace="http://directory.api.de.bpm.tibco.com" substitutionGroup="">
+      <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.base.bom#com.tibco.bpm.de.api.baseXmlContainer?com.tibco.bpm.de.api.base%3a%3aXmlContainer?"/>
+    </elements>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_qUK2wK1jEem1vK-kP1bIqQ" name="listContainers" type="com.tibco.bpm.de.api.directorylistContainersType?com.tibco.bpm.de.api.directory%3a%3alistContainersType?" isAnonymous="true" targetNamespace="http://directory.api.de.bpm.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_qUWc8a1jEem1vK-kP1bIqQ" name="listContainersResponse" type="com.tibco.bpm.de.api.directorylistContainersResponseType?com.tibco.bpm.de.api.directory%3a%3alistContainersResponseType?" isAnonymous="true" targetNamespace="http://directory.api.de.bpm.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_qUiqMK1jEem1vK-kP1bIqQ" name="saveContainerResponse" type="com.tibco.bpm.de.api.directorysaveContainerResponseType?com.tibco.bpm.de.api.directory%3a%3asaveContainerResponseType?" isAnonymous="true" targetNamespace="http://directory.api.de.bpm.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_qU5PgK1jEem1vK-kP1bIqQ" name="deleteContainer" type="com.tibco.bpm.de.api.directorydeleteContainerType?com.tibco.bpm.de.api.directory%3a%3adeleteContainerType?" isAnonymous="true" targetNamespace="http://directory.api.de.bpm.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_qVE1sK1jEem1vK-kP1bIqQ" name="deleteContainerResponse" type="com.tibco.bpm.de.api.directorydeleteContainerResponseType?com.tibco.bpm.de.api.directory%3a%3adeleteContainerResponseType?" isAnonymous="true" targetNamespace="http://directory.api.de.bpm.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_qVFcwK1jEem1vK-kP1bIqQ" name="listLdapConnections" type="com.tibco.bpm.de.api.directorylistLdapConnectionsType?com.tibco.bpm.de.api.directory%3a%3alistLdapConnectionsType?" isAnonymous="true" targetNamespace="http://directory.api.de.bpm.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_qViIsK1jEem1vK-kP1bIqQ" name="listLdapConnectionsResponse" type="com.tibco.bpm.de.api.directorylistLdapConnectionsResponseType?com.tibco.bpm.de.api.directory%3a%3alistLdapConnectionsResponseType?" isAnonymous="true" targetNamespace="http://directory.api.de.bpm.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_qWfK8K1jEem1vK-kP1bIqQ" name="executeLdapQuery" type="com.tibco.bpm.de.api.directoryexecuteLdapQueryType?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType?" isAnonymous="true" targetNamespace="http://directory.api.de.bpm.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_qX0AoK1jEem1vK-kP1bIqQ" name="executeLdapQueryResponse" type="com.tibco.bpm.de.api.directoryexecuteLdapQueryResponseType?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType?" isAnonymous="true" targetNamespace="http://directory.api.de.bpm.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_qYG7kq1jEem1vK-kP1bIqQ" name="getLdapEntry" type="com.tibco.bpm.de.api.directorygetLdapEntryType?com.tibco.bpm.de.api.directory%3a%3agetLdapEntryType?" isAnonymous="true" targetNamespace="http://directory.api.de.bpm.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_qYgkMa1jEem1vK-kP1bIqQ" name="getLdapEntryResponse" type="com.tibco.bpm.de.api.directorygetLdapEntryResponseType?com.tibco.bpm.de.api.directory%3a%3agetLdapEntryResponseType?" isAnonymous="true" targetNamespace="http://directory.api.de.bpm.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_qZTOYK1jEem1vK-kP1bIqQ" name="listAttributeNames" type="com.tibco.bpm.de.api.directorylistAttributeNamesType?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesType?" isAnonymous="true" targetNamespace="http://directory.api.de.bpm.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_qagvUK1jEem1vK-kP1bIqQ" name="listAttributeNamesResponse" type="com.tibco.bpm.de.api.directorylistAttributeNamesResponseType?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType?" isAnonymous="true" targetNamespace="http://directory.api.de.bpm.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_qbKPkK1jEem1vK-kP1bIqQ" name="listCandidateResources" type="com.tibco.bpm.de.api.directorylistCandidateResourcesType?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesType?" isAnonymous="true" targetNamespace="http://directory.api.de.bpm.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_qcAkIK1jEem1vK-kP1bIqQ" name="listCandidateResourcesResponse" type="com.tibco.bpm.de.api.directorylistCandidateResourcesResponseType?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesResponseType?" isAnonymous="true" targetNamespace="http://directory.api.de.bpm.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_qcP0sK1jEem1vK-kP1bIqQ" name="getCandidateDetail" type="com.tibco.bpm.de.api.directorygetCandidateDetailType?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailType?" isAnonymous="true" targetNamespace="http://directory.api.de.bpm.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_qdoUwK1jEem1vK-kP1bIqQ" name="getCandidateDetailResponse" type="com.tibco.bpm.de.api.directorygetCandidateDetailResponseType?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType?" isAnonymous="true" targetNamespace="http://directory.api.de.bpm.tibco.com" substitutionGroup=""/>
+  </XsdNotationProfile:TopLevelElements>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_qUKPsa1jEem1vK-kP1bIqQ" base_Class="com.tibco.bpm.de.api.directorylistContainersType?com.tibco.bpm.de.api.directory%3a%3alistContainersType?" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_qULd0a1jEem1vK-kP1bIqQ" base_Class="com.tibco.bpm.de.api.directorylistContainersResponseType?com.tibco.bpm.de.api.directory%3a%3alistContainersResponseType?" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true">
+    <xsdSequenceList xmi:type="XsdNotationProfile:XsdSequence" xmi:id="_qUV14K1jEem1vK-kP1bIqQ" name="MS1_1_1"/>
+  </XsdNotationProfile:XsdBasedClass>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qUVO161jEem1vK-kP1bIqQ" base_Property="listContainersResponseTypeldap-container?com.tibco.bpm.de.api.directory%3a%3alistContainersResponseType%3a%3aldapcontainer?" xsdName="ldap-container" xsdForm="unqualified" xsdType="XmlContainer" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_qUV14K1jEem1vK-kP1bIqQ" xsdMinOccurs="0" xsdMaxOccurs="-1"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_qUXEAa1jEem1vK-kP1bIqQ" base_Class="com.tibco.bpm.de.api.directorysaveContainerResponseType?com.tibco.bpm.de.api.directory%3a%3asaveContainerResponseType?" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qUhcEK1jEem1vK-kP1bIqQ" base_Property="saveContainerResponseTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3asaveContainerResponseType%3a%3acontainerid?" xsdName="container-id" xsdForm="unqualified" xsdUse="required" xsdType="long" xsdIsAttribute="true"/>
+  <XsdNotationProfile:XsdBasedRestriction xmi:id="_qUhcE61jEem1vK-kP1bIqQ" base_Property="saveContainerResponseTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3asaveContainerResponseType%3a%3acontainerid?" xsdMaxExclusiveValue="" xsdMaxInclusiveValue="9223372036854775807" xsdMinExclusiveValue="" xsdMinInclusiveValue="-9223372036854775808"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qUhcFK1jEem1vK-kP1bIqQ" integerUpper="9223372036854775807" integerLower="-9223372036854775808" integerSubType="fixedLength" base_Property="saveContainerResponseTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3asaveContainerResponseType%3a%3acontainerid?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_qUjRQK1jEem1vK-kP1bIqQ" base_Class="com.tibco.bpm.de.api.directorydeleteContainerType?com.tibco.bpm.de.api.directory%3a%3adeleteContainerType?" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qUtCQa1jEem1vK-kP1bIqQ" base_Property="deleteContainerTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3adeleteContainerType%3a%3acontainerid?" xsdName="container-id" xsdForm="unqualified" xsdUse="required" xsdType="long" xsdIsAttribute="true"/>
+  <XsdNotationProfile:XsdBasedRestriction xmi:id="_qUtCRK1jEem1vK-kP1bIqQ" base_Property="deleteContainerTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3adeleteContainerType%3a%3acontainerid?" xsdMaxExclusiveValue="" xsdMaxInclusiveValue="9223372036854775807" xsdMinExclusiveValue="" xsdMinInclusiveValue="-9223372036854775808"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qUtpUK1jEem1vK-kP1bIqQ" integerUpper="9223372036854775807" integerLower="-9223372036854775808" integerSubType="fixedLength" base_Property="deleteContainerTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3adeleteContainerType%3a%3acontainerid?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qU4BYa1jEem1vK-kP1bIqQ" base_Property="deleteContainerTypedelete-resources?com.tibco.bpm.de.api.directory%3a%3adeleteContainerType%3a%3adeleteresources?" xsdName="delete-resources" xsdForm="unqualified" xsdDefault="false" xsdUse="optional" xsdType="boolean" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qU4BZK1jEem1vK-kP1bIqQ" base_Property="deleteContainerTypedelete-resources?com.tibco.bpm.de.api.directory%3a%3adeleteContainerType%3a%3adeleteresources?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_qU5Pgq1jEem1vK-kP1bIqQ" base_Class="com.tibco.bpm.de.api.directorydeleteContainerResponseType?com.tibco.bpm.de.api.directory%3a%3adeleteContainerResponseType?" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qVDnka1jEem1vK-kP1bIqQ" base_Property="deleteContainerResponseTypesuccessful?com.tibco.bpm.de.api.directory%3a%3adeleteContainerResponseType%3a%3asuccessful?" xsdName="successful" xsdForm="unqualified" xsdUse="required" xsdType="boolean" xsdIsAttribute="true"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_qVE1sq1jEem1vK-kP1bIqQ" base_Class="com.tibco.bpm.de.api.directorylistLdapConnectionsType?com.tibco.bpm.de.api.directory%3a%3alistLdapConnectionsType?" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_qVGD0a1jEem1vK-kP1bIqQ" base_Class="com.tibco.bpm.de.api.directorylistLdapConnectionsResponseType?com.tibco.bpm.de.api.directory%3a%3alistLdapConnectionsResponseType?" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true">
+    <xsdSequenceList xmi:type="XsdNotationProfile:XsdSequence" xmi:id="_qVhhoK1jEem1vK-kP1bIqQ" name="MS1_1_1"/>
+  </XsdNotationProfile:XsdBasedClass>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_qVHR8a1jEem1vK-kP1bIqQ" base_Class="com.tibco.bpm.de.api.directoryldap-connectionType?com.tibco.bpm.de.api.directory%3a%3aldapconnectionType?" xsdName="ldap-connection" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qVRqAa1jEem1vK-kP1bIqQ" base_Property="ldap-connectionTypeldap-alias?com.tibco.bpm.de.api.directory%3a%3aldapconnectionType%3a%3aldapalias?" xsdName="ldap-alias" xsdForm="unqualified" xsdUse="required" xsdType="string" xsdIsAttribute="true"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qVRqBK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="ldap-connectionTypeldap-alias?com.tibco.bpm.de.api.directory%3a%3aldapconnectionType%3a%3aldapalias?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qVcpIa1jEem1vK-kP1bIqQ" base_Property="ldap-connectionTypeprovider-url?com.tibco.bpm.de.api.directory%3a%3aldapconnectionType%3a%3aproviderurl?" xsdName="provider-url" xsdForm="unqualified" xsdUse="required" xsdType="string" xsdIsAttribute="true"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qVcpJK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="ldap-connectionTypeprovider-url?com.tibco.bpm.de.api.directory%3a%3aldapconnectionType%3a%3aproviderurl?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qVg6kq1jEem1vK-kP1bIqQ" base_Property="listLdapConnectionsResponseTypeldap-connectionType?com.tibco.bpm.de.api.directory%3a%3alistLdapConnectionsResponseType%3a%3aldapconnection?" xsdName="ldap-connection" xsdForm="unqualified" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_qVhhoK1jEem1vK-kP1bIqQ" xsdMinOccurs="0" xsdMaxOccurs="-1"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_qVivwK1jEem1vK-kP1bIqQ" base_Class="com.tibco.bpm.de.api.directoryexecuteLdapQueryType?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType?" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qVtu4K1jEem1vK-kP1bIqQ" base_Property="executeLdapQueryTypeldap-alias?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType%3a%3aldapalias?" xsdName="ldap-alias" xsdForm="unqualified" xsdUse="required" xsdType="string" xsdIsAttribute="true"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qVtu461jEem1vK-kP1bIqQ" textLength="-1" base_Property="executeLdapQueryTypeldap-alias?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType%3a%3aldapalias?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qV5VEa1jEem1vK-kP1bIqQ" base_Property="executeLdapQueryTypebase-dn?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType%3a%3abasedn?" xsdName="base-dn" xsdForm="unqualified" xsdUse="optional" xsdType="string" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qV5VFK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="executeLdapQueryTypebase-dn?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType%3a%3abasedn?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qWEUMa1jEem1vK-kP1bIqQ" base_Property="executeLdapQueryTypeldap-query?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType%3a%3aldapquery?" xsdName="ldap-query" xsdForm="unqualified" xsdUse="required" xsdType="string" xsdIsAttribute="true"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qWE7QK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="executeLdapQueryTypeldap-query?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType%3a%3aldapquery?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qWH-kK1jEem1vK-kP1bIqQ" base_Property="executeLdapQueryTypesearch-scope?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType%3a%3asearchscope?" xsdName="search-scope" xsdForm="unqualified" xsdUse="optional" xsdType="XmlLdapSearchScope" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qWS9sK1jEem1vK-kP1bIqQ" base_Property="executeLdapQueryTypepage-size?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType%3a%3apagesize?" xsdName="page-size" xsdForm="unqualified" xsdUse="optional" xsdType="int" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <XsdNotationProfile:XsdBasedRestriction xmi:id="_qWS9s61jEem1vK-kP1bIqQ" base_Property="executeLdapQueryTypepage-size?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType%3a%3apagesize?"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qWS9tK1jEem1vK-kP1bIqQ" base_Property="executeLdapQueryTypepage-size?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType%3a%3apagesize?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qWd80a1jEem1vK-kP1bIqQ" base_Property="executeLdapQueryTypebookmark?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType%3a%3abookmark?" xsdName="bookmark" xsdForm="unqualified" xsdUse="optional" xsdType="string" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qWd81K1jEem1vK-kP1bIqQ" textLength="-1" base_Property="executeLdapQueryTypebookmark?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType%3a%3abookmark?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_qWfyAa1jEem1vK-kP1bIqQ" base_Class="com.tibco.bpm.de.api.directoryexecuteLdapQueryResponseType?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType?" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true">
+    <xsdSequenceList xmi:type="XsdNotationProfile:XsdSequence" xmi:id="_qXzZkK1jEem1vK-kP1bIqQ" name="MS1_1_1"/>
+  </XsdNotationProfile:XsdBasedClass>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qWrYMK1jEem1vK-kP1bIqQ" base_Property="executeLdapQueryResponseTypeldap-alias?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType%3a%3aldapalias?" xsdName="ldap-alias" xsdForm="unqualified" xsdUse="required" xsdType="string" xsdIsAttribute="true"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qWrYM61jEem1vK-kP1bIqQ" textLength="-1" base_Property="executeLdapQueryResponseTypeldap-alias?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType%3a%3aldapalias?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qW2XUK1jEem1vK-kP1bIqQ" base_Property="executeLdapQueryResponseTypebase-dn?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType%3a%3abasedn?" xsdName="base-dn" xsdForm="unqualified" xsdUse="optional" xsdType="string" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qW2XU61jEem1vK-kP1bIqQ" textLength="-1" base_Property="executeLdapQueryResponseTypebase-dn?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType%3a%3abasedn?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qXBWcK1jEem1vK-kP1bIqQ" base_Property="executeLdapQueryResponseTypeldap-query?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType%3a%3aldapquery?" xsdName="ldap-query" xsdForm="unqualified" xsdUse="required" xsdType="string" xsdIsAttribute="true"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qXBWc61jEem1vK-kP1bIqQ" textLength="-1" base_Property="executeLdapQueryResponseTypeldap-query?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType%3a%3aldapquery?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qXEZwa1jEem1vK-kP1bIqQ" base_Property="executeLdapQueryResponseTypesearch-scope?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType%3a%3asearchscope?" xsdName="search-scope" xsdForm="unqualified" xsdUse="optional" xsdType="XmlLdapSearchScope" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qXWGka1jEem1vK-kP1bIqQ" base_Property="executeLdapQueryResponseTypeestimated-size?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType%3a%3aestimatedsize?" xsdName="estimated-size" xsdForm="unqualified" xsdUse="optional" xsdType="int" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <XsdNotationProfile:XsdBasedRestriction xmi:id="_qXWGlK1jEem1vK-kP1bIqQ" base_Property="executeLdapQueryResponseTypeestimated-size?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType%3a%3aestimatedsize?"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qXWGla1jEem1vK-kP1bIqQ" base_Property="executeLdapQueryResponseTypeestimated-size?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType%3a%3aestimatedsize?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qXhswa1jEem1vK-kP1bIqQ" base_Property="executeLdapQueryResponseTypebookmark?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType%3a%3abookmark?" xsdName="bookmark" xsdForm="unqualified" xsdUse="optional" xsdType="string" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qXiT0q1jEem1vK-kP1bIqQ" textLength="-1" base_Property="executeLdapQueryResponseTypebookmark?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType%3a%3abookmark?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_qXjh8a1jEem1vK-kP1bIqQ" base_Class="com.tibco.bpm.de.api.directoryldap-entryType?com.tibco.bpm.de.api.directory%3a%3aldapentryType?" xsdName="ldap-entry" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qXuhEa1jEem1vK-kP1bIqQ" base_Property="ldap-entryTypeldap-dn?com.tibco.bpm.de.api.directory%3a%3aldapentryType%3a%3aldapdn?" xsdName="ldap-dn" xsdForm="unqualified" xsdUse="required" xsdType="string" xsdIsAttribute="true"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qXvIIK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="ldap-entryTypeldap-dn?com.tibco.bpm.de.api.directory%3a%3aldapentryType%3a%3aldapdn?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qXyyh61jEem1vK-kP1bIqQ" base_Property="executeLdapQueryResponseTypeldap-entryType?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType%3a%3aldapentry?" xsdName="ldap-entry" xsdForm="unqualified" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_qXzZkK1jEem1vK-kP1bIqQ" xsdMinOccurs="0" xsdMaxOccurs="-1"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_qX0nsa1jEem1vK-kP1bIqQ" base_Class="com.tibco.bpm.de.api.directorygetLdapEntryType?com.tibco.bpm.de.api.directory%3a%3agetLdapEntryType?" xsdName="getLdapEntry" xsdMixed="false" xsdIsComplexType="true" xsdIsAnonType="true">
+    <xsdSequenceList xmi:type="XsdNotationProfile:XsdSequence" xmi:id="_qYFtcK1jEem1vK-kP1bIqQ" name="MS1_1_1"/>
+  </XsdNotationProfile:XsdBasedClass>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_qX110a1jEem1vK-kP1bIqQ" base_Class="com.tibco.bpm.de.api.directoryattributeType?com.tibco.bpm.de.api.directory%3a%3aattributeType?" xsdName="attribute" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qYA08a1jEem1vK-kP1bIqQ" base_Property="attributeTypename?com.tibco.bpm.de.api.directory%3a%3aattributeType%3a%3aname?" xsdName="name" xsdForm="unqualified" xsdUse="required" xsdType="string" xsdIsAttribute="true"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qYBcAK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="attributeTypename?com.tibco.bpm.de.api.directory%3a%3aattributeType%3a%3aname?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qYFGZ61jEem1vK-kP1bIqQ" base_Property="getLdapEntryTypeattributeType?com.tibco.bpm.de.api.directory%3a%3agetLdapEntryType%3a%3aattribute?" xsdName="attribute" xsdForm="unqualified" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_qYFtcK1jEem1vK-kP1bIqQ" xsdMinOccurs="0" xsdMaxOccurs="-1"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_qYHioa1jEem1vK-kP1bIqQ" base_Class="com.tibco.bpm.de.api.directorygetLdapEntryResponseType?com.tibco.bpm.de.api.directory%3a%3agetLdapEntryResponseType?" xsdName="getLdapEntryResponse" xsdMixed="false" xsdIsComplexType="true" xsdIsAnonType="true"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qYShwa1jEem1vK-kP1bIqQ" base_Property="getLdapEntryResponseTypeldap-alias?com.tibco.bpm.de.api.directory%3a%3agetLdapEntryResponseType%3a%3aldapalias?" xsdName="ldap-alias" xsdForm="unqualified" xsdUse="required" xsdType="string" xsdIsAttribute="true"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qYTI0q1jEem1vK-kP1bIqQ" textLength="-1" base_Property="getLdapEntryResponseTypeldap-alias?com.tibco.bpm.de.api.directory%3a%3agetLdapEntryResponseType%3a%3aldapalias?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qYevAa1jEem1vK-kP1bIqQ" base_Property="getLdapEntryResponseTypenot-found?com.tibco.bpm.de.api.directory%3a%3agetLdapEntryResponseType%3a%3anotfound?" xsdName="not-found" xsdForm="unqualified" xsdDefault="false" xsdUse="optional" xsdType="boolean" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qYevBK1jEem1vK-kP1bIqQ" base_Property="getLdapEntryResponseTypenot-found?com.tibco.bpm.de.api.directory%3a%3agetLdapEntryResponseType%3a%3anotfound?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_qYhLQa1jEem1vK-kP1bIqQ" base_Class="com.tibco.bpm.de.api.directorylistAttributeNamesType?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesType?" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qYsKYa1jEem1vK-kP1bIqQ" base_Property="listAttributeNamesTypeldap-alias?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesType%3a%3aldapalias?" xsdName="ldap-alias" xsdForm="unqualified" xsdUse="required" xsdType="string" xsdIsAttribute="true"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qYsKZK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="listAttributeNamesTypeldap-alias?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesType%3a%3aldapalias?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qY3wka1jEem1vK-kP1bIqQ" base_Property="listAttributeNamesTypebase-dn?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesType%3a%3abasedn?" xsdName="base-dn" xsdForm="unqualified" xsdUse="optional" xsdType="string" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qY3wlK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="listAttributeNamesTypebase-dn?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesType%3a%3abasedn?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qZDWwa1jEem1vK-kP1bIqQ" base_Property="listAttributeNamesTypeldap-query?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesType%3a%3aldapquery?" xsdName="ldap-query" xsdForm="unqualified" xsdUse="required" xsdType="string" xsdIsAttribute="true"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qZDWxK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="listAttributeNamesTypeldap-query?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesType%3a%3aldapquery?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qZGaEa1jEem1vK-kP1bIqQ" base_Property="listAttributeNamesTypesearch-scope?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesType%3a%3asearchscope?" xsdName="search-scope" xsdForm="unqualified" xsdUse="optional" xsdType="XmlLdapSearchScope" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qZSAQa1jEem1vK-kP1bIqQ" base_Property="listAttributeNamesTypesample-size?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesType%3a%3asamplesize?" xsdName="sample-size" xsdForm="unqualified" xsdDefault="0" xsdUse="optional" xsdType="int" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qZSARK1jEem1vK-kP1bIqQ" integerDefaultValue="0" base_Property="listAttributeNamesTypesample-size?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesType%3a%3asamplesize?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedRestriction xmi:id="_qZSARa1jEem1vK-kP1bIqQ" base_Property="listAttributeNamesTypesample-size?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesType%3a%3asamplesize?"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_qZT1ca1jEem1vK-kP1bIqQ" base_Class="com.tibco.bpm.de.api.directorylistAttributeNamesResponseType?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType?" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true">
+    <xsdSequenceList xmi:type="XsdNotationProfile:XsdSequence" xmi:id="_qafhMK1jEem1vK-kP1bIqQ" name="MS1_1_1"/>
+  </XsdNotationProfile:XsdBasedClass>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qZfboa1jEem1vK-kP1bIqQ" base_Property="listAttributeNamesResponseTypeldap-alias?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType%3a%3aldapalias?" xsdName="ldap-alias" xsdForm="unqualified" xsdUse="required" xsdType="string" xsdIsAttribute="true"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qZgCsK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="listAttributeNamesResponseTypeldap-alias?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType%3a%3aldapalias?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qZrB0a1jEem1vK-kP1bIqQ" base_Property="listAttributeNamesResponseTypebase-dn?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType%3a%3abasedn?" xsdName="base-dn" xsdForm="unqualified" xsdUse="optional" xsdType="string" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qZro4K1jEem1vK-kP1bIqQ" textLength="-1" base_Property="listAttributeNamesResponseTypebase-dn?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType%3a%3abasedn?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qZ3PEa1jEem1vK-kP1bIqQ" base_Property="listAttributeNamesResponseTypeldap-query?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType%3a%3aldapquery?" xsdName="ldap-query" xsdForm="unqualified" xsdUse="required" xsdType="string" xsdIsAttribute="true"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qZ3PFK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="listAttributeNamesResponseTypeldap-query?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType%3a%3aldapquery?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qZ65cK1jEem1vK-kP1bIqQ" base_Property="listAttributeNamesResponseTypesearch-scope?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType%3a%3asearchscope?" xsdName="search-scope" xsdForm="unqualified" xsdUse="optional" xsdType="XmlLdapSearchScope" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qaGfoa1jEem1vK-kP1bIqQ" base_Property="listAttributeNamesResponseTypeentry-count?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType%3a%3aentrycount?" xsdName="entry-count" xsdForm="unqualified" xsdUse="required" xsdType="int" xsdIsAttribute="true"/>
+  <XsdNotationProfile:XsdBasedRestriction xmi:id="_qaHGsK1jEem1vK-kP1bIqQ" base_Property="listAttributeNamesResponseTypeentry-count?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType%3a%3aentrycount?"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qaHGsa1jEem1vK-kP1bIqQ" base_Property="listAttributeNamesResponseTypeentry-count?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType%3a%3aentrycount?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qaSs561jEem1vK-kP1bIqQ" base_Property="listAttributeNamesResponseTypeattribute?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType%3a%3aattribute?" xsdName="attribute" xsdForm="unqualified" xsdType="XmlLdapAttribute" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_qafhMK1jEem1vK-kP1bIqQ" xsdMinOccurs="0" xsdMaxOccurs="-1"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qae6KK1jEem1vK-kP1bIqQ" base_Property="listAttributeNamesResponseTypesample-entry?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType%3a%3asampleentry?" xsdName="sample-entry" xsdForm="unqualified" xsdType="XmlLdapEntry" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_qafhMK1jEem1vK-kP1bIqQ" xsdMinOccurs="0" xsdMaxOccurs="-1"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_qahWYa1jEem1vK-kP1bIqQ" base_Class="com.tibco.bpm.de.api.directorylistCandidateResourcesType?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesType?" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qas8ka1jEem1vK-kP1bIqQ" base_Property="listCandidateResourcesTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesType%3a%3acontainerid?" xsdName="container-id" xsdForm="unqualified" xsdUse="required" xsdType="long" xsdIsAttribute="true"/>
+  <XsdNotationProfile:XsdBasedRestriction xmi:id="_qatjoa1jEem1vK-kP1bIqQ" base_Property="listCandidateResourcesTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesType%3a%3acontainerid?" xsdMaxExclusiveValue="" xsdMaxInclusiveValue="9223372036854775807" xsdMinExclusiveValue="" xsdMinInclusiveValue="-9223372036854775808"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qatjoq1jEem1vK-kP1bIqQ" integerUpper="9223372036854775807" integerLower="-9223372036854775808" integerSubType="fixedLength" base_Property="listCandidateResourcesTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesType%3a%3acontainerid?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qawm8a1jEem1vK-kP1bIqQ" base_Property="listCandidateResourcesTypeinclude?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesType%3a%3ainclude?" xsdName="include" xsdForm="unqualified" xsdDefault="ALL" xsdUse="optional" xsdType="XmlCandidateChoice" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qa80Ma1jEem1vK-kP1bIqQ" base_Property="listCandidateResourcesTypepage-size?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesType%3a%3apagesize?" xsdName="page-size" xsdForm="unqualified" xsdUse="optional" xsdType="int" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <XsdNotationProfile:XsdBasedRestriction xmi:id="_qa80NK1jEem1vK-kP1bIqQ" base_Property="listCandidateResourcesTypepage-size?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesType%3a%3apagesize?"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qa80Na1jEem1vK-kP1bIqQ" base_Property="listCandidateResourcesTypepage-size?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesType%3a%3apagesize?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qbJBca1jEem1vK-kP1bIqQ" base_Property="listCandidateResourcesTypebookmark?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesType%3a%3abookmark?" xsdName="bookmark" xsdForm="unqualified" xsdUse="optional" xsdType="string" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qbJBdK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="listCandidateResourcesTypebookmark?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesType%3a%3abookmark?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_qbK2oa1jEem1vK-kP1bIqQ" base_Class="com.tibco.bpm.de.api.directorylistCandidateResourcesResponseType?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesResponseType?" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true">
+    <xsdSequenceList xmi:type="XsdNotationProfile:XsdSequence" xmi:id="_qb_9EK1jEem1vK-kP1bIqQ" name="MS1_1_1"/>
+  </XsdNotationProfile:XsdBasedClass>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qbXD4a1jEem1vK-kP1bIqQ" base_Property="listCandidateResourcesResponseTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesResponseType%3a%3acontainerid?" xsdName="container-id" xsdForm="unqualified" xsdUse="required" xsdType="long" xsdIsAttribute="true"/>
+  <XsdNotationProfile:XsdBasedRestriction xmi:id="_qbXD5K1jEem1vK-kP1bIqQ" base_Property="listCandidateResourcesResponseTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesResponseType%3a%3acontainerid?" xsdMaxExclusiveValue="" xsdMaxInclusiveValue="9223372036854775807" xsdMinExclusiveValue="" xsdMinInclusiveValue="-9223372036854775808"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qbXD5a1jEem1vK-kP1bIqQ" integerUpper="9223372036854775807" integerLower="-9223372036854775808" integerSubType="fixedLength" base_Property="listCandidateResourcesResponseTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesResponseType%3a%3acontainerid?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qbaHMa1jEem1vK-kP1bIqQ" base_Property="listCandidateResourcesResponseTypeinclude?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesResponseType%3a%3ainclude?" xsdName="include" xsdForm="unqualified" xsdDefault="ALL" xsdUse="optional" xsdType="XmlCandidateChoice" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qbmUca1jEem1vK-kP1bIqQ" base_Property="listCandidateResourcesResponseTypeestimated-size?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesResponseType%3a%3aestimatedsize?" xsdName="estimated-size" xsdForm="unqualified" xsdUse="optional" xsdType="int" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <XsdNotationProfile:XsdBasedRestriction xmi:id="_qbmUdK1jEem1vK-kP1bIqQ" base_Property="listCandidateResourcesResponseTypeestimated-size?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesResponseType%3a%3aestimatedsize?"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qbmUda1jEem1vK-kP1bIqQ" base_Property="listCandidateResourcesResponseTypeestimated-size?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesResponseType%3a%3aestimatedsize?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qbzIwa1jEem1vK-kP1bIqQ" base_Property="listCandidateResourcesResponseTypebookmark?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesResponseType%3a%3abookmark?" xsdName="bookmark" xsdForm="unqualified" xsdUse="optional" xsdType="string" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qbzIxK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="listCandidateResourcesResponseTypebookmark?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesResponseType%3a%3abookmark?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qb_WB61jEem1vK-kP1bIqQ" base_Property="listCandidateResourcesResponseTypecandidate?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesResponseType%3a%3acandidate?" xsdName="candidate" xsdForm="unqualified" xsdType="XmlResourceCandidate" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_qb_9EK1jEem1vK-kP1bIqQ" xsdMinOccurs="0" xsdMaxOccurs="-1"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_qcByQK1jEem1vK-kP1bIqQ" base_Class="com.tibco.bpm.de.api.directorygetCandidateDetailType?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailType?" xsdName="getCandidateDetail" xsdMixed="false" xsdIsComplexType="true" xsdIsAnonType="true"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qcNYca1jEem1vK-kP1bIqQ" base_Property="getCandidateDetailTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailType%3a%3acontainerid?" xsdName="container-id" xsdForm="unqualified" xsdUse="required" xsdType="long" xsdIsAttribute="true"/>
+  <XsdNotationProfile:XsdBasedRestriction xmi:id="_qcN_gK1jEem1vK-kP1bIqQ" base_Property="getCandidateDetailTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailType%3a%3acontainerid?" xsdMaxExclusiveValue="" xsdMaxInclusiveValue="9223372036854775807" xsdMinExclusiveValue="" xsdMinInclusiveValue="-9223372036854775808"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qcN_ga1jEem1vK-kP1bIqQ" integerUpper="9223372036854775807" integerLower="-9223372036854775808" integerSubType="fixedLength" base_Property="getCandidateDetailTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailType%3a%3acontainerid?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_qcQbwa1jEem1vK-kP1bIqQ" base_Class="com.tibco.bpm.de.api.directorygetCandidateDetailResponseType?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType?" xsdName="getCandidateDetailResponse" xsdMixed="false" xsdIsComplexType="true" xsdIsAnonType="true">
+    <xsdSequenceList xmi:type="XsdNotationProfile:XsdSequence" xmi:id="_qdnGoK1jEem1vK-kP1bIqQ" name="MS1_1_1"/>
+  </XsdNotationProfile:XsdBasedClass>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qccpAa1jEem1vK-kP1bIqQ" base_Property="getCandidateDetailResponseTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType%3a%3acontainerid?" xsdName="container-id" xsdForm="unqualified" xsdUse="required" xsdType="long" xsdIsAttribute="true"/>
+  <XsdNotationProfile:XsdBasedRestriction xmi:id="_qccpBK1jEem1vK-kP1bIqQ" base_Property="getCandidateDetailResponseTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType%3a%3acontainerid?" xsdMaxExclusiveValue="" xsdMaxInclusiveValue="9223372036854775807" xsdMinExclusiveValue="" xsdMinInclusiveValue="-9223372036854775808"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qcdQEK1jEem1vK-kP1bIqQ" integerUpper="9223372036854775807" integerLower="-9223372036854775808" integerSubType="fixedLength" base_Property="getCandidateDetailResponseTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType%3a%3acontainerid?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qcqEYa1jEem1vK-kP1bIqQ" base_Property="getCandidateDetailResponseTypeguid?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType%3a%3aguid?" xsdName="guid" xsdForm="unqualified" xsdUse="optional" xsdType="string" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qcqEZK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="getCandidateDetailResponseTypeguid?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType%3a%3aguid?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qc3fwa1jEem1vK-kP1bIqQ" base_Property="getCandidateDetailResponseTypename?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType%3a%3aname?" xsdName="name" xsdForm="unqualified" xsdUse="required" xsdType="string" xsdIsAttribute="true"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_qc4G0K1jEem1vK-kP1bIqQ" textLength="-1" base_Property="getCandidateDetailResponseTypename?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType%3a%3aname?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qdM28a1jEem1vK-kP1bIqQ" base_Property="getCandidateDetailResponseTypestart-date?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType%3a%3astartdate?" xsdName="start-date" xsdForm="unqualified" xsdUse="optional" xsdType="dateTime" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qdaSUa1jEem1vK-kP1bIqQ" base_Property="getCandidateDetailResponseTypeend-date?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType%3a%3aenddate?" xsdName="end-date" xsdForm="unqualified" xsdUse="optional" xsdType="dateTime" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_qdmfmK1jEem1vK-kP1bIqQ" base_Property="getCandidateDetailResponseTypeattribute?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType%3a%3aattribute?" xsdName="attribute" xsdForm="unqualified" xsdType="XmlMappedAttributeValue" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_qdnGoK1jEem1vK-kP1bIqQ" xsdMinOccurs="0" xsdMaxOccurs="-1"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfCqAK1jEem1vK-kP1bIqQ" base_Element="com.tibco.bpm.de.api.directoryattributeType?com.tibco.bpm.de.api.directory%3a%3aattributeType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfCqAa1jEem1vK-kP1bIqQ" base_Element="_qcNYc61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfCqAq1jEem1vK-kP1bIqQ" base_Element="_qWH-ka1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfCqA61jEem1vK-kP1bIqQ" base_Element="_qZfbo61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfCqBK1jEem1vK-kP1bIqQ" base_Element="_qZSAQ61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfCqBa1jEem1vK-kP1bIqQ" base_Element="_qUVO061jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfCqBq1jEem1vK-kP1bIqQ" base_Element="_qWd80q1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfDREK1jEem1vK-kP1bIqQ" base_Element="getLdapEntryResponseTypeldap-alias?com.tibco.bpm.de.api.directory%3a%3agetLdapEntryResponseType%3a%3aldapalias?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfDREa1jEem1vK-kP1bIqQ" base_Element="_qXyyha1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfDREq1jEem1vK-kP1bIqQ" base_Element="_qWEUMq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfDRE61jEem1vK-kP1bIqQ" base_Element="_qVgTg61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfDRFK1jEem1vK-kP1bIqQ" base_Element="_qXWGk61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfDRFa1jEem1vK-kP1bIqQ" base_Element="_qaGfoq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfDRFq1jEem1vK-kP1bIqQ" base_Element="_qcqEY61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfDRF61jEem1vK-kP1bIqQ" base_Element="_qVEOoK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfDRGK1jEem1vK-kP1bIqQ" base_Element="com.tibco.bpm.de.api.directoryComposition163?com.tibco.bpm.de.api.directory%3a%3aComposition163?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfDRGa1jEem1vK-kP1bIqQ" base_Element="_qVtu4q1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfDRGq1jEem1vK-kP1bIqQ" base_Element="_qdM2861jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfDRG61jEem1vK-kP1bIqQ" base_Element="_qawm9K1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfDRHK1jEem1vK-kP1bIqQ" base_Element="_qYsxcK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfDRHa1jEem1vK-kP1bIqQ" base_Element="_qcdQEa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfD4IK1jEem1vK-kP1bIqQ" base_Element="_qYFGYq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfD4Ia1jEem1vK-kP1bIqQ" base_Element="executeLdapQueryResponseTypeldap-entryType?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType%3a%3aldapentry?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfD4Iq1jEem1vK-kP1bIqQ" base_Element="_qYFGY61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfD4I61jEem1vK-kP1bIqQ" base_Element="_qdmfl61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfD4JK1jEem1vK-kP1bIqQ" base_Element="_qVcpI61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfD4Ja1jEem1vK-kP1bIqQ" base_Element="attributeTypename?com.tibco.bpm.de.api.directory%3a%3aattributeType%3a%3aname?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfD4Jq1jEem1vK-kP1bIqQ" base_Element="_qYsKYq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfD4J61jEem1vK-kP1bIqQ" base_Element="_qcNYcq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfD4KK1jEem1vK-kP1bIqQ" base_Element="listLdapConnectionsResponseTypeldap-connectionType?com.tibco.bpm.de.api.directory%3a%3alistLdapConnectionsResponseType%3a%3aldapconnection?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfD4Ka1jEem1vK-kP1bIqQ" base_Element="_qaGfo61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfD4Kq1jEem1vK-kP1bIqQ" base_Element="getCandidateDetailResponseTypeattribute?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType%3a%3aattribute?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfD4K61jEem1vK-kP1bIqQ" base_Element="_qUiDIK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfD4LK1jEem1vK-kP1bIqQ" base_Element="_qZro4a1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfD4La1jEem1vK-kP1bIqQ" base_Element="listCandidateResourcesResponseTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesResponseType%3a%3acontainerid?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfD4Lq1jEem1vK-kP1bIqQ" base_Element="Composition159executeldapqueryresponsetype?com.tibco.bpm.de.api.directory%3a%3aComposition159%3a%3aexecuteldapqueryresponsetype?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfEfMK1jEem1vK-kP1bIqQ" base_Element="listAttributeNamesTypesample-size?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesType%3a%3asamplesize?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfEfMa1jEem1vK-kP1bIqQ" base_Element="_qY3wk61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfEfMq1jEem1vK-kP1bIqQ" base_Element="_qb_WA61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfEfM61jEem1vK-kP1bIqQ" base_Element="_qdaSU61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfEfNK1jEem1vK-kP1bIqQ" base_Element="executeLdapQueryTypeldap-query?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType%3a%3aldapquery?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfEfNa1jEem1vK-kP1bIqQ" base_Element="_qbJogK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfEfNq1jEem1vK-kP1bIqQ" base_Element="_qZfboq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfEfN61jEem1vK-kP1bIqQ" base_Element="_qV5VEq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfEfOK1jEem1vK-kP1bIqQ" base_Element="listAttributeNamesResponseTypebase-dn?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType%3a%3abasedn?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfEfOa1jEem1vK-kP1bIqQ" base_Element="_qXBWdK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfEfOq1jEem1vK-kP1bIqQ" base_Element="_qaHGsq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfEfO61jEem1vK-kP1bIqQ" base_Element="_qUtpUa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfEfPK1jEem1vK-kP1bIqQ" base_Element="_qbaHM61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfEfPa1jEem1vK-kP1bIqQ" base_Element="com.tibco.bpm.de.api.directorylistCandidateResourcesResponseType?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesResponseType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfEfPq1jEem1vK-kP1bIqQ" base_Element="_qYgkMK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfEfP61jEem1vK-kP1bIqQ" base_Element="_qYsKY61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFGQK1jEem1vK-kP1bIqQ" base_Element="listCandidateResourcesTypepage-size?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesType%3a%3apagesize?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFGQa1jEem1vK-kP1bIqQ" base_Element="com.tibco.bpm.de.api.directorylistContainersType?com.tibco.bpm.de.api.directory%3a%3alistContainersType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFGQq1jEem1vK-kP1bIqQ" base_Element="_qXyyhq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFGQ61jEem1vK-kP1bIqQ" base_Element="_qa80M61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFGRK1jEem1vK-kP1bIqQ" base_Element="Composition158listldapconnectionsresponsetype?com.tibco.bpm.de.api.directory%3a%3aComposition158%3a%3alistldapconnectionsresponsetype?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFGRa1jEem1vK-kP1bIqQ" base_Element="_qVg6kK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFGRq1jEem1vK-kP1bIqQ" base_Element="_qc4G0a1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFGR61jEem1vK-kP1bIqQ" base_Element="_qa80Mq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFGSK1jEem1vK-kP1bIqQ" base_Element="getLdapEntryTypeattributeType?com.tibco.bpm.de.api.directory%3a%3agetLdapEntryType%3a%3aattribute?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFGSa1jEem1vK-kP1bIqQ" base_Element="_qYTI061jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFGSq1jEem1vK-kP1bIqQ" base_Element="_qWd8061jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFGS61jEem1vK-kP1bIqQ" base_Element="_qYG7ka1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFGTK1jEem1vK-kP1bIqQ" base_Element="_qbJBcq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFGTa1jEem1vK-kP1bIqQ" base_Element="executeLdapQueryResponseTypeldap-alias?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType%3a%3aldapalias?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFGTq1jEem1vK-kP1bIqQ" base_Element="com.tibco.bpm.de.api.directoryexecuteLdapQueryType?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFGT61jEem1vK-kP1bIqQ" base_Element="_qbmUc61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFtUK1jEem1vK-kP1bIqQ" base_Element="_qZ3PE61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFtUa1jEem1vK-kP1bIqQ" base_Element="com.tibco.bpm.de.api.directoryldap-connectionType?com.tibco.bpm.de.api.directory%3a%3aldapconnectionType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFtUq1jEem1vK-kP1bIqQ" base_Element="_qVDnk61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFtU61jEem1vK-kP1bIqQ" base_Element="_qbJBc61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFtVK1jEem1vK-kP1bIqQ" base_Element="_qXEZxK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFtVa1jEem1vK-kP1bIqQ" base_Element="_qXEZwq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFtVq1jEem1vK-kP1bIqQ" base_Element="_qVSREK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFtV61jEem1vK-kP1bIqQ" base_Element="getLdapEntryResponseTypenot-found?com.tibco.bpm.de.api.directory%3a%3agetLdapEntryResponseType%3a%3anotfound?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFtWK1jEem1vK-kP1bIqQ" base_Element="ldap-connectionTypeprovider-url?com.tibco.bpm.de.api.directory%3a%3aldapconnectionType%3a%3aproviderurl?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFtWa1jEem1vK-kP1bIqQ" base_Element="_qVRqAq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFtWq1jEem1vK-kP1bIqQ" base_Element="com.tibco.bpm.de.api.directorygetLdapEntryResponseType?com.tibco.bpm.de.api.directory%3a%3agetLdapEntryResponseType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFtW61jEem1vK-kP1bIqQ" base_Element="_qZDWw61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFtXK1jEem1vK-kP1bIqQ" base_Element="executeLdapQueryResponseTypebookmark?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType%3a%3abookmark?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFtXa1jEem1vK-kP1bIqQ" base_Element="_qXBWcq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFtXq1jEem1vK-kP1bIqQ" base_Element="_qV58IK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfFtX61jEem1vK-kP1bIqQ" base_Element="_qVg6ka1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfGUYK1jEem1vK-kP1bIqQ" base_Element="_qUVO1q1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfGUYa1jEem1vK-kP1bIqQ" base_Element="_qZrB0q1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfGUYq1jEem1vK-kP1bIqQ" base_Element="_qXWGkq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfGUY61jEem1vK-kP1bIqQ" base_Element="_qYfWEK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfGUZK1jEem1vK-kP1bIqQ" base_Element="_qXBWca1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfGUZa1jEem1vK-kP1bIqQ" base_Element="_qbm7gK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfGUZq1jEem1vK-kP1bIqQ" base_Element="listCandidateResourcesResponseTypecandidate?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesResponseType%3a%3acandidate?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfGUZ61jEem1vK-kP1bIqQ" base_Element="com.tibco.bpm.de.api.directorysaveContainerResponseType?com.tibco.bpm.de.api.directory%3a%3asaveContainerResponseType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfGUaK1jEem1vK-kP1bIqQ" base_Element="_qYevAq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfGUaa1jEem1vK-kP1bIqQ" base_Element="listAttributeNamesTypesearch-scope?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesType%3a%3asearchscope?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfGUaq1jEem1vK-kP1bIqQ" base_Element="executeLdapQueryTypesearch-scope?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType%3a%3asearchscope?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfGUa61jEem1vK-kP1bIqQ" base_Element="_qWS9sq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfGUbK1jEem1vK-kP1bIqQ" base_Element="_qas8kq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfGUba1jEem1vK-kP1bIqQ" base_Element="_qaSs5a1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfGUbq1jEem1vK-kP1bIqQ" base_Element="com.tibco.bpm.de.api.directorylistContainersResponseType?com.tibco.bpm.de.api.directory%3a%3alistContainersResponseType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfGUb61jEem1vK-kP1bIqQ" base_Element="_qbzIw61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfG7cK1jEem1vK-kP1bIqQ" base_Element="com.tibco.bpm.de.api.directorygetCandidateDetailResponseType?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfG7ca1jEem1vK-kP1bIqQ" base_Element="_qWS9sa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfG7cq1jEem1vK-kP1bIqQ" base_Element="_qZD90K1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfG7c61jEem1vK-kP1bIqQ" base_Element="_qTkZ061jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfG7dK1jEem1vK-kP1bIqQ" base_Element="_qTkZ0a1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfG7da1jEem1vK-kP1bIqQ" base_Element="com.tibco.bpm.de.api.directorygetLdapEntryType?com.tibco.bpm.de.api.directory%3a%3agetLdapEntryType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfG7dq1jEem1vK-kP1bIqQ" base_Element="_qWH-kq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfG7d61jEem1vK-kP1bIqQ" base_Element="Composition160getldapentrytype?com.tibco.bpm.de.api.directory%3a%3aComposition160%3a%3agetldapentrytype?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfG7eK1jEem1vK-kP1bIqQ" base_Element="listCandidateResourcesResponseTypebookmark?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesResponseType%3a%3abookmark?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfG7ea1jEem1vK-kP1bIqQ" base_Element="listAttributeNamesResponseTypesample-entry?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType%3a%3asampleentry?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfG7eq1jEem1vK-kP1bIqQ" base_Element="_qZSAQq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfG7e61jEem1vK-kP1bIqQ" base_Element="_qb_WAq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfG7fK1jEem1vK-kP1bIqQ" base_Element="getCandidateDetailResponseTypeend-date?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType%3a%3aenddate?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfHigK1jEem1vK-kP1bIqQ" base_Element="_qa9bQK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfHiga1jEem1vK-kP1bIqQ" base_Element="ldap-entryTypeldap-dn?com.tibco.bpm.de.api.directory%3a%3aldapentryType%3a%3aldapdn?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfHigq1jEem1vK-kP1bIqQ" base_Element="listAttributeNamesResponseTypeattribute?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType%3a%3aattribute?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfHig61jEem1vK-kP1bIqQ" base_Element="_qWH-k61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfHihK1jEem1vK-kP1bIqQ" base_Element="_qZgCsa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfHiha1jEem1vK-kP1bIqQ" base_Element="executeLdapQueryResponseTypesearch-scope?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType%3a%3asearchscope?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfHihq1jEem1vK-kP1bIqQ" base_Element="Composition157listcontainersresponsetype?com.tibco.bpm.de.api.directory%3a%3aComposition157%3a%3alistcontainersresponsetype?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfHih61jEem1vK-kP1bIqQ" base_Element="com.tibco.bpm.de.api.directoryComposition158?com.tibco.bpm.de.api.directory%3a%3aComposition158?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfHiiK1jEem1vK-kP1bIqQ" base_Element="_qdaSUq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfHiia1jEem1vK-kP1bIqQ" base_Element="_qdmfk61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfHiiq1jEem1vK-kP1bIqQ" base_Element="_qawm861jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfHii61jEem1vK-kP1bIqQ" base_Element="_qda5YK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfHijK1jEem1vK-kP1bIqQ" base_Element="_qUWc8K1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfHija1jEem1vK-kP1bIqQ" base_Element="_qYTI0K1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfHijq1jEem1vK-kP1bIqQ" base_Element="_qc3fw61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIJkK1jEem1vK-kP1bIqQ" base_Element="executeLdapQueryTypepage-size?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType%3a%3apagesize?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIJka1jEem1vK-kP1bIqQ" base_Element="_qXyyg61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIJkq1jEem1vK-kP1bIqQ" base_Element="_qXWtoK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIJk61jEem1vK-kP1bIqQ" base_Element="_qYFGZq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIJlK1jEem1vK-kP1bIqQ" base_Element="_qZ3PEq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIJla1jEem1vK-kP1bIqQ" base_Element="_qUtCQq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIJlq1jEem1vK-kP1bIqQ" base_Element="_qZGaE61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIJl61jEem1vK-kP1bIqQ" base_Element="_qXiT061jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIJmK1jEem1vK-kP1bIqQ" base_Element="getCandidateDetailResponseTypestart-date?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType%3a%3astartdate?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIJma1jEem1vK-kP1bIqQ" base_Element="com.tibco.bpm.de.api.directoryComposition164?com.tibco.bpm.de.api.directory%3a%3aComposition164?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIJmq1jEem1vK-kP1bIqQ" base_Element="listCandidateResourcesResponseTypeestimated-size?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesResponseType%3a%3aestimatedsize?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIJm61jEem1vK-kP1bIqQ" base_Element="_qVRqA61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIJnK1jEem1vK-kP1bIqQ" base_Element="_qccpAq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIJna1jEem1vK-kP1bIqQ" base_Element="_qW2XUa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIJnq1jEem1vK-kP1bIqQ" base_Element="_qae6JK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIJn61jEem1vK-kP1bIqQ" base_Element="_qcN_gq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIwoK1jEem1vK-kP1bIqQ" base_Element="listAttributeNamesTypeldap-query?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesType%3a%3aldapquery?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIwoa1jEem1vK-kP1bIqQ" base_Element="_qWTkwK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIwoq1jEem1vK-kP1bIqQ" base_Element="_qWrYMq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIwo61jEem1vK-kP1bIqQ" base_Element="_qUVO1a1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIwpK1jEem1vK-kP1bIqQ" base_Element="_qdmflK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIwpa1jEem1vK-kP1bIqQ" base_Element="_qbzv0K1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIwpq1jEem1vK-kP1bIqQ" base_Element="_qU4BYq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIwp61jEem1vK-kP1bIqQ" base_Element="_qawm8q1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIwqK1jEem1vK-kP1bIqQ" base_Element="Composition164getcandidatedetailresponsetype?com.tibco.bpm.de.api.directory%3a%3aComposition164%3a%3agetcandidatedetailresponsetype?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIwqa1jEem1vK-kP1bIqQ" base_Element="deleteContainerTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3adeleteContainerType%3a%3acontainerid?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIwqq1jEem1vK-kP1bIqQ" base_Element="executeLdapQueryResponseTypebase-dn?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType%3a%3abasedn?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIwq61jEem1vK-kP1bIqQ" base_Element="_qaSs461jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIwrK1jEem1vK-kP1bIqQ" base_Element="_qcqrcK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIwra1jEem1vK-kP1bIqQ" base_Element="_qZGaEq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIwrq1jEem1vK-kP1bIqQ" base_Element="_qZ65ca1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfIwr61jEem1vK-kP1bIqQ" base_Element="_qYA08q1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJXsK1jEem1vK-kP1bIqQ" base_Element="_qae6I61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJXsa1jEem1vK-kP1bIqQ" base_Element="_qaSs5q1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJXsq1jEem1vK-kP1bIqQ" base_Element="Composition163listcandidateresourcesresponsetype?com.tibco.bpm.de.api.directory%3a%3aComposition163%3a%3alistcandidateresourcesresponsetype?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJXs61jEem1vK-kP1bIqQ" base_Element="com.tibco.bpm.de.api.directoryComposition160?com.tibco.bpm.de.api.directory%3a%3aComposition160?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJXtK1jEem1vK-kP1bIqQ" base_Element="getCandidateDetailResponseTypename?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType%3a%3aname?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJXta1jEem1vK-kP1bIqQ" base_Element="_qU4ocK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJXtq1jEem1vK-kP1bIqQ" base_Element="_qaSs4q1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJXt61jEem1vK-kP1bIqQ" base_Element="_qdM28q1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJXuK1jEem1vK-kP1bIqQ" base_Element="_qZHBIK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJXua1jEem1vK-kP1bIqQ" base_Element="_qZSnUK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJXuq1jEem1vK-kP1bIqQ" base_Element="_qY4XoK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJXu61jEem1vK-kP1bIqQ" base_Element="_qccpA61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJXvK1jEem1vK-kP1bIqQ" base_Element="_qUhcEq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJXva1jEem1vK-kP1bIqQ" base_Element="_qZrB061jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJXvq1jEem1vK-kP1bIqQ" base_Element="executeLdapQueryTypebookmark?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType%3a%3abookmark?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJXv61jEem1vK-kP1bIqQ" base_Element="_qZ65cq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJ-wK1jEem1vK-kP1bIqQ" base_Element="_qVtu4a1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJ-wa1jEem1vK-kP1bIqQ" base_Element="_qZ32IK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJ-wq1jEem1vK-kP1bIqQ" base_Element="_qYFGZa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJ-w61jEem1vK-kP1bIqQ" base_Element="com.tibco.bpm.de.api.directoryComposition162?com.tibco.bpm.de.api.directory%3a%3aComposition162?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJ-xK1jEem1vK-kP1bIqQ" base_Element="_qXyygq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJ-xa1jEem1vK-kP1bIqQ" base_Element="_qVcpIq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJ-xq1jEem1vK-kP1bIqQ" base_Element="_qae6Jq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJ-x61jEem1vK-kP1bIqQ" base_Element="com.tibco.bpm.de.api.directorylistCandidateResourcesType?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJ-yK1jEem1vK-kP1bIqQ" base_Element="Composition161listattributenamesresponsetype?com.tibco.bpm.de.api.directory%3a%3aComposition161%3a%3alistattributenamesresponsetype?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJ-ya1jEem1vK-kP1bIqQ" base_Element="_qVgTgq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJ-yq1jEem1vK-kP1bIqQ" base_Element="com.tibco.bpm.de.api.directorylistLdapConnectionsType?com.tibco.bpm.de.api.directory%3a%3alistLdapConnectionsType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJ-y61jEem1vK-kP1bIqQ" base_Element="saveContainerResponseTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3asaveContainerResponseType%3a%3acontainerid?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJ-zK1jEem1vK-kP1bIqQ" base_Element="_qZ65c61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJ-za1jEem1vK-kP1bIqQ" base_Element="ldap-connectionTypeldap-alias?com.tibco.bpm.de.api.directory%3a%3aldapconnectionType%3a%3aldapalias?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJ-zq1jEem1vK-kP1bIqQ" base_Element="com.tibco.bpm.de.api.directoryComposition161?com.tibco.bpm.de.api.directory%3a%3aComposition161?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfJ-z61jEem1vK-kP1bIqQ" base_Element="deleteContainerTypedelete-resources?com.tibco.bpm.de.api.directory%3a%3adeleteContainerType%3a%3adeleteresources?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfKl0K1jEem1vK-kP1bIqQ" base_Element="executeLdapQueryResponseTypeldap-query?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType%3a%3aldapquery?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfKl0a1jEem1vK-kP1bIqQ" base_Element="_qb_WBa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfKl0q1jEem1vK-kP1bIqQ" base_Element="Composition162listattributenamesresponsetype?com.tibco.bpm.de.api.directory%3a%3aComposition162%3a%3alistattributenamesresponsetype?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfKl061jEem1vK-kP1bIqQ" base_Element="_qWE7Qa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfKl1K1jEem1vK-kP1bIqQ" base_Element="_qbaHMq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfKl1a1jEem1vK-kP1bIqQ" base_Element="_qXuhEq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfKl1q1jEem1vK-kP1bIqQ" base_Element="_qbzIwq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfKl161jEem1vK-kP1bIqQ" base_Element="_qYTI0a1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfKl2K1jEem1vK-kP1bIqQ" base_Element="com.tibco.bpm.de.api.directorylistLdapConnectionsResponseType?com.tibco.bpm.de.api.directory%3a%3alistLdapConnectionsResponseType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfKl2a1jEem1vK-kP1bIqQ" base_Element="_qY3wkq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfKl2q1jEem1vK-kP1bIqQ" base_Element="com.tibco.bpm.de.api.directorydeleteContainerType?com.tibco.bpm.de.api.directory%3a%3adeleteContainerType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfKl261jEem1vK-kP1bIqQ" base_Element="_qdmflq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfKl3K1jEem1vK-kP1bIqQ" base_Element="listAttributeNamesResponseTypeldap-alias?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType%3a%3aldapalias?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfKl3a1jEem1vK-kP1bIqQ" base_Element="_qbXD4q1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfKl3q1jEem1vK-kP1bIqQ" base_Element="listAttributeNamesResponseTypeentry-count?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType%3a%3aentrycount?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfKl361jEem1vK-kP1bIqQ" base_Element="listCandidateResourcesTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesType%3a%3acontainerid?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLM4K1jEem1vK-kP1bIqQ" base_Element="_qcqEYq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLM4a1jEem1vK-kP1bIqQ" base_Element="com.tibco.bpm.de.api.directoryexecuteLdapQueryResponseType?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLM4q1jEem1vK-kP1bIqQ" base_Element="_qae6J61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLM461jEem1vK-kP1bIqQ" base_Element="listCandidateResourcesResponseTypeinclude?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesResponseType%3a%3ainclude?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLM5K1jEem1vK-kP1bIqQ" base_Element="_qYA0861jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLM5a1jEem1vK-kP1bIqQ" base_Element="_qdNeAK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLM5q1jEem1vK-kP1bIqQ" base_Element="listContainersResponseTypeldap-container?com.tibco.bpm.de.api.directory%3a%3alistContainersResponseType%3a%3aldapcontainer?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLM561jEem1vK-kP1bIqQ" base_Element="_qXiT0K1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLM6K1jEem1vK-kP1bIqQ" base_Element="com.tibco.bpm.de.api.directorygetCandidateDetailType?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLM6a1jEem1vK-kP1bIqQ" base_Element="_qWEUM61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLM6q1jEem1vK-kP1bIqQ" base_Element="_qUtCQ61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLM661jEem1vK-kP1bIqQ" base_Element="_qatjoK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLM7K1jEem1vK-kP1bIqQ" base_Element="getCandidateDetailResponseTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType%3a%3acontainerid?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLM7a1jEem1vK-kP1bIqQ" base_Element="_qVdQMK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLM7q1jEem1vK-kP1bIqQ" base_Element="_qXuhE61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLM761jEem1vK-kP1bIqQ" base_Element="_qdntsK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLz8K1jEem1vK-kP1bIqQ" base_Element="com.tibco.bpm.de.api.directoryComposition157?com.tibco.bpm.de.api.directory%3a%3aComposition157?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLz8a1jEem1vK-kP1bIqQ" base_Element="com.tibco.bpm.de.api.directorylistAttributeNamesType?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLz8q1jEem1vK-kP1bIqQ" base_Element="_qW2XVK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLz861jEem1vK-kP1bIqQ" base_Element="_qatjo61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLz9K1jEem1vK-kP1bIqQ" base_Element="_qV5VE61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLz9a1jEem1vK-kP1bIqQ" base_Element="_qbXD461jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLz9q1jEem1vK-kP1bIqQ" base_Element="_qbmUcq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLz961jEem1vK-kP1bIqQ" base_Element="deleteContainerResponseTypesuccessful?com.tibco.bpm.de.api.directory%3a%3adeleteContainerResponseType%3a%3asuccessful?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLz-K1jEem1vK-kP1bIqQ" base_Element="listAttributeNamesTypebase-dn?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesType%3a%3abasedn?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLz-a1jEem1vK-kP1bIqQ" base_Element="_qWej4K1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLz-q1jEem1vK-kP1bIqQ" base_Element="_qW2XUq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLz-61jEem1vK-kP1bIqQ" base_Element="executeLdapQueryTypeldap-alias?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType%3a%3aldapalias?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLz_K1jEem1vK-kP1bIqQ" base_Element="listAttributeNamesResponseTypeldap-query?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType%3a%3aldapquery?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLz_a1jEem1vK-kP1bIqQ" base_Element="listAttributeNamesTypeldap-alias?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesType%3a%3aldapalias?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLz_q1jEem1vK-kP1bIqQ" base_Element="getCandidateDetailResponseTypeguid?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType%3a%3aguid?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfLz_61jEem1vK-kP1bIqQ" base_Element="_qUVO0q1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfMbAK1jEem1vK-kP1bIqQ" base_Element="com.tibco.bpm.de.api.directorydeleteContainerResponseType?com.tibco.bpm.de.api.directory%3a%3adeleteContainerResponseType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfMbAa1jEem1vK-kP1bIqQ" base_Element="_qXiT0a1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfMbAq1jEem1vK-kP1bIqQ" base_Element="_qZDWwq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfMbA61jEem1vK-kP1bIqQ" base_Element="com.tibco.bpm.de.api.directorylistAttributeNamesResponseType?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfMbBK1jEem1vK-kP1bIqQ" base_Element="com.tibco.bpm.de.api.directoryldap-entryType?com.tibco.bpm.de.api.directory%3a%3aldapentryType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfMbBa1jEem1vK-kP1bIqQ" base_Element="_qb_WBq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfMbBq1jEem1vK-kP1bIqQ" base_Element="_qYevA61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfMbB61jEem1vK-kP1bIqQ" base_Element="_qXEZw61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfMbCK1jEem1vK-kP1bIqQ" base_Element="_qWrYMa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfMbCa1jEem1vK-kP1bIqQ" base_Element="listCandidateResourcesTypeinclude?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesType%3a%3ainclude?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfMbCq1jEem1vK-kP1bIqQ" base_Element="listAttributeNamesResponseTypesearch-scope?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType%3a%3asearchscope?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfMbC61jEem1vK-kP1bIqQ" base_Element="_qc3fwq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfMbDK1jEem1vK-kP1bIqQ" base_Element="_qU4BY61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfMbDa1jEem1vK-kP1bIqQ" base_Element="executeLdapQueryResponseTypeestimated-size?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType%3a%3aestimatedsize?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfMbDq1jEem1vK-kP1bIqQ" base_Element="_qWrYNK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfMbD61jEem1vK-kP1bIqQ" base_Element="_qbauQK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfNCEK1jEem1vK-kP1bIqQ" base_Element="_qVuV8K1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfNCEa1jEem1vK-kP1bIqQ" base_Element="executeLdapQueryTypebase-dn?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType%3a%3abasedn?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfNCEq1jEem1vK-kP1bIqQ" base_Element="com.tibco.bpm.de.api.directoryComposition159?com.tibco.bpm.de.api.directory%3a%3aComposition159?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfNCE61jEem1vK-kP1bIqQ" base_Element="getCandidateDetailTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailType%3a%3acontainerid?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfNCFK1jEem1vK-kP1bIqQ" base_Element="_qVDnkq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfNCFa1jEem1vK-kP1bIqQ" base_Element="_qcPNoa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfNCFq1jEem1vK-kP1bIqQ" base_Element="_qUhcEa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfNCF61jEem1vK-kP1bIqQ" base_Element="listCandidateResourcesTypebookmark?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesType%3a%3abookmark?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_qfNCGK1jEem1vK-kP1bIqQ" base_Element="_qbXq8K1jEem1vK-kP1bIqQ"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmOQEK1jEem1vK-kP1bIqQ" displayLabel="deleteContainerType" base_NamedElement="com.tibco.bpm.de.api.directorydeleteContainerType?com.tibco.bpm.de.api.directory%3a%3adeleteContainerType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmO3IK1jEem1vK-kP1bIqQ" displayLabel="deleteContainerResponseType" base_NamedElement="com.tibco.bpm.de.api.directorydeleteContainerResponseType?com.tibco.bpm.de.api.directory%3a%3adeleteContainerResponseType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmO3Ia1jEem1vK-kP1bIqQ" displayLabel="executeLdapQueryType" base_NamedElement="com.tibco.bpm.de.api.directoryexecuteLdapQueryType?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmPeMK1jEem1vK-kP1bIqQ" displayLabel="executeLdapQueryResponseType" base_NamedElement="com.tibco.bpm.de.api.directoryexecuteLdapQueryResponseType?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmPeMa1jEem1vK-kP1bIqQ" displayLabel="getCandidateDetailType" base_NamedElement="com.tibco.bpm.de.api.directorygetCandidateDetailType?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmPeMq1jEem1vK-kP1bIqQ" displayLabel="getCandidateDetailResponseType" base_NamedElement="com.tibco.bpm.de.api.directorygetCandidateDetailResponseType?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmQFQK1jEem1vK-kP1bIqQ" displayLabel="getLdapEntryType" base_NamedElement="com.tibco.bpm.de.api.directorygetLdapEntryType?com.tibco.bpm.de.api.directory%3a%3agetLdapEntryType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmQFQa1jEem1vK-kP1bIqQ" displayLabel="getLdapEntryResponseType" base_NamedElement="com.tibco.bpm.de.api.directorygetLdapEntryResponseType?com.tibco.bpm.de.api.directory%3a%3agetLdapEntryResponseType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmQsUK1jEem1vK-kP1bIqQ" displayLabel="listAttributeNamesType" base_NamedElement="com.tibco.bpm.de.api.directorylistAttributeNamesType?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmQsUa1jEem1vK-kP1bIqQ" displayLabel="listAttributeNamesResponseType" base_NamedElement="com.tibco.bpm.de.api.directorylistAttributeNamesResponseType?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmQsUq1jEem1vK-kP1bIqQ" displayLabel="listCandidateResourcesType" base_NamedElement="com.tibco.bpm.de.api.directorylistCandidateResourcesType?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmRTYK1jEem1vK-kP1bIqQ" displayLabel="listCandidateResourcesResponseType" base_NamedElement="com.tibco.bpm.de.api.directorylistCandidateResourcesResponseType?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesResponseType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmRTYa1jEem1vK-kP1bIqQ" displayLabel="listContainersType" base_NamedElement="com.tibco.bpm.de.api.directorylistContainersType?com.tibco.bpm.de.api.directory%3a%3alistContainersType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmR6cK1jEem1vK-kP1bIqQ" displayLabel="listContainersResponseType" base_NamedElement="com.tibco.bpm.de.api.directorylistContainersResponseType?com.tibco.bpm.de.api.directory%3a%3alistContainersResponseType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmR6ca1jEem1vK-kP1bIqQ" displayLabel="listLdapConnectionsType" base_NamedElement="com.tibco.bpm.de.api.directorylistLdapConnectionsType?com.tibco.bpm.de.api.directory%3a%3alistLdapConnectionsType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmShgK1jEem1vK-kP1bIqQ" displayLabel="listLdapConnectionsResponseType" base_NamedElement="com.tibco.bpm.de.api.directorylistLdapConnectionsResponseType?com.tibco.bpm.de.api.directory%3a%3alistLdapConnectionsResponseType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmShga1jEem1vK-kP1bIqQ" displayLabel="saveContainerResponseType" base_NamedElement="com.tibco.bpm.de.api.directorysaveContainerResponseType?com.tibco.bpm.de.api.directory%3a%3asaveContainerResponseType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmShgq1jEem1vK-kP1bIqQ" displayLabel="container-id" base_NamedElement="deleteContainerTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3adeleteContainerType%3a%3acontainerid?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmTIkK1jEem1vK-kP1bIqQ" displayLabel="delete-resources" base_NamedElement="deleteContainerTypedelete-resources?com.tibco.bpm.de.api.directory%3a%3adeleteContainerType%3a%3adeleteresources?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmTIka1jEem1vK-kP1bIqQ" displayLabel="successful" base_NamedElement="deleteContainerResponseTypesuccessful?com.tibco.bpm.de.api.directory%3a%3adeleteContainerResponseType%3a%3asuccessful?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmTvoK1jEem1vK-kP1bIqQ" displayLabel="base-dn" base_NamedElement="executeLdapQueryTypebase-dn?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType%3a%3abasedn?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmTvoa1jEem1vK-kP1bIqQ" displayLabel="bookmark" base_NamedElement="executeLdapQueryTypebookmark?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType%3a%3abookmark?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmUWsK1jEem1vK-kP1bIqQ" displayLabel="ldap-alias" base_NamedElement="executeLdapQueryTypeldap-alias?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType%3a%3aldapalias?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmUWsa1jEem1vK-kP1bIqQ" displayLabel="ldap-query" base_NamedElement="executeLdapQueryTypeldap-query?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType%3a%3aldapquery?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmUWsq1jEem1vK-kP1bIqQ" displayLabel="page-size" base_NamedElement="executeLdapQueryTypepage-size?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType%3a%3apagesize?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmU9wK1jEem1vK-kP1bIqQ" displayLabel="search-scope" base_NamedElement="executeLdapQueryTypesearch-scope?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType%3a%3asearchscope?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmU9wa1jEem1vK-kP1bIqQ" displayLabel="ldap-entry" base_NamedElement="executeLdapQueryResponseTypeldap-entryType?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType%3a%3aldapentry?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmVk0K1jEem1vK-kP1bIqQ" displayLabel="base-dn" base_NamedElement="executeLdapQueryResponseTypebase-dn?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType%3a%3abasedn?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmVk0a1jEem1vK-kP1bIqQ" displayLabel="bookmark" base_NamedElement="executeLdapQueryResponseTypebookmark?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType%3a%3abookmark?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmVk0q1jEem1vK-kP1bIqQ" displayLabel="estimated-size" base_NamedElement="executeLdapQueryResponseTypeestimated-size?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType%3a%3aestimatedsize?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmWL4K1jEem1vK-kP1bIqQ" displayLabel="ldap-alias" base_NamedElement="executeLdapQueryResponseTypeldap-alias?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType%3a%3aldapalias?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmWL4a1jEem1vK-kP1bIqQ" displayLabel="ldap-query" base_NamedElement="executeLdapQueryResponseTypeldap-query?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType%3a%3aldapquery?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmWL4q1jEem1vK-kP1bIqQ" displayLabel="search-scope" base_NamedElement="executeLdapQueryResponseTypesearch-scope?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType%3a%3asearchscope?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmWy8K1jEem1vK-kP1bIqQ" displayLabel="ldapentryType" base_NamedElement="com.tibco.bpm.de.api.directoryldap-entryType?com.tibco.bpm.de.api.directory%3a%3aldapentryType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmWy8a1jEem1vK-kP1bIqQ" displayLabel="ldap-dn" base_NamedElement="ldap-entryTypeldap-dn?com.tibco.bpm.de.api.directory%3a%3aldapentryType%3a%3aldapdn?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmXaAK1jEem1vK-kP1bIqQ" displayLabel="container-id" base_NamedElement="getCandidateDetailTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailType%3a%3acontainerid?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmYBEK1jEem1vK-kP1bIqQ" displayLabel="attribute" base_NamedElement="getCandidateDetailResponseTypeattribute?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType%3a%3aattribute?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmYBEa1jEem1vK-kP1bIqQ" displayLabel="container-id" base_NamedElement="getCandidateDetailResponseTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType%3a%3acontainerid?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmYBEq1jEem1vK-kP1bIqQ" displayLabel="end-date" base_NamedElement="getCandidateDetailResponseTypeend-date?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType%3a%3aenddate?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmYoIK1jEem1vK-kP1bIqQ" displayLabel="guid" base_NamedElement="getCandidateDetailResponseTypeguid?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType%3a%3aguid?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmYoIa1jEem1vK-kP1bIqQ" displayLabel="name" base_NamedElement="getCandidateDetailResponseTypename?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType%3a%3aname?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmYoIq1jEem1vK-kP1bIqQ" displayLabel="start-date" base_NamedElement="getCandidateDetailResponseTypestart-date?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType%3a%3astartdate?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmZPMK1jEem1vK-kP1bIqQ" displayLabel="attribute" base_NamedElement="getLdapEntryTypeattributeType?com.tibco.bpm.de.api.directory%3a%3agetLdapEntryType%3a%3aattribute?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmZPMa1jEem1vK-kP1bIqQ" displayLabel="attributeType" base_NamedElement="com.tibco.bpm.de.api.directoryattributeType?com.tibco.bpm.de.api.directory%3a%3aattributeType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmZ2QK1jEem1vK-kP1bIqQ" displayLabel="name" base_NamedElement="attributeTypename?com.tibco.bpm.de.api.directory%3a%3aattributeType%3a%3aname?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmadUa1jEem1vK-kP1bIqQ" displayLabel="ldap-alias" base_NamedElement="getLdapEntryResponseTypeldap-alias?com.tibco.bpm.de.api.directory%3a%3agetLdapEntryResponseType%3a%3aldapalias?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmadUq1jEem1vK-kP1bIqQ" displayLabel="not-found" base_NamedElement="getLdapEntryResponseTypenot-found?com.tibco.bpm.de.api.directory%3a%3agetLdapEntryResponseType%3a%3anotfound?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmbEYK1jEem1vK-kP1bIqQ" displayLabel="base-dn" base_NamedElement="listAttributeNamesTypebase-dn?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesType%3a%3abasedn?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmbEYa1jEem1vK-kP1bIqQ" displayLabel="ldap-alias" base_NamedElement="listAttributeNamesTypeldap-alias?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesType%3a%3aldapalias?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmbrcK1jEem1vK-kP1bIqQ" displayLabel="ldap-query" base_NamedElement="listAttributeNamesTypeldap-query?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesType%3a%3aldapquery?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmbrca1jEem1vK-kP1bIqQ" displayLabel="sample-size" base_NamedElement="listAttributeNamesTypesample-size?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesType%3a%3asamplesize?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmbrcq1jEem1vK-kP1bIqQ" displayLabel="search-scope" base_NamedElement="listAttributeNamesTypesearch-scope?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesType%3a%3asearchscope?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmcSgK1jEem1vK-kP1bIqQ" displayLabel="attribute" base_NamedElement="listAttributeNamesResponseTypeattribute?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType%3a%3aattribute?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmcSga1jEem1vK-kP1bIqQ" displayLabel="sample-entry" base_NamedElement="listAttributeNamesResponseTypesample-entry?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType%3a%3asampleentry?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmc5kK1jEem1vK-kP1bIqQ" displayLabel="base-dn" base_NamedElement="listAttributeNamesResponseTypebase-dn?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType%3a%3abasedn?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmc5ka1jEem1vK-kP1bIqQ" displayLabel="entry-count" base_NamedElement="listAttributeNamesResponseTypeentry-count?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType%3a%3aentrycount?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmc5kq1jEem1vK-kP1bIqQ" displayLabel="ldap-alias" base_NamedElement="listAttributeNamesResponseTypeldap-alias?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType%3a%3aldapalias?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmdgoK1jEem1vK-kP1bIqQ" displayLabel="ldap-query" base_NamedElement="listAttributeNamesResponseTypeldap-query?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType%3a%3aldapquery?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmdgoa1jEem1vK-kP1bIqQ" displayLabel="search-scope" base_NamedElement="listAttributeNamesResponseTypesearch-scope?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType%3a%3asearchscope?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmeHsK1jEem1vK-kP1bIqQ" displayLabel="bookmark" base_NamedElement="listCandidateResourcesTypebookmark?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesType%3a%3abookmark?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmeHsa1jEem1vK-kP1bIqQ" displayLabel="container-id" base_NamedElement="listCandidateResourcesTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesType%3a%3acontainerid?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmeuwK1jEem1vK-kP1bIqQ" displayLabel="include" base_NamedElement="listCandidateResourcesTypeinclude?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesType%3a%3ainclude?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmeuwa1jEem1vK-kP1bIqQ" displayLabel="page-size" base_NamedElement="listCandidateResourcesTypepage-size?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesType%3a%3apagesize?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmfV0K1jEem1vK-kP1bIqQ" displayLabel="candidate" base_NamedElement="listCandidateResourcesResponseTypecandidate?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesResponseType%3a%3acandidate?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmfV0a1jEem1vK-kP1bIqQ" displayLabel="bookmark" base_NamedElement="listCandidateResourcesResponseTypebookmark?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesResponseType%3a%3abookmark?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmfV0q1jEem1vK-kP1bIqQ" displayLabel="container-id" base_NamedElement="listCandidateResourcesResponseTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesResponseType%3a%3acontainerid?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmf84K1jEem1vK-kP1bIqQ" displayLabel="estimated-size" base_NamedElement="listCandidateResourcesResponseTypeestimated-size?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesResponseType%3a%3aestimatedsize?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmf84a1jEem1vK-kP1bIqQ" displayLabel="include" base_NamedElement="listCandidateResourcesResponseTypeinclude?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesResponseType%3a%3ainclude?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmgj8K1jEem1vK-kP1bIqQ" displayLabel="ldap-container" base_NamedElement="listContainersResponseTypeldap-container?com.tibco.bpm.de.api.directory%3a%3alistContainersResponseType%3a%3aldapcontainer?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmgj8a1jEem1vK-kP1bIqQ" displayLabel="ldap-connection" base_NamedElement="listLdapConnectionsResponseTypeldap-connectionType?com.tibco.bpm.de.api.directory%3a%3alistLdapConnectionsResponseType%3a%3aldapconnection?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmgj8q1jEem1vK-kP1bIqQ" displayLabel="ldapconnectionType" base_NamedElement="com.tibco.bpm.de.api.directoryldap-connectionType?com.tibco.bpm.de.api.directory%3a%3aldapconnectionType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmhLAK1jEem1vK-kP1bIqQ" displayLabel="ldap-alias" base_NamedElement="ldap-connectionTypeldap-alias?com.tibco.bpm.de.api.directory%3a%3aldapconnectionType%3a%3aldapalias?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmhLAa1jEem1vK-kP1bIqQ" displayLabel="provider-url" base_NamedElement="ldap-connectionTypeprovider-url?com.tibco.bpm.de.api.directory%3a%3aldapconnectionType%3a%3aproviderurl?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qmhyEK1jEem1vK-kP1bIqQ" displayLabel="container-id" base_NamedElement="saveContainerResponseTypecontainer-id?com.tibco.bpm.de.api.directory%3a%3asaveContainerResponseType%3a%3acontainerid?"/>
+  <notation:Diagram xmi:id="_qmhyFa1jEem1vK-kP1bIqQ" type="Business Object Model" element="com.tibco.bpm.de.api.directory?com.tibco.bpm.de.api.directory?" name="com.tibco.bpm.de.api.directory" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_qmhyFq1jEem1vK-kP1bIqQ"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_qmhyF61jEem1vK-kP1bIqQ"/>
+  </notation:Diagram>
+</xmi:XMI>

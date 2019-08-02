@@ -1,0 +1,13 @@
+
+/**
+ * Forms 3.1.0 V12 compliant.
+ */
+    .ffebb432d-3795-491a-b964-de82cefd2a3e .pane_toolbar > .label {
+        display:none !important;
+    }
+    .ffebb432d-3795-491a-b964-de82cefd2a3e .pane_messages > .label {
+        display:none !important;
+    }
+    .ffebb432d-3795-491a-b964-de82cefd2a3e .pane_content > .label {
+        
+display:block !important;    }

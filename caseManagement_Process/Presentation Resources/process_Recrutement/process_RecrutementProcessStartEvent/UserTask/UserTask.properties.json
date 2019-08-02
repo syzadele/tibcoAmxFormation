@@ -1,0 +1,46 @@
+{"pane_content_label":"User Task",
+  "control_Candidature_entretiens_avis_label":"avis",
+  "pane_Candidature_label":"Candidature",
+  "control_Candidature_avisFinale_label":"avisFinale","pane_toolbar_label":
+  "Toolbar","control_Candidature_portable_label":"portable",
+  "control_Candidature_entretiens_date_label":"date",
+  "control_Candidature_mail_label":"mail","control_Candidature_nom_label":
+  "nom","control_Candidature_poleConcerne_property_choiceLabels_1":"Pole2",
+  "control_Candidature_poleConcerne_property_choiceLabels_0":"Pole1",
+  "form_action_error_message":"Error in script for action {0} ({1}): {2}",
+  "pane_Candidature_entretiens_property_rowLabel":"{0}",
+  "form_required_message":"{0} is a required field.",
+  "control_Candidature_avisFinale_property_choiceLabels_2":"Indecise",
+  "control_Candidature_avisFinale_property_choiceLabels_1":"Negative",
+  "control_Candidature_avisFinale_property_choiceLabels_0":"Positive",
+  "control_Candidature_prenom_label":"prenom",
+  "control_Candidature_statut_property_choiceLabels_4":
+  "Donner avis finale",
+  "control_Candidature_avisProposition_property_choiceLabels_1":"Refuse",
+  "control_Candidature_CID_candidature_label":"CID_candidature",
+  "control_Candidature_statut_property_choiceLabels_5":"Valide",
+  "control_Candidature_avisProposition_property_choiceLabels_0":"Accepte",
+  "control_Candidature_statut_property_choiceLabels_2":
+  "Plannification entretien",
+  "control_Candidature_statut_property_choiceLabels_3":"Entretien",
+  "control_Candidature_statut_property_choiceLabels_0":"Cree",
+  "control_Candidature_poleConcerne_label":"poleConcerne",
+  "control_Candidature_statut_property_choiceLabels_1":"Appel",
+  "pane_messages_label":"Invalid Entries",
+  "control_Candidature_avisProposition_label":"avisProposition",
+  "control_Candidature_adresse_label":"adresse",
+  "control_Candidature_dateCreation_label":"dateCreation",
+  "pane_Candidature_entretiens_label":"entretiens",
+  "control_Candidature_statut_label":"Statut",
+  "form_validation_error_message":
+  "Error in script for validation {0} of Control {1} ({2}): {3}",
+  "control_Candidature_sauterRecrutement_label":
+  "Ce candidat peut sauter le processus de recrutement ?",
+  "control_Candidature_entretiens_avis_property_choiceLabels_1":"Refuse",
+  "control_Candidature_interesseParEntretien_label":
+  "interesseParEntretien",
+  "control_Candidature_entretiens_avis_property_choiceLabels_0":"Accepte",
+  "control_cancel_label":"Cancel",
+  "control_Candidature_entretiens_nomCollaborateur_label":
+  "nomCollaborateur","control_submit_label":"Submit",
+  "control_Candidature_statut_property_choiceLabels_6":"Termine"}

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:XsdNotationProfile="http:///schemas/XsdNotationProfile/_LmHW0PHtEd2z3-vLsCwuEg/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/XsdNotationProfile/_LmHW0PHtEd2z3-vLsCwuEg/1 pathmap://XSD_NOTATION_TYPES/XsdNotation.profile.uml#_LmHW0fHtEd2z3-vLsCwuEg">
+  <uml:Model xmi:id="com.tibco.n2.de.api.exception" name="com.tibco.n2.de.api.exception">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oQIicK1jEem1vK-kP1bIqQ" source="model.metadata">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oQIica1jEem1vK-kP1bIqQ" key="author" value="YSong"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oQIicq1jEem1vK-kP1bIqQ" key="created" value="1563897902615"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oQIic61jEem1vK-kP1bIqQ" key="version" value="5"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ozdR8K1jEem1vK-kP1bIqQ" key="checksum" value="3443493425"/>
+    </eAnnotations>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_mjpyga1jEem1vK-kP1bIqQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_mjpygq1jEem1vK-kP1bIqQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://XSD_NOTATION_TYPES/XsdNotation.profile.uml#_LmHW0fHtEd2z3-vLsCwuEg"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://XSD_NOTATION_TYPES/XsdNotation.profile.uml#_rcgvMcXQEd24G-GaruVVqA?XsdNotationProfile?"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_mjpyg61jEem1vK-kP1bIqQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_mjpyhK1jEem1vK-kP1bIqQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://BOM_TYPES/PrimitiveTypeFacets.profile.uml#_8TmTUstlEdy7K9XeCH7Hrw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://BOM_TYPES/PrimitiveTypeFacets.profile.uml#_3A574HcJEdytQ9AWEvOuug?PrimitiveTypeFacets?"/>
+    </profileApplication>
+  </uml:Model>
+  <XsdNotationProfile:XsdBasedModel xmi:id="_mjqZkK1jEem1vK-kP1bIqQ" base_Package="com.tibco.n2.de.api.exception?com.tibco.n2.de.api.exception?" xsdTargetNamespace="http://exception.api.de.n2.tibco.com" xsdSchemaLocation="de.wsdl;deexception.xsd;de-services.wsdl;deexception.xsd" xsdAttributeForm="unqualified" xsdElementForm="unqualified" xsdStudioVersion="4.0.0.003" bomWsdlSources="de.wsdl,de-services.wsdl"/>
+  <XsdNotationProfile:TopLevelElements xmi:id="_mkPoYK1jEem1vK-kP1bIqQ" base_Package="com.tibco.n2.de.api.exception?com.tibco.n2.de.api.exception?">
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_mkQPcK1jEem1vK-kP1bIqQ" name="InternalServiceFault" targetNamespace="http://exception.api.de.n2.tibco.com" substitutionGroup="">
+      <type xmi:type="uml:Class" href="com.tibco.n2.common.api.exception.bom#com.tibco.n2.common.api.exceptionDetailedException?com.tibco.n2.common.api.exception%3a%3aDetailedException?"/>
+    </elements>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_mkQ2gK1jEem1vK-kP1bIqQ" name="InvalidServiceRequestFault" targetNamespace="http://exception.api.de.n2.tibco.com" substitutionGroup="">
+      <type xmi:type="uml:Class" href="com.tibco.n2.common.api.exception.bom#com.tibco.n2.common.api.exceptionDetailedException?com.tibco.n2.common.api.exception%3a%3aDetailedException?"/>
+    </elements>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_mkRdkK1jEem1vK-kP1bIqQ" name="InvalidEntityReferenceFault" targetNamespace="http://exception.api.de.n2.tibco.com" substitutionGroup="">
+      <type xmi:type="uml:Class" href="com.tibco.n2.common.api.exception.bom#com.tibco.n2.common.api.exceptionDetailedException?com.tibco.n2.common.api.exception%3a%3aDetailedException?"/>
+    </elements>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_mkSEoK1jEem1vK-kP1bIqQ" name="InvalidOrgModelVersionFault" targetNamespace="http://exception.api.de.n2.tibco.com" substitutionGroup="">
+      <type xmi:type="uml:Class" href="com.tibco.n2.common.api.exception.bom#com.tibco.n2.common.api.exceptionDetailedException?com.tibco.n2.common.api.exception%3a%3aDetailedException?"/>
+    </elements>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_mkSrsK1jEem1vK-kP1bIqQ" name="OrgModelDeploymentFault" targetNamespace="http://exception.api.de.n2.tibco.com" substitutionGroup="">
+      <type xmi:type="uml:Class" href="com.tibco.n2.common.api.exception.bom#com.tibco.n2.common.api.exceptionDetailedException?com.tibco.n2.common.api.exception%3a%3aDetailedException?"/>
+    </elements>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_mkT50K1jEem1vK-kP1bIqQ" name="OrgModelUndeploymentFault" targetNamespace="http://exception.api.de.n2.tibco.com" substitutionGroup="">
+      <type xmi:type="uml:Class" href="com.tibco.n2.common.api.exception.bom#com.tibco.n2.common.api.exceptionDetailedException?com.tibco.n2.common.api.exception%3a%3aDetailedException?"/>
+    </elements>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_mkUg4K1jEem1vK-kP1bIqQ" name="InvalidLDAPFault" targetNamespace="http://exception.api.de.n2.tibco.com" substitutionGroup="">
+      <type xmi:type="uml:Class" href="com.tibco.n2.common.api.exception.bom#com.tibco.n2.common.api.exceptionDetailedException?com.tibco.n2.common.api.exception%3a%3aDetailedException?"/>
+    </elements>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_mkVH8K1jEem1vK-kP1bIqQ" name="InvalidLDAPResourceFault" targetNamespace="http://exception.api.de.n2.tibco.com" substitutionGroup="">
+      <type xmi:type="uml:Class" href="com.tibco.n2.common.api.exception.bom#com.tibco.n2.common.api.exceptionDetailedException?com.tibco.n2.common.api.exception%3a%3aDetailedException?"/>
+    </elements>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_mkVvAK1jEem1vK-kP1bIqQ" name="InvalidLDAPSearchFault" targetNamespace="http://exception.api.de.n2.tibco.com" substitutionGroup="">
+      <type xmi:type="uml:Class" href="com.tibco.n2.common.api.exception.bom#com.tibco.n2.common.api.exceptionDetailedException?com.tibco.n2.common.api.exception%3a%3aDetailedException?"/>
+    </elements>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_mkWWEK1jEem1vK-kP1bIqQ" name="InvalidLDAPSourceFault" targetNamespace="http://exception.api.de.n2.tibco.com" substitutionGroup="">
+      <type xmi:type="uml:Class" href="com.tibco.n2.common.api.exception.bom#com.tibco.n2.common.api.exceptionDetailedException?com.tibco.n2.common.api.exception%3a%3aDetailedException?"/>
+    </elements>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_mkW9IK1jEem1vK-kP1bIqQ" name="InvalidLDAPContainerFault" targetNamespace="http://exception.api.de.n2.tibco.com" substitutionGroup="">
+      <type xmi:type="uml:Class" href="com.tibco.n2.common.api.exception.bom#com.tibco.n2.common.api.exceptionDetailedException?com.tibco.n2.common.api.exception%3a%3aDetailedException?"/>
+    </elements>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_mkYLQK1jEem1vK-kP1bIqQ" name="InternalDAOErrorFault" targetNamespace="http://exception.api.de.n2.tibco.com" substitutionGroup="">
+      <type xmi:type="uml:Class" href="com.tibco.n2.common.api.exception.bom#com.tibco.n2.common.api.exceptionDetailedException?com.tibco.n2.common.api.exception%3a%3aDetailedException?"/>
+    </elements>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_mkYyUK1jEem1vK-kP1bIqQ" name="InvalidResourceMappingFault" targetNamespace="http://exception.api.de.n2.tibco.com" substitutionGroup="">
+      <type xmi:type="uml:Class" href="com.tibco.n2.common.api.exception.bom#com.tibco.n2.common.api.exceptionDetailedException?com.tibco.n2.common.api.exception%3a%3aDetailedException?"/>
+    </elements>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_mkZZYK1jEem1vK-kP1bIqQ" name="NoUndeliveredGroupFault" targetNamespace="http://exception.api.de.n2.tibco.com" substitutionGroup="">
+      <type xmi:type="uml:Class" href="com.tibco.n2.common.api.exception.bom#com.tibco.n2.common.api.exceptionDetailedException?com.tibco.n2.common.api.exception%3a%3aDetailedException?"/>
+    </elements>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_mkaAcK1jEem1vK-kP1bIqQ" name="NoSuchNamedEntityFault" targetNamespace="http://exception.api.de.n2.tibco.com" substitutionGroup="">
+      <type xmi:type="uml:Class" href="com.tibco.n2.common.api.exception.bom#com.tibco.n2.common.api.exceptionDetailedException?com.tibco.n2.common.api.exception%3a%3aDetailedException?"/>
+    </elements>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_mkangK1jEem1vK-kP1bIqQ" name="InvalidQueryFault" targetNamespace="http://exception.api.de.n2.tibco.com" substitutionGroup="">
+      <type xmi:type="uml:Class" href="com.tibco.n2.common.api.exception.bom#com.tibco.n2.common.api.exceptionDetailedException?com.tibco.n2.common.api.exception%3a%3aDetailedException?"/>
+    </elements>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_mkbOkK1jEem1vK-kP1bIqQ" name="InvalidModelImportFault" targetNamespace="http://exception.api.de.n2.tibco.com" substitutionGroup="">
+      <type xmi:type="uml:Class" href="com.tibco.n2.common.api.exception.bom#com.tibco.n2.common.api.exceptionDetailedException?com.tibco.n2.common.api.exception%3a%3aDetailedException?"/>
+    </elements>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_mkb1oK1jEem1vK-kP1bIqQ" name="InvalidEntityTypeFault" targetNamespace="http://exception.api.de.n2.tibco.com" substitutionGroup="">
+      <type xmi:type="uml:Class" href="com.tibco.n2.common.api.exception.bom#com.tibco.n2.common.api.exceptionDetailedException?com.tibco.n2.common.api.exception%3a%3aDetailedException?"/>
+    </elements>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_mkdDwK1jEem1vK-kP1bIqQ" name="AssignmentNotAllowedFault" targetNamespace="http://exception.api.de.n2.tibco.com" substitutionGroup="">
+      <type xmi:type="uml:Class" href="com.tibco.n2.common.api.exception.bom#com.tibco.n2.common.api.exceptionDetailedException?com.tibco.n2.common.api.exception%3a%3aDetailedException?"/>
+    </elements>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_mkdq0K1jEem1vK-kP1bIqQ" name="SecurityFault" targetNamespace="http://exception.api.de.n2.tibco.com" substitutionGroup="">
+      <type xmi:type="uml:Class" href="com.tibco.n2.common.api.exception.bom#com.tibco.n2.common.api.exceptionDetailedException?com.tibco.n2.common.api.exception%3a%3aDetailedException?"/>
+    </elements>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_mkeR4K1jEem1vK-kP1bIqQ" name="DirectoryEngineFault" targetNamespace="http://exception.api.de.n2.tibco.com" substitutionGroup="">
+      <type xmi:type="uml:Class" href="com.tibco.n2.common.api.exception.bom#com.tibco.n2.common.api.exceptionDetailedException?com.tibco.n2.common.api.exception%3a%3aDetailedException?"/>
+    </elements>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_mke48K1jEem1vK-kP1bIqQ" name="PersistenceFault" targetNamespace="http://exception.api.de.n2.tibco.com" substitutionGroup="">
+      <type xmi:type="uml:Class" href="com.tibco.n2.common.api.exception.bom#com.tibco.n2.common.api.exceptionDetailedException?com.tibco.n2.common.api.exception%3a%3aDetailedException?"/>
+    </elements>
+  </XsdNotationProfile:TopLevelElements>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_mkuwkK1jEem1vK-kP1bIqQ" base_Element="_mjpyga1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_mkuwka1jEem1vK-kP1bIqQ" base_Element="_mjpyg61jEem1vK-kP1bIqQ"/>
+  <notation:Diagram xmi:id="_oQIidK1jEem1vK-kP1bIqQ" type="Business Object Model" element="com.tibco.n2.de.api.exception?com.tibco.n2.de.api.exception?" name="com.tibco.n2.de.api.exception" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_oQIida1jEem1vK-kP1bIqQ"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_oQIidq1jEem1vK-kP1bIqQ"/>
+  </notation:Diagram>
+</xmi:XMI>

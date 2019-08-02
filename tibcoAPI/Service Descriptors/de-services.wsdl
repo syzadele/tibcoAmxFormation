@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- edited with XMLSpy v2012 rel. 2 sp1 (x64) (http://www.altova.com) by Phill Watson (Tibco Software Limited) --><wsdl:definitions xmlns:channel="http://channeltype.common.n2.tibco.com" xmlns:de="http://base.api.de.bpm.tibco.com" xmlns:dir="http://directory.api.de.bpm.tibco.com" xmlns:dto="http://api.de.n2.tibco.com" xmlns:ex="http://exception.api.de.n2.tibco.com" xmlns:ex2="http://exception.api.common.n2.tibco.com" xmlns:impl="http://services.de.n2.tibco.com" xmlns:ns="http://schemas.xmlsoap.org/soap/encoding/" xmlns:om="http://orgmodel.api.de.bpm.tibco.com" xmlns:orgdto="http://api.organisation.common.n2.tibco.com" xmlns:resource="http://resource.api.de.bpm.tibco.com" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tibex="http://www.tibco.com/bs3.2/extensions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" name="DirectoryEngineService" targetNamespace="http://services.de.n2.tibco.com" tibex:src="file:/C:/Users/YSong/Downloads/public_api/de-services.wsdl">
+	<wsdl:types>
+		<!-- Exceptions -->
+		<xs:schema targetNamespace="http://exception.api.de.n2.tibco.com">
+			<xs:include schemaLocation="deexception.xsd"/>
+		</xs:schema>
+		<!-- Types -->
+		<xs:schema targetNamespace="http://resource.api.de.bpm.tibco.com">
+			<xs:include schemaLocation="de-resource-service.xsd"/>
+		</xs:schema>
+		<xs:schema targetNamespace="http://orgmodel.api.de.bpm.tibco.com">
+			<xs:include schemaLocation="de-orgmodel-service.xsd"/>
+		</xs:schema>
+		<xs:schema targetNamespace="http://directory.api.de.bpm.tibco.com">
+			<xs:include schemaLocation="de-directory-service.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="createResourceRequest">
+		<wsdl:part element="resource:createResource" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="createResourceResponse">
+		<wsdl:part element="resource:createResourceResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="updateResourceRequest">
+		<wsdl:part element="resource:updateResource" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="updateResourceResponse">
+		<wsdl:part element="resource:updateResourceResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="deleteResourceRequest">
+		<wsdl:part element="resource:deleteResource" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="deleteResourceResponse">
+		<wsdl:part element="resource:deleteResourceResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="getResourceRequest">
+		<wsdl:part element="resource:getResource" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="getResourceResponse">
+		<wsdl:part element="resource:getResourceResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="directoryEngineFault">
+		<wsdl:part element="ex:DirectoryEngineFault" name="directoryEngineFault"/>
+	</wsdl:message>
+	<wsdl:message name="securityFault">
+		<wsdl:part element="ex:SecurityFault" name="securityFault"/>
+	</wsdl:message>
+	<wsdl:message name="listOrgModelVersionsRequest">
+		<wsdl:part element="om:listOrgModelVersions" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="listOrgModelVersionsResponse">
+		<wsdl:part element="om:listOrgModelVersionsResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="getOrgModelRequest">
+		<wsdl:part element="om:getOrgModel" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="getOrgModelResponse">
+		<wsdl:part element="om:getOrgModelResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="findResourcesRequest">
+		<wsdl:part element="resource:findResources" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="findResourcesResponse">
+		<wsdl:part element="resource:findResourcesResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="listLdapConnectionsRequest">
+		<wsdl:part element="dir:listLdapConnections" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="listLdapConnectionsResponse">
+		<wsdl:part element="dir:listLdapConnectionsResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="getLdapEntryRequest">
+		<wsdl:part element="dir:getLdapEntry" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="getLdapEntryResponse">
+		<wsdl:part element="dir:getLdapEntryResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="executeLdapQueryRequest">
+		<wsdl:part element="dir:executeLdapQuery" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="executeLdapQueryResponse">
+		<wsdl:part element="dir:executeLdapQueryResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="listAttributeNamesRequest">
+		<wsdl:part element="dir:listAttributeNames" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="listAttributeNamesResponse">
+		<wsdl:part element="dir:listAttributeNamesResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="listContainersRequest">
+		<wsdl:part element="dir:listContainers" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="listContainersResponse">
+		<wsdl:part element="dir:listContainersResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="saveContainerRequest">
+		<wsdl:part element="dir:saveContainer" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="saveContainerResponse">
+		<wsdl:part element="dir:saveContainerResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="listCandidateResourcesRequest">
+		<wsdl:part element="dir:listCandidateResources" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="listCandidateResourcesResponse">
+		<wsdl:part element="dir:listCandidateResourcesResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="getCandidateDetailRequest">
+		<wsdl:part element="dir:getCandidateDetail" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="getCandidateDetailResponse">
+		<wsdl:part element="dir:getCandidateDetailResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="deleteContainerRequest">
+		<wsdl:part element="dir:deleteContainer" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="deleteContainerResponse">
+		<wsdl:part element="dir:deleteContainerResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="getCalendarReferencesRequest">
+		<wsdl:part element="om:getCalendarReferences" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="getCalendarReferencesResponse">
+		<wsdl:part element="om:getCalendarReferencesResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="setCalendarReferencesRequest">
+		<wsdl:part element="om:setCalendarReferences" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="setCalendarReferencesResponse">
+		<wsdl:part element="om:setCalendarReferencesResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="updatePushDestinationsRequest">
+		<wsdl:part element="om:updatePushDestinations" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="updatePushDestinationsResponse">
+		<wsdl:part element="om:updatePushDestinationsResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="setCandidateQueriesRequest">
+		<wsdl:part element="om:setCandidateQueries" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="setCandidateQueriesResponse">
+		<wsdl:part element="om:setCandidateQueriesResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="setExtensionPointsRequest">
+		<wsdl:part element="om:setExtensionPoints" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="setExtensionPointsResponse">
+		<wsdl:part element="om:setExtensionPointsResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="processDynamicOrgRequest">
+		<wsdl:part element="om:processDynamicOrg" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="processDynamicOrgResponse">
+		<wsdl:part element="om:processDynamicOrgResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="getPushDestinationsRequest">
+		<wsdl:part element="om:getPushDestinations" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="getPushDestinationsResponse">
+		<wsdl:part element="om:getPushDestinationsResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="getOrgModelRootsRequest">
+		<wsdl:part element="om:getOrgModelRoots" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="getOrgModelRootsResponse">
+		<wsdl:part element="om:getOrgModelRootsResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="getOrgModelEntityRequest">
+		<wsdl:part element="om:getOrgModelEntity" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="getOrgModelEntityResponse">
+		<wsdl:part element="om:getOrgModelEntityResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="persistenceFault">
+		<wsdl:part element="ex:PersistenceFault" name="persistenceFault"/>
+	</wsdl:message>
+	<wsdl:message name="getDeletedResourcesRequest">
+		<wsdl:part element="resource:getDeletedResources" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="getDeletedResourcesResponse">
+		<wsdl:part element="resource:getDeletedResourcesResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="purgeDeletedResourcesRequest">
+		<wsdl:part element="resource:purgeDeletedResources" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="purgeDeletedResourcesResponse">
+		<wsdl:part element="resource:purgeDeletedResourcesResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="NewMessage"/>
+	<wsdl:message name="NewMessage2"/>
+	<wsdl:portType name="OrgResourceService">
+		<wsdl:operation name="createResource">
+			<wsdl:input message="impl:createResourceRequest" name="createResourceRequest"/>
+			<wsdl:output message="impl:createResourceResponse" name="createResourceResponse"/>
+			<wsdl:fault message="impl:directoryEngineFault" name="DirectoryEngineFault"/>
+			<wsdl:fault message="impl:securityFault" name="SecurityFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="updateResource">
+			<wsdl:input message="impl:updateResourceRequest" name="updateResourceRequest"/>
+			<wsdl:output message="impl:updateResourceResponse" name="updateResourceResponse"/>
+			<wsdl:fault message="impl:directoryEngineFault" name="DirectoryEngineFault"/>
+			<wsdl:fault message="impl:securityFault" name="SecurityFault"/>
+			<wsdl:fault message="impl:persistenceFault" name="PersistenceFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="deleteResource">
+			<wsdl:input message="impl:deleteResourceRequest" name="deleteResourceRequest"/>
+			<wsdl:output message="impl:deleteResourceResponse" name="deleteResourceResponse"/>
+			<wsdl:fault message="impl:directoryEngineFault" name="DirectoryEngineFault"/>
+			<wsdl:fault message="impl:securityFault" name="SecurityFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="getResource">
+			<wsdl:input message="impl:getResourceRequest" name="getResourceRequest"/>
+			<wsdl:output message="impl:getResourceResponse" name="getResourceResponse"/>
+			<wsdl:fault message="impl:directoryEngineFault" name="DirectoryEngineFault"/>
+			<wsdl:fault message="impl:securityFault" name="SecurityFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="findResources">
+			<wsdl:input message="impl:findResourcesRequest" name="findResourcesRequest"/>
+			<wsdl:output message="impl:findResourcesResponse" name="findResourcesResponse"/>
+			<wsdl:fault message="impl:directoryEngineFault" name="DirectoryEngineFault"/>
+			<wsdl:fault message="impl:securityFault" name="SecurityFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="getDeletedResources">
+			<wsdl:input message="impl:getDeletedResourcesRequest" name="getDeletedResourcesRequest"/>
+			<wsdl:output message="impl:getDeletedResourcesResponse" name="getDeletedResourcesResponse"/>
+			<wsdl:fault message="impl:directoryEngineFault" name="DirectoryEngineFault"/>
+			<wsdl:fault message="impl:securityFault" name="SecurityFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="purgeDeletedResources">
+			<wsdl:input message="impl:purgeDeletedResourcesRequest" name="purgeDeletedResourcesRequest"/>
+			<wsdl:output message="impl:purgeDeletedResourcesResponse" name="purgeDeletedResourcesResponse"/>
+			<wsdl:fault message="impl:directoryEngineFault" name="DirectoryEngineFault"/>
+			<wsdl:fault message="impl:securityFault" name="SecurityFault"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="OrgModelService">
+		<wsdl:operation name="listOrgModelVersions">
+			<wsdl:input message="impl:listOrgModelVersionsRequest" name="listOrgModelVersionsRequest"/>
+			<wsdl:output message="impl:listOrgModelVersionsResponse" name="listOrgModelVersionsResponse"/>
+			<wsdl:fault message="impl:directoryEngineFault" name="DirectoryEngineFault"/>
+			<wsdl:fault message="impl:securityFault" name="SecurityFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="getOrgModel">
+			<wsdl:input message="impl:getOrgModelRequest" name="getOrgModelRequest"/>
+			<wsdl:output message="impl:getOrgModelResponse" name="getOrgModelResponse"/>
+			<wsdl:fault message="impl:directoryEngineFault" name="DirectoryEngineFault"/>
+			<wsdl:fault message="impl:securityFault" name="SecurityFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="getCalendarReferences">
+			<wsdl:input message="impl:getCalendarReferencesRequest" name="getCalendarReferencesRequest"/>
+			<wsdl:output message="impl:getCalendarReferencesResponse" name="getCalendarReferencesResponse"/>
+			<wsdl:fault message="impl:directoryEngineFault" name="DirectoryEngineFault"/>
+			<wsdl:fault message="impl:securityFault" name="SecurityFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="setCalendarReferences">
+			<wsdl:input message="impl:setCalendarReferencesRequest" name="setCalendarReferencesRequest">
+				<wsdl:documentation>Request message (uses org:setCalendarReferences element):Assigns calendar references to the identified organization model entity. </wsdl:documentation>
+			</wsdl:input>
+			<wsdl:output message="impl:setCalendarReferencesResponse" name="setCalendarReferencesResponse">
+				<wsdl:documentation>Response message (uses org:setCalendarReferencesResponse element): Returns a fault if it was an unsucessful assignment.</wsdl:documentation>
+			</wsdl:output>
+			<wsdl:fault message="impl:directoryEngineFault" name="DirectoryEngineFault"/>
+			<wsdl:fault message="impl:securityFault" name="SecurityFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="updatePushDestinations">
+			<wsdl:input message="impl:updatePushDestinationsRequest" name="updatePushDestinationsRequest">
+				<wsdl:documentation>Request message (uses org:updatePushDestinations element):Updates, creates and/or removes push destination entries for the identified organization model entity.</wsdl:documentation>
+			</wsdl:input>
+			<wsdl:output message="impl:updatePushDestinationsResponse" name="updatePushDestinationsResponse">
+				<wsdl:documentation>Response message (uses org:updatePushDestinationsResponse element): Empty acknowledgment reponse. Failures are reported as service faults.</wsdl:documentation>
+			</wsdl:output>
+			<wsdl:fault message="impl:directoryEngineFault" name="DirectoryEngineFault"/>
+			<wsdl:fault message="impl:securityFault" name="SecurityFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="setCandidateQueries">
+			<wsdl:input message="impl:setCandidateQueriesRequest" name="setCandidateQueriesRequest">
+				<wsdl:documentation>Request message (uses org:setCandidateQueries element):Sets, or updates, the Candidate Query assignments to identified org-model entities. Each org-model entity may only hold one Candidate Query. Any existing assignment will be ovewritten by a new assignment. Candidate Queries span all org-model versions in which the identified org-model entity exists. Therefore, the request does not include a model version.</wsdl:documentation>
+			</wsdl:input>
+			<wsdl:output message="impl:setCandidateQueriesResponse" name="setCandidateQueriesResponse">
+				<wsdl:documentation>Response message (uses org:setCandidateQueriesResponse element): Empty acknowledgment reponse. Failures are reported as service faults.</wsdl:documentation>
+			</wsdl:output>
+			<wsdl:fault message="impl:directoryEngineFault" name="DirectoryEngineFault"/>
+			<wsdl:fault message="impl:securityFault" name="SecurityFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="setExtensionPoints">
+			<wsdl:input message="impl:setExtensionPointsRequest" name="setExtensionPointsRequest">
+				<wsdl:documentation>Request message (uses org:setExtensionPoints element):Sets, or updates, the configurations for the identified Organisation Model Extension Point entities. Configurations apply to only the model version specified in the request elements.
+Any existing configuration for the identified entities will be overwritten. Attempting to set the configuration for an org-model entity to which the caller does not have access, will cause a SecurityFault.
+Changing an existing Extension Point configuration may invalidate any Model Template Instances that have previously been generated using the previous configuration; causing those invalud Model Template Instances to be deleted.</wsdl:documentation>
+			</wsdl:input>
+			<wsdl:output message="impl:setExtensionPointsResponse" name="setExtensionPointsResponse"/>
+			<wsdl:fault message="impl:directoryEngineFault" name="DirectoryEngineFault"/>
+			<wsdl:fault message="impl:securityFault" name="SecurityFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="processDynamicOrg">
+			<wsdl:input message="impl:processDynamicOrgRequest" name="processDynamicOrgRequest">
+				<wsdl:documentation>Requests that the processing of the Extension Points and Candidate Queries be performed as soon as possible. The request is placed on a queue for immediate processing by the lead node. The request will not be processed by the thread on which the request was received, and this service will return immediately.</wsdl:documentation>
+			</wsdl:input>
+			<wsdl:output message="impl:processDynamicOrgResponse" name="processDynamicOrgResponse"/>
+			<wsdl:fault message="impl:directoryEngineFault" name="DirectoryEngineFault"/>
+			<wsdl:fault message="impl:securityFault" name="SecurityFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="getPushDestinations">
+			<wsdl:input message="impl:getPushDestinationsRequest" name="getPushDestinationsRequest">
+				<wsdl:documentation>Request message (uses org:getPushDestinations element): Specify the organization model entities for whom push destinations should be retrieved.</wsdl:documentation>
+			</wsdl:input>
+			<wsdl:output message="impl:getPushDestinationsResponse" name="getPushDestinationsResponse">
+				<wsdl:documentation>Response message (uses org:getPushDestinationsResponse element): Lists the currently defined push destinations for each specified organization model entity.</wsdl:documentation>
+			</wsdl:output>
+			<wsdl:fault message="impl:directoryEngineFault" name="DirectoryEngineFault"/>
+			<wsdl:fault message="impl:securityFault" name="SecurityFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="getOrgModelRoots">
+			<wsdl:input message="impl:getOrgModelRootsRequest" name="getOrgModelRootsRequest">
+				<wsdl:documentation>Request message (uses org:getOrgModelRoots element):Returns the details of the entities that form the root elements of the organzation model identified by the given major version.</wsdl:documentation>
+			</wsdl:input>
+			<wsdl:output message="impl:getOrgModelRootsResponse" name="getOrgModelRootsResponse">
+				<wsdl:documentation>Response message (uses org:getOrgModelRootsResponse element): Returns a fault if caller is not authorised.</wsdl:documentation>
+			</wsdl:output>
+			<wsdl:fault message="impl:directoryEngineFault" name="DirectoryEngineFault"/>
+			<wsdl:fault message="impl:securityFault" name="SecurityFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="getOrgModelEntity">
+			<wsdl:input message="impl:getOrgModelEntityRequest" name="getOrgModelEntityRequest">
+				<wsdl:documentation>Request message (uses org:getOrgModelEntity element):Returns the details of the org-model entity identified by the given major version and GUID.</wsdl:documentation>
+			</wsdl:input>
+			<wsdl:output message="impl:getOrgModelEntityResponse" name="getOrgModelEntityResponse">
+				<wsdl:documentation>Response message (uses org:getOrgModelEntityResponse element): Returns a fault if caller is not authorised to access entity.</wsdl:documentation>
+			</wsdl:output>
+			<wsdl:fault message="impl:directoryEngineFault" name="DirectoryEngineFault"/>
+			<wsdl:fault message="impl:securityFault" name="SecurityFault"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="DirectoryService">
+		<wsdl:documentation>Get information about LDAP containers and manage LDAP entries.</wsdl:documentation>
+		<wsdl:operation name="listLdapConnections">
+			<wsdl:documentation>Lists details of all the LDAP connection shared resources available to Directory Engine.</wsdl:documentation>
+			<wsdl:input message="impl:listLdapConnectionsRequest" name="listLdapConnectionsRequest">
+				<wsdl:documentation>Request message (uses dir:listLdapConnections element): Requests a list of all available LDAP connections.</wsdl:documentation>
+			</wsdl:input>
+			<wsdl:output message="impl:listLdapConnectionsResponse" name="listLdapConnectionsResponse">
+				<wsdl:documentation>Response message (uses dir:listLdapConnectionsResponse element): Returns a list of all available LDAP connections and their URLs.</wsdl:documentation>
+			</wsdl:output>
+			<wsdl:fault message="impl:directoryEngineFault" name="DirectoryEngineFault"/>
+			<wsdl:fault message="impl:securityFault" name="SecurityFault">
+				<wsdl:documentation>Error message (uses ex:SecurityFault): The request failed due to authentication or authorization failure.</wsdl:documentation>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getLdapEntry">
+			<wsdl:documentation>Gets details of a specified LDAP entry.</wsdl:documentation>
+			<wsdl:input message="impl:getLdapEntryRequest" name="getLdapEntryRequest">
+				<wsdl:documentation>Request message (uses dir:getLdapEntry element): Identifies an LDAP entry and requests details.</wsdl:documentation>
+			</wsdl:input>
+			<wsdl:output message="impl:getLdapEntryResponse" name="getLdapEntryResponse">
+				<wsdl:documentation>Response message (uses dir:getLdapEntryResponse element): Gives details of the specified LDAP entry.</wsdl:documentation>
+			</wsdl:output>
+			<wsdl:fault message="impl:directoryEngineFault" name="DirectoryEngineFault"/>
+			<wsdl:fault message="impl:securityFault" name="SecurityFault">
+				<wsdl:documentation>Error message (uses ex:SecurityFault): The request failed due to authentication or authorization failure.</wsdl:documentation>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="executeLdapQuery">
+			<wsdl:documentation>Enters an LDAP query and returns the Distinguished Names (DNs) of all those entries that match the query. The query traverses all sub-tree nodes starting from the node identified by the base-dn attribute.</wsdl:documentation>
+			<wsdl:input message="impl:executeLdapQueryRequest" name="executeLdapQueryRequest">
+				<wsdl:documentation>Request message (uses dir:executeLdapQuery element): Identifies an LDAP connection shared resource and specifies the query to be resolved against that resource.</wsdl:documentation>
+			</wsdl:input>
+			<wsdl:output message="impl:executeLdapQueryResponse" name="executeLdapQueryResponse">
+				<wsdl:documentation>Response message (uses dir:executeLdapQueryResponse element): Lists the DNs of all LDAP entries that match the given LDAP query.</wsdl:documentation>
+			</wsdl:output>
+			<wsdl:fault message="impl:directoryEngineFault" name="DirectoryEngineFault"/>
+			<wsdl:fault message="impl:securityFault" name="SecurityFault">
+				<wsdl:documentation>Error message (uses ex:SecurityFault): The request failed due to authentication or authorization failure.</wsdl:documentation>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="listAttributeNames">
+			<wsdl:documentation>Lists the names of those attributes that are available from the LDAP entries associated with the named LDAP connection</wsdl:documentation>
+			<wsdl:input message="impl:listAttributeNamesRequest" name="listAttributeNamesRequest">
+				<wsdl:documentation>Request message (uses dir:listAttributeNames element): Identifies an LDAP connection by its alias to be searched for LDAP entries. The search can be further limited by specifying a base-dn, an LDAP query as a filter, and a sample size.</wsdl:documentation>
+			</wsdl:input>
+			<wsdl:output message="impl:listAttributeNamesResponse" name="listAttributeNamesResponse">
+				<wsdl:documentation>Response message (uses dir:listAttributeNamesResponse element): Lists the requested attribute names and also includes the number of LDAP entries identified in the search.</wsdl:documentation>
+			</wsdl:output>
+			<wsdl:fault message="impl:directoryEngineFault" name="DirectoryEngineFault"/>
+			<wsdl:fault message="impl:securityFault" name="SecurityFault">
+				<wsdl:documentation>Error message (uses ex:SecurityFault): The request failed due to authentication or authorization failure.</wsdl:documentation>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="listContainers">
+			<wsdl:documentation>Lists the configuration detail of all LDAP containers to which the user has access permission. Access can be restricted by the Organizations to which the calling user is associated.</wsdl:documentation>
+			<wsdl:input message="impl:listContainersRequest" name="listContainersRequest">
+				<wsdl:documentation>Request message (uses dir:listContainers element): Requests a list of LDAP containers. No parameters are required for this request. </wsdl:documentation>
+			</wsdl:input>
+			<wsdl:output message="impl:listContainersResponse" name="listContainersResponse">
+				<wsdl:documentation>Response message (uses dir:listContainersResponse element): Returns a list with the full details of the LDAP containers, including the LDAP sources and resource.</wsdl:documentation>
+			</wsdl:output>
+			<wsdl:fault message="impl:directoryEngineFault" name="DirectoryEngineFault"/>
+			<wsdl:fault message="impl:securityFault" name="SecurityFault">
+				<wsdl:documentation>Error message (uses ex:SecurityFault): The request failed due to authentication or authorization failure.</wsdl:documentation>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="saveContainer">
+			<wsdl:documentation>Saves the given LDAP container configuration. You can use this operation to create a new LDAP container or to update an existing one.</wsdl:documentation>
+			<wsdl:input message="impl:saveContainerRequest" name="saveContainerRequest">
+				<wsdl:documentation>Request message (uses dir:saveContainer element): Defines the primary LDAP source for the container, and optionally any secondary LDAP source. Optionally also identifies the organizations to which access is restricted.</wsdl:documentation>
+			</wsdl:input>
+			<wsdl:output message="impl:saveContainerResponse" name="saveContainerResponse">
+				<wsdl:documentation>Response message (uses directoryservice:saveContainerResponse element):Returns the unique ID of the newly-created or updated LDAP container.</wsdl:documentation>
+			</wsdl:output>
+			<wsdl:fault message="impl:directoryEngineFault" name="DirectoryEngineFault"/>
+			<wsdl:fault message="impl:securityFault" name="SecurityFault">
+				<wsdl:documentation>Error message (uses ex:SecurityFault): The request failed due to authentication or authorization failure.</wsdl:documentation>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="listCandidateResources">
+			<wsdl:documentation>Lists the candidate resources (including existing resources) from the identified LDAP container. The entries in the response are suitable to be passed to the createResource operation in OrgResourceService.</wsdl:documentation>
+			<wsdl:input message="impl:listCandidateResourcesRequest" name="listCandidateResourcesRequest">
+				<wsdl:documentation>Request message (uses dir:listCandidateResources element):Identifies the LDAP container that is to be listed, and what entries should be included.</wsdl:documentation>
+			</wsdl:input>
+			<wsdl:output message="impl:listCandidateResourcesResponse" name="listCandidateResourcesResponse">
+				<wsdl:documentation>Response message (uses dir:listCandidateResourcesResponse element):Returns a list of candidate resources from the requested container.</wsdl:documentation>
+			</wsdl:output>
+			<wsdl:fault message="impl:directoryEngineFault" name="DirectoryEngineFault"/>
+			<wsdl:fault message="impl:securityFault" name="SecurityFault">
+				<wsdl:documentation>Error message (uses ex:SecurityFault): The request failed due to authentication or authorization failure.</wsdl:documentation>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getCandidateDetail">
+			<wsdl:documentation>Gets additional information about one candidate listed by the listCandidateResources operation.</wsdl:documentation>
+			<wsdl:input message="impl:getCandidateDetailRequest" name="getCandidateDetailRequest">
+				<wsdl:documentation>Request message (uses dir:getCandidateDetail element):Identifies the candidate.</wsdl:documentation>
+			</wsdl:input>
+			<wsdl:output message="impl:getCandidateDetailResponse" name="getCandidateDetailResponse">
+				<wsdl:documentation>Response message (uses dir:getCandidateDetailResponse element):If the candidate is one for which a resource already exists, the GUID and the name of that existing resource are given in the response. If not, the name that will be assigned (by default) to the resource created from this candidate entry is given.</wsdl:documentation>
+			</wsdl:output>
+			<wsdl:fault message="impl:directoryEngineFault" name="DirectoryEngineFault"/>
+			<wsdl:fault message="impl:securityFault" name="SecurityFault">
+				<wsdl:documentation>Error message (uses ex:SecurityFault): The request failed due to authentication or authorization failure.</wsdl:documentation>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="deleteContainer">
+			<wsdl:documentation>Deletes the configuration of the identified LDAP container.</wsdl:documentation>
+			<wsdl:input message="impl:deleteContainerRequest" name="deleteContainerRequest">
+				<wsdl:documentation>Request message (uses dir:deleteContainer element):Requests deletion of the identified LDAP container.</wsdl:documentation>
+			</wsdl:input>
+			<wsdl:output message="impl:deleteContainerResponse" name="deleteContainerResponse">
+				<wsdl:documentation>Response message (uses dir:deleteContainerResponse element):Returns true or false.</wsdl:documentation>
+			</wsdl:output>
+			<wsdl:fault message="impl:directoryEngineFault" name="DirectoryEngineFault"/>
+			<wsdl:fault message="impl:securityFault" name="SecurityFault">
+				<wsdl:documentation>Error message (uses ex:SecurityFault): The request failed due to authentication or authorization failure.</wsdl:documentation>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="OrgResourceService_EP" type="impl:OrgResourceService">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="createResource">
+			<soap:operation soapAction="createResource" style="document"/>
+			<wsdl:input name="createResourceRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="createResourceResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DirectoryEngineFault">
+				<soap:fault name="DirectoryEngineFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="SecurityFault">
+				<soap:fault name="SecurityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="updateResource">
+			<soap:operation soapAction="updateResource" style="document"/>
+			<wsdl:input name="updateResourceRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="updateResourceResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DirectoryEngineFault">
+				<soap:fault name="DirectoryEngineFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="SecurityFault">
+				<soap:fault name="SecurityFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="PersistenceFault">
+				<soap:fault name="PersistenceFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="deleteResource">
+			<soap:operation soapAction="deleteResource" style="document"/>
+			<wsdl:input name="deleteResourceRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="deleteResourceResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DirectoryEngineFault">
+				<soap:fault name="DirectoryEngineFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="SecurityFault">
+				<soap:fault name="SecurityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getResource">
+			<soap:operation soapAction="getResource" style="document"/>
+			<wsdl:input name="getResourceRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getResourceResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DirectoryEngineFault">
+				<soap:fault name="DirectoryEngineFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="SecurityFault">
+				<soap:fault name="SecurityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="findResources">
+			<soap:operation soapAction="findResources" style="document"/>
+			<wsdl:input name="findResourcesRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="findResourcesResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DirectoryEngineFault">
+				<soap:fault name="DirectoryEngineFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="SecurityFault">
+				<soap:fault name="SecurityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getDeletedResources">
+			<soap:operation soapAction="getDeletedResources" style="document"/>
+			<wsdl:input name="getDeletedResourcesRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getDeletedResourcesResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DirectoryEngineFault">
+				<soap:fault name="DirectoryEngineFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="SecurityFault">
+				<soap:fault name="SecurityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="purgeDeletedResources">
+			<soap:operation soapAction="purgeDeletedResources" style="document"/>
+			<wsdl:input name="purgeDeletedResourcesRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="purgeDeletedResourcesResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DirectoryEngineFault">
+				<soap:fault name="DirectoryEngineFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="SecurityFault">
+				<soap:fault name="SecurityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="OrgModelService_EP" type="impl:OrgModelService">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="listOrgModelVersions">
+			<soap:operation soapAction="listOrgModelVersions" style="document"/>
+			<wsdl:input name="listOrgModelVersionsRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="listOrgModelVersionsResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DirectoryEngineFault">
+				<soap:fault name="DirectoryEngineFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="SecurityFault">
+				<soap:fault name="SecurityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getOrgModel">
+			<soap:operation soapAction="getOrgModel" style="document"/>
+			<wsdl:input name="getOrgModelRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getOrgModelResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DirectoryEngineFault">
+				<soap:fault name="DirectoryEngineFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="SecurityFault">
+				<soap:fault name="SecurityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getCalendarReferences">
+			<soap:operation soapAction="getCalendarReferences" style="document"/>
+			<wsdl:input name="getCalendarReferencesRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getCalendarReferencesResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DirectoryEngineFault">
+				<soap:fault name="DirectoryEngineFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="SecurityFault">
+				<soap:fault name="SecurityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="setCalendarReferences">
+			<soap:operation soapAction="setCalendarReferences" style="document"/>
+			<wsdl:input name="setCalendarReferencesRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="setCalendarReferencesResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DirectoryEngineFault">
+				<soap:fault name="DirectoryEngineFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="SecurityFault">
+				<soap:fault name="SecurityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="updatePushDestinations">
+			<soap:operation soapAction="updatePushDestinations" style="document"/>
+			<wsdl:input name="updatePushDestinationsRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="updatePushDestinationsResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DirectoryEngineFault">
+				<soap:fault name="DirectoryEngineFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="SecurityFault">
+				<soap:fault name="SecurityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="setCandidateQueries">
+			<soap:operation soapAction="setCandidateQueries" style="document"/>
+			<wsdl:input name="setCandidateQueriesRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="setCandidateQueriesResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DirectoryEngineFault">
+				<soap:fault name="DirectoryEngineFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="SecurityFault">
+				<soap:fault name="SecurityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="setExtensionPoints">
+			<soap:operation soapAction="setExtensionPoints" style="document"/>
+			<wsdl:input name="setExtensionPointsRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="setExtensionPointsResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DirectoryEngineFault">
+				<soap:fault name="DirectoryEngineFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="SecurityFault">
+				<soap:fault name="SecurityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="processDynamicOrg">
+			<soap:operation soapAction="processDynamicOrg" style="document"/>
+			<wsdl:input name="processDynamicOrgRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="processDynamicOrgResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DirectoryEngineFault">
+				<soap:fault name="DirectoryEngineFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="SecurityFault">
+				<soap:fault name="SecurityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getPushDestinations">
+			<soap:operation soapAction="getPushDestinations" style="document"/>
+			<wsdl:input name="getPushDestinationsRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getPushDestinationsResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DirectoryEngineFault">
+				<soap:fault name="DirectoryEngineFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="SecurityFault">
+				<soap:fault name="SecurityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getOrgModelRoots">
+			<soap:operation soapAction="getOrgModelRoots" style="document"/>
+			<wsdl:input name="getOrgModelRootsRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getOrgModelRootsResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DirectoryEngineFault">
+				<soap:fault name="DirectoryEngineFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="SecurityFault">
+				<soap:fault name="SecurityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getOrgModelEntity">
+			<soap:operation soapAction="getOrgModelEntity" style="document"/>
+			<wsdl:input name="getOrgModelEntityRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getOrgModelEntityResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DirectoryEngineFault">
+				<soap:fault name="DirectoryEngineFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="SecurityFault">
+				<soap:fault name="SecurityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="DirectoryService_EP" type="impl:DirectoryService">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="listLdapConnections">
+			<soap:operation soapAction="listLdapConnections" style="document"/>
+			<wsdl:input name="listLdapConnectionsRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="listLdapConnectionsResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DirectoryEngineFault">
+				<soap:fault name="DirectoryEngineFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="SecurityFault">
+				<soap:fault name="SecurityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getLdapEntry">
+			<soap:operation soapAction="getLdapEntry" style="document"/>
+			<wsdl:input name="getLdapEntryRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getLdapEntryResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DirectoryEngineFault">
+				<soap:fault name="DirectoryEngineFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="SecurityFault">
+				<soap:fault name="SecurityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="executeLdapQuery">
+			<soap:operation soapAction="executeLdapQuery" style="document"/>
+			<wsdl:input name="executeLdapQueryRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="executeLdapQueryResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DirectoryEngineFault">
+				<soap:fault name="DirectoryEngineFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="SecurityFault">
+				<soap:fault name="SecurityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="listAttributeNames">
+			<soap:operation soapAction="listAttributeNames" style="document"/>
+			<wsdl:input name="listAttributeNamesRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="listAttributeNamesResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DirectoryEngineFault">
+				<soap:fault name="DirectoryEngineFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="SecurityFault">
+				<soap:fault name="SecurityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="listContainers">
+			<soap:operation soapAction="listContainers" style="document"/>
+			<wsdl:input name="listContainersRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="listContainersResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DirectoryEngineFault">
+				<soap:fault name="DirectoryEngineFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="SecurityFault">
+				<soap:fault name="SecurityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="saveContainer">
+			<soap:operation soapAction="saveContainer" style="document"/>
+			<wsdl:input name="saveContainerRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="saveContainerResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DirectoryEngineFault">
+				<soap:fault name="DirectoryEngineFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="SecurityFault">
+				<soap:fault name="SecurityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="listCandidateResources">
+			<soap:operation soapAction="listCandidateResources" style="document"/>
+			<wsdl:input name="listCandidateResourcesRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="listCandidateResourcesResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DirectoryEngineFault">
+				<soap:fault name="DirectoryEngineFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="SecurityFault">
+				<soap:fault name="SecurityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getCandidateDetail">
+			<soap:operation soapAction="getCandidateDetail" style="document"/>
+			<wsdl:input name="getCandidateDetailRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getCandidateDetailResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DirectoryEngineFault">
+				<soap:fault name="DirectoryEngineFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="SecurityFault">
+				<soap:fault name="SecurityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="deleteContainer">
+			<soap:operation soapAction="deleteContainer" style="document"/>
+			<wsdl:input name="deleteContainerRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="deleteContainerResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DirectoryEngineFault">
+				<soap:fault name="DirectoryEngineFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="SecurityFault">
+				<soap:fault name="SecurityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="OrgResourceService">
+		<wsdl:port binding="impl:OrgResourceService_EP" name="OrgResourceService_EP">
+			<soap:address location="http://localhost:8080/amxbpm/OrgResourceService"/>
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:service name="OrgModelService">
+		<wsdl:port binding="impl:OrgModelService_EP" name="OrgModelService_EP">
+			<soap:address location="http://localhost:8080/amxbpm/OrgModelService"/>
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:service name="DirectoryService">
+		<wsdl:port binding="impl:DirectoryService_EP" name="DirectoryService_EP">
+			<soap:address location="http://localhost:8080/amxbpm/DirectoryService"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,16 @@
+
+/**
+ * Forms 3.1.0 V12 compliant.
+ */
+    .f2fafbdcc-ac58-4a22-90ca-c27b504e7e56 .pane_toolbar > .label {
+        display:none !important;
+    }
+    .f2fafbdcc-ac58-4a22-90ca-c27b504e7e56 .pane_messages > .label {
+        display:none !important;
+    }
+    .f2fafbdcc-ac58-4a22-90ca-c27b504e7e56 .pane_Candidature_entretiens__add_delete > .label {
+        display:none !important;
+    }
+    .f2fafbdcc-ac58-4a22-90ca-c27b504e7e56 .pane_content > .label {
+        
+display:block !important;    }

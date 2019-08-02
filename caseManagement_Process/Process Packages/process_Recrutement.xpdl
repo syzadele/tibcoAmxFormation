@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xpdl2:Package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:database="http://www.tibco.com/XPD/database1.0.0" xmlns:eaijava="http://www.tibco.com/XPD/EAIJava1.0.0" xmlns:email="http://www.tibco.com/XPD/email1.0.0" xmlns:iProcessExt="http://www.tibco.com/XPD/iProcessExt1.0.0" xmlns:orchestrator="http://www.tibco.com/XPD/orchestrator1.0.0" xmlns:order="http://www.tibco.com/XPD/order1.0.0" xmlns:simulation="http://www.tibco.com/xpd/Simulation1.0.1" xmlns:xpdExt="http://www.tibco.com/XPD/xpdExtension1.0.0" xmlns:xpdl2="http://www.wfmc.org/2008/XPDL2.1" xsi:schemaLocation="http://www.wfmc.org/2008/XPDL2.1 http://www.wfmc.org/standards/bpmnxpdl_31.xsd" Id="_nRPP0LLKEemV1ZxU_L0F9A" xpdExt:DisplayName="process_Recrutement" Name="process_Recrutement">
+  <xpdl2:PackageHeader xpdExt:Language="fr_FR">
+    <xpdl2:XPDLVersion>2.1</xpdl2:XPDLVersion>
+    <xpdl2:Vendor>TIBCO</xpdl2:Vendor>
+    <xpdl2:Created>2019-07-30</xpdl2:Created>
+    <xpdl2:Description></xpdl2:Description>
+    <xpdl2:Documentation></xpdl2:Documentation>
+    <xpdl2:CostUnit>EUR</xpdl2:CostUnit>
+  </xpdl2:PackageHeader>
+  <xpdl2:RedefinableHeader PublicationStatus="UNDER_REVISION">
+    <xpdl2:Author>YSong</xpdl2:Author>
+    <xpdl2:Version>1.0.0.qualifier</xpdl2:Version>
+  </xpdl2:RedefinableHeader>
+  <xpdl2:Participants>
+    <xpdl2:Participant Id="_Qh2mMLNsEemwzsImCRebZQ" xpdExt:DisplayName="Charge de recrutement" Name="Charge de recrutement">
+      <xpdl2:ParticipantType Type="RESOURCE"/>
+      <xpdl2:ExternalReference location="rs2iOrganisation.om" namespace="http://www.tibco.com/om/1.0" xref="_JEjwAKltEemWaOmJWd3_OQ"/>
+    </xpdl2:Participant>
+    <xpdl2:Participant Id="_Eql-ULOuEemwHpDuGnRDDA" xpdExt:DisplayName="process_ChargeDeRecrutement (API Activity EndPoint)" Name="process_ChargeDeRecrutement">
+      <xpdl2:ParticipantType Type="SYSTEM"/>
+      <xpdExt:ParticipantSharedResource>
+        <xpdExt:WebService>
+          <xpdExt:Inbound>
+            <xpdExt:VirtualBinding Name="Virtualization"/>
+            <xpdExt:SoapHttpBinding Name="SoapOverHttp" BindingStyle="RpcLiteral" SoapVersion="1.1" EndpointUrlPath="/process_Recrutement/process_ChargeDeRecrutement" HttpConnectorInstanceName="httpConnector"/>
+          </xpdExt:Inbound>
+        </xpdExt:WebService>
+      </xpdExt:ParticipantSharedResource>
+    </xpdl2:Participant>
+    <xpdl2:Participant Id="_npxmILQ_Eemxc-TWSNhKXA" xpdExt:DisplayName="PersonnePourEntretien (API Activity EndPoint)" Name="PersonnePourEntretien">
+      <xpdl2:ParticipantType Type="SYSTEM"/>
+      <xpdExt:ParticipantSharedResource>
+        <xpdExt:WebService>
+          <xpdExt:Inbound>
+            <xpdExt:VirtualBinding Name="Virtualization"/>
+            <xpdExt:SoapHttpBinding Name="SoapOverHttp" BindingStyle="RpcLiteral" SoapVersion="1.1" EndpointUrlPath="/process_Recrutement/PersonnePourEntretien" HttpConnectorInstanceName="httpConnector"/>
+          </xpdExt:Inbound>
+        </xpdExt:WebService>
+      </xpdExt:ParticipantSharedResource>
+    </xpdl2:Participant>
+  </xpdl2:Participants>
+  <xpdl2:Pools>
+    <xpdl2:Pool Id="_LOCjcLLNEemV1ZxU_L0F9A" xpdExt:DisplayName="Entretien" Name="Entretien" BoundaryVisible="true" Process="_LN-5ELLNEemV1ZxU_L0F9A">
+      <xpdl2:Lanes>
+        <xpdl2:Lane Id="_LOCjcbLNEemV1ZxU_L0F9A" xpdExt:DisplayName="PersonneAvecCapaciteEntretien" Name="PersonneAvecCapaciteEntretien">
+          <xpdl2:NodeGraphicsInfos>
+            <xpdl2:NodeGraphicsInfo Height="318.0"/>
+          </xpdl2:NodeGraphicsInfos>
+        </xpdl2:Lane>
+      </xpdl2:Lanes>
+      <xpdl2:NodeGraphicsInfos>
+        <xpdl2:NodeGraphicsInfo BorderColor="0,0,128" FillColor="223,179,0" IsVisible="true"/>
+      </xpdl2:NodeGraphicsInfos>
+    </xpdl2:Pool>
+    <xpdl2:Pool Id="_slEg8LLKEemV1ZxU_L0F9A" xpdExt:DisplayName="Recrutement" Name="Recrutement" BoundaryVisible="true" Process="_nRS6MLLKEemV1ZxU_L0F9A">
+      <xpdl2:Lanes>
+        <xpdl2:Lane Id="_slEg8bLKEemV1ZxU_L0F9A" xpdExt:DisplayName="Charge de recrutement" Name="Chargederecrutement">
+          <xpdl2:NodeGraphicsInfos>
+            <xpdl2:NodeGraphicsInfo Height="343.0"/>
+          </xpdl2:NodeGraphicsInfos>
+        </xpdl2:Lane>
+      </xpdl2:Lanes>
+      <xpdl2:NodeGraphicsInfos>
+        <xpdl2:NodeGraphicsInfo BorderColor="0,0,128" FillColor="223,179,0" IsVisible="true"/>
+      </xpdl2:NodeGraphicsInfos>
+    </xpdl2:Pool>
+  </xpdl2:Pools>
+  <xpdl2:WorkflowProcesses>
+    <xpdl2:WorkflowProcess Id="_nRS6MLLKEemV1ZxU_L0F9A" xpdExt:DisplayName="process_ChargeDeRecrutement" xpdExt:ApiEndPointParticipant="_Eql-ULOuEemwHpDuGnRDDA" Name="process_ChargeDeRecrutement">
+      <xpdl2:ProcessHeader>
+        <xpdl2:Description></xpdl2:Description>
+      </xpdl2:ProcessHeader>
+      <xpdl2:FormalParameters>
+        <xpdl2:FormalParameter Id="_R1kK0LOuEemwHpDuGnRDDA" Name="CandidatureId" Mode="IN" Required="true" xpdExt:DisplayName="Candidature Id">
+          <xpdl2:DataType>
+            <xpdl2:BasicType Type="INTEGER">
+              <xpdl2:Precision>9</xpdl2:Precision>
+            </xpdl2:BasicType>
+          </xpdl2:DataType>
+        </xpdl2:FormalParameter>
+      </xpdl2:FormalParameters>
+      <xpdl2:DataFields>
+        <xpdl2:DataField Id="_FZefYLNzEemwzsImCRebZQ" xpdExt:DisplayName="Candidature" Name="Candidature" ReadOnly="false">
+          <xpdl2:DataType>
+            <xpdl2:ExternalReference location="CaseManagementDataModel.bom" namespace="http://www.eclipse.org/uml2/5.0.0/UML" xref="_2oBk8LIMEemj-ayD1bfv5w"/>
+          </xpdl2:DataType>
+          <xpdl2:InitialValue/>
+        </xpdl2:DataField>
+        <xpdl2:DataField Id="_Eq_cYLOtEemwHpDuGnRDDA" xpdExt:DisplayName="CandidatureID correlation" Name="CandidatureIDcorrelation" ReadOnly="true" Correlation="true">
+          <xpdl2:DataType>
+            <xpdl2:BasicType Type="INTEGER">
+              <xpdl2:Precision>9</xpdl2:Precision>
+            </xpdl2:BasicType>
+          </xpdl2:DataType>
+        </xpdl2:DataField>
+        <xpdl2:DataField Id="_zMfEYLLLEemV1ZxU_L0F9A" xpdExt:DisplayName="CandidatureRef" Name="CandidatureRef" IsArray="false" ReadOnly="false">
+          <xpdl2:DataType>
+            <xpdl2:RecordType>
+              <xpdl2:Member>
+                <xpdl2:ExternalReference location="CaseManagementDataModel.bom" namespace="http://www.eclipse.org/uml2/5.0.0/UML" xref="_2oBk8LIMEemj-ayD1bfv5w"/>
+              </xpdl2:Member>
+            </xpdl2:RecordType>
+          </xpdl2:DataType>
+        </xpdl2:DataField>
+      </xpdl2:DataFields>
+      <xpdl2:Activities>
+        <xpdl2:Activity Id="_slEg8rLKEemV1ZxU_L0F9A" Name="DemarrerProcessusRecrutement" xpdExt:DisplayName="Démarrer Processus Recrutement" xpdExt:Visibility="Private">
+          <xpdl2:Event>
+            <xpdl2:StartEvent xpdExt:ImplementationType="WebService" Implementation="WebService" Trigger="Message">
+              <xpdl2:TriggerResultMessage xpdExt:Generated="true" CatchThrow="CATCH">
+                <xpdl2:Message Id="_b9SowLOuEemwHpDuGnRDDA">
+                  <xpdl2:DataMappings>
+                    <xpdl2:DataMapping xpdExt:TargetPrimitiveProperty="true" Direction="OUT" Formal="CandidatureId">
+                      <xpdl2:Actual ScriptGrammar="JavaScript">CandidatureId</xpdl2:Actual>
+                    </xpdl2:DataMapping>
+                  </xpdl2:DataMappings>
+                  <xpdExt:CorrelationDataMappings>
+                    <xpdExt:DataMapping xpdExt:TargetPrimitiveProperty="true" Direction="OUT" Formal="CandidatureId">
+                      <xpdl2:Actual ScriptGrammar="JavaScript">CandidatureIDcorrelation</xpdl2:Actual>
+                    </xpdExt:DataMapping>
+                  </xpdExt:CorrelationDataMappings>
+                </xpdl2:Message>
+                <xpdl2:WebServiceOperation xpdExt:SecurityProfile="" xpdExt:Transport="http://www.tibco.com/service_virtualisation" xpdExt:Alias="_Eql-ULOuEemwHpDuGnRDDA" OperationName="">
+                  <xpdl2:Service xpdExt:IsRemote="true" PortName="" ServiceName="">
+                    <xpdl2:EndPoint EndPointType="WSDL">
+                      <xpdl2:ExternalReference location="process_Recrutement.wsdl"/>
+                    </xpdl2:EndPoint>
+                  </xpdl2:Service>
+                </xpdl2:WebServiceOperation>
+                <xpdExt:PortTypeOperation PortTypeName="process_ChargeDeRecrutement" OperationName="DemarrerProcessusRecrutement">
+                  <xpdExt:ExternalReference location="process_Recrutement.wsdl"/>
+                </xpdExt:PortTypeOperation>
+              </xpdl2:TriggerResultMessage>
+            </xpdl2:StartEvent>
+          </xpdl2:Event>
+          <xpdl2:Performers>
+            <xpdl2:Performer>_Eql-ULOuEemwHpDuGnRDDA</xpdl2:Performer>
+          </xpdl2:Performers>
+          <xpdl2:NodeGraphicsInfos>
+            <xpdl2:NodeGraphicsInfo BorderColor="0,0,128" FillColor="255,219,74" Height="27.0" LaneId="_slEg8bLKEemV1ZxU_L0F9A" Width="27.0">
+              <xpdl2:Coordinates XCoordinate="55.0" YCoordinate="155.0"/>
+            </xpdl2:NodeGraphicsInfo>
+          </xpdl2:NodeGraphicsInfos>
+          <xpdl2:Extensions/>
+          <xpdExt:Audit/>
+          <xpdExt:ActivityResourcePatterns>
+            <xpdExt:AllocationStrategy xpdExt:Strategy="SYSTEM_DETERMINED"/>
+          </xpdExt:ActivityResourcePatterns>
+        </xpdl2:Activity>
+        <xpdl2:Activity Id="_slEg87LKEemV1ZxU_L0F9A" Name="EndEvent" xpdExt:DisplayName="End Event">
+          <xpdl2:Event>
+            <xpdl2:EndEvent Result="None"/>
+          </xpdl2:Event>
+          <xpdl2:TransitionRestrictions>
+            <xpdl2:TransitionRestriction>
+              <xpdl2:Join Type="Exclusive" ExclusiveType="Data"/>
+            </xpdl2:TransitionRestriction>
+          </xpdl2:TransitionRestrictions>
+          <xpdl2:NodeGraphicsInfos>
+            <xpdl2:NodeGraphicsInfo BorderColor="0,0,128" FillColor="255,219,74" Height="30.0" LaneId="_slEg8bLKEemV1ZxU_L0F9A" Width="30.0">
+              <xpdl2:Coordinates XCoordinate="592.0" YCoordinate="155.0"/>
+            </xpdl2:NodeGraphicsInfo>
+          </xpdl2:NodeGraphicsInfos>
+        </xpdl2:Activity>
+        <xpdl2:Activity Id="_Ns8rELNrEemwzsImCRebZQ" Name="Traitementdossierchargederecrutement" xpdExt:Visibility="Private" xpdExt:DisplayName="Traitement dossier charge de recrutement">
+          <xpdl2:Implementation>
+            <xpdl2:Task>
+              <xpdl2:TaskUser Implementation="Unspecified">
+                <xpdl2:Performers>
+                  <xpdl2:Performer>-defined-in-Activity-Performer-</xpdl2:Performer>
+                </xpdl2:Performers>
+                <xpdl2:MessageIn Id="_Ns8rEbNrEemwzsImCRebZQ"/>
+                <xpdl2:MessageOut Id="_Ns8rErNrEemwzsImCRebZQ"/>
+                <xpdExt:FormImplementation FormType="Form" FormURI="form://process_Recrutement/process_ChargeDeRecrutement/Traitementdossierchargederecrutement/Traitementdossierchargederecrutement.form"/>
+              </xpdl2:TaskUser>
+            </xpdl2:Task>
+          </xpdl2:Implementation>
+          <xpdl2:Performers>
+            <xpdl2:Performer>_Qh2mMLNsEemwzsImCRebZQ</xpdl2:Performer>
+          </xpdl2:Performers>
+          <xpdl2:ExtendedAttributes>
+            <xpdl2:ExtendedAttribute Name="bpmJspTask" Value="form://process_Recrutement/process_ChargeDeRecrutement/Traitementdossierchargederecrutement/Traitementdossierchargederecrutement.form"/>
+          </xpdl2:ExtendedAttributes>
+          <xpdl2:NodeGraphicsInfos>
+            <xpdl2:NodeGraphicsInfo BorderColor="0,0,128" FillColor="255,219,74" Height="64.0" LaneId="_slEg8bLKEemV1ZxU_L0F9A" Width="96.0">
+              <xpdl2:Coordinates XCoordinate="319.0" YCoordinate="155.0"/>
+            </xpdl2:NodeGraphicsInfo>
+          </xpdl2:NodeGraphicsInfos>
+          <xpdl2:Extensions/>
+          <xpdExt:ActivityResourcePatterns>
+            <xpdExt:AllocationStrategy xpdExt:Offer="OfferAll" xpdExt:Strategy="SYSTEM_DETERMINED" xpdExt:ReOfferOnClose="true" xpdExt:ReOfferOnCancel="true"/>
+            <xpdExt:WorkItemPriority InitialPriority="50"/>
+          </xpdExt:ActivityResourcePatterns>
+          <xpdExt:AssociatedParameters DisableImplicitAssociation="false">
+            <xpdExt:AssociatedParameter FormalParam="CandidatureRef" Mode="IN" Mandatory="true"/>
+          </xpdExt:AssociatedParameters>
+          <xpdExt:Audit/>
+        </xpdl2:Activity>
+        <xpdl2:Activity Id="_EqKggLOuEemwHpDuGnRDDA" Name="Annulation" xpdExt:Visibility="Private" xpdExt:DisplayName="Annulation">
+          <xpdl2:Event>
+            <xpdl2:IntermediateEvent xpdExt:ImplementationType="WebService" Implementation="WebService" Target="_Ns8rELNrEemwzsImCRebZQ" Trigger="Message">
+              <xpdl2:TriggerResultMessage xpdExt:Generated="true" CatchThrow="CATCH">
+                <xpdl2:Message Id="_EqKggbOuEemwHpDuGnRDDA">
+                  <xpdl2:DataMappings>
+                    <xpdl2:DataMapping xpdExt:TargetPrimitiveProperty="true" Direction="OUT" Formal="CandidatureId">
+                      <xpdl2:Actual ScriptGrammar="JavaScript">CandidatureId</xpdl2:Actual>
+                    </xpdl2:DataMapping>
+                  </xpdl2:DataMappings>
+                  <xpdExt:CorrelationDataMappings>
+                    <xpdExt:DataMapping xpdExt:TargetPrimitiveProperty="true" Direction="OUT" Formal="CandidatureId">
+                      <xpdl2:Actual ScriptGrammar="JavaScript">CandidatureIDcorrelation</xpdl2:Actual>
+                    </xpdExt:DataMapping>
+                  </xpdExt:CorrelationDataMappings>
+                </xpdl2:Message>
+                <xpdl2:WebServiceOperation xpdExt:SecurityProfile="" xpdExt:Transport="http://www.tibco.com/service_virtualisation" xpdExt:Alias="_Eql-ULOuEemwHpDuGnRDDA" OperationName="">
+                  <xpdl2:Service xpdExt:IsRemote="true" PortName="" ServiceName="">
+                    <xpdl2:EndPoint EndPointType="WSDL">
+                      <xpdl2:ExternalReference location="process_Recrutement.wsdl"/>
+                    </xpdl2:EndPoint>
+                  </xpdl2:Service>
+                </xpdl2:WebServiceOperation>
+                <xpdExt:PortTypeOperation PortTypeName="process_ChargeDeRecrutement" OperationName="Annulation">
+                  <xpdExt:ExternalReference location="process_Recrutement.wsdl"/>
+                </xpdExt:PortTypeOperation>
+              </xpdl2:TriggerResultMessage>
+            </xpdl2:IntermediateEvent>
+          </xpdl2:Event>
+          <xpdl2:Performers>
+            <xpdl2:Performer>_Eql-ULOuEemwHpDuGnRDDA</xpdl2:Performer>
+          </xpdl2:Performers>
+          <xpdl2:NodeGraphicsInfos>
+            <xpdl2:NodeGraphicsInfo BorderColor="0,0,128" FillColor="255,219,74" Height="27.0" LaneId="_slEg8bLKEemV1ZxU_L0F9A" Width="27.0">
+              <xpdl2:Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </xpdl2:NodeGraphicsInfo>
+            <xpdl2:NodeGraphicsInfo ToolId="XPD.BorderEventPosition">
+              <xpdl2:Coordinates XCoordinate="26.25" YCoordinate="0.0"/>
+            </xpdl2:NodeGraphicsInfo>
+          </xpdl2:NodeGraphicsInfos>
+          <xpdl2:Extensions/>
+          <xpdExt:ActivityResourcePatterns>
+            <xpdExt:AllocationStrategy xpdExt:Strategy="SYSTEM_DETERMINED"/>
+          </xpdExt:ActivityResourcePatterns>
+        </xpdl2:Activity>
+        <xpdl2:Activity Id="_kLeyMLOuEemwHpDuGnRDDA" Name="LectureCandidature" xpdExt:Visibility="Private" xpdExt:DisplayName="Lecture Candidature">
+          <xpdl2:Implementation>
+            <xpdl2:Task>
+              <xpdl2:TaskScript>
+                <xpdl2:Script ScriptGrammar="JavaScript">CandidatureRef = cac_com_example_casemanagementdatamodel_Candidature.findByCID_candidature(CandidatureId);&#xD;
+</xpdl2:Script>
+              </xpdl2:TaskScript>
+            </xpdl2:Task>
+          </xpdl2:Implementation>
+          <xpdl2:NodeGraphicsInfos>
+            <xpdl2:NodeGraphicsInfo BorderColor="0,0,128" FillColor="255,219,74" Height="64.0" LaneId="_slEg8bLKEemV1ZxU_L0F9A" Width="96.0">
+              <xpdl2:Coordinates XCoordinate="175.0" YCoordinate="155.0"/>
+            </xpdl2:NodeGraphicsInfo>
+          </xpdl2:NodeGraphicsInfos>
+          <xpdl2:Extensions/>
+          <xpdExt:ActivityResourcePatterns>
+            <xpdExt:AllocationStrategy xpdExt:Strategy="SYSTEM_DETERMINED"/>
+          </xpdExt:ActivityResourcePatterns>
+        </xpdl2:Activity>
+      </xpdl2:Activities>
+      <xpdl2:Transitions>
+        <xpdl2:Transition Id="_slEg9LLKEemV1ZxU_L0F9A" xpdExt:DisplayName="" Name="" From="_kLeyMLOuEemwHpDuGnRDDA" To="_Ns8rELNrEemwzsImCRebZQ">
+          <xpdl2:ConnectorGraphicsInfos>
+            <xpdl2:ConnectorGraphicsInfo BorderColor="0,0,128" ToolId="XPD.ConnectionInfo"/>
+            <xpdl2:ConnectorGraphicsInfo ToolId="XPD.EndAnchorPosition"/>
+            <xpdl2:ConnectorGraphicsInfo ToolId="XPD.StartAnchorPosition"/>
+          </xpdl2:ConnectorGraphicsInfos>
+        </xpdl2:Transition>
+        <xpdl2:Transition Id="_O13a8LNrEemwzsImCRebZQ" xpdExt:DisplayName="" Name="" From="_Ns8rELNrEemwzsImCRebZQ" To="_slEg87LKEemV1ZxU_L0F9A">
+          <xpdl2:ConnectorGraphicsInfos>
+            <xpdl2:ConnectorGraphicsInfo BorderColor="0,0,128" ToolId="XPD.ConnectionInfo"/>
+            <xpdl2:ConnectorGraphicsInfo ToolId="XPD.LabelAnchorPosition">
+              <xpdl2:Coordinates XCoordinate="50.0" YCoordinate="0.0"/>
+              <xpdl2:Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </xpdl2:ConnectorGraphicsInfo>
+          </xpdl2:ConnectorGraphicsInfos>
+        </xpdl2:Transition>
+        <xpdl2:Transition Id="_FUnywLOuEemwHpDuGnRDDA" xpdExt:DisplayName="" Name="" From="_EqKggLOuEemwHpDuGnRDDA" To="_slEg87LKEemV1ZxU_L0F9A">
+          <xpdl2:ConnectorGraphicsInfos>
+            <xpdl2:ConnectorGraphicsInfo BorderColor="0,0,128" ToolId="XPD.ConnectionInfo">
+              <xpdl2:Coordinates XCoordinate="215.0" YCoordinate="75.0"/>
+              <xpdl2:Coordinates XCoordinate="-27.0" YCoordinate="93.0"/>
+            </xpdl2:ConnectorGraphicsInfo>
+            <xpdl2:ConnectorGraphicsInfo ToolId="XPD.EndAnchorPosition">
+              <xpdl2:Coordinates XCoordinate="28.141647909450057" YCoordinate="0.0"/>
+            </xpdl2:ConnectorGraphicsInfo>
+            <xpdl2:ConnectorGraphicsInfo ToolId="XPD.LabelAnchorPosition">
+              <xpdl2:Coordinates XCoordinate="50.0" YCoordinate="0.0"/>
+              <xpdl2:Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </xpdl2:ConnectorGraphicsInfo>
+          </xpdl2:ConnectorGraphicsInfos>
+        </xpdl2:Transition>
+        <xpdl2:Transition Id="_kLgAULOuEemwHpDuGnRDDA" xpdExt:DisplayName="" Name="" From="_slEg8rLKEemV1ZxU_L0F9A" To="_kLeyMLOuEemwHpDuGnRDDA">
+          <xpdl2:ConnectorGraphicsInfos>
+            <xpdl2:ConnectorGraphicsInfo BorderColor="0,0,128" ToolId="XPD.ConnectionInfo"/>
+            <xpdl2:ConnectorGraphicsInfo ToolId="XPD.StartAnchorPosition"/>
+          </xpdl2:ConnectorGraphicsInfos>
+        </xpdl2:Transition>
+      </xpdl2:Transitions>
+      <xpdl2:ExtendedAttributes>
+        <xpdl2:ExtendedAttribute Name="Destination" Value="BPM"/>
+        <xpdl2:ExtendedAttribute Name="WorkflowProcessSimulationData"><simulation:WorkflowProcessSimulationData>
+            <simulation:ParameterDistribution ParameterId="CandidatureId"/>
+          </simulation:WorkflowProcessSimulationData></xpdl2:ExtendedAttribute>
+      </xpdl2:ExtendedAttributes>
+    </xpdl2:WorkflowProcess>
+    <xpdl2:WorkflowProcess Id="_LN-5ELLNEemV1ZxU_L0F9A" xpdExt:DisplayName="PersonnePourEntretien" xpdExt:ApiEndPointParticipant="_npxmILQ_Eemxc-TWSNhKXA" Name="PersonnePourEntretien">
+      <xpdl2:ProcessHeader/>
+      <xpdl2:FormalParameters>
+        <xpdl2:FormalParameter Id="_1WdYkLQ_Eemxc-TWSNhKXA" Name="CandidatureId" Mode="IN" Required="true" xpdExt:DisplayName="CandidatureId">
+          <xpdl2:DataType>
+            <xpdl2:BasicType Type="INTEGER">
+              <xpdl2:Precision>9</xpdl2:Precision>
+            </xpdl2:BasicType>
+          </xpdl2:DataType>
+        </xpdl2:FormalParameter>
+        <xpdl2:FormalParameter Id="_shcEYLRaEemrAqVZWSCv5A" Name="NomCollaborateur" Mode="IN" Required="true" xpdExt:DisplayName="Nom Collaborateur">
+          <xpdl2:DataType>
+            <xpdl2:BasicType Type="STRING">
+              <xpdl2:Length>50</xpdl2:Length>
+            </xpdl2:BasicType>
+          </xpdl2:DataType>
+        </xpdl2:FormalParameter>
+      </xpdl2:FormalParameters>
+      <xpdl2:DataFields>
+        <xpdl2:DataField Id="_ChOLALLSEemV1ZxU_L0F9A" xpdExt:DisplayName="participantEntretien" Name="participantEntretien">
+          <xpdl2:DataType>
+            <xpdl2:BasicType Type="PERFORMER"/>
+          </xpdl2:DataType>
+        </xpdl2:DataField>
+        <xpdl2:DataField Id="_k0z6ULNyEemwzsImCRebZQ" xpdExt:DisplayName="Candidature" Name="Candidature" ReadOnly="false">
+          <xpdl2:DataType>
+            <xpdl2:ExternalReference location="CaseManagementDataModel.bom" namespace="http://www.eclipse.org/uml2/5.0.0/UML" xref="_2oBk8LIMEemj-ayD1bfv5w"/>
+          </xpdl2:DataType>
+          <xpdl2:InitialValue/>
+        </xpdl2:DataField>
+        <xpdl2:DataField Id="_dDx18bLNEemV1ZxU_L0F9A" xpdExt:DisplayName="CandidatureRef" Name="CandidatureRef" IsArray="false" ReadOnly="false">
+          <xpdl2:DataType>
+            <xpdl2:RecordType>
+              <xpdl2:Member>
+                <xpdl2:ExternalReference location="CaseManagementDataModel.bom" namespace="http://www.eclipse.org/uml2/5.0.0/UML" xref="_2oBk8LIMEemj-ayD1bfv5w"/>
+              </xpdl2:Member>
+            </xpdl2:RecordType>
+          </xpdl2:DataType>
+        </xpdl2:DataField>
+        <xpdl2:DataField Id="__tgfkLR5Eem0F8GCydzZ8w" xpdExt:DisplayName="nomCollaborateur" Name="nomCollaborateur" ReadOnly="true" Correlation="true">
+          <xpdl2:DataType>
+            <xpdl2:BasicType Type="STRING">
+              <xpdl2:Length>50</xpdl2:Length>
+            </xpdl2:BasicType>
+          </xpdl2:DataType>
+        </xpdl2:DataField>
+      </xpdl2:DataFields>
+      <xpdl2:Activities>
+        <xpdl2:Activity Id="_LOCjcrLNEemV1ZxU_L0F9A" Name="DemarrerProcessusEntretien" xpdExt:Visibility="Private" xpdExt:DisplayName="Demarrer processus entretien">
+          <xpdl2:Event>
+            <xpdl2:StartEvent xpdExt:ImplementationType="WebService" Implementation="WebService" Trigger="Message">
+              <xpdl2:TriggerResultMessage xpdExt:Generated="true" CatchThrow="CATCH">
+                <xpdl2:Message Id="_8OSMALQ_Eemxc-TWSNhKXA">
+                  <xpdl2:DataMappings>
+                    <xpdl2:DataMapping xpdExt:TargetPrimitiveProperty="true" Direction="OUT" Formal="CandidatureId">
+                      <xpdl2:Actual ScriptGrammar="JavaScript">CandidatureId</xpdl2:Actual>
+                    </xpdl2:DataMapping>
+                    <xpdl2:DataMapping xpdExt:TargetPrimitiveProperty="true" Direction="OUT" Formal="NomCollaborateur">
+                      <xpdl2:Actual ScriptGrammar="JavaScript">NomCollaborateur</xpdl2:Actual>
+                    </xpdl2:DataMapping>
+                  </xpdl2:DataMappings>
+                  <xpdExt:CorrelationDataMappings>
+                    <xpdExt:DataMapping xpdExt:TargetPrimitiveProperty="true" Direction="OUT" Formal="NomCollaborateur">
+                      <xpdl2:Actual ScriptGrammar="JavaScript">nomCollaborateur</xpdl2:Actual>
+                    </xpdExt:DataMapping>
+                  </xpdExt:CorrelationDataMappings>
+                </xpdl2:Message>
+                <xpdl2:WebServiceOperation xpdExt:SecurityProfile="" xpdExt:Transport="http://www.tibco.com/service_virtualisation" xpdExt:Alias="_npxmILQ_Eemxc-TWSNhKXA" OperationName="">
+                  <xpdl2:Service xpdExt:IsRemote="true" PortName="" ServiceName="">
+                    <xpdl2:EndPoint EndPointType="WSDL">
+                      <xpdl2:ExternalReference location="process_Recrutement.wsdl"/>
+                    </xpdl2:EndPoint>
+                  </xpdl2:Service>
+                </xpdl2:WebServiceOperation>
+                <xpdExt:PortTypeOperation PortTypeName="PersonnePourEntretien" OperationName="DemarrerProcessusEntretien">
+                  <xpdExt:ExternalReference location="process_Recrutement.wsdl"/>
+                </xpdExt:PortTypeOperation>
+              </xpdl2:TriggerResultMessage>
+            </xpdl2:StartEvent>
+          </xpdl2:Event>
+          <xpdl2:Performers>
+            <xpdl2:Performer>_npxmILQ_Eemxc-TWSNhKXA</xpdl2:Performer>
+          </xpdl2:Performers>
+          <xpdl2:NodeGraphicsInfos>
+            <xpdl2:NodeGraphicsInfo BorderColor="0,0,128" FillColor="255,219,74" Height="77.0" LaneId="_LOCjcbLNEemV1ZxU_L0F9A" Width="54.0">
+              <xpdl2:Coordinates XCoordinate="58.0" YCoordinate="149.0"/>
+            </xpdl2:NodeGraphicsInfo>
+          </xpdl2:NodeGraphicsInfos>
+          <xpdl2:Extensions/>
+          <xpdExt:ActivityResourcePatterns>
+            <xpdExt:AllocationStrategy xpdExt:Strategy="SYSTEM_DETERMINED"/>
+          </xpdExt:ActivityResourcePatterns>
+        </xpdl2:Activity>
+        <xpdl2:Activity Id="_LOCjc7LNEemV1ZxU_L0F9A" Name="EndEvent" xpdExt:DisplayName="End Event">
+          <xpdl2:Event>
+            <xpdl2:EndEvent Result="None"/>
+          </xpdl2:Event>
+          <xpdl2:TransitionRestrictions>
+            <xpdl2:TransitionRestriction>
+              <xpdl2:Join Type="Exclusive" ExclusiveType="Data"/>
+            </xpdl2:TransitionRestriction>
+          </xpdl2:TransitionRestrictions>
+          <xpdl2:NodeGraphicsInfos>
+            <xpdl2:NodeGraphicsInfo BorderColor="0,0,128" FillColor="255,219,74" Height="30.0" LaneId="_LOCjcbLNEemV1ZxU_L0F9A" Width="30.0">
+              <xpdl2:Coordinates XCoordinate="592.0" YCoordinate="155.0"/>
+            </xpdl2:NodeGraphicsInfo>
+          </xpdl2:NodeGraphicsInfos>
+        </xpdl2:Activity>
+        <xpdl2:Activity Id="_oIjOILLREemV1ZxU_L0F9A" Name="Entretien" xpdExt:Visibility="Private" xpdExt:DisplayName="Entretien">
+          <xpdl2:Implementation>
+            <xpdl2:Task>
+              <xpdl2:TaskUser Implementation="Unspecified">
+                <xpdl2:Performers>
+                  <xpdl2:Performer>-defined-in-Activity-Performer-</xpdl2:Performer>
+                </xpdl2:Performers>
+                <xpdl2:MessageIn Id="_oIjOIbLREemV1ZxU_L0F9A"/>
+                <xpdl2:MessageOut Id="_oIjOIrLREemV1ZxU_L0F9A"/>
+                <xpdExt:FormImplementation FormType="Form" FormURI="form://process_Recrutement/PersonnePourEntretien/Entretien/Entretien.form"/>
+              </xpdl2:TaskUser>
+            </xpdl2:Task>
+          </xpdl2:Implementation>
+          <xpdl2:Performers>
+            <xpdl2:Performer>_ChOLALLSEemV1ZxU_L0F9A</xpdl2:Performer>
+          </xpdl2:Performers>
+          <xpdl2:ExtendedAttributes>
+            <xpdl2:ExtendedAttribute Name="bpmJspTask" Value="form://process_Recrutement/PersonnePourEntretien/Entretien/Entretien.form"/>
+          </xpdl2:ExtendedAttributes>
+          <xpdl2:NodeGraphicsInfos>
+            <xpdl2:NodeGraphicsInfo BorderColor="0,0,128" FillColor="255,219,74" Height="64.0" LaneId="_LOCjcbLNEemV1ZxU_L0F9A" Width="96.0">
+              <xpdl2:Coordinates XCoordinate="413.0" YCoordinate="155.0"/>
+            </xpdl2:NodeGraphicsInfo>
+          </xpdl2:NodeGraphicsInfos>
+          <xpdl2:Extensions/>
+          <xpdExt:ActivityResourcePatterns>
+            <xpdExt:AllocationStrategy xpdExt:Offer="OfferAll" xpdExt:Strategy="SYSTEM_DETERMINED" xpdExt:ReOfferOnClose="true" xpdExt:ReOfferOnCancel="true"/>
+            <xpdExt:WorkItemPriority InitialPriority="50"/>
+          </xpdExt:ActivityResourcePatterns>
+          <xpdExt:AssociatedParameters DisableImplicitAssociation="false">
+            <xpdExt:AssociatedParameter FormalParam="CandidatureRef" Mode="IN" Mandatory="false">
+              <xpdl2:Description/>
+            </xpdExt:AssociatedParameter>
+          </xpdExt:AssociatedParameters>
+          <xpdExt:Audit>
+            <xpdExt:AuditEvent Type="Initiated">
+              <xpdExt:Information ScriptGrammar="JavaScript">participantEntretien = &quot;resource(name='&quot; + NomCollaborateur + &quot;')&quot;;
+</xpdExt:Information>
+            </xpdExt:AuditEvent>
+            <xpdExt:AuditEvent Type="Completed">
+              <xpdExt:Information ScriptGrammar="JavaScript">Candidature.statut = com_example_casemanagementdatamodel_Statut.ENTRETIEN;&#xD;
+</xpdExt:Information>
+            </xpdExt:AuditEvent>
+          </xpdExt:Audit>
+        </xpdl2:Activity>
+        <xpdl2:Activity Id="_0bLKILRBEemSZcabNfOeJQ" Name="Getcandidatureref" xpdExt:Visibility="Private" xpdExt:DisplayName="Get candidature ref">
+          <xpdl2:Implementation>
+            <xpdl2:Task>
+              <xpdl2:TaskScript>
+                <xpdl2:Script ScriptGrammar="JavaScript">CandidatureRef = cac_com_example_casemanagementdatamodel_Candidature.findByCID_candidature(CandidatureId);&#xD;
+</xpdl2:Script>
+              </xpdl2:TaskScript>
+            </xpdl2:Task>
+          </xpdl2:Implementation>
+          <xpdl2:NodeGraphicsInfos>
+            <xpdl2:NodeGraphicsInfo BorderColor="0,0,128" FillColor="255,219,74" Height="64.0" LaneId="_LOCjcbLNEemV1ZxU_L0F9A" Width="96.0">
+              <xpdl2:Coordinates XCoordinate="231.0" YCoordinate="155.0"/>
+            </xpdl2:NodeGraphicsInfo>
+          </xpdl2:NodeGraphicsInfos>
+          <xpdl2:Extensions/>
+          <xpdExt:ActivityResourcePatterns>
+            <xpdExt:AllocationStrategy xpdExt:Strategy="SYSTEM_DETERMINED"/>
+          </xpdExt:ActivityResourcePatterns>
+        </xpdl2:Activity>
+        <xpdl2:Activity Id="_x632ILR5Eem0F8GCydzZ8w" Name="SupprimerTacheEntretien" xpdExt:Visibility="Private" xpdExt:DisplayName="Supprimer tache entretien">
+          <xpdl2:Event>
+            <xpdl2:IntermediateEvent xpdExt:ImplementationType="WebService" Implementation="WebService" Target="_oIjOILLREemV1ZxU_L0F9A" Trigger="Message">
+              <xpdl2:TriggerResultMessage xpdExt:Generated="true" CatchThrow="CATCH">
+                <xpdl2:Message Id="_x632IbR5Eem0F8GCydzZ8w">
+                  <xpdl2:DataMappings>
+                    <xpdl2:DataMapping xpdExt:TargetPrimitiveProperty="true" Direction="OUT" Formal="CandidatureId">
+                      <xpdl2:Actual ScriptGrammar="JavaScript">CandidatureId</xpdl2:Actual>
+                    </xpdl2:DataMapping>
+                    <xpdl2:DataMapping xpdExt:TargetPrimitiveProperty="true" Direction="OUT" Formal="NomCollaborateur">
+                      <xpdl2:Actual ScriptGrammar="JavaScript">NomCollaborateur</xpdl2:Actual>
+                    </xpdl2:DataMapping>
+                  </xpdl2:DataMappings>
+                  <xpdExt:CorrelationDataMappings>
+                    <xpdExt:DataMapping xpdExt:TargetPrimitiveProperty="true" Direction="OUT" Formal="NomCollaborateur">
+                      <xpdl2:Actual ScriptGrammar="JavaScript">nomCollaborateur</xpdl2:Actual>
+                    </xpdExt:DataMapping>
+                  </xpdExt:CorrelationDataMappings>
+                </xpdl2:Message>
+                <xpdl2:WebServiceOperation xpdExt:SecurityProfile="" xpdExt:Transport="http://www.tibco.com/service_virtualisation" xpdExt:Alias="_npxmILQ_Eemxc-TWSNhKXA" OperationName="">
+                  <xpdl2:Service xpdExt:IsRemote="true" PortName="" ServiceName="">
+                    <xpdl2:EndPoint EndPointType="WSDL">
+                      <xpdl2:ExternalReference location="process_Recrutement.wsdl"/>
+                    </xpdl2:EndPoint>
+                  </xpdl2:Service>
+                </xpdl2:WebServiceOperation>
+                <xpdExt:PortTypeOperation PortTypeName="PersonnePourEntretien" OperationName="SupprimerTacheEntretien">
+                  <xpdExt:ExternalReference location="process_Recrutement.wsdl"/>
+                </xpdExt:PortTypeOperation>
+              </xpdl2:TriggerResultMessage>
+            </xpdl2:IntermediateEvent>
+          </xpdl2:Event>
+          <xpdl2:Performers>
+            <xpdl2:Performer>_npxmILQ_Eemxc-TWSNhKXA</xpdl2:Performer>
+          </xpdl2:Performers>
+          <xpdl2:NodeGraphicsInfos>
+            <xpdl2:NodeGraphicsInfo BorderColor="0,0,128" FillColor="255,219,74" Height="27.0" LaneId="_LOCjcbLNEemV1ZxU_L0F9A" Width="27.0">
+              <xpdl2:Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </xpdl2:NodeGraphicsInfo>
+            <xpdl2:NodeGraphicsInfo ToolId="XPD.BorderEventPosition">
+              <xpdl2:Coordinates XCoordinate="26.875" YCoordinate="0.0"/>
+            </xpdl2:NodeGraphicsInfo>
+          </xpdl2:NodeGraphicsInfos>
+          <xpdl2:Extensions/>
+          <xpdExt:ActivityResourcePatterns>
+            <xpdExt:AllocationStrategy xpdExt:Strategy="SYSTEM_DETERMINED"/>
+          </xpdExt:ActivityResourcePatterns>
+        </xpdl2:Activity>
+      </xpdl2:Activities>
+      <xpdl2:Transitions>
+        <xpdl2:Transition Id="_LOCjdLLNEemV1ZxU_L0F9A" xpdExt:DisplayName="" Name="" From="_LOCjcrLNEemV1ZxU_L0F9A" To="_0bLKILRBEemSZcabNfOeJQ">
+          <xpdl2:ConnectorGraphicsInfos>
+            <xpdl2:ConnectorGraphicsInfo BorderColor="0,0,128" ToolId="XPD.ConnectionInfo"/>
+            <xpdl2:ConnectorGraphicsInfo ToolId="XPD.EndAnchorPosition">
+              <xpdl2:Coordinates XCoordinate="61.875" YCoordinate="0.0"/>
+            </xpdl2:ConnectorGraphicsInfo>
+          </xpdl2:ConnectorGraphicsInfos>
+        </xpdl2:Transition>
+        <xpdl2:Transition Id="_pqe68LLREemV1ZxU_L0F9A" xpdExt:DisplayName="" Name="" From="_oIjOILLREemV1ZxU_L0F9A" To="_LOCjc7LNEemV1ZxU_L0F9A">
+          <xpdl2:ConnectorGraphicsInfos>
+            <xpdl2:ConnectorGraphicsInfo BorderColor="0,0,128" ToolId="XPD.ConnectionInfo"/>
+            <xpdl2:ConnectorGraphicsInfo ToolId="XPD.LabelAnchorPosition">
+              <xpdl2:Coordinates XCoordinate="50.0" YCoordinate="0.0"/>
+              <xpdl2:Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </xpdl2:ConnectorGraphicsInfo>
+            <xpdl2:ConnectorGraphicsInfo ToolId="XPD.EndAnchorPosition"/>
+          </xpdl2:ConnectorGraphicsInfos>
+        </xpdl2:Transition>
+        <xpdl2:Transition Id="_3z29MLRBEemSZcabNfOeJQ" xpdExt:DisplayName="" Name="" From="_0bLKILRBEemSZcabNfOeJQ" To="_oIjOILLREemV1ZxU_L0F9A">
+          <xpdl2:ConnectorGraphicsInfos>
+            <xpdl2:ConnectorGraphicsInfo BorderColor="0,0,128" ToolId="XPD.ConnectionInfo"/>
+            <xpdl2:ConnectorGraphicsInfo ToolId="XPD.LabelAnchorPosition">
+              <xpdl2:Coordinates XCoordinate="50.0" YCoordinate="0.0"/>
+              <xpdl2:Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </xpdl2:ConnectorGraphicsInfo>
+          </xpdl2:ConnectorGraphicsInfos>
+        </xpdl2:Transition>
+        <xpdl2:Transition Id="_3WVZQLR5Eem0F8GCydzZ8w" xpdExt:DisplayName="" Name="" From="_x632ILR5Eem0F8GCydzZ8w" To="_LOCjc7LNEemV1ZxU_L0F9A">
+          <xpdl2:ConnectorGraphicsInfos>
+            <xpdl2:ConnectorGraphicsInfo BorderColor="0,0,128" ToolId="XPD.ConnectionInfo"/>
+            <xpdl2:ConnectorGraphicsInfo ToolId="XPD.LabelAnchorPosition">
+              <xpdl2:Coordinates XCoordinate="50.0" YCoordinate="0.0"/>
+              <xpdl2:Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </xpdl2:ConnectorGraphicsInfo>
+          </xpdl2:ConnectorGraphicsInfos>
+        </xpdl2:Transition>
+      </xpdl2:Transitions>
+      <xpdl2:ExtendedAttributes>
+        <xpdl2:ExtendedAttribute Name="Destination" Value="BPM"/>
+        <xpdl2:ExtendedAttribute Name="WorkflowProcessSimulationData"><simulation:WorkflowProcessSimulationData>
+            <simulation:ParameterDistribution ParameterId="CandidatureId"/>
+            <simulation:ParameterDistribution ParameterId="NomCollaborateur"/>
+          </simulation:WorkflowProcessSimulationData></xpdl2:ExtendedAttribute>
+      </xpdl2:ExtendedAttributes>
+    </xpdl2:WorkflowProcess>
+  </xpdl2:WorkflowProcesses>
+  <xpdl2:ExtendedAttributes>
+    <xpdl2:ExtendedAttribute Name="CreatedBy" Value="TIBCO Business Studio"/>
+    <xpdl2:ExtendedAttribute Name="FormatVersion" Value="22"/>
+    <xpdl2:ExtendedAttribute Name="OriginalFormatVersion" Value="22"/>
+  </xpdl2:ExtendedAttributes>
+</xpdl2:Package>

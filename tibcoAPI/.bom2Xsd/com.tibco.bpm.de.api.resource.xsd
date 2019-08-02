@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://resource.api.de.bpm.tibco.com" xmlns:tns7="http://resource.api.de.bpm.tibco.com"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:tns5="http://base.api.de.bpm.tibco.com"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://resource.api.de.bpm.tibco.com">
+  <xsd:annotation>
+    <xsd:documentation>BOMORIGIN::/tibcoAPI/Generated Business Objects/com.tibco.bpm.de.api.resource.bom</xsd:documentation>
+  </xsd:annotation>
+  <xsd:import namespace="http://base.api.de.bpm.tibco.com" schemaLocation="com.tibco.bpm.de.api.base.xsd"/>
+  <xsd:complexType ecore:name="XmlCreateResource" id="com.tibco.bpm.de.api.resourceXmlCreateResource"
+      abstract="false" mixed="false" name="XmlCreateResource">
+    <xsd:annotation>
+      <xsd:documentation>Having retrieved a list of the candidate resources, this method is used to create resources from the LDAP references returned with each candidate resource. The response returns the GUID assigned to the newly created resources. Each element in the response identifies the candidate to which it relates using the primary LDAP Source reference and the LDAP container ID.
+
+If a resource already exists with a given LDAP reference, no update is made to that resource, and the GUID of the existing resource is returned in the response (along with a boolean attribute &quot;already-present&quot;).
+
+For those candidates for which a resource could not be created (due to some logical error, rather than a system failure), the response includes a &quot;failure&quot; element identifying the candidate, as well as a reason for the failure. System failures are reported using a SOAP fault response. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ecore:name="candidate" id="XmlCreateResourcecandidateType" form="unqualified"
+          maxOccurs="unbounded" minOccurs="1" name="candidate">
+        <xsd:complexType ecore:name="candidateType" id="com.tibco.bpm.de.api.resourcecandidateType"
+            mixed="false">
+          <xsd:complexContent mixed="false">
+            <xsd:extension base="tns5:XmlLdapContainerEntry">
+              <xsd:attribute ecore:name="containerid" id="candidateTypecontainer-id"
+                  form="unqualified" name="container-id" type="tns7:long_StudioGeneratedTemplate"
+                  use="required">
+                <xsd:annotation>
+                  <xsd:documentation>Identifies the LDAP container from which the candidate was resolved. </xsd:documentation>
+                </xsd:annotation>
+              </xsd:attribute>
+              <xsd:attribute ecore:name="name" id="candidateTypename" form="unqualified"
+                  name="name" type="xsd:string" use="required">
+                <xsd:annotation>
+                  <xsd:documentation>The name to be assigned to the resource created from this candidate entry. </xsd:documentation>
+                </xsd:annotation>
+              </xsd:attribute>
+              <xsd:attribute ecore:name="label" id="candidateTypelabel" form="unqualified"
+                  name="label" type="xsd:string" use="optional">
+                <xsd:annotation>
+                  <xsd:documentation>The name assigned to the resource for display purposes. </xsd:documentation>
+                </xsd:annotation>
+              </xsd:attribute>
+              <xsd:attribute ecore:name="startdate" id="candidateTypestart-date" form="unqualified"
+                  name="start-date" type="xsd:dateTime" use="optional">
+                <xsd:annotation>
+                  <xsd:documentation>The optional date and time on which the resource's presence should begin. </xsd:documentation>
+                </xsd:annotation>
+              </xsd:attribute>
+              <xsd:attribute ecore:name="enddate" id="candidateTypeend-date" form="unqualified"
+                  name="end-date" type="xsd:dateTime" use="optional">
+                <xsd:annotation>
+                  <xsd:documentation>The optional date and time on which the resource's presence should end. If specified, a start-date must also be specified. </xsd:documentation>
+                </xsd:annotation>
+              </xsd:attribute>
+            </xsd:extension>
+          </xsd:complexContent>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute ecore:name="schemaversion" id="XmlCreateResourceschema-version"
+        default="1" form="unqualified" name="schema-version" type="xsd:int" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Indicates the version of the request schema; which determines what information is to be included in the response. This allows for future, backward compatible modifications to the schema.
+The following values are recognised:
+1: Include candidate name in failure elements of response. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlDeleteResource" id="com.tibco.bpm.de.api.resourceXmlDeleteResource"
+      abstract="false" mixed="false" name="XmlDeleteResource">
+    <xsd:annotation>
+      <xsd:documentation>Request element for the deleteResource operation. This service is used to delete the resource identified by its GUID. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ecore:name="guid" id="XmlDeleteResourceguid" form="unqualified"
+          maxOccurs="unbounded" minOccurs="1" name="guid" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlGetResource" id="com.tibco.bpm.de.api.resourceXmlGetResource"
+      abstract="false" mixed="false" name="XmlGetResource">
+    <xsd:annotation>
+      <xsd:documentation>Request element for the getResource operation. Returns detailed information for the resource identified by its GUID. The organization model version in the request identifies the organization model major version from which the resource's model entity associations are to be taken. The default value of -1 indicates that the latest version should be used.
+             </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ecore:name="guid" id="XmlGetResourceguid" form="unqualified" maxOccurs="unbounded"
+          minOccurs="0" name="guid" type="xsd:string"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:name="modelversion" id="XmlGetResourcemodel-version" default="-1"
+        form="unqualified" name="model-version" type="xsd:int" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Identifies the model major version from which the resource's organization model entity associations are to be taken. The default value of -1 indicates that the latest version should be used. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlUpdateResource" id="com.tibco.bpm.de.api.resourceXmlUpdateResource"
+      abstract="false" mixed="false" name="XmlUpdateResource">
+    <xsd:annotation>
+      <xsd:documentation>Request element for updateResource operation. Allows the properties of the identified resource to be modified. Many of the parameters within this request document are optional; only those that are provided in the request will be set on the identified resource. Returns detailed information for the resource identified by its GUID. The model version in the request identifies the organization model major version from which the resource's model entity associations are to be taken. The default value of -1 indicates that the latest version should be used.
+             </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ecore:name="resource" id="XmlUpdateResourceresource" form="unqualified"
+          maxOccurs="unbounded" minOccurs="1" name="resource" type="XmlUpdateResourceType"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:name="modelversion" id="XmlUpdateResourcemodel-version" default="-1"
+        form="unqualified" name="model-version" type="xsd:int" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Identifies the model major version from which the resource's organization model entity associations are to be taken. The default value of -1 indicates that the latest version should be used. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlUpdateResourceType" id="com.tibco.bpm.de.api.resourceXmlUpdateResourceType"
+      abstract="false" mixed="false" name="XmlUpdateResourceType">
+    <xsd:annotation>
+      <xsd:documentation>A list of candidate resources to be updated. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ecore:name="setname" id="XmlUpdateResourceTypeset-name" form="unqualified"
+          maxOccurs="1" minOccurs="0" name="set-name" type="tns5:XmlStringAttribute"/>
+      <xsd:element ecore:name="setlabel" id="XmlUpdateResourceTypeset-label" form="unqualified"
+          maxOccurs="1" minOccurs="0" name="set-label" type="tns5:XmlOptionalStringAttribute"/>
+      <xsd:element ecore:name="setdaterange" id="XmlUpdateResourceTypeset-date-range"
+          form="unqualified" maxOccurs="1" minOccurs="0" name="set-date-range" type="tns5:XmlDateRangeAttribute"/>
+      <xsd:element ecore:name="ldapreference" id="XmlUpdateResourceTypeldap-referenceType"
+          form="unqualified" maxOccurs="1" minOccurs="0" name="ldap-reference">
+        <xsd:complexType ecore:name="ldapreferenceType" id="com.tibco.bpm.de.api.resourceldap-referenceType"
+            mixed="false">
+          <xsd:complexContent mixed="false">
+            <xsd:extension base="tns5:XmlLdapContainerEntry">
+              <xsd:attribute ecore:name="containerid" id="ldap-referenceTypecontainer-id"
+                  form="unqualified" name="container-id" type="tns7:long_StudioGeneratedTemplate"
+                  use="optional">
+                <xsd:annotation>
+                  <xsd:documentation>Identifies the LDAP container to which the candidate is to be moved. </xsd:documentation>
+                </xsd:annotation>
+              </xsd:attribute>
+            </xsd:extension>
+          </xsd:complexContent>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ecore:name="setlocation" id="XmlUpdateResourceTypeset-location"
+          form="unqualified" maxOccurs="1" minOccurs="0" name="set-location" type="tns5:XmlOptionalEntityReference"/>
+      <xsd:element ecore:name="addposition" id="XmlUpdateResourceTypeadd-position"
+          form="unqualified" maxOccurs="unbounded" minOccurs="0" name="add-position"
+          type="tns5:XmlEntityReferenceDateRange"/>
+      <xsd:element ecore:name="removeposition" id="XmlUpdateResourceTyperemove-position"
+          form="unqualified" maxOccurs="unbounded" minOccurs="0" name="remove-position"
+          type="tns5:XmlEntityReference"/>
+      <xsd:element ecore:name="addgroup" id="XmlUpdateResourceTypeadd-group" form="unqualified"
+          maxOccurs="unbounded" minOccurs="0" name="add-group" type="tns5:XmlEntityReferenceDateRange"/>
+      <xsd:element ecore:name="removegroup" id="XmlUpdateResourceTyperemove-group"
+          form="unqualified" maxOccurs="unbounded" minOccurs="0" name="remove-group"
+          type="tns5:XmlEntityReference"/>
+      <xsd:element ecore:name="addcapability" id="XmlUpdateResourceTypeadd-capability"
+          form="unqualified" maxOccurs="unbounded" minOccurs="0" name="add-capability"
+          type="tns5:XmlEntityReferenceQualified"/>
+      <xsd:element ecore:name="removecapability" id="XmlUpdateResourceTyperemove-capability"
+          form="unqualified" maxOccurs="unbounded" minOccurs="0" name="remove-capability"
+          type="tns5:XmlEntityReference"/>
+      <xsd:element ecore:name="setattribute" id="XmlUpdateResourceTypeset-attribute"
+          form="unqualified" maxOccurs="unbounded" minOccurs="0" name="set-attribute"
+          type="tns5:XmlEntityReferenceAttributes"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:name="guid" id="XmlUpdateResourceTypeguid" form="unqualified"
+        name="guid" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The GUID that identifies the Resource. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:simpleType name="long_StudioGeneratedTemplate">
+    <xsd:restriction base="xsd:integer">
+      <xsd:minInclusive value="-9223372036854775808"/>
+      <xsd:maxInclusive value="9223372036854775807"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element abstract="false" name="createResource" nillable="false" type="XmlCreateResource"/>
+  <xsd:element abstract="false" name="deleteResource" nillable="false" type="XmlDeleteResource"/>
+  <xsd:element abstract="false" name="getResource" nillable="false" type="XmlGetResource"/>
+  <xsd:element abstract="false" name="updateResource" nillable="false" type="XmlUpdateResource"/>
+  <xsd:element abstract="false" name="createResourceResponse" nillable="false">
+    <xsd:complexType ecore:name="createResourceResponseType" id="com.tibco.bpm.de.api.resourcecreateResourceResponseType"
+        mixed="false">
+      <xsd:sequence>
+        <xsd:element ecore:name="entity" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="entity">
+          <xsd:complexType ecore:name="entityType" id="com.tibco.bpm.de.api.resourceentityType"
+              mixed="false">
+            <xsd:complexContent mixed="false">
+              <xsd:extension base="tns5:XmlLdapEntryId">
+                <xsd:attribute ecore:name="containerid" id="entityTypecontainer-id"
+                    form="unqualified" name="container-id" type="tns7:long_StudioGeneratedTemplate"
+                    use="required">
+                  <xsd:annotation>
+                    <xsd:documentation>Identifies the LDAP Container from which the candidate was resolved. </xsd:documentation>
+                  </xsd:annotation>
+                </xsd:attribute>
+                <xsd:attribute ecore:name="guid" id="entityTypeguid" form="unqualified"
+                    name="guid" type="xsd:string" use="required">
+                  <xsd:annotation>
+                    <xsd:documentation>The GUID assigned to the newly created resource. </xsd:documentation>
+                  </xsd:annotation>
+                </xsd:attribute>
+                <xsd:attribute ecore:name="name" id="entityTypename" form="unqualified"
+                    name="name" type="xsd:string" use="required">
+                  <xsd:annotation>
+                    <xsd:documentation>The name assigned to the resource. </xsd:documentation>
+                  </xsd:annotation>
+                </xsd:attribute>
+                <xsd:attribute ecore:name="label" id="entityTypelabel" form="unqualified"
+                    name="label" type="xsd:string" use="optional">
+                  <xsd:annotation>
+                    <xsd:documentation>The name assigned to the resource for dispay purposes. </xsd:documentation>
+                  </xsd:annotation>
+                </xsd:attribute>
+                <xsd:attribute ecore:name="alreadypresent" id="entityTypealready-present"
+                    default="false" form="unqualified" name="already-present" type="xsd:boolean"
+                    use="optional">
+                  <xsd:annotation>
+                    <xsd:documentation>Indicates whether a resource already exists for the given LDAP references. </xsd:documentation>
+                  </xsd:annotation>
+                </xsd:attribute>
+              </xsd:extension>
+            </xsd:complexContent>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element ecore:name="failure" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="failure">
+          <xsd:complexType ecore:name="failureType" id="com.tibco.bpm.de.api.resourcefailureType"
+              mixed="false">
+            <xsd:complexContent mixed="false">
+              <xsd:extension base="tns5:XmlLdapEntryId">
+                <xsd:attribute ecore:name="containerid" id="failureTypecontainer-id"
+                    form="unqualified" name="container-id" type="tns7:long_StudioGeneratedTemplate"
+                    use="required">
+                  <xsd:annotation>
+                    <xsd:documentation>Identifies the LDAP container from which the candidate was resolved. </xsd:documentation>
+                  </xsd:annotation>
+                </xsd:attribute>
+                <xsd:attribute ecore:name="name" id="failureTypename" form="unqualified"
+                    name="name" type="xsd:string" use="required">
+                  <xsd:annotation>
+                    <xsd:documentation>Identifies the Resource name given in the failing entry. </xsd:documentation>
+                  </xsd:annotation>
+                </xsd:attribute>
+                <xsd:attribute ecore:name="error" id="failureTypeerror" form="unqualified"
+                    name="error" type="tns5:XmlCandidateError" use="required">
+                  <xsd:annotation>
+                    <xsd:documentation>Provides a coded explanation of why a resource could not be created from the corresponding candidate. </xsd:documentation>
+                  </xsd:annotation>
+                </xsd:attribute>
+              </xsd:extension>
+            </xsd:complexContent>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="deleteResourceResponse" nillable="false">
+    <xsd:complexType ecore:name="deleteResourceResponseType" id="com.tibco.bpm.de.api.resourcedeleteResourceResponseType"
+        mixed="false">
+      <xsd:sequence>
+        <xsd:element ecore:name="guid" form="unqualified" maxOccurs="unbounded" minOccurs="1"
+            name="guid" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="getDeletedResources" nillable="false">
+    <xsd:complexType ecore:name="getDeletedResourcesType" id="com.tibco.bpm.de.api.resourcegetDeletedResourcesType"
+        mixed="false">
+      <xsd:sequence>
+        <xsd:element ecore:name="pagecontrol" form="unqualified" maxOccurs="1" minOccurs="0"
+            name="page-control" type="tns5:XmlPageControl"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="getDeletedResourcesResponse" nillable="false">
+    <xsd:complexType ecore:name="getDeletedResourcesResponseType" id="com.tibco.bpm.de.api.resourcegetDeletedResourcesResponseType"
+        mixed="false">
+      <xsd:sequence>
+        <xsd:element ecore:name="pagecontrol" form="unqualified" maxOccurs="1" minOccurs="0"
+            name="page-control" type="tns5:XmlPageControlResponse"/>
+        <xsd:element ecore:name="resource" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="resource" type="tns5:XmlDeletedResource"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="purgeDeletedResources" nillable="false">
+    <xsd:complexType ecore:name="purgeDeletedResourcesType" id="com.tibco.bpm.de.api.resourcepurgeDeletedResourcesType"
+        mixed="false">
+      <xsd:choice>
+        <xsd:element ecore:name="all" form="unqualified" maxOccurs="1" minOccurs="1"
+            name="all" type="xsd:anyType"/>
+        <xsd:element ecore:name="guid" form="unqualified" maxOccurs="unbounded" minOccurs="1"
+            name="guid" type="xsd:string"/>
+      </xsd:choice>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="purgeDeletedResourcesResponse" nillable="false">
+    <xsd:complexType ecore:name="purgeDeletedResourcesResponseType" id="com.tibco.bpm.de.api.resourcepurgeDeletedResourcesResponseType"
+        mixed="false">
+      <xsd:attribute ecore:name="purgecount" id="purgeDeletedResourcesResponseTypepurge-count"
+          form="unqualified" name="purge-count" type="xsd:int" use="required">
+        <xsd:annotation>
+          <xsd:documentation>The number of records that were purged. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="getResourceResponse" nillable="false">
+    <xsd:complexType ecore:name="getResourceResponseType" id="com.tibco.bpm.de.api.resourcegetResourceResponseType"
+        mixed="false">
+      <xsd:sequence>
+        <xsd:element ecore:name="resource" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="resource" type="tns5:XmlResourceDetail"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="updateResourceResponse" nillable="false">
+    <xsd:complexType ecore:name="updateResourceResponseType" id="com.tibco.bpm.de.api.resourceupdateResourceResponseType"
+        mixed="false">
+      <xsd:sequence>
+        <xsd:element ecore:name="resource" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="resource" type="tns5:XmlResourceDetail"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="findResources" nillable="false">
+    <xsd:complexType ecore:name="findResourcesType" id="com.tibco.bpm.de.api.resourcefindResourcesType"
+        mixed="false">
+      <xsd:sequence>
+        <xsd:element ecore:name="entityref" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="entity-ref">
+          <xsd:complexType ecore:name="entityrefType" id="com.tibco.bpm.de.api.resourceentity-refType"
+              mixed="false">
+            <xsd:attribute ecore:name="guid" id="entity-refTypeguid" form="unqualified"
+                name="guid" type="xsd:string" use="required"/>
+            <xsd:attribute ecore:name="deepsearch" id="entity-refTypedeep-search"
+                default="false" form="unqualified" name="deep-search" type="xsd:boolean"
+                use="optional">
+              <xsd:annotation>
+                <xsd:documentation>Determines whether the search for resources should extend to logical associations (true). This only applies to groups (where sub-groups will also be included) and locations (where associations by positions, organization units, and organizations will be included). For other entity types, this attribute is ignored. </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element ecore:name="resourcename" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="resource-name" type="xsd:string"/>
+      </xsd:sequence>
+      <xsd:attribute ecore:name="modelversion" id="findResourcesTypemodel-version"
+          default="-1" form="unqualified" name="model-version" type="xsd:int" use="optional">
+        <xsd:annotation>
+          <xsd:documentation>Identifies the major organization model version in which the identified entities are to be searched. The default value of -1 indicates that the latest version should be used. When searching for resources by name, this attribute is ignored. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="currentonly" id="findResourcesTypecurrent-only" default="false"
+          form="unqualified" name="current-only" type="xsd:boolean" use="optional">
+        <xsd:annotation>
+          <xsd:documentation>Determines whether only resources currently associated with the identified entities are to be include (true). If false, any date ranges applied to the resource or its associations are ignored. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="findResourcesResponse" nillable="false">
+    <xsd:complexType ecore:name="findResourcesResponseType" id="com.tibco.bpm.de.api.resourcefindResourcesResponseType"
+        mixed="false">
+      <xsd:sequence>
+        <xsd:element ecore:name="resource" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="resource" type="tns5:XmlModelEntity"/>
+      </xsd:sequence>
+      <xsd:attribute ecore:name="modelversion" id="findResourcesResponseTypemodel-version"
+          form="unqualified" name="model-version" type="xsd:int" use="required">
+        <xsd:annotation>
+          <xsd:documentation>Identifies the major organization model version in which the search was performed. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

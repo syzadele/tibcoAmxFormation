@@ -1,0 +1,49 @@
+{"pane_content_label":"Traitement Dossier Charge De Recrutement",
+  "control_CandidatureRef_CID_candidature_label":"CID_candidature",
+  "pane_toolbar_label":"Toolbar",
+  "control_CandidatureRef_avisProposition_property_choiceLabels_0":
+  "Accepte","control_CandidatureRef_avisProposition_property_choiceLabels_1":
+  "Refuse","control_CandidatureRef_mail_label":"mail",
+  "pane_CandidatureRef_label":"CandidatureRef",
+  "control_CandidatureRef_adresse_label":"adresse",
+  "form_action_error_message":"Error in script for action {0} ({1}): {2}",
+  "control_CandidatureRef_dateCreation_label":"dateCreation",
+  "pane_CandidatureRef_entretiens_property_rowLabel":"{0}",
+  "form_required_message":"{0} is a required field.",
+  "control_CandidatureRef_entretiens_date_label":"date",
+  "control_CandidatureRef_interesseParEntretien_label":
+  "interesseParEntretien",
+  "control_CandidatureRef_poleConcerne_property_choiceLabels_1":"Pole2",
+  "pane_CandidatureRef_entretiens_label":"entretiens",
+  "control_CandidatureRef_statut_label":"Statut",
+  "control_CandidatureRef_poleConcerne_property_choiceLabels_0":"Pole1",
+  "pane_messages_label":"Invalid Entries",
+  "control_CandidatureRef_entretiens_nomCollaborateur_label":
+  "nomCollaborateur","control_CandidatureRef_prenom_label":"prenom",
+  "control_CandidatureRef_avisFinale_label":"avisFinale",
+  "control_close_label":"Close","form_validation_error_message":
+  "Error in script for validation {0} of Control {1} ({2}): {3}",
+  "control_CandidatureRef_statut_property_choiceLabels_0":"Cree",
+  "control_CandidatureRef_avisFinale_property_choiceLabels_2":"Indecise",
+  "control_CandidatureRef_sauterRecrutement_label":"sauterRecrutement",
+  "control_CandidatureRef_statut_property_choiceLabels_2":
+  "Plannification entretien",
+  "control_CandidatureRef_avisFinale_property_choiceLabels_0":"Positive",
+  "control_CandidatureRef_statut_property_choiceLabels_1":"Appel",
+  "control_CandidatureRef_avisFinale_property_choiceLabels_1":"Negative",
+  "control_CandidatureRef_entretiens_avis_property_choiceLabels_0":
+  "Positive","control_CandidatureRef_statut_property_choiceLabels_4":
+  "Donner avis finale",
+  "control_CandidatureRef_entretiens_avis_property_choiceLabels_1":
+  "Negative","control_CandidatureRef_avisProposition_label":
+  "avisProposition","control_CandidatureRef_statut_property_choiceLabels_3":
+  "Entretien",
+  "control_CandidatureRef_entretiens_avis_property_choiceLabels_2":
+  "Indecise","control_CandidatureRef_statut_property_choiceLabels_6":
+  "Termine","control_CandidatureRef_statut_property_choiceLabels_5":
+  "Valide","control_cancel_label":"Cancel",
+  "control_CandidatureRef_nom_label":"nom",
+  "control_CandidatureRef_poleConcerne_label":"poleConcerne",
+  "control_CandidatureRef_entretiens_avis_label":"avis",
+  "control_submit_label":"Submit","control_CandidatureRef_portable_label":
+  "portable"}

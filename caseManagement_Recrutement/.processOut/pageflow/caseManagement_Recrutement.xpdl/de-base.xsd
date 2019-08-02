@@ -1,0 +1,1565 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://base.api.de.bpm.tibco.com" xmlns:channel="http://channeltype.common.n2.tibco.com" xmlns:dex="http://api.de.n2.tibco.com" targetNamespace="http://base.api.de.bpm.tibco.com" version="1.0">
+	<xs:import namespace="http://channeltype.common.n2.tibco.com" schemaLocation="channeltype.xsd"/>
+	<xs:import namespace="http://api.de.n2.tibco.com" schemaLocation="de.xsd"/>
+	<xs:annotation>
+		<xs:documentation>
+      A note on the naming conventions used:
+      Element types from which Java classes are generated should be named using the
+      same convention as Java classes (i.e. camel-casing). They should also have the
+      prefix "Xml" in order to avoid any conflict with any POJO classes of the same
+      name.
+      Attributes, and the name of sub-elements, are in lower-case, with hyphens used
+      to separate words. For example, "first-name", "primary-attribute" and "parent-id".
+      Sub-element names should also be singular; e.g. "child" and not "children",
+      "property" and not "properties".
+        </xs:documentation>
+	</xs:annotation>
+	<xs:element name="test" type="XmlContainer"/>
+	<xs:simpleType name="XmlLdapSearchScope">
+		<xs:annotation>
+			<xs:documentation>Enumerated value indicating the scope on which an LDAP search is to be performed.
+            ONELEVEL - contains elements with objects in the named context that satisfy the search filter.
+            SUBTREE - contains elements of objects from the subtree (including the named context) that satisfy the search filter.
+            </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ONELEVEL"/>
+			<xs:enumeration value="SUBTREE"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="XmlPageControl">
+		<xs:annotation>
+			<xs:documentation>Conveys the paged request for a list of entities.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="page" type="xs:int" use="required">
+			<xs:annotation>
+				<xs:documentation>Indicates the page requested. The first page is numbered 1. If the requested page, for a given page-size, exceeds the available entries, the resulting list will be empty.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="page-size" type="xs:int" use="required">
+			<xs:annotation>
+				<xs:documentation>Indicates the maximum number of entries per page.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	
+	<xs:complexType name="XmlPageControlResponse">
+		<xs:annotation>
+			<xs:documentation>Conveys the paged request for a list of entities.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="XmlPageControl">
+				<xs:attribute name="total-entries" type="xs:int" use="required">
+					<xs:annotation>
+						<xs:documentation>Indicates the total number of entries available. Allowing the number of pages to be determined.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="XmlModelInstanceIdAttribute">
+		<xs:annotation>
+			<xs:documentation>Names an LDAP Attribute that will be used to populate the value of the named Model-Template Instance Identity attribute.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="name" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Names the model-template instance ID attribute that will take its value from the named LDAP Attribute.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="ldap-attribute" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Names the LDAP Attribute from which the value of the model-template instance ID attribute will be populated.
+                If the named LDAP Attribute holds many values, only one will be chosen - at random.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="XmlModelInstanceIdValue">
+		<xs:annotation>
+			<xs:documentation>Makes up one element of the Model-Template Identity; each element being a named attribute linked to a named LDAP attribute.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="name" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Names the model-template instance ID attribute that will take its value from the named LDAP Attribute.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="value" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The value of the LDAP Attribute from which the model-template instance ID will be constructed.
+                If the named LDAP Attribute holds many values, only one will be chosen - at random.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="XmlExtensionPoint">
+		<xs:annotation>
+			<xs:documentation>It provides the configuration details of an Organisation Extension Point.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="1" name="instance-id-attr" type="XmlModelInstanceIdAttribute"/>
+		</xs:sequence>
+		<xs:attribute name="ldap-alias" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Identifies the LDAP Connection on which the LDAP Query will be performed.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="query" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>This LDAP Query expression will locate entries that identify new model template instances.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="base-dn" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Optionally names the LDAP branch to which the LDAP Query will be restricted. This will be in addition to any Base-DN already specified on the LDAP Connection.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="search-scope" type="XmlLdapSearchScope" use="required">
+			<xs:annotation>
+				<xs:documentation>The Search Scope determines the depth to which the search will be performed.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="ldap-attribute" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Names the LDAP Attribute from which the name of the new Model Template Instance will be taken. The root Organisation-Unit of the Model Template Instance will be named with the value of this attribute.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="XmlExtensionPointSetting">
+		<xs:annotation>
+			<xs:documentation>Serves two purposes. Firstly, it identifies the entity in which it is an element as being an Organisation Extension Point.
+            Secondly, it provides the configuration details of that Extension Point.
+            </xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="XmlExtensionPoint">
+				<xs:attribute name="model-template" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Identifies the Model Template entity to which this Extension Point refers.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute default="true" name="complete" type="xs:boolean">
+					<xs:annotation>
+						<xs:documentation>Indicates whether this Extension Point configuration is complete. If false then it will require configuration before it is used to generate dynamic org-model fragments.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XmlExtensionPointAssignment">
+		<xs:annotation>
+			<xs:documentation>Serves two purposes. Firstly, it identifies the entity in which it is an element as being an Organisation Extension Point.
+            Secondly, it provides the configuration details of that Extension Point.
+            </xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="XmlExtensionPoint">
+				<xs:attribute name="model-version" type="xs:int" use="required">
+					<xs:annotation>
+						<xs:documentation>Major version number of the organization model in which the Extension Point entity is found; and to which this Extension Point configuration will be set.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="ext-point-guid" type="xs:string" use="required">
+					<xs:annotation>
+						<xs:documentation>Unique identifier of the organisation unit that is the Extension Point to which this configuration will be set.
+		                The identified entity must have been deployed as an Extension Point holder.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XmlExtensionPointRemoval">
+		<xs:attribute name="model-version" type="xs:int" use="required">
+			<xs:annotation>
+				<xs:documentation>Major version number of the organization model in which the Extension Point entity is found; and to which this Extension Point configuration will be set.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="ext-point-guid" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Unique identifier of the organisation unit that is the Extension Point to which this configuration will be set.
+		                The identified entity must have been deployed as an Extension Point holder.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="XmlCandidateQuery">
+		<xs:annotation>
+			<xs:documentation>Defines an LDAP Query that will identify candidates for Resources. The candidate Resources will be automatically created and assigned to the Group or Position to which this query is associated.
+The query identifies an LDAP Container; the Primary LDAP Source of which will be used to evaluate the query.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="container-id" type="xs:long" use="required">
+			<xs:annotation>
+				<xs:documentation>Identifies the LDAP Container whose the Primary LDAP Source will be used to evaluate the query.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="query" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The LDAP Query that will be combined with the query of the Primary LDAP Source to identify candidate Resources.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="base-dn" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>(Optional) Provides an additional base DN that will be used to restrict the scope of the Candidate Query. This base DN is relative to, and in additon, to any base DN of the LDAP Container's primary LDAP Source.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="search-scope" type="XmlLdapSearchScope" use="optional">
+			<xs:annotation>
+				<xs:documentation>Enumerated value indicating the scope on which an LDAP search is to be performed.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="XmlCandidateQueryAssignment">
+		<xs:annotation>
+			<xs:documentation>Used to persist the LDAP Query that is used to identify candidate Resources for the Position or Group to which the CandidateQuery is assigned.
+            </xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="XmlCandidateQuery">
+				<xs:choice>
+					<xs:element maxOccurs="1" minOccurs="1" name="position" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>Identifies the position, by its guid, to which the Candidate Query is assigned.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="1" name="group" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>Identifies the group, by its guid, to which the Candidate Query is assigned.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XmlContainer">
+		<xs:annotation>
+			<xs:documentation>Definition of an LDAP container and any LDAP source entries that it contains.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice maxOccurs="1" minOccurs="1">
+				<xs:element name="primary-ldap" type="XmlLdapQuerySource">
+					<xs:annotation>
+						<xs:documentation>Definition of the primary LDAP source for this LDAP container.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="primary-group-ldap" type="XmlLdapGroupSource">
+					<xs:annotation>
+						<xs:documentation>Definition of the primary LDAP source for this LDAP container.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+			<xs:choice maxOccurs="unbounded" minOccurs="0">
+				<xs:element name="secondary-ldap" type="XmlSecondaryLdapQuerySource">
+					<xs:annotation>
+						<xs:documentation>(Optional) Definition of a secondary LDAP source for this LDAP container. An LDAP container can have any number of secondary LDAP sources.
+	
+	A secondary LDAP source provides the ability to retrieve some LDAP data from an alternative LDAP directory.
+	
+	Named LDAP attributes are used to map the secondary LDAP entries to the primary LDAP entries.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="secondary-group-ldap" type="XmlSecondaryLdapGroupSource">
+					<xs:annotation>
+						<xs:documentation>(Optional) Definition of a secondary LDAP source for this LDAP container. An LDAP container can have any number of secondary LDAP sources.
+	
+	A secondary LDAP source provides the ability to retrieve some LDAP data from an alternative LDAP directory.
+	
+	Named LDAP attributes are used to map the secondary LDAP entries to the primary LDAP entries.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="restricted-org" type="XmlRestrictedOrg">
+				<xs:annotation>
+					<xs:documentation>(Optional) Identifies the organisations to which access is restricted to only those resources derived from the LDAP container in which this element resides.
+
+It also restricts the organizations to which resources derived from the LDAP container can be assigned.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute default="0" name="id" type="xs:long" use="optional">
+			<xs:annotation>
+				<xs:documentation>Unique ID of the LDAP container. Only given when updating an existing LDAP container.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="name" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Unique name of the LDAP container.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="description" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Description of the LDAP container.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute default="true" name="active" type="xs:boolean">
+			<xs:annotation>
+				<xs:documentation>Read-only - Indicates if this container has been marked as deleted. Containers will only be deleted when all resources derived from it are deleted.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="entity-count" type="xs:int" use="optional">
+			<xs:annotation>
+				<xs:documentation>Read-only - only specified when this XmlContainer is used in a service response.
+
+The count of the number of LDAP entries this container referenced. This count is set when the container is queried. The count may not be currently correct if the LDAP directory has been modified since the count was set.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="last-accessed" type="xs:dateTime" use="optional">
+			<xs:annotation>
+				<xs:documentation>Read-only - Date and time on which the LDAP container was last queried, and the date on which the entity-count above was set.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="XmlRestrictedOrg">
+		<xs:annotation>
+			<xs:documentation>Identifies an organisation to which access is restricted to only those Resource derived  from the LDAP Container in which this element resides. It also restricts the Organizations to which Resources derived from the LDAP Container can be assigned.
+            </xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="org-guid" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Unique identifier of the organisation to be administered.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="name" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Read-only - Name of the organization to be administered. Only supplied for display purposes.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="XmlLdapSource">
+		<xs:annotation>
+			<xs:documentation>Definition of an LDAP shared resource entry (identified by the LDAP alias) in an LDAP container.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="attribute-mapping" type="XmlLdapAttributeMapping"/>
+		</xs:sequence>
+		<xs:attribute name="ldap-alias" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The name (or alias) by which a configured LDAP connection shared resource is identified. LDAP connection shared resource are named with the prefix "ldap/de/" in order to indicate that they are intended for Directory Engine use. The alias given here is that name without the "ldap/de/" prefix.
+
+An LDAP container can contain only one instance of an LDAP source for any alias.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="resource-name-attributes" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>(Optional) A space-separated list of named LDAP attributes, whose values will be concatenated to generate a default display name for resources derived from entries in this LDAP source.
+When an LDAP container contains one or more secondary LDAP sources, and those LDAP sources also provide resource-name-attributes, those of the first entry encountered will be used.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="XmlLdapQuerySource">
+		<xs:annotation>
+			<xs:documentation>Definition of an LDAP Source entry (identified by the LDAP alias) in an LDAP container.
+            This class of LDAP Source is used to locate candidate entries using an LDAP Query, and optional base-dn.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="XmlLdapSource">
+				<xs:attribute name="base-dn" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>(Optional) Provides an additional base DN that will be used to restrict the scope of the LDAP query. This base DN is relative to, and in additon, to any base DN specified in the URL of the LDAP connection shared resource identified by the ldap-alias.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="ldap-query" type="xs:string" use="required">
+					<xs:annotation>
+						<xs:documentation>LDAP query expression used to identify the entries to be returned from this LDAP source.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="search-scope" type="XmlLdapSearchScope" use="optional">
+					<xs:annotation>
+						<xs:documentation>The Search Scope determines the depth to which the search will be performed. By default the search will be SUBTREE.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XmlLdapGroupSource">
+		<xs:annotation>
+			<xs:documentation>Definition of an LDAP Source entry (identified by the LDAP alias) in an LDAP container.
+            This class of LDAP Source is used to locate candidate entries using LDAP Groups.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="XmlLdapSource">
+				<xs:attribute name="group-dn" type="xs:string" use="required">
+					<xs:annotation>
+						<xs:documentation>The Group DN uniquely identifies the directory entry that is the group. This can be derived by performing a search based upon the base-DN, search filter and scope parameters described above. Or, it can be manually entered (with verification) by the user.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="member-attribute" type="xs:string" use="required">
+					<xs:annotation>
+						<xs:documentation>The member attribute names the attribute within the group entry that holds the collection of member idenifiers - their DNs. This will give the final list of candidate resources.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XmlLdapAttributeMapping">
+		<xs:annotation>
+			<xs:documentation>Mapping between a Resource Attribute, which is defined in the organization model and identified by its GUID, and an LDAP attribute, which is identified by its name.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="resource-attr-guid" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The GUID of the Resource Attribute as defined in the organization model.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="ldap-attribute" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>LDAP attribute that is to be mapped to the identified resource attribute. Whenever a value is required for the resource attribute, it will be provided by this LDAP attribute.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="XmlSecondaryLdapQuerySource">
+		<xs:annotation>
+			<xs:documentation>Extension of XmlLdapSource, which identifies a secondary LDAP Source entry within an LDAP container.
+
+An LDAP container can hold a single primary LDAP Source and any number of secondary LDAP Sources. Secondary LDAP Sources hold "foreign-key" references that map their entries to those of the primary LDAP Source by named attribute values.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="XmlLdapQuerySource">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="1" name="primary-link" type="XmlLdapSourceLink">
+						<xs:annotation>
+							<xs:documentation>Definition of how this secondary LDAP source is mappped to the primary LDAP source. The mapping will allow an attribute's value in the primary LDAP source to map to an attribute's value in the secondary LDAP source.
+
+For example, if a resource has an entry of "UID=Clint Hill" in the primary LDAP source, and is uniquely identified in the secondary LDAP source as "CN=Clint Hill". The mappping would map the "UID" attribute in the primary LDAP source to the "CN" attribute in the secondary LDAP source.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XmlSecondaryLdapGroupSource">
+		<xs:annotation>
+			<xs:documentation>Extension of XmlLdapSource, which identifies a secondary LDAP Source entry within an LDAP container.
+
+An LDAP container can hold a single primary LDAP Source and any number of secondary LDAP Sources. Secondary LDAP Sources hold "foreign-key" references that map their entries to those of the primary LDAP Source by named attribute values.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="XmlLdapGroupSource">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="1" name="primary-link" type="XmlLdapSourceLink">
+						<xs:annotation>
+							<xs:documentation>Definition of how this secondary LDAP source is mappped to the primary LDAP source. The mapping will allow an attribute's value in the primary LDAP source to map to an attribute's value in the secondary LDAP source.
+
+For example, if a resource has an entry of "UID=Clint Hill" in the primary LDAP source, and is uniquely identified in the secondary LDAP source as "CN=Clint Hill". The mappping would map the "UID" attribute in the primary LDAP source to the "CN" attribute in the secondary LDAP source.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XmlLdapSourceLink">
+		<xs:annotation>
+			<xs:documentation>Definition of a foreign key mapping between the primary LDAP source and a secondary LDAP source for an LDAP container.
+
+Each element names an attribute within each LDAP source that, for a given entry in each LDAP source, holds the same value and thus provides an association between the two entries.
+
+For example, if a resource has an entry of "UID=Clint Hill" in the primary LDAP source, and is uniquely identified in the secondary LDAP source as "CN=Clint Hill". The mappping would map the "UID" attribute in the primary LDAP source to the "CN" attribute in the secondary LDAP source.
+
+In order to uniquely identify an entry in each LDAP source many of these elements may be required, naming several attributes in each LDAP source.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="primary-attribute" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The LDAP attribute in the primary LDAP source that is to be mapped to the LDAP attribute in the secondary LDAP source (name in the secondary-attribute).</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="secondary-attribute" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The LDAP attribute in this secondary LDAP source that is to be mapped to from the LDAP attribute in the primary LDAP source (named in the primary-attribute)</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="XmlLdapEntry">
+		<xs:annotation>
+			<xs:documentation>Details the properties of an LDAP entry; including its DN and attributes.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="attribute" type="XmlLdapAttributeValue">
+				<xs:annotation>
+					<xs:documentation>The collection of named attributes read from the LDAP entry. This collection may be limited to those named in the request that returned this element.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="ldap-dn" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The full Distinguished Name (DN) of the LDAP entry from which this element was constructed.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="XmlLdapEntryId">
+		<xs:annotation>
+			<xs:documentation>Identifies an LDAP entry by the alias of the LDAP connection shared resource and the Distinguished Name (DN) of the entry within that LDAP.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="ldap-alias" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The name (or alias) by which a configured LDAP connection shared resource is identified.
+
+LDAP connection shared resources are named with the prefix "ldap/de/" in order to indicate that they are intended for Directory Engine use. The alias given here is that name without the "ldap/de/" prefix.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="ldap-dn" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The full Distinguished Name (DN) of the LDAP entry identified by this element.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:simpleType name="XmlCandidateChoice">
+		<xs:annotation>
+			<xs:documentation>Enumerated value indicating what entries should be included in the result set of a search
+            of an LDAP Container's candidate Resources. One of the following:
+                - EXISTING: include only entries from which a Resource has already been created.
+                - NON-EXISTING: include only entries from which no Resource has yet been created.
+                - ALL: include both existing and non-existing candidate Resources.
+                - INVALID: include only Resources that exist in BPM but not in LDAP</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="EXISTING"/>
+			<xs:enumeration value="NON-EXISTING"/>
+			<xs:enumeration value="ALL"/>
+			<xs:enumeration value="INVALID"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="XmlCandidateError">
+		<xs:annotation>
+			<xs:documentation>Enumerated value indicating an error in the identification of an LDAP Container's
+            candidate Resource. Also used to report failure when attempting to create a Resource from a candidate.
+                - MULTIPLE-ENTRIES: The Secondary LDAP Source mappings identify multiple entries.
+                - MISSING-RESOURCE: The existing Resource's entry could not be found in the LDAP directory.
+                - NAME-EXISTS: A Resource already exists with the name specified in a create Resource request.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="MULTIPLE-ENTRIES"/>
+			<xs:enumeration value="MISSING-RESOURCE"/>
+			<xs:enumeration value="NAME-EXISTS"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="XmlLdapContainerEntry">
+		<xs:annotation>
+			<xs:documentation>Identifies the LDAP entries (both primary and secondaries) from which a Resource can be (or has been) created. The ldap-alias and ldap-dn identify the LDAP Entry within the Primary LDAP Source the LDAP Container from which the candidate was derived.
+
+If the LDAP Container has any Secondary LDAP Sources, a "secondary-ref" identifies the LDAP Entry within each of those Secondary LDAP Sources.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="XmlLdapEntryId">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="secondary-ref" type="XmlLdapEntryId">
+						<xs:annotation>
+							<xs:documentation>Identifies the LDAP entry in the secondary LDAP source (which is itself identified by the ldap-alias) of an LDAP container.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XmlResourceCandidate">
+		<xs:annotation>
+			<xs:documentation>Identifies the LDAP entries (both primary and secondaries) from which a Resource can be (or has been) created. The ldap-alias and ldap-dn identify the LDAP Entry within the Primary LDAP Source the LDAP Container from which the candidate was derived. If the LDAP Container has any Secondary LDAP Sources, a "secondary-ref" identifies the LDAP Entry within each of those Secondary LDAP Sources. If the candidate is an existing Resource, the GUID for that Resource will be included. If a Resource cannot be created from the candidate, an error code will indicate the reason.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="XmlLdapContainerEntry">
+				<xs:attribute name="guid" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>If the candidate is one for which a Resource already exists, the GUID of that existing resource is given.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="name" type="xs:string" use="required">
+					<xs:annotation>
+						<xs:documentation>The name of the existing resource, or the name that will be assigned (by default) to the resource created from this candidate entry.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="error" type="XmlCandidateError" use="optional">
+					<xs:annotation>
+						<xs:documentation>Read-only - Indicates that the candidate is invalid, and provides a coded explanation why. If this attribute is not present, the candidate is valid.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="XmlDeletedResource">
+		<xs:annotation>
+			<xs:documentation>Identifies a resource that has been deleted but whose details have been recorded in order to allow the re-allocation of processes/work-items.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="XmlLdapContainerEntry">
+				<xs:attribute name="guid" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>The GUID originally assigned to the resource..</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="name" type="xs:string" use="required">
+					<xs:annotation>
+						<xs:documentation>The name assigned to the resource.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="label" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>The alternative name assigned to the resource.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="container-id" type="xs:long" use="optional">
+					<xs:annotation>
+						<xs:documentation>Identifies the LDAP container from which the resource originated.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="date-deleted" type="xs:dateTime" use="optional">
+					<xs:annotation>
+						<xs:documentation>The date and time on which the resource was deleted.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="XmlLdapAttribute">
+		<xs:annotation>
+			<xs:documentation>Names an LDAP attribute and indicates whether its values are binary data.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="name" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The name of the LDAP attribute.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute default="false" name="binary" type="xs:boolean">
+			<xs:annotation>
+				<xs:documentation>Indicates whether the data of the named attribute is binary.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="XmlLdapAttributeValue">
+		<xs:annotation>
+			<xs:documentation>Names an LDAP Attribute and returns the values it holds. Includes an indication of whether its values are binary data. Binary values will be encoded in Base-64.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="XmlLdapAttribute">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="value" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>The collection of values read from the named attribute.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XmlMappedAttributeValue">
+		<xs:annotation>
+			<xs:documentation>Names an LDAP attribute and returns the values it holds. Includes an indication of whether its values are binary data. Binary values will be encoded in Base-64.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="XmlLdapAttributeValue">
+				<xs:attribute name="resource-attr-guid" type="xs:string" use="required">
+					<xs:annotation>
+						<xs:documentation>The GUID of the resource attribute as defined in the organization model.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="XmlAllocationMethod">
+		<xs:annotation>
+			<xs:documentation>Enumerated value defining the method by which resources will be selected from a collection for work allocation. One of the following:
+- ANY: use random selection.
+- NEXT: use iterative selection.
+- THIS: use the specifically identified resource.
+- PLUGIN: use the named plugin code (where the name is given separately) to perform the selection.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ANY"/>
+			<xs:enumeration value="NEXT"/>
+			<xs:enumeration value="THIS"/>
+			<xs:enumeration value="PLUGIN"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="XmlSelectionMode">
+		<xs:annotation>
+			<xs:documentation>Method used to select a resource from an identified collection of resources.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="method" type="XmlAllocationMethod" use="required">
+			<xs:annotation>
+				<xs:documentation>Algorithm used to select a resource. One of:
+- ANY: use random selection.
+- NEXT: use iterative selection.
+- THIS: use the specifically identified resource.
+- PLUGIN: use the named plugin code (where the name is given separately) to perform the selection.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="plugin" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Name of custom plugin implementation.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="XmlModelEntity">
+		<xs:annotation>
+			<xs:documentation>Identifies an Organizational Model Entity to which a Resource is associated.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="guid" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The GUID that uniquely identifies the entity.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="name" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The name assigned to the entity.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="label" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The optional label assigned to the entity. This is used for display purposes. If not given, the name is used for display.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="XmlEntityAssignmentDated">
+		<xs:complexContent>
+			<xs:extension base="XmlModelEntity">
+				<xs:annotation>
+					<xs:documentation>Identifies an Organizational Model Entity to which a Resource is associated.
+                   The association can be restricted by a date range, that specifies when the association is valid.</xs:documentation>
+				</xs:annotation>
+				<xs:attribute name="start-date" type="xs:dateTime" use="optional">
+					<xs:annotation>
+						<xs:documentation>The optional date and time on which the resource's membership to this entity starts.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="end-date" type="xs:dateTime" use="optional">
+					<xs:annotation>
+						<xs:documentation>The optional date and time on which the resource's membership to this entity ends.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XmlEntityAssignmentQualified">
+		<xs:complexContent>
+			<xs:extension base="XmlModelEntity">
+				<xs:annotation>
+					<xs:documentation>Identifies an Organizational Model Entity to which the enclosing entity is associated.
+                   The association can be qualified by one or more values.</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="qualifier-value" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>Any number of values that qualify this assignment.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XmlPrivilegeAssignment">
+		<xs:complexContent>
+			<xs:extension base="XmlEntityAssignmentQualified">
+				<xs:annotation>
+					<xs:documentation>Identifies a Privilege to which a Resource is associated.
+                   The association can be qualified by one or more values.</xs:documentation>
+				</xs:annotation>
+				<xs:choice>
+					<xs:element maxOccurs="1" minOccurs="1" name="position" type="XmlModelEntity">
+						<xs:annotation>
+							<xs:documentation>Identifies the position from which the resource inherits this privilege assignment.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="1" name="org-unit" type="XmlModelEntity">
+						<xs:annotation>
+							<xs:documentation>Identifies the organization unit from which the resource inherits this privilege assignment.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="1" name="group" type="XmlModelEntity">
+						<xs:annotation>
+							<xs:documentation>Identifies the group from which the resource inherits this privilege assignment.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XmlResourceAttributeValue">
+		<xs:annotation>
+			<xs:documentation>Identifies Resource Attribute and the values assigned to a Resource.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="value" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>The collection of values assigned to this attribute instance.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="guid" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The GUID that uniquely identifies the resource attribute.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="name" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The name of the resource attribute.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="label" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The name of the resource attribute used for display purposes.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="type" type="dex:XmlParameterType" use="required">
+			<xs:annotation>
+				<xs:documentation>Indicates the data type of the attribute values.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="ldap-alias" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>If the resource attribute takes its value from an LDAP attribute, this names the LDAP shared resource from which the LDAP entry was retrieved.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="ldap-dn" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>If the resource attribute takes its value from an LDAP attribute, this is the DN of the LDAP entry from which the values were retrieved.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="ldap-attribute" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>If the resource attribute takes its value from an LDAP attribute, this names the LDAP attribute from which the values were retrieved.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="ldap-binary" type="xs:boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>If the resource attribute takes its value from an LDAP attribute, this indicates whether its values are binary data. Binary values are encoded in Base-64.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="XmlPushDestinationId">
+		<xs:annotation>
+			<xs:documentation>Identifies a push destination.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="name" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The name of the push destination.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="channel-type" type="channel:ChannelType" use="required">
+			<xs:annotation>
+				<xs:documentation>Enumerated type defining the presentation technology used by the channel associated with this push destination.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="channel-id" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Unique ID of the channel associated with this push destination.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="XmlPushDestination">
+		<xs:annotation>
+			<xs:documentation>Definition of a push destination.
+
+When using these XML elements to set a push destination, if both the "resource-attr-guid" attribute and "value" elements are specified, the "value" elements will be ignored.
+The value elements are used to pass the values of the push destination. If the push destination:
+            - retrieves its value from an LDAP attribute (via a resource-attr-guid arameter descriptor) it can hold multiple values, so the value element can occur several times.
+            - does not take its value from an LDAP attribute, it can hold only one value. If multiple values are given when setting the push destination, only the first value is recorded.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="XmlPushDestinationId">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="value" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>Value to be used for this push destination.
+When setting a push destination, this value is only used if no resource-attr-guid attribute is supplied.
+When reading a push destination, this is the explicit value or the value(s) held by the Resource attribute identified by the resource-attr-guid attribute.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="enabled" type="xs:boolean" use="required">
+					<xs:annotation>
+						<xs:documentation>Boolean value indicating whether this push destination is currently enabled (TRUE) or not (FALSE).</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="resource-attr-guid" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>Unique ID of a resource attribute whose value should be used for the push destination. The parameter descriptor must be assigned to the organization model entity for whom the push destination is being set.  If a value is assigned to both this attribute and the "value" element, the value of this attribute will be used.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XmlResourceDetail">
+		<xs:sequence>
+			<xs:element maxOccurs="1" minOccurs="0" name="location" type="XmlModelEntity">
+				<xs:annotation>
+					<xs:documentation>Identifies a location to which the resource is associated.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="position" type="XmlEntityAssignmentDated">
+				<xs:annotation>
+					<xs:documentation>Identifies a position to which the resource is associated.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="group" type="XmlEntityAssignmentDated">
+				<xs:annotation>
+					<xs:documentation>Identifies a group to which the resource is associated.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="capability" type="XmlEntityAssignmentQualified">
+				<xs:annotation>
+					<xs:documentation>Identifies a capability to which the resource is associated.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="privilege" type="XmlPrivilegeAssignment">
+				<xs:annotation>
+					<xs:documentation>Identifies a privilege to which the resource is associated. It also identifies the organizational model entity from which the resource inherits the privilege.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="attribute" type="XmlResourceAttributeValue">
+				<xs:annotation>
+					<xs:documentation>Identifies a resource attribute, and the values assigned to the resource.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="push-destination" type="XmlPushDestination">
+				<xs:annotation>
+					<xs:documentation>Describes a resource push destination, used to push work items to the resource.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="ldap-reference" type="XmlLdapContainerEntry">
+				<xs:annotation>
+					<xs:documentation>Identifies the LDAP entry from which the resource is derived.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="model-version" type="xs:int" use="required">
+			<xs:annotation>
+				<xs:documentation>Identifies the model major version from which the resource's organization model entity associations are taken.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="resource-type" type="dex:ResourceType" use="required">
+			<xs:annotation>
+				<xs:documentation>Identifies the model major version from which the resource's organization model entity associations are taken.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="guid" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The GUID assigned to the resource.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="name" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The name assigned to the resource.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="label" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The name assigned to the resource for display purposes.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="start-date" type="xs:dateTime" use="optional">
+			<xs:annotation>
+				<xs:documentation>The optional date and time on which the resource's presence should begin.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="end-date" type="xs:dateTime" use="optional">
+			<xs:annotation>
+				<xs:documentation>The optional date and time on which the resource's presence should end.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="container-id" type="xs:long" use="optional">
+			<xs:annotation>
+				<xs:documentation>Identifies the LDAP container from which the candidate was resolved.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="container-name" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The name of LDAP container from which the candidate was resolved.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="XmlOrgModelDeployment">
+		<xs:annotation>
+			<xs:documentation>Lists all the properties of an organization-model deployment artefact.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="major" type="xs:int" use="required">
+			<xs:annotation>
+				<xs:documentation>Major component of the version number.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="minor" type="xs:int" use="required">
+			<xs:annotation>
+				<xs:documentation>Minor component of the version number.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="micro" type="xs:int" use="required">
+			<xs:annotation>
+				<xs:documentation>Micro component of the version number.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="qualifier" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Qualifier component of the version number.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="name" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Name of the organization model deployment artifact, as defined by TIBCO Business Studio.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="deployed" type="xs:dateTime" use="optional">
+			<xs:annotation>
+				<xs:documentation>Timestamp on which the organization model deployment artifact was deployed.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="XmlOrgModelVersionDetail">
+		<xs:annotation>
+			<xs:documentation>Identifies a major version number of an organization model, detailing the deployment artifacts that make up that major version.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="1" name="deployment" type="XmlOrgModelDeployment"/>
+		</xs:sequence>
+		<xs:attribute name="model-version" type="xs:int" use="required">
+			<xs:annotation>
+				<xs:documentation>Major version number of the organization model. The contained organization model deployment records make up this version.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="XmlOrgAttribute">
+		<xs:annotation>
+			<xs:documentation>Describes an organization model attribute that may be assigned to organization model entities.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="XmlModelEntity">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="enum-val" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>For Enum and EnumSet attributes, these elements list the permitted values.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="type" type="dex:XmlParameterType" use="required">
+					<xs:annotation>
+						<xs:documentation>Indicates the data type of the attribute values.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XmlOrgAttributeValue">
+		<xs:annotation>
+			<xs:documentation>Records the values held by an organization model entity for an attribute. The attribute is described by its definition.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element maxOccurs="1" minOccurs="1" name="definition" type="XmlOrgAttribute">
+				<xs:annotation>
+					<xs:documentation>The definition of the attribute, including data type and possible values.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="value" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Lists the values assigned to this attribute.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="XmlQualifiedEntity">
+		<xs:annotation>
+			<xs:documentation>Describes an qualified org-model entity (i.e. Privilege or Capability).</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="XmlModelEntity">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="0" name="qualifier" type="XmlOrgAttribute">
+						<xs:annotation>
+							<xs:documentation>For qualified entities, this element describes the qualifier attribute.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType abstract="true" name="XmlQueryEntity">
+		<xs:annotation>
+			<xs:documentation>Describes registered Resource Query.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="XmlModelEntity"/>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="XmlCapability">
+		<xs:annotation>
+			<xs:documentation>Describes an org-model Capability and any qualifier attribute.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="XmlQualifiedEntity">
+				<xs:attribute default="0" name="resource-count" type="xs:int" use="optional">
+					<xs:annotation>
+						<xs:documentation>Reports the number of resources assigned with this capability. This information is only included if requested as part of the request parameters.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="XmlPrivilege">
+		<xs:annotation>
+			<xs:documentation>Describes an org-model Privilege and any qualifier attribute.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="XmlQualifiedEntity"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="XmlCapabilityCategory">
+    	<xs:annotation>
+      		<xs:documentation>Allows Categories to be grouped into categories; perhaps by functionality. The categories can also be nested.</xs:documentation>
+		</xs:annotation>
+    	<xs:complexContent>
+	      	<xs:extension base="XmlModelEntity">
+		    	<xs:choice maxOccurs="unbounded" minOccurs="0">
+			  		<xs:element maxOccurs="unbounded" minOccurs="0" name="capability-category" type="XmlCapabilityCategory">
+		        		<xs:annotation>
+		          			<xs:documentation>Defines sub-categories to this Category; creating a hierarchical structure.</xs:documentation>
+		        		</xs:annotation>
+		      		</xs:element>
+		      		<xs:element maxOccurs="unbounded" minOccurs="0" name="capability" type="XmlCapability">
+		        		<xs:annotation>
+		          			<xs:documentation>A capability that is contained within this category.</xs:documentation>
+		        		</xs:annotation>
+		      		</xs:element>
+		    	</xs:choice>
+	      	</xs:extension>
+    	</xs:complexContent>
+  	</xs:complexType>
+
+	<xs:complexType name="XmlPrivilegeCategory">
+    	<xs:annotation>
+      		<xs:documentation>Allows Privileges to be grouped into categories; perhaps by functionality. The categories can also be nested.</xs:documentation>
+		</xs:annotation>
+    	<xs:complexContent>
+	      	<xs:extension base="XmlModelEntity">
+		    	<xs:choice maxOccurs="unbounded" minOccurs="0">
+			  		<xs:element maxOccurs="unbounded" minOccurs="0" name="privilege-category" type="XmlPrivilegeCategory">
+		        		<xs:annotation>
+		          			<xs:documentation>Defines sub-categories to this Category; creating a hierarchical structure.</xs:documentation>
+		        		</xs:annotation>
+		      		</xs:element>
+		      		<xs:element maxOccurs="unbounded" minOccurs="0" name="privilege" type="XmlPrivilege">
+		        		<xs:annotation>
+		          			<xs:documentation>A privilege that is contained within this category.</xs:documentation>
+		        		</xs:annotation>
+		      		</xs:element>
+		    	</xs:choice>
+	      	</xs:extension>
+    	</xs:complexContent>
+  	</xs:complexType>
+
+	<xs:complexType name="XmlGroup">
+		<xs:annotation>
+			<xs:documentation>Describes an org-model Group and the associated entities.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="XmlModelEntity">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="0" name="allocation-method" type="XmlSelectionMode">
+						<xs:annotation>
+							<xs:documentation>Describes the method of work allocation for this group.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="group" type="XmlGroup">
+						<xs:annotation>
+							<xs:documentation>Creates a nested collection of sub-groups for this group.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="req-capability" type="XmlEntityAssignmentQualified">
+						<xs:annotation>
+							<xs:documentation>Identifies a capability assignment that forms the collection of capabilities required to join this group.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="privilege-holding" type="XmlEntityAssignmentQualified">
+						<xs:annotation>
+							<xs:documentation>Identifies the privileges held by this group, and any qualifier values that may apply.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="push-destination" type="XmlPushDestination">
+						<xs:annotation>
+							<xs:documentation>Describes a Push Destinations, used to push work-items to Resources.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="0" name="candidate-query" type="XmlCandidateQuery">
+						<xs:annotation>
+							<xs:documentation>The optional query that will identify candidate Resource for this Group.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute default="0" name="resource-count" type="xs:int" use="optional">
+					<xs:annotation>
+						<xs:documentation>Reports the number of resources assigned to this group. This information is only included if requested as part of the request parameters.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="calendar-alias" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>The alias of the calendar that this group will use for deadline calculations. This information is only included if requested as part of the request parameters.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="candidate-query" type="xs:boolean" use="optional">
+					<xs:annotation>
+						<xs:documentation>Only used in the org-model drill-down API. Returns true if this Group holds a Candidate Query configuration.
+                        </xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XmlLocation">
+		<xs:annotation>
+			<xs:documentation>Describes an org-model Location and the associated entities.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="XmlModelEntity">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="0" name="schema-type" type="XmlModelEntity">
+						<xs:annotation>
+							<xs:documentation>Describes the org-model schema type from which this location is derived. This is an optional element, as a location need not be derived from a schema type.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="attribute" type="XmlOrgAttributeValue">
+						<xs:annotation>
+							<xs:documentation>Names an attribute assigned to this location, and gives the definition for that attribute. Attributes can only be assigned to a location if it has a schema-type.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="XmlBasePosition">
+		<xs:annotation>
+			<xs:documentation>Describes an org-model Position and the associated entities.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="XmlModelEntity">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="0" name="schema-type" type="XmlModelEntity">
+						<xs:annotation>
+							<xs:documentation>Describes the org-model schema type from which this position is derived.
+
+This is an optional element, as a position need not be derived from a schema type.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="0" name="allocation-method" type="XmlSelectionMode">
+						<xs:annotation>
+							<xs:documentation>Describes the method of work allocation for this position.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="0" name="location-ref" type="XmlModelEntity">
+						<xs:annotation>
+							<xs:documentation>Identifies the location to which this position is associated.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="req-capability" type="XmlEntityAssignmentQualified">
+						<xs:annotation>
+							<xs:documentation>Identifies a capability assignment that forms the collection of capabilities required to join this position.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="privilege-holding" type="XmlEntityAssignmentQualified">
+						<xs:annotation>
+							<xs:documentation>Identifies the privileges held by this position, and any qualifier values that may apply.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="attribute" type="XmlOrgAttributeValue">
+						<xs:annotation>
+							<xs:documentation>Names an attribute assigned to this position, and gives the definition for that attribute.  Attributes can only be assigned to a position if it has a schema-type.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="push-destination" type="XmlPushDestination">
+						<xs:annotation>
+							<xs:documentation>Describes a Push Destinations, used to push work-items to Resources.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="0" name="candidate-query" type="XmlCandidateQuery">
+						<xs:annotation>
+							<xs:documentation>The optional query that will identify candidate Resource for this Position.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="ideal-number" type="xs:int" use="required">
+					<xs:annotation>
+						<xs:documentation>For modelling purposes only, this returns the ideal number of resources that should be assigned to this Position.
+
+A position can be filled by any number of human resources, but an ideal number can be specified. This ideal number is merely an indication, and a lower or higher number of human resource assignments can be made.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="calendar-alias" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>The alias of the calendar that this position will use for deadline calculations. This information is only included if requested as part of the request parameters.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="candidate-query" type="xs:boolean" use="optional">
+					<xs:annotation>
+						<xs:documentation>Only used in the org-model drill-down API. Returns true if this Position holds a Candidate Query configuration.
+                        </xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XmlPosition">
+		<xs:annotation>
+			<xs:documentation>Describes an org-model Position and the associated entities.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="XmlBasePosition">
+				<xs:attribute default="0" name="resource-count" type="xs:int" use="optional">
+					<xs:annotation>
+						<xs:documentation>Reports the number of resources assigned to this position. This information is only included if requested as part of the request parameters.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="dynamic" type="xs:boolean" use="optional">
+					<xs:annotation>
+						<xs:documentation>Returns true if this Position was dynamically generated as a result of an
+                        Organisational Model Extension Point; rather than part of an org-model deployment.
+                        </xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XmlModelPosition">
+		<xs:annotation>
+			<xs:documentation>Describes an org-model Position and the associated entities.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="XmlBasePosition"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="XmlBaseOrgUnit">
+		<xs:complexContent>
+			<xs:extension base="XmlModelEntity">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="0" name="schema-type" type="XmlModelEntity">
+						<xs:annotation>
+							<xs:documentation>Describes the organization model schema type from which this organization unit is derived.
+
+This is an optional element, as an org-unit need not be derived from a schema type.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="0" name="allocation-method" type="XmlSelectionMode">
+						<xs:annotation>
+							<xs:documentation>Describes the method of work allocation for this organization unit.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="0" name="location-ref" type="XmlModelEntity">
+						<xs:annotation>
+							<xs:documentation>Identifies the location to which this organization unit is associated.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="privilege-holding" type="XmlEntityAssignmentQualified">
+						<xs:annotation>
+							<xs:documentation>Identifies the privileges held by this organization unit, and any qualifier values that may apply.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="attribute" type="XmlOrgAttributeValue">
+						<xs:annotation>
+							<xs:documentation>Names an attribute assigned to this organization unit, and gives the definition for that attribute. Attributes can only be assigned to an organization unit if it has a schema-type.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="push-destination" type="XmlPushDestination">
+						<xs:annotation>
+							<xs:documentation>Describes a push destination used to push work items to resources.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="calendar-alias" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>The alias of the calendar that this org-unit will use for deadline calculations.
+                        This information is only included if requested as part of the request parameters.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XmlOrgUnit">
+		<xs:annotation>
+			<xs:documentation>Describes an organization model organization unit and the associated entities.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="XmlBaseOrgUnit">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="0" name="extension-point" type="XmlExtensionPointSetting">
+						<xs:annotation>
+							<xs:documentation>Marks this entity as being an Organisation Extension Point; and provides the configuration details of that Extension Point.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="instance-id-attr" type="XmlModelInstanceIdValue">
+						<xs:annotation>
+							<xs:documentation>Only used for Dynamic Model-Template instances. Makes up one element of the Model-Template Identity; each element being a named attribute linked to a named LDAP attribute.
+                            These elements are only included for the root org-unit of a Model-Template instance.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="position" type="XmlPosition">
+						<xs:annotation>
+							<xs:documentation>Describes the positions contained within this organization unit.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="org-unit" type="XmlOrgUnit">
+						<xs:annotation>
+							<xs:documentation>Describes the organization units contained within this organization unit (the sub-organization units). Each organization unit described may have further sub-organization units.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="dynamic" type="xs:boolean" use="optional">
+					<xs:annotation>
+						<xs:documentation>Returns true if this entity was dynamically generated as a result of an
+                        Organisational Model Extension Point; rather than part of an org-model deployment.
+                        </xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="extension-point" type="xs:boolean" use="optional">
+					<xs:annotation>
+						<xs:documentation>Only used in the org-model drill-down API. Returns true if this Org-Unit has been designated as an Extension Point.
+                        </xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XmlModelOrgUnit">
+		<xs:annotation>
+			<xs:documentation>Describes an organization model organization unit and the associated entities.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="XmlBaseOrgUnit">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="model-position" type="XmlModelPosition">
+						<xs:annotation>
+							<xs:documentation>Describes the positions contained within this organization unit.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="model-org-unit" type="XmlModelOrgUnit">
+						<xs:annotation>
+							<xs:documentation>Describes the organization units contained within this organization unit (the sub-organization units). Each organization unit described may have further sub-organization units.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XmlOrganization">
+		<xs:annotation>
+			<xs:documentation>Describes an organization model organization and its associated entities.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="XmlModelEntity">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="0" name="schema-type" type="XmlModelEntity">
+						<xs:annotation>
+							<xs:documentation>Describes the organization model schema type from which this organization is derived. This is an optional element, as an organization need not be derived from a schema type.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="0" name="allocation-method" type="XmlSelectionMode">
+						<xs:annotation>
+							<xs:documentation>Describes the method of work allocation for this organization.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="0" name="location-ref" type="XmlModelEntity">
+						<xs:annotation>
+							<xs:documentation>Identifies the location to which this organization is associated.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="org-unit" type="XmlOrgUnit">
+						<xs:annotation>
+							<xs:documentation>Describes the organizational-units directly associated with this organization.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="attribute" type="XmlOrgAttributeValue">
+						<xs:annotation>
+							<xs:documentation>Names an attribute assigned to this organization, and gives the definition for that attribute. Attributes can only be assigned to an organization if it has a schema-type.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="push-destination" type="XmlPushDestination">
+						<xs:annotation>
+							<xs:documentation>Describes a push destination used to push work items to resources.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="calendar-alias" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>The alias of the calendar that this organization will use for deadline calculations. This information is only included if requested as part of the request parameters.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XmlStringAttribute">
+		<xs:attribute name="value" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The text value of the attribute.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="XmlOptionalStringAttribute">
+		<xs:attribute name="value" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The optional text value of the attribute.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="XmlOptionalEntityReference">
+		<xs:attribute name="guid" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The optional GUID that uniquely identifies the entity.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="XmlEntityReference">
+		<xs:attribute name="guid" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The GUID that uniquely identifies the entity.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="XmlDateRangeAttribute">
+		<xs:attribute name="start-date" type="xs:dateTime" use="optional">
+			<xs:annotation>
+				<xs:documentation>The optional date and time on which the resource's presence should begin.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="end-date" type="xs:dateTime" use="optional">
+			<xs:annotation>
+				<xs:documentation>The optional date and time on which the resource's presence should end. If specified, a start-date must also be specified.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="XmlEntityReferenceDateRange">
+		<xs:complexContent>
+			<xs:extension base="XmlEntityReference">
+				<xs:attribute name="start-date" type="xs:dateTime" use="optional">
+					<xs:annotation>
+						<xs:documentation>The optional date and time on which the resource's presence should begin.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="end-date" type="xs:dateTime" use="optional">
+					<xs:annotation>
+						<xs:documentation>The optional date and time on which the resource's presence should end. If specified, a start-date must also be specified.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XmlEntityReferenceQualified">
+		<xs:complexContent>
+			<xs:extension base="XmlEntityReference">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="qualifier-value" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>Any number of values that qualify this assignment.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XmlEntityReferenceAttributes">
+		<xs:complexContent>
+			<xs:extension base="XmlEntityReference">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="value" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>The collection of values assigned to this attribute instance.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

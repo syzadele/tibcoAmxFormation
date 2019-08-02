@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- edited with XMLSpy v2014 (x64) (http://www.altova.com) by Paul Raby (Tibco Software Limited) --><xs:schema xmlns="http://directory.api.de.bpm.tibco.com" xmlns:de="http://base.api.de.bpm.tibco.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://directory.api.de.bpm.tibco.com" version="1.0">
+	<xs:import namespace="http://base.api.de.bpm.tibco.com" schemaLocation="de-base.xsd"/>
+	<xs:annotation>
+		<xs:documentation>
+      A note on the naming conventions used:
+      Element types from which Java classes are generated should be named using the same convention as Java classes (i.e. camel-casing). They should also have the  prefix "Xml" in order to avoid any conflict with any POJO classes of the same       name.
+      Attributes, and the name of sub-elements, are in lower-case, with hyphens used to separate words. For example, "first-name", "primary-attribute" and "parent-id".
+      Sub-element names should also be singular; e.g. "child" and not "children","property" and not "properties".
+        </xs:documentation>
+	</xs:annotation>
+	<xs:element name="listContainers">
+		<xs:annotation>
+			<xs:documentation>Request element for the listContainers operation. This service returns the configuration detail of all LDAP containers to which the caller has access permission. Access can be restricted by the organizations to which the caller is associated.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType/>
+	</xs:element>
+	<xs:element name="listContainersResponse">
+		<xs:annotation>
+			<xs:documentation>Response element for listLDAPContainers operation. Includes the full details of the LDAP containers, including the LDAP sources and resource  attribute mappings.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:annotation>
+				<xs:documentation>A list of the configured LDAP Containers.</xs:documentation>
+			</xs:annotation>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="ldap-container" type="de:XmlContainer">
+					<xs:annotation>
+						<xs:documentation>Definition of an LDAP container, including its LDAP source(s) and any attribute mappings.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="saveContainer" type="de:XmlContainer">
+		<xs:annotation>
+			<xs:documentation>Request element for saveLDAPContainerDetail operation. This service will save the given LDAP container configuration. See the description of XmlLdapContainer for more detail on the request parameter.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="saveContainerResponse">
+		<xs:annotation>
+			<xs:documentation>Response element for saveLDAPContainerDetail operation.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="container-id" type="xs:long" use="required">
+				<xs:annotation>
+					<xs:documentation>Unique ID of the newly-created or updated LDAP container.
+
+(This value is returned only if the LDAP container was successfully saved.)</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="deleteContainer">
+		<xs:annotation>
+			<xs:documentation>Request element for deleteLDAPContainer operation. This service will delete the configuration of the identified LDAP container.
+            
+An LDAP container can only be deleted if it no longer has any resources associated with it.
+           
+If the attribute "delete-resources" is true, and the caller has the required privileges for either of the system action "resourceAdmin" or "deleteResourceAdmin", any associated resources will be deleted before the LDAP container is deleted.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="container-id" type="xs:long" use="required">
+				<xs:annotation>
+					<xs:documentation>Unique ID of the LDAP container to be deleted.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute default="false" name="delete-resources" type="xs:boolean">
+				<xs:annotation>
+					<xs:documentation>Indicates whether the resources derived from the LDAP container should also be deleted.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="deleteContainerResponse">
+		<xs:annotation>
+			<xs:documentation>Response element for deleteLDAPContainer operation.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="successful" type="xs:boolean" use="required">
+				<xs:annotation>
+					<xs:documentation>Boolean value that indicates whether the LDAP container was successfully deleted (TRUE) or not (FALSE).</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="listLdapConnections">
+		<xs:annotation>
+			<xs:documentation>Request element for the listLdapConnections operation. Gets a list of the LDAP connection shared resources available to Directory Engine.
+
+Those LDAP connection shared resources named with the prefix "ldap/de/" will be included. Each will be
+identified by its alias (which is the name minus the "ldap/de/" prefix).</xs:documentation>
+		</xs:annotation>
+		<xs:complexType/>
+	</xs:element>
+	<xs:element name="listLdapConnectionsResponse">
+		<xs:annotation>
+			<xs:documentation>Response element for listLdapConnections operation.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="ldap-connection">
+					<xs:annotation>
+						<xs:documentation>Identifies an LDAP connection shared resource by its alias, and also provides the URL used by that connection.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="ldap-alias" type="xs:string" use="required">
+							<xs:annotation>
+								<xs:documentation>The name (or alias) by which a configured LDAP connection shared resource is identified.
+
+LDAP connection shared resource are named with the prefix "ldap/de/" in order to indicate that they are intended for Directory Engine use. The alias given here is that name without the "ldap/de/" prefix.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="provider-url" type="xs:string" use="required">
+							<xs:annotation>
+								<xs:documentation>The URL (including any base DN) to which configured LDAP connection shared resource is connected.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="executeLdapQuery">
+		<xs:annotation>
+			<xs:documentation>Request element for the executeLdapQuery operation. Gets the Distinguished Names (DNs) of those entries that match the given LDAP query. The query will traverse all sub-tree nodes starting from node identified by the "base-dn" attribute.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="ldap-alias" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>Identifies the LDAP connection shared resource on which the LDAP query is to be evaluated.
+
+LDAP connection shared resource are named with the prefix "ldap/de/" in order to indicate that they are  intended for Directory Engine use. The alias given here is that name without the "ldap/de/" prefix.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="base-dn" type="xs:string" use="optional">
+				<xs:annotation>
+					<xs:documentation>The base DN to which the query is to be restricted. This will be relative, and in  addition to, any base DN specified in the LDAP connection shared resource's URL.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ldap-query" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>The LDAP query to be evaluated. The query must conform to the RFC 2254 LDAP Search Filter standard.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="search-scope" type="de:XmlLdapSearchScope" use="optional">
+				<xs:annotation>
+					<xs:documentation>The Search Scope determines the depth to which the search will be performed. By default the search will be SUBTREE.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="page-size" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>Requested page size for paged result sets. If not specified then paging will not be used. To be specified on every paging request.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="bookmark" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Opaque marker for progress through a paged result set. Not specified on the first paging request. Only specified on subsequent paging requests. Content must be Base64 encoded.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="executeLdapQueryResponse">
+		<xs:annotation>
+			<xs:documentation>Response element for the executeLdapQuery operation. Returns the Distinguished Names (DNs) resolved by the given LDAP query.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="ldap-entry">
+					<xs:annotation>
+						<xs:documentation>The collection of fully Distinguished Names (DNs) resolved by the given LDAP query.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="ldap-dn" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="ldap-alias" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>Identifies the LDAP connection shared resource on which the LDAP query was evaluated.
+
+LDAP connection shared Resource are named with the prefix "ldap/de/" in order to indicate that they are 
+intended for Directory Engine use. The alias given here is that name without the "ldap/de/" prefix.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="base-dn" type="xs:string" use="optional">
+				<xs:annotation>
+					<xs:documentation>The base DN to which the query was restricted. This will be relative, and in additition to, any base DN specified in the LDAP connection shared resource's rURL.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ldap-query" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>The LDAP query that was evaluated.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="search-scope" type="de:XmlLdapSearchScope" use="optional">
+				<xs:annotation>
+					<xs:documentation>The Search Scope determines the depth to which the search will be performed. By default the search will be SUBTREE.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="estimated-size" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>Estimated size of all results from LDAP server. Only specified if paged result sets are requested, and only if supported by the LDAP server.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="bookmark" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Opaque marker for progress through a paged result set. Specified but empty if there are no more results left in the paged result set. Response will be Base64 encoded.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="getLdapEntry">
+		<xs:annotation>
+			<xs:documentation>Request element for the getLdapEntry operation. Returns the named attributes from the LDAP entry identified by the given LDAP alias and DN.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="de:XmlLdapEntryId">
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="attribute">
+							<xs:annotation>
+								<xs:documentation>Names an LDAP attribute to be included for each entry in the result set. If no names are specified in the request, all the entry's attributes will be returned.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="name" type="xs:string" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="getLdapEntryResponse">
+		<xs:annotation>
+			<xs:documentation>Response element for the getLdapEntry operation. Returns the requested attributes of the LDAP entry identified in the request. If the identifed LDAP entry does not exist, the response will be empty.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="de:XmlLdapEntry">
+					<xs:attribute name="ldap-alias" type="xs:string" use="required">
+						<xs:annotation>
+							<xs:documentation>Identifies the LDAP connection shared resource from which the entry was read.
+
+LDAP connection shared resource are named with the prefix "ldap/de/" in order to indicate that they are intended for Directory Engine use. The alias given here is that name without the "ldap/de/" prefix.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute default="false" name="not-found" type="xs:boolean">
+						<xs:annotation>
+							<xs:documentation>Indicates that the identified LDAP entry cannot be found.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="listAttributeNames">
+		<xs:annotation>
+			<xs:documentation>Request element for the listAttributeNames operation. Lists the names of those attributes that are available from the LDAP entries identified by a search of the LDAP connection shared resource. The LDAP connection is identified by its alias, and the search is limited to the LDAP query given in the filter.
+
+A base-dn also limits the search to the LDAP entries that lie within that branch of the LDAP directory.
+
+A sample of the values held by the resulting named attributes can be requested by specifying a sample-size. This value specifies the number of sample values to be returned for each named attribute.
+
+The response also includes the number of LDAP entries identified in the search.        </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="ldap-alias" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>Identifies the LDAP connection shared resource on which the LDAP query is to be evaluated.
+
+LDAP connection shared resource are named with the prefix "ldap/de/" in order to indicate that they are intended for Directory Engine use. The alias given here is that name without the "ldap/de/" prefix.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="base-dn" type="xs:string" use="optional">
+				<xs:annotation>
+					<xs:documentation>The base DN to which the query is to be restricted. This will be relative to, and in  addition to, any base DN specified in the LDAP connection shared resource's URL.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ldap-query" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>The LDAP query to be evaluated. The query must conform to the RFC 2254 LDAP Search Filter standard.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="search-scope" type="de:XmlLdapSearchScope" use="optional">
+				<xs:annotation>
+					<xs:documentation>The Search Scope determines the depth to which the search will be performed. By default the search will be SUBTREE.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute default="0" name="sample-size" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>The maximum number of random example LDAP entries to be returned.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="listAttributeNamesResponse">
+		<xs:annotation>
+			<xs:documentation>Response element for the listAttributeNames operation Returns a list of attribute names and counts the LDAP entries identified in the search.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="attribute" type="de:XmlLdapAttribute">
+					<xs:annotation>
+						<xs:documentation>The collection of attribute names resolved from the LDAP entries identified 
+by the given LDAP query.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="sample-entry" type="de:XmlLdapEntry">
+					<xs:annotation>
+						<xs:documentation>The collection of sample LDAP entries resolved by the given LDAP query.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="ldap-alias" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>Identifies the LDAP connection shared resource on which the LDAP query was evaluated.
+
+LDAP connection shared resources are named with the prefix "ldap/de/" in order to indicate that they are intended for Directory Engine use. The alias given here is that name without the "ldap/de/" prefix.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="base-dn" type="xs:string" use="optional">
+				<xs:annotation>
+					<xs:documentation>The base DN to which the query was restricted. This will be relative to, and in  addition to, any base DN specified in the LDAP Connection Shared Resource's URL.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ldap-query" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>The LDAP query that was evaluated.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="search-scope" type="de:XmlLdapSearchScope" use="optional">
+				<xs:annotation>
+					<xs:documentation>The Search Scope determines the depth to which the search will be performed. By default the search will be SUBTREE. This is only returned if it was specified in the request.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="entry-count" type="xs:int" use="required">
+				<xs:annotation>
+					<xs:documentation>The number of LDAP entries encountered in the search.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="listCandidateResources">
+		<xs:annotation>
+			<xs:documentation>Request element for the listCandidateResources operation. Lists the candidate resources (including existing eesources) from the identified LDAP container. The entries in the response are suitable to be passed to the createResource operation.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="container-id" type="xs:long" use="required">
+				<xs:annotation>
+					<xs:documentation>Identifies the LDAP container from which the candidates are to be resolved.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute default="ALL" name="include" type="de:XmlCandidateChoice">
+				<xs:annotation>
+					<xs:documentation>Determines what entries should be included in the response.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="page-size" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>Requested page size for paged result sets. If not specified then paging will not be used. To be specified on every paging request.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="bookmark" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Opaque marker for progress through a paged result set. Not specified on the first paging request. Only specified on subsequent paging requests. Content must be Base64 encoded.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="listCandidateResourcesResponse">
+		<xs:annotation>
+			<xs:documentation>Response element for the listCandidateResources operation.  Returns a list of candidate resources from the requested container.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="candidate" type="de:XmlResourceCandidate"/>
+			</xs:sequence>
+			<xs:attribute name="container-id" type="xs:long" use="required">
+				<xs:annotation>
+					<xs:documentation>Identifies the LDAP container from which the candidates were resolved.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute default="ALL" name="include" type="de:XmlCandidateChoice">
+				<xs:annotation>
+					<xs:documentation>Indicates what entries are be included in the collection of candidate entries.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="estimated-size" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>Estimated size of all results from LDAP server. Only specified if paged result sets are requested, and only if supported by the LDAP server.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="bookmark" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Opaque marker for progress through a paged result set. Specified but empty if there are no more results left in the paged result set. Response will be Base64 encoded.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="getCandidateDetail">
+		<xs:annotation>
+			<xs:documentation>Request element for the getCandidateDetail operation. Having retrieved a list of the candidate resources, this operation will allow the caller to retrieve additional information about one candidate.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="de:XmlLdapContainerEntry">
+					<xs:attribute name="container-id" type="xs:long" use="required">
+						<xs:annotation>
+							<xs:documentation>Identifies the LDAP container from which the candidate was resolved.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="getCandidateDetailResponse">
+		<xs:annotation>
+			<xs:documentation>Response element for the getCandidateDetail operation. Returns the name and GUID of the existing resource, if one already exists for the candidate. Includes the values for any resource attributes mapped to the LDAP attributes of the identified LDAP container.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="de:XmlLdapContainerEntry">
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="attribute" type="de:XmlMappedAttributeValue">
+							<xs:annotation>
+								<xs:documentation>Names an LDAP attribute mapped to the resource attribute identified by its GUID, and provides the values derived from the named LDAP attribute.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="container-id" type="xs:long" use="required">
+						<xs:annotation>
+							<xs:documentation>Identifies the LDAP container from which the candidate was resolved.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="guid" type="xs:string" use="optional">
+						<xs:annotation>
+							<xs:documentation>If the candidate is one for which a resource already exists, the GUID of that existing resource is given.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="name" type="xs:string" use="required">
+						<xs:annotation>
+							<xs:documentation>The name of the existing resource, or the name that will be assigned (by default) to the resource created from this candidate entry.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="start-date" type="xs:dateTime" use="optional">
+						<xs:annotation>
+							<xs:documentation>If the candidate is one for which a resource already exists, this optional date and time shows when the resource's presence begins.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="end-date" type="xs:dateTime" use="optional">
+						<xs:annotation>
+							<xs:documentation>If the candidate is one for which a resource already exists, this optional date and time shows when the resource's presence ends.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

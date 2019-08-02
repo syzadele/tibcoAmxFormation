@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- edited with XMLSpy v2013 (x64) (http://www.altova.com) by Paul Raby (Tibco Software Limited) --><xs:schema xmlns="http://resource.api.de.bpm.tibco.com" xmlns:de="http://base.api.de.bpm.tibco.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://resource.api.de.bpm.tibco.com" version="1.0">
+	<xs:import namespace="http://base.api.de.bpm.tibco.com" schemaLocation="de-base.xsd"/>
+	<xs:annotation>
+		<xs:documentation>
+      A note on the naming conventions used:
+      Element types from which Java classes are generated should be named using the
+      same convention as Java classes (i.e. camel-casing). They should also have the
+      prefix "Xml" in order to avoid any conflict with any POJO classes of the same
+      name.
+      Attributes, and the name of sub-elements, are in lower-case, with hyphens used
+      to separate words. For example, "first-name", "primary-attribute" and "parent-id".
+      Sub-element names should also be singular; e.g. "child" and not "children",
+      "property" and not "properties".
+        </xs:documentation>
+	</xs:annotation>
+	
+	<xs:complexType name="XmlCreateResource">
+		<xs:annotation>
+			<xs:documentation>Having retrieved a list of the candidate resources, this method is used to create resources from the LDAP references returned with each candidate resource. The response returns the GUID assigned to the newly created resources. Each element in the response identifies the candidate to which it relates using the primary LDAP Source reference and the LDAP container ID.
+
+If a resource already exists with a given LDAP reference, no update is made to that resource, and the GUID of the existing resource is returned in the response (along with a boolean attribute "already-present").
+
+For those candidates for which a resource could not be created (due to some logical error, rather than a system failure), the response includes a "failure" element identifying the candidate, as well as a reason for the failure. System failures are reported using a SOAP fault response.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="1" name="candidate">
+				<xs:annotation>
+					<xs:documentation>A list of candidate resources to be created.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="de:XmlLdapContainerEntry">
+							<xs:attribute name="container-id" type="xs:long" use="required">
+								<xs:annotation>
+									<xs:documentation>Identifies the LDAP container from which the candidate was resolved.</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+							<xs:attribute name="name" type="xs:string" use="required">
+								<xs:annotation>
+									<xs:documentation>The name to be assigned to the resource created from this candidate entry.</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+							<xs:attribute name="label" type="xs:string">
+								<xs:annotation>
+									<xs:documentation>The name assigned to the resource for display purposes.</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+							<xs:attribute name="start-date" type="xs:dateTime" use="optional">
+								<xs:annotation>
+									<xs:documentation>The optional date and time on which the resource's presence should begin.</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+							<xs:attribute name="end-date" type="xs:dateTime" use="optional">
+								<xs:annotation>
+									<xs:documentation>The optional date and time on which the resource's presence should end. If specified, a start-date must also be specified.</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute default="1" name="schema-version" type="xs:int" use="optional">
+			<xs:annotation>
+				<xs:documentation>Indicates the version of the request schema; which determines what information is to be included in the response. This allows for future, backward compatible modifications to the schema.
+The following values are recognised:
+1: Include candidate name in failure elements of response.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="createResource" type="XmlCreateResource"/>
+	
+	<xs:element name="createResourceResponse">
+		<xs:annotation>
+			<xs:documentation>Response element for the createResource operation. Details the properties and attributes of the resource identified in the request.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="entity">
+					<xs:annotation>
+						<xs:documentation>List of successfully created resources.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="de:XmlLdapEntryId">
+								<xs:annotation>
+									<xs:documentation>Identifies the candidate to which the Resource refers.</xs:documentation>
+								</xs:annotation>
+								<xs:attribute name="container-id" type="xs:long" use="required">
+									<xs:annotation>
+										<xs:documentation>Identifies the LDAP Container from which the candidate was resolved.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+								<xs:attribute name="guid" type="xs:string" use="required">
+									<xs:annotation>
+										<xs:documentation>The GUID assigned to the newly created resource.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+								<xs:attribute name="name" type="xs:string" use="required">
+									<xs:annotation>
+										<xs:documentation>The name assigned to the resource.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+								<xs:attribute name="label" type="xs:string">
+									<xs:annotation>
+										<xs:documentation>The name assigned to the resource for dispay purposes.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+								<xs:attribute default="false" name="already-present" type="xs:boolean">
+									<xs:annotation>
+										<xs:documentation>Indicates whether a resource already exists for the given LDAP references.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+							</xs:extension>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="failure">
+					<xs:annotation>
+						<xs:documentation>List of resources that could not be created due to an error.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="de:XmlLdapEntryId">
+								<xs:annotation>
+									<xs:documentation>Identifies the candidate to which the failure refers.</xs:documentation>
+								</xs:annotation>
+								<xs:attribute name="container-id" type="xs:long" use="required">
+									<xs:annotation>
+										<xs:documentation>Identifies the LDAP container from which the candidate was resolved.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+								<xs:attribute name="name" type="xs:string" use="required">
+									<xs:annotation>
+										<xs:documentation>Identifies the Resource name given in the failing entry.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+								<xs:attribute name="error" type="de:XmlCandidateError" use="required">
+									<xs:annotation>
+										<xs:documentation>Provides a coded explanation of why a resource could not be created from the corresponding candidate.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+							</xs:extension>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+	<xs:complexType name="XmlDeleteResource">
+		<xs:annotation>
+			<xs:documentation>Request element for the deleteResource operation. This service is used to delete the resource identified by its GUID.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" name="guid" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>List of GUIDs of the resources to be deleted.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="deleteResource" type="XmlDeleteResource"/>
+	<xs:element name="deleteResourceResponse">
+		<xs:annotation>
+			<xs:documentation>Response element for the deleteResource operation.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" name="guid" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>GUIDs of the resources that were deleted. Indicates a successful deletion.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getDeletedResources">
+		<xs:annotation>
+			<xs:documentation>Requests a list of the deleted resources. The results will be ordered by name, and may be, optionally, paged.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="1" minOccurs="0" name="page-control" type="de:XmlPageControl">
+					<xs:annotation>
+						<xs:documentation>Allows results to be paged. This is optional. If not specified, the entire list of deleted resources are returned.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="getDeletedResourcesResponse">
+		<xs:annotation>
+			<xs:documentation>The response object for XmlGetDeletedResources. Lists the details of the deleted resources.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="1" minOccurs="0" name="page-control" type="de:XmlPageControlResponse">
+					<xs:annotation>
+						<xs:documentation>If a page control was given in the request, this will convey the same information and also indicate the number of pages</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="resource" type="de:XmlDeletedResource">
+					<xs:annotation>
+						<xs:documentation>Lists the summary details of the deleted resources/users.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="purgeDeletedResources">
+		<xs:annotation>
+			<xs:documentation>Requests that the identified, deleted resource records be purged.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:element maxOccurs="1" minOccurs="1" name="all">
+					<xs:annotation>
+						<xs:documentation>Specifies that all deletion records are to be purged.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element maxOccurs="unbounded" minOccurs="1" name="guid" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Identifies individual deletion records that are to be purged.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="purgeDeletedResourcesResponse">
+		<xs:annotation>
+			<xs:documentation>The response object for purgeDeletedResources requests.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="purge-count" type="xs:int" use="required">
+				<xs:annotation>
+					<xs:documentation>The number of records that were purged.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="XmlGetResource">
+		<xs:annotation>
+			<xs:documentation>Request element for the getResource operation. Returns detailed information for the resource identified by its GUID. The organization model version in the request identifies the organization model major version from which the resource's model entity associations are to be taken. The default value of -1 indicates that the latest version should be used.
+            </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="guid" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>List of GUIDs that identifies the resource(s).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute default="-1" name="model-version" type="xs:int">
+			<xs:annotation>
+				<xs:documentation>Identifies the model major version from which the resource's organization model entity associations are to be taken. The default value of -1 indicates that the latest version should be used.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="getResource" type="XmlGetResource"/>
+	<xs:element name="getResourceResponse">
+		<xs:annotation>
+			<xs:documentation>Response element for the getResource operation. Details the properties and attributes of the resources identified in the request.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="resource" type="de:XmlResourceDetail">
+					<xs:annotation>
+						<xs:documentation>List of resources to be retrieved.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="XmlUpdateResource">
+		<xs:annotation>
+			<xs:documentation>Request element for updateResource operation. Allows the properties of the identified resource to be modified. Many of the parameters within this request document are optional; only those that are provided in the request will be set on the identified resource. Returns detailed information for the resource identified by its GUID. The model version in the request identifies the organization model major version from which the resource's model entity associations are to be taken. The default value of -1 indicates that the latest version should be used.
+            </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" name="resource" type="XmlUpdateResourceType">
+				<xs:annotation>
+					<xs:documentation>A list of candidate resources to be updated.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute default="-1" name="model-version" type="xs:int">
+			<xs:annotation>
+				<xs:documentation>Identifies the model major version from which the resource's organization model entity associations are to be taken. The default value of -1 indicates that the latest version should be used.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="updateResource" type="XmlUpdateResource"/>
+
+	<xs:element name="updateResourceResponse">
+		<xs:annotation>
+			<xs:documentation>Response element for the updateResource operation. Provides an acknowledgement of the update and details the properties and attributes of the resources identified in the request.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="resource" type="de:XmlResourceDetail">
+					<xs:annotation>
+						<xs:documentation>List of resources that have been updated.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="findResources">
+		<xs:annotation>
+			<xs:documentation>Request element for the findResource operation. The request identifies any number of groups, positions, organization units, organizations, locations, capabilities, or privileges from which the associated resources will be identified.
+
+The request may also identify resources by their name.
+
+Normally either GUIDs or resource names are specified in the request, however a mixture can be specified if necessary. Note that a request with no GUIDs or resource names is invalid - at least one of the two must be specified.
+
+Where both GUIDs and resource names are specified in the request these lists are independent of each of other - the GUIDs do not need to match up with corresponding resource names.
+			
+The response lists those resources, giving their GUID, name, and label properties. If the same resource is associated with more than one of the entities identified in the request, that resource only appears once in the response. The response does not indicate the entity from which the resource was located.
+			
+The model version in the request identifies the organization model major version in which the search for the entities should be performed. The default value of -1 indicates that the latest version should be used. When the request is to locate resources by their names, the model version is not used (but must still be valid).
+
+As a resource's associations, and the resource itself, can be limited by a date range, the search can selectively include only those resources that are currently associated with the identified entities. When searching by resource name or associations, a true value ensures that the response only includes those resources whose date restrictions fall within the current date/time. </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="entity-ref">
+					<xs:annotation>
+						<xs:documentation>Identifies an organization model entity (by its unique GUID) whose associated resources are to be included in the response.
+
+The 'deep-search' attribute determines whether the search for resources should extend to logical associations (true). This only applies to groups (where sub-groups will also be included) and locations (where associations by positions, organization units, and organizations will be included). For other entity types, the deep-search attribute is ignored.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="guid" type="xs:string" use="required"/>
+						<xs:attribute default="false" name="deep-search" type="xs:boolean" use="optional">
+							<xs:annotation>
+								<xs:documentation>Determines whether the search for resources should extend to logical associations (true). This only applies to groups (where sub-groups will also be included) and locations (where associations by positions, organization units, and organizations will be included). For other entity types, this attribute is ignored.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="resource-name" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Names the resource(s) to be searched for. There may be two, or more, resources that share the same name, so the response may include more than one result for each name provided.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute default="-1" name="model-version" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>Identifies the major organization model version in which the identified entities are to be searched. The default value of -1 indicates that the latest version should be used. When searching for resources by name, this attribute is ignored.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute default="false" name="current-only" type="xs:boolean">
+				<xs:annotation>
+					<xs:documentation>Determines whether only resources currently associated with the identified entities are to be include (true). If false, any date ranges applied to the resource or its associations are ignored.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="findResourcesResponse">
+		<xs:annotation>
+			<xs:documentation>Response element for the findResource operation. The request identifies any number of groups, positions, organization units, organizations, locations, capabilities or privileges, from which the associated resources are to be identified.
+			
+The response lists those resources, giving their GUID, name, and label properties. If the same resource is associated with more than one of the entities identified in the request, that resource only appears once in the response. The response does not indicate the entity from which the resource was located.
+
+Any date range that applies to either the resource or its association with the entity is ignored, unless the request indicates that only current resources are to be included.
+
+The GUIDs of the resources included in the response can be passed to the getResource operation in order to retrieve detailed information on any resource.
+			
+The model version in the response identifies the organization model major version in which the search for the entities was performed.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="resource" type="de:XmlModelEntity">
+					<xs:annotation>
+						<xs:documentation>Identifies a resource associated with one or more of the organization model entities identified in the request.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="model-version" type="xs:int" use="required">
+				<xs:annotation>
+					<xs:documentation>Identifies the major organization model version in which the search was performed.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="XmlUpdateResourceType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="set-name" type="de:XmlStringAttribute">
+				<xs:annotation>
+					<xs:documentation>The name value to be assigned to the resource.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="set-label" type="de:XmlOptionalStringAttribute">
+				<xs:annotation>
+					<xs:documentation>The name to be assigned to the resource that is used for display purposes. To remove the label from a resource, do not include a value attribute.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="set-date-range" type="de:XmlDateRangeAttribute">
+				<xs:annotation>
+					<xs:documentation>Identifies the date range for which the resource should be present. To remove a date range, do not set any attribute values.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="ldap-reference">
+				<xs:annotation>
+					<xs:documentation>Lists the LDAP mappings of the resource to be modified. The LDAP alias's listed must correspond to those of the LDAP container to which the resource belongs.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="de:XmlLdapContainerEntry">
+							<xs:attribute name="container-id" type="xs:long" use="optional">
+								<xs:annotation>
+									<xs:documentation>Identifies the LDAP container to which the candidate is to be moved.</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="set-location" type="de:XmlOptionalEntityReference">
+				<xs:annotation>
+					<xs:documentation>Identifies a location to which the resource is to be associated.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="add-position" type="de:XmlEntityReferenceDateRange">
+				<xs:annotation>
+					<xs:documentation>Identifies the positions to which the resource is to be associated. Note that add requests are processed ahead of remove requests when included in the same update. Adding the same position multiple times, overwrites any existing positions.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="remove-position" type="de:XmlEntityReference">
+				<xs:annotation>
+					<xs:documentation>Identifies the positions from which the resource is to be removed. Note that add requests are processed ahead of remove requests when included in the same update. Removing the same position multiple times in the same request is acceptable.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="add-group" type="de:XmlEntityReferenceDateRange">
+				<xs:annotation>
+					<xs:documentation>Identifies the groups to which the resource is to be associated. Note that add requests are processed ahead of remove requests when included in the same update. Adding the same group multiple times overwrites any existing groups.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="remove-group" type="de:XmlEntityReference">
+				<xs:annotation>
+					<xs:documentation>Identifies the groups from which the resource is to be removed. Note that add requests are processed ahead of remove requests when included in the same update. Removing the same group multiple times in the same request is acceptable.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="add-capability" type="de:XmlEntityReferenceQualified">
+				<xs:annotation>
+					<xs:documentation>Identifies the capabilities to which the resource is to be associated. Note that add requests are processed ahead of remove requests when included in the same update. Adding the same capability multiple times overwrites any existing capabilities.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="remove-capability" type="de:XmlEntityReference">
+				<xs:annotation>
+					<xs:documentation>Identifies the capabilities from which the resource is to be removed. Note that add requests are processed ahead of remove requests when included in the same update. Removing the same capability multiple times in the same request is acceptable.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="set-attribute" type="de:XmlEntityReferenceAttributes">
+				<xs:annotation>
+					<xs:documentation>Identifies the resource attributes, and the values to be assigned to the resource. Adding the same attribute multiple times overwrites any existing attributes. To remove an attribute value, do not include the value attribute. Note that for an EnumSet type, the value attribute is repeated as a list. For all other types, there should be just one value attribute.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="guid" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The GUID that identifies the Resource.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

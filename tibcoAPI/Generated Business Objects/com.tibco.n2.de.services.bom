@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:PrimitiveTypeFacets="http:///schemas/PrimitiveTypeFacets/_8TmTUMtlEdy7K9XeCH7Hrw/0" xmlns:XsdNotationProfile="http:///schemas/XsdNotationProfile/_LmHW0PHtEd2z3-vLsCwuEg/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/PrimitiveTypeFacets/_8TmTUMtlEdy7K9XeCH7Hrw/0 pathmap://BOM_TYPES/PrimitiveTypeFacets.profile.uml#_8TmTUstlEdy7K9XeCH7Hrw http:///schemas/XsdNotationProfile/_LmHW0PHtEd2z3-vLsCwuEg/1 pathmap://XSD_NOTATION_TYPES/XsdNotation.profile.uml#_LmHW0fHtEd2z3-vLsCwuEg">
+  <uml:Model xmi:id="com.tibco.n2.de.services" name="com.tibco.n2.de.services">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oUEnQq1jEem1vK-kP1bIqQ" source="model.metadata">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oUEnQ61jEem1vK-kP1bIqQ" key="author" value="YSong"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oUEnRK1jEem1vK-kP1bIqQ" key="created" value="1563897903028"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oUEnRa1jEem1vK-kP1bIqQ" key="version" value="5"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oyMtsK1jEem1vK-kP1bIqQ" key="checksum" value="3970067476"/>
+    </eAnnotations>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.servicesOrgResourceService" name="OrgResourceService">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="OrgResourceServicecreateResource" name="createResource">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="createResourceparameters" name="parameters">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.resource.bom#com.tibco.bpm.de.api.resourceXmlCreateResource?com.tibco.bpm.de.api.resource%3a%3aXmlCreateResource?"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="createResourceresponse" name="response" direction="return">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.resource.bom#com.tibco.bpm.de.api.resourcecreateResourceResponseType?com.tibco.bpm.de.api.resource%3a%3acreateResourceResponseType?"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="OrgResourceServiceupdateResource" name="updateResource">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="updateResourceparameters" name="parameters">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.resource.bom#com.tibco.bpm.de.api.resourceXmlUpdateResource?com.tibco.bpm.de.api.resource%3a%3aXmlUpdateResource?"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="updateResourceresponse" name="response" direction="return">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.resource.bom#com.tibco.bpm.de.api.resourceupdateResourceResponseType?com.tibco.bpm.de.api.resource%3a%3aupdateResourceResponseType?"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="OrgResourceServicedeleteResource" name="deleteResource">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="deleteResourceparameters" name="parameters">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.resource.bom#com.tibco.bpm.de.api.resourceXmlDeleteResource?com.tibco.bpm.de.api.resource%3a%3aXmlDeleteResource?"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="deleteResourceresponse" name="response" direction="return">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.resource.bom#com.tibco.bpm.de.api.resourcedeleteResourceResponseType?com.tibco.bpm.de.api.resource%3a%3adeleteResourceResponseType?"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="OrgResourceServicegetResource" name="getResource">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="getResourceparameters" name="parameters">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.resource.bom#com.tibco.bpm.de.api.resourceXmlGetResource?com.tibco.bpm.de.api.resource%3a%3aXmlGetResource?"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="getResourceresponse" name="response" direction="return">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.resource.bom#com.tibco.bpm.de.api.resourcegetResourceResponseType?com.tibco.bpm.de.api.resource%3a%3agetResourceResponseType?"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="OrgResourceServicefindResources" name="findResources">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="findResourcesparameters" name="parameters">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.resource.bom#com.tibco.bpm.de.api.resourcefindResourcesType?com.tibco.bpm.de.api.resource%3a%3afindResourcesType?"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="findResourcesresponse" name="response" direction="return">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.resource.bom#com.tibco.bpm.de.api.resourcefindResourcesResponseType?com.tibco.bpm.de.api.resource%3a%3afindResourcesResponseType?"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="OrgResourceServicegetDeletedResources" name="getDeletedResources">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="getDeletedResourcesparameters" name="parameters">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.resource.bom#com.tibco.bpm.de.api.resourcegetDeletedResourcesType?com.tibco.bpm.de.api.resource%3a%3agetDeletedResourcesType?"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="getDeletedResourcesresponse" name="response" direction="return">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.resource.bom#com.tibco.bpm.de.api.resourcegetDeletedResourcesResponseType?com.tibco.bpm.de.api.resource%3a%3agetDeletedResourcesResponseType?"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="OrgResourceServicepurgeDeletedResources" name="purgeDeletedResources">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="purgeDeletedResourcesparameters" name="parameters">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.resource.bom#com.tibco.bpm.de.api.resourcepurgeDeletedResourcesType?com.tibco.bpm.de.api.resource%3a%3apurgeDeletedResourcesType?"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="purgeDeletedResourcesresponse" name="response" direction="return">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.resource.bom#com.tibco.bpm.de.api.resourcepurgeDeletedResourcesResponseType?com.tibco.bpm.de.api.resource%3a%3apurgeDeletedResourcesResponseType?"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.servicesOrgModelService" name="OrgModelService">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="OrgModelServicelistOrgModelVersions" name="listOrgModelVersions">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="listOrgModelVersionsparameters" name="parameters">
+          <type xmi:type="uml:PrimitiveType" href="com.tibco.bpm.de.api.orgmodel.bom#com.tibco.bpm.de.api.orgmodellistOrgModelVersions?com.tibco.bpm.de.api.orgmodel%3a%3alistOrgModelVersionsType?"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="listOrgModelVersionsresponse" name="response" direction="return">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.orgmodel.bom#com.tibco.bpm.de.api.orgmodellistOrgModelVersionsResponseType?com.tibco.bpm.de.api.orgmodel%3a%3alistOrgModelVersionsResponseType?"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="OrgModelServicegetOrgModel" name="getOrgModel">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="getOrgModelparameters" name="parameters">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.orgmodel.bom#com.tibco.bpm.de.api.orgmodelgetOrgModelType?com.tibco.bpm.de.api.orgmodel%3a%3agetOrgModelType?"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="getOrgModelresponse" name="response" direction="return">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.orgmodel.bom#com.tibco.bpm.de.api.orgmodelgetOrgModelResponseType?com.tibco.bpm.de.api.orgmodel%3a%3agetOrgModelResponseType?"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="OrgModelServicegetCalendarReferences" name="getCalendarReferences">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="getCalendarReferencesparameters" name="parameters">
+          <type xmi:type="uml:Class" href="com.tibco.n2.common.organisation.api.bom#com.tibco.n2.common.organisation.apiXmlModelEntityId?com.tibco.n2.common.organisation.api%3a%3aXmlModelEntityId?"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="getCalendarReferencesresponse" name="response" direction="return">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.orgmodel.bom#com.tibco.bpm.de.api.orgmodelgetCalendarReferencesResponseType?com.tibco.bpm.de.api.orgmodel%3a%3agetCalendarReferencesResponseType?"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="OrgModelServicesetCalendarReferences" name="setCalendarReferences">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="setCalendarReferencesparameters" name="parameters">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.orgmodel.bom#com.tibco.bpm.de.api.orgmodelXmlCalendarAssignments?com.tibco.bpm.de.api.orgmodel%3a%3aXmlCalendarAssignments?"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="setCalendarReferencesresponse" name="response" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="com.tibco.bpm.de.api.orgmodel.bom#com.tibco.bpm.de.api.orgmodelsetCalendarReferencesResponse?com.tibco.bpm.de.api.orgmodel%3a%3asetCalendarReferencesResponseType?"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="OrgModelServiceupdatePushDestinations" name="updatePushDestinations">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="updatePushDestinationsparameters" name="parameters">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.orgmodel.bom#com.tibco.bpm.de.api.orgmodelXmlUpdatePushDestinations?com.tibco.bpm.de.api.orgmodel%3a%3aXmlUpdatePushDestinations?"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="updatePushDestinationsresponse" name="response" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="com.tibco.bpm.de.api.orgmodel.bom#com.tibco.bpm.de.api.orgmodelupdatePushDestinationsResponse?com.tibco.bpm.de.api.orgmodel%3a%3aupdatePushDestinationsResponseType?"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="OrgModelServicesetCandidateQueries" name="setCandidateQueries">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="setCandidateQueriesparameters" name="parameters">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.orgmodel.bom#com.tibco.bpm.de.api.orgmodelsetCandidateQueriesType?com.tibco.bpm.de.api.orgmodel%3a%3asetCandidateQueriesType?"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="setCandidateQueriesresponse" name="response" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="com.tibco.bpm.de.api.orgmodel.bom#com.tibco.bpm.de.api.orgmodelsetCandidateQueriesResponse?com.tibco.bpm.de.api.orgmodel%3a%3asetCandidateQueriesResponseType?"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="OrgModelServicesetExtensionPoints" name="setExtensionPoints">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="setExtensionPointsparameters" name="parameters">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.orgmodel.bom#com.tibco.bpm.de.api.orgmodelsetExtensionPointsType?com.tibco.bpm.de.api.orgmodel%3a%3asetExtensionPointsType?"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="setExtensionPointsresponse" name="response" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="com.tibco.bpm.de.api.orgmodel.bom#com.tibco.bpm.de.api.orgmodelsetExtensionPointsResponse?com.tibco.bpm.de.api.orgmodel%3a%3asetExtensionPointsResponseType?"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="OrgModelServiceprocessDynamicOrg" name="processDynamicOrg">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="processDynamicOrgparameters" name="parameters">
+          <type xmi:type="uml:PrimitiveType" href="com.tibco.bpm.de.api.orgmodel.bom#com.tibco.bpm.de.api.orgmodelprocessDynamicOrg?com.tibco.bpm.de.api.orgmodel%3a%3aprocessDynamicOrgType?"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="processDynamicOrgresponse" name="response" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="com.tibco.bpm.de.api.orgmodel.bom#com.tibco.bpm.de.api.orgmodelprocessDynamicOrgResponse?com.tibco.bpm.de.api.orgmodel%3a%3aprocessDynamicOrgResponseType?"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="OrgModelServicegetPushDestinations" name="getPushDestinations">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="getPushDestinationsparameters" name="parameters">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.orgmodel.bom#com.tibco.bpm.de.api.orgmodelgetPushDestinationsType?com.tibco.bpm.de.api.orgmodel%3a%3agetPushDestinationsType?"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="getPushDestinationsresponse" name="response" direction="return">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.orgmodel.bom#com.tibco.bpm.de.api.orgmodelgetPushDestinationsResponseType?com.tibco.bpm.de.api.orgmodel%3a%3agetPushDestinationsResponseType?"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="OrgModelServicegetOrgModelRoots" name="getOrgModelRoots">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="getOrgModelRootsparameters" name="parameters">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.orgmodel.bom#com.tibco.bpm.de.api.orgmodelgetOrgModelRootsType?com.tibco.bpm.de.api.orgmodel%3a%3agetOrgModelRootsType?"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="getOrgModelRootsresponse" name="response" direction="return">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.orgmodel.bom#com.tibco.bpm.de.api.orgmodelgetOrgModelRootsResponseType?com.tibco.bpm.de.api.orgmodel%3a%3agetOrgModelRootsResponseType?"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="OrgModelServicegetOrgModelEntity" name="getOrgModelEntity">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="getOrgModelEntityparameters" name="parameters">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.orgmodel.bom#com.tibco.bpm.de.api.orgmodelgetOrgModelEntityType?com.tibco.bpm.de.api.orgmodel%3a%3agetOrgModelEntityType?"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="getOrgModelEntityresponse" name="response" direction="return">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.orgmodel.bom#com.tibco.bpm.de.api.orgmodelgetOrgModelEntityResponseType?com.tibco.bpm.de.api.orgmodel%3a%3agetOrgModelEntityResponseType?"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.servicesDirectoryService" name="DirectoryService">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_qisa8a1jEem1vK-kP1bIqQ" body="Get information about LDAP containers and manage LDAP entries."/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="DirectoryServicelistLdapConnections" name="listLdapConnections">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="listLdapConnectionsparameters" name="parameters">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.directory.bom#com.tibco.bpm.de.api.directorylistLdapConnectionsType?com.tibco.bpm.de.api.directory%3a%3alistLdapConnectionsType?"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="listLdapConnectionsresponse" name="response" direction="return">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.directory.bom#com.tibco.bpm.de.api.directorylistLdapConnectionsResponseType?com.tibco.bpm.de.api.directory%3a%3alistLdapConnectionsResponseType?"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="DirectoryServicegetLdapEntry" name="getLdapEntry">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="getLdapEntryparameters" name="parameters">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.directory.bom#com.tibco.bpm.de.api.directorygetLdapEntryType?com.tibco.bpm.de.api.directory%3a%3agetLdapEntryType?"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="getLdapEntryresponse" name="response" direction="return">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.directory.bom#com.tibco.bpm.de.api.directorygetLdapEntryResponseType?com.tibco.bpm.de.api.directory%3a%3agetLdapEntryResponseType?"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="DirectoryServiceexecuteLdapQuery" name="executeLdapQuery">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="executeLdapQueryparameters" name="parameters">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.directory.bom#com.tibco.bpm.de.api.directoryexecuteLdapQueryType?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryType?"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="executeLdapQueryresponse" name="response" direction="return">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.directory.bom#com.tibco.bpm.de.api.directoryexecuteLdapQueryResponseType?com.tibco.bpm.de.api.directory%3a%3aexecuteLdapQueryResponseType?"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="DirectoryServicelistAttributeNames" name="listAttributeNames">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="listAttributeNamesparameters" name="parameters">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.directory.bom#com.tibco.bpm.de.api.directorylistAttributeNamesType?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesType?"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="listAttributeNamesresponse" name="response" direction="return">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.directory.bom#com.tibco.bpm.de.api.directorylistAttributeNamesResponseType?com.tibco.bpm.de.api.directory%3a%3alistAttributeNamesResponseType?"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="DirectoryServicelistContainers" name="listContainers">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="listContainersparameters" name="parameters">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.directory.bom#com.tibco.bpm.de.api.directorylistContainersType?com.tibco.bpm.de.api.directory%3a%3alistContainersType?"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="listContainersresponse" name="response" direction="return">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.directory.bom#com.tibco.bpm.de.api.directorylistContainersResponseType?com.tibco.bpm.de.api.directory%3a%3alistContainersResponseType?"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="DirectoryServicesaveContainer" name="saveContainer">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="saveContainerparameters" name="parameters">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.base.bom#com.tibco.bpm.de.api.baseXmlContainer?com.tibco.bpm.de.api.base%3a%3aXmlContainer?"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="saveContainerresponse" name="response" direction="return">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.directory.bom#com.tibco.bpm.de.api.directorysaveContainerResponseType?com.tibco.bpm.de.api.directory%3a%3asaveContainerResponseType?"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="DirectoryServicelistCandidateResources" name="listCandidateResources">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="listCandidateResourcesparameters" name="parameters">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.directory.bom#com.tibco.bpm.de.api.directorylistCandidateResourcesType?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesType?"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="listCandidateResourcesresponse" name="response" direction="return">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.directory.bom#com.tibco.bpm.de.api.directorylistCandidateResourcesResponseType?com.tibco.bpm.de.api.directory%3a%3alistCandidateResourcesResponseType?"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="DirectoryServicegetCandidateDetail" name="getCandidateDetail">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="getCandidateDetailparameters" name="parameters">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.directory.bom#com.tibco.bpm.de.api.directorygetCandidateDetailType?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailType?"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="getCandidateDetailresponse" name="response" direction="return">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.directory.bom#com.tibco.bpm.de.api.directorygetCandidateDetailResponseType?com.tibco.bpm.de.api.directory%3a%3agetCandidateDetailResponseType?"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="DirectoryServicedeleteContainer" name="deleteContainer">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="deleteContainerparameters" name="parameters">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.directory.bom#com.tibco.bpm.de.api.directorydeleteContainerType?com.tibco.bpm.de.api.directory%3a%3adeleteContainerType?"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="deleteContainerresponse" name="response" direction="return">
+          <type xmi:type="uml:Class" href="com.tibco.bpm.de.api.directory.bom#com.tibco.bpm.de.api.directorydeleteContainerResponseType?com.tibco.bpm.de.api.directory%3a%3adeleteContainerResponseType?"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_oNp2Ma1jEem1vK-kP1bIqQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oNp2Mq1jEem1vK-kP1bIqQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://XSD_NOTATION_TYPES/XsdNotation.profile.uml#_LmHW0fHtEd2z3-vLsCwuEg"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://XSD_NOTATION_TYPES/XsdNotation.profile.uml#_rcgvMcXQEd24G-GaruVVqA?XsdNotationProfile?"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_oNp2M61jEem1vK-kP1bIqQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oNp2NK1jEem1vK-kP1bIqQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://BOM_TYPES/PrimitiveTypeFacets.profile.uml#_8TmTUstlEdy7K9XeCH7Hrw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://BOM_TYPES/PrimitiveTypeFacets.profile.uml#_3A574HcJEdytQ9AWEvOuug?PrimitiveTypeFacets?"/>
+    </profileApplication>
+  </uml:Model>
+  <XsdNotationProfile:XsdBasedModel xmi:id="_oNp2Na1jEem1vK-kP1bIqQ" base_Package="com.tibco.n2.de.services?com.tibco.n2.de.services?" xsdTargetNamespace="http://services.de.n2.tibco.com" xsdSchemaLocation="de.wsdl;de-services.wsdl" xsdStudioVersion="4.0.0.003" bomWsdlSources="de.wsdl,de-services.wsdl"/>
+  <notation:Diagram xmi:id="_oUFOUK1jEem1vK-kP1bIqQ" type="Business Object Model" element="com.tibco.n2.de.services?com.tibco.n2.de.services?" name="com.tibco.n2.de.services" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_oUFOUa1jEem1vK-kP1bIqQ"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_oUFOUq1jEem1vK-kP1bIqQ"/>
+  </notation:Diagram>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_qft_cK1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.servicesOrgResourceService?com.tibco.n2.de.services%3a%3aOrgResourceService?" xsdName="OrgResourceService"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qlYika1jEem1vK-kP1bIqQ" displayLabel="OrgResourceService" base_NamedElement="com.tibco.n2.de.servicesOrgResourceService?com.tibco.n2.de.services%3a%3aOrgResourceService?"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_qg0ysK1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.servicesOrgModelService?com.tibco.n2.de.services%3a%3aOrgModelService?" xsdName="OrgModelService"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qlYikK1jEem1vK-kP1bIqQ" displayLabel="OrgModelService" base_NamedElement="com.tibco.n2.de.servicesOrgModelService?com.tibco.n2.de.services%3a%3aOrgModelService?"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_qisa8q1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.servicesDirectoryService?com.tibco.n2.de.services%3a%3aDirectoryService?" xsdName="DirectoryService"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_qlX7gK1jEem1vK-kP1bIqQ" displayLabel="DirectoryService" base_NamedElement="com.tibco.n2.de.servicesDirectoryService?com.tibco.n2.de.services%3a%3aDirectoryService?"/>
+</xmi:XMI>

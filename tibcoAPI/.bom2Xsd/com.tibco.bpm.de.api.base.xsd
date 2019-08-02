@@ -1,0 +1,1534 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://base.api.de.bpm.tibco.com" xmlns:tns5="http://base.api.de.bpm.tibco.com"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:tns4="http://api.de.n2.tibco.com"
+    xmlns:tns6="http://channeltype.common.n2.tibco.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://base.api.de.bpm.tibco.com">
+  <xsd:annotation>
+    <xsd:documentation>BOMORIGIN::/tibcoAPI/Generated Business Objects/com.tibco.bpm.de.api.base.bom</xsd:documentation>
+  </xsd:annotation>
+  <xsd:import namespace="http://api.de.n2.tibco.com" schemaLocation="com.tibco.n2.de.api.xsd"/>
+  <xsd:import namespace="http://channeltype.common.n2.tibco.com" schemaLocation="com.tibco.n2.common.channeltype.xsd"/>
+  <xsd:simpleType ecore:name="XmlLdapSearchScope" id="com.tibco.bpm.de.api.baseXmlLdapSearchScope"
+      name="XmlLdapSearchScope">
+    <xsd:annotation>
+      <xsd:documentation>Enumerated value indicating the scope on which an LDAP search is to be performed.
+            ONELEVEL - contains elements with objects in the named context that satisfy the search filter.
+            SUBTREE - contains elements of objects from the subtree (including the named context) that satisfy the search filter.
+             </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration ecore:name="ONELEVEL" value="ONELEVEL"/>
+      <xsd:enumeration ecore:name="SUBTREE" value="SUBTREE"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType ecore:name="XmlCandidateChoice" id="com.tibco.bpm.de.api.baseXmlCandidateChoice"
+      name="XmlCandidateChoice">
+    <xsd:annotation>
+      <xsd:documentation>Enumerated value indicating what entries should be included in the result set of a search
+            of an LDAP Container's candidate Resources. One of the following:
+                - EXISTING: include only entries from which a Resource has already been created.
+                - NON-EXISTING: include only entries from which no Resource has yet been created.
+                - ALL: include both existing and non-existing candidate Resources.
+                - INVALID: include only Resources that exist in BPM but not in LDAP </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration ecore:name="EXISTING" value="EXISTING"/>
+      <xsd:enumeration ecore:name="NONEXISTING" value="NON-EXISTING"/>
+      <xsd:enumeration ecore:name="ALL" value="ALL"/>
+      <xsd:enumeration ecore:name="INVALID" value="INVALID"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType ecore:name="XmlCandidateError" id="com.tibco.bpm.de.api.baseXmlCandidateError"
+      name="XmlCandidateError">
+    <xsd:annotation>
+      <xsd:documentation>Enumerated value indicating an error in the identification of an LDAP Container's
+            candidate Resource. Also used to report failure when attempting to create a Resource from a candidate.
+                - MULTIPLE-ENTRIES: The Secondary LDAP Source mappings identify multiple entries.
+                - MISSING-RESOURCE: The existing Resource's entry could not be found in the LDAP directory.
+                - NAME-EXISTS: A Resource already exists with the name specified in a create Resource request. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration ecore:name="MULTIPLEENTRIES" value="MULTIPLE-ENTRIES"/>
+      <xsd:enumeration ecore:name="MISSINGRESOURCE" value="MISSING-RESOURCE"/>
+      <xsd:enumeration ecore:name="NAMEEXISTS" value="NAME-EXISTS"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType ecore:name="XmlAllocationMethod" id="com.tibco.bpm.de.api.baseXmlAllocationMethod"
+      name="XmlAllocationMethod">
+    <xsd:annotation>
+      <xsd:documentation>Enumerated value defining the method by which resources will be selected from a collection for work allocation. One of the following:
+- ANY: use random selection.
+- NEXT: use iterative selection.
+- THIS: use the specifically identified resource.
+- PLUGIN: use the named plugin code (where the name is given separately) to perform the selection. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration ecore:name="ANY" value="ANY"/>
+      <xsd:enumeration ecore:name="NEXT" value="NEXT"/>
+      <xsd:enumeration ecore:name="THIS" value="THIS"/>
+      <xsd:enumeration ecore:name="PLUGIN" value="PLUGIN"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType ecore:name="XmlPageControl" id="com.tibco.bpm.de.api.baseXmlPageControl"
+      abstract="false" mixed="false" name="XmlPageControl">
+    <xsd:annotation>
+      <xsd:documentation>Conveys the paged request for a list of entities. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute ecore:name="page" id="XmlPageControlpage" form="unqualified" name="page"
+        type="xsd:int" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Indicates the page requested. The first page is numbered 1. If the requested page, for a given page-size, exceeds the available entries, the resulting list will be empty. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="pagesize" id="XmlPageControlpage-size" form="unqualified"
+        name="page-size" type="xsd:int" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Indicates the maximum number of entries per page. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlPageControlResponse" id="com.tibco.bpm.de.api.baseXmlPageControlResponse"
+      abstract="false" mixed="false" name="XmlPageControlResponse">
+    <xsd:annotation>
+      <xsd:documentation>Conveys the paged request for a list of entities. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlPageControl">
+        <xsd:attribute ecore:name="totalentries" id="XmlPageControlResponsetotal-entries"
+            form="unqualified" name="total-entries" type="xsd:int" use="required">
+          <xsd:annotation>
+            <xsd:documentation>Indicates the total number of entries available. Allowing the number of pages to be determined. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlModelInstanceIdAttribute" id="com.tibco.bpm.de.api.baseXmlModelInstanceIdAttribute"
+      abstract="false" mixed="false" name="XmlModelInstanceIdAttribute">
+    <xsd:annotation>
+      <xsd:documentation>Names an LDAP Attribute that will be used to populate the value of the named Model-Template Instance Identity attribute. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute ecore:name="name" id="XmlModelInstanceIdAttributename" form="unqualified"
+        name="name" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Names the model-template instance ID attribute that will take its value from the named LDAP Attribute. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="ldapattribute" id="XmlModelInstanceIdAttributeldap-attribute"
+        form="unqualified" name="ldap-attribute" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Names the LDAP Attribute from which the value of the model-template instance ID attribute will be populated.
+                If the named LDAP Attribute holds many values, only one will be chosen - at random. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlModelInstanceIdValue" id="com.tibco.bpm.de.api.baseXmlModelInstanceIdValue"
+      abstract="false" mixed="false" name="XmlModelInstanceIdValue">
+    <xsd:annotation>
+      <xsd:documentation>Makes up one element of the Model-Template Identity; each element being a named attribute linked to a named LDAP attribute. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute ecore:name="name" id="XmlModelInstanceIdValuename" form="unqualified"
+        name="name" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Names the model-template instance ID attribute that will take its value from the named LDAP Attribute. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="value" id="XmlModelInstanceIdValuevalue" form="unqualified"
+        name="value" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>The value of the LDAP Attribute from which the model-template instance ID will be constructed.
+                If the named LDAP Attribute holds many values, only one will be chosen - at random. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlExtensionPoint" id="com.tibco.bpm.de.api.baseXmlExtensionPoint"
+      abstract="false" mixed="false" name="XmlExtensionPoint">
+    <xsd:annotation>
+      <xsd:documentation>It provides the configuration details of an Organisation Extension Point. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ecore:name="instanceidattr" id="XmlExtensionPointinstance-id-attr"
+          form="unqualified" maxOccurs="unbounded" minOccurs="1" name="instance-id-attr"
+          type="XmlModelInstanceIdAttribute"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:name="ldapalias" id="XmlExtensionPointldap-alias" form="unqualified"
+        name="ldap-alias" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Identifies the LDAP Connection on which the LDAP Query will be performed. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="query" id="XmlExtensionPointquery" form="unqualified"
+        name="query" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>This LDAP Query expression will locate entries that identify new model template instances. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="basedn" id="XmlExtensionPointbase-dn" form="unqualified"
+        name="base-dn" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Optionally names the LDAP branch to which the LDAP Query will be restricted. This will be in addition to any Base-DN already specified on the LDAP Connection. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="searchscope" id="XmlExtensionPointsearch-scope" form="unqualified"
+        name="search-scope" type="XmlLdapSearchScope" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The Search Scope determines the depth to which the search will be performed. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="ldapattribute" id="XmlExtensionPointldap-attribute"
+        form="unqualified" name="ldap-attribute" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Names the LDAP Attribute from which the name of the new Model Template Instance will be taken. The root Organisation-Unit of the Model Template Instance will be named with the value of this attribute. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlExtensionPointSetting" id="com.tibco.bpm.de.api.baseXmlExtensionPointSetting"
+      abstract="false" mixed="false" name="XmlExtensionPointSetting">
+    <xsd:annotation>
+      <xsd:documentation>Serves two purposes. Firstly, it identifies the entity in which it is an element as being an Organisation Extension Point.
+            Secondly, it provides the configuration details of that Extension Point.
+             </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlExtensionPoint">
+        <xsd:attribute ecore:name="modeltemplate" id="XmlExtensionPointSettingmodel-template"
+            form="unqualified" name="model-template" type="xsd:string" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>Identifies the Model Template entity to which this Extension Point refers. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:name="complete" id="XmlExtensionPointSettingcomplete"
+            default="true" form="unqualified" name="complete" type="xsd:boolean" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>Indicates whether this Extension Point configuration is complete. If false then it will require configuration before it is used to generate dynamic org-model fragments. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlExtensionPointAssignment" id="com.tibco.bpm.de.api.baseXmlExtensionPointAssignment"
+      abstract="false" mixed="false" name="XmlExtensionPointAssignment">
+    <xsd:annotation>
+      <xsd:documentation>Serves two purposes. Firstly, it identifies the entity in which it is an element as being an Organisation Extension Point.
+            Secondly, it provides the configuration details of that Extension Point.
+             </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlExtensionPoint">
+        <xsd:attribute ecore:name="modelversion" id="XmlExtensionPointAssignmentmodel-version"
+            form="unqualified" name="model-version" type="xsd:int" use="required">
+          <xsd:annotation>
+            <xsd:documentation>Major version number of the organization model in which the Extension Point entity is found; and to which this Extension Point configuration will be set. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:name="extpointguid" id="XmlExtensionPointAssignmentext-point-guid"
+            form="unqualified" name="ext-point-guid" type="xsd:string" use="required">
+          <xsd:annotation>
+            <xsd:documentation>Unique identifier of the organisation unit that is the Extension Point to which this configuration will be set.
+		                The identified entity must have been deployed as an Extension Point holder. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlExtensionPointRemoval" id="com.tibco.bpm.de.api.baseXmlExtensionPointRemoval"
+      abstract="false" mixed="false" name="XmlExtensionPointRemoval">
+    <xsd:attribute ecore:name="modelversion" id="XmlExtensionPointRemovalmodel-version"
+        form="unqualified" name="model-version" type="xsd:int" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Major version number of the organization model in which the Extension Point entity is found; and to which this Extension Point configuration will be set. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="extpointguid" id="XmlExtensionPointRemovalext-point-guid"
+        form="unqualified" name="ext-point-guid" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Unique identifier of the organisation unit that is the Extension Point to which this configuration will be set.
+		                The identified entity must have been deployed as an Extension Point holder. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlCandidateQuery" id="com.tibco.bpm.de.api.baseXmlCandidateQuery"
+      abstract="false" mixed="false" name="XmlCandidateQuery">
+    <xsd:annotation>
+      <xsd:documentation>Defines an LDAP Query that will identify candidates for Resources. The candidate Resources will be automatically created and assigned to the Group or Position to which this query is associated.
+The query identifies an LDAP Container; the Primary LDAP Source of which will be used to evaluate the query. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute ecore:name="containerid" id="XmlCandidateQuerycontainer-id" form="unqualified"
+        name="container-id" type="tns5:long_StudioGeneratedTemplate" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Identifies the LDAP Container whose the Primary LDAP Source will be used to evaluate the query. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="query" id="XmlCandidateQueryquery" form="unqualified"
+        name="query" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>The LDAP Query that will be combined with the query of the Primary LDAP Source to identify candidate Resources. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="basedn" id="XmlCandidateQuerybase-dn" form="unqualified"
+        name="base-dn" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>(Optional) Provides an additional base DN that will be used to restrict the scope of the Candidate Query. This base DN is relative to, and in additon, to any base DN of the LDAP Container's primary LDAP Source. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="searchscope" id="XmlCandidateQuerysearch-scope" form="unqualified"
+        name="search-scope" type="XmlLdapSearchScope" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Enumerated value indicating the scope on which an LDAP search is to be performed. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlCandidateQueryAssignment" id="com.tibco.bpm.de.api.baseXmlCandidateQueryAssignment"
+      abstract="false" mixed="false" name="XmlCandidateQueryAssignment">
+    <xsd:annotation>
+      <xsd:documentation>Used to persist the LDAP Query that is used to identify candidate Resources for the Position or Group to which the CandidateQuery is assigned.
+             </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlCandidateQuery">
+        <xsd:choice>
+          <xsd:element ecore:name="position" id="XmlCandidateQueryAssignmentposition"
+              form="unqualified" maxOccurs="1" minOccurs="1" name="position" type="xsd:string"/>
+          <xsd:element ecore:name="group" id="XmlCandidateQueryAssignmentgroup" form="unqualified"
+              maxOccurs="1" minOccurs="1" name="group" type="xsd:string"/>
+        </xsd:choice>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlContainer" id="com.tibco.bpm.de.api.baseXmlContainer"
+      abstract="false" mixed="false" name="XmlContainer">
+    <xsd:annotation>
+      <xsd:documentation>Definition of an LDAP container and any LDAP source entries that it contains. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:choice>
+        <xsd:element ecore:name="primaryldap" id="XmlContainerprimary-ldap" form="unqualified"
+            maxOccurs="1" minOccurs="1" name="primary-ldap" type="XmlLdapQuerySource"/>
+        <xsd:element ecore:name="primarygroupldap" id="XmlContainerprimary-group-ldap"
+            form="unqualified" maxOccurs="1" minOccurs="1" name="primary-group-ldap"
+            type="XmlLdapGroupSource"/>
+      </xsd:choice>
+      <xsd:choice maxOccurs="unbounded" minOccurs="0">
+        <xsd:element ecore:name="secondaryldap" id="XmlContainersecondary-ldap" form="unqualified"
+            maxOccurs="1" minOccurs="1" name="secondary-ldap" type="XmlSecondaryLdapQuerySource"/>
+        <xsd:element ecore:name="secondarygroupldap" id="XmlContainersecondary-group-ldap"
+            form="unqualified" maxOccurs="1" minOccurs="1" name="secondary-group-ldap"
+            type="XmlSecondaryLdapGroupSource"/>
+      </xsd:choice>
+      <xsd:element ecore:name="restrictedorg" id="XmlContainerrestricted-org" form="unqualified"
+          maxOccurs="unbounded" minOccurs="0" name="restricted-org" type="XmlRestrictedOrg"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:name="id" id="XmlContainerid" default="0" form="unqualified"
+        name="id" type="tns5:long_StudioGeneratedTemplate" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Unique ID of the LDAP container. Only given when updating an existing LDAP container. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="name" id="XmlContainername" form="unqualified" name="name"
+        type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Unique name of the LDAP container. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="description" id="XmlContainerdescription" form="unqualified"
+        name="description" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Description of the LDAP container. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="active" id="XmlContaineractive" default="true" form="unqualified"
+        name="active" type="xsd:boolean" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Read-only - Indicates if this container has been marked as deleted. Containers will only be deleted when all resources derived from it are deleted. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="entitycount" id="XmlContainerentity-count" form="unqualified"
+        name="entity-count" type="xsd:int" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Read-only - only specified when this XmlContainer is used in a service response.
+
+The count of the number of LDAP entries this container referenced. This count is set when the container is queried. The count may not be currently correct if the LDAP directory has been modified since the count was set. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="lastaccessed" id="XmlContainerlast-accessed" form="unqualified"
+        name="last-accessed" type="xsd:dateTime" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Read-only - Date and time on which the LDAP container was last queried, and the date on which the entity-count above was set. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlLdapQuerySource" id="com.tibco.bpm.de.api.baseXmlLdapQuerySource"
+      abstract="false" mixed="false" name="XmlLdapQuerySource">
+    <xsd:annotation>
+      <xsd:documentation>Definition of an LDAP Source entry (identified by the LDAP alias) in an LDAP container.
+            This class of LDAP Source is used to locate candidate entries using an LDAP Query, and optional base-dn. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlLdapSource">
+        <xsd:attribute ecore:name="basedn" id="XmlLdapQuerySourcebase-dn" form="unqualified"
+            name="base-dn" type="xsd:string" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>(Optional) Provides an additional base DN that will be used to restrict the scope of the LDAP query. This base DN is relative to, and in additon, to any base DN specified in the URL of the LDAP connection shared resource identified by the ldap-alias. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:name="ldapquery" id="XmlLdapQuerySourceldap-query" form="unqualified"
+            name="ldap-query" type="xsd:string" use="required">
+          <xsd:annotation>
+            <xsd:documentation>LDAP query expression used to identify the entries to be returned from this LDAP source. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:name="searchscope" id="XmlLdapQuerySourcesearch-scope"
+            form="unqualified" name="search-scope" type="XmlLdapSearchScope" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>The Search Scope determines the depth to which the search will be performed. By default the search will be SUBTREE. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlLdapSource" id="com.tibco.bpm.de.api.baseXmlLdapSource"
+      abstract="true" mixed="false" name="XmlLdapSource">
+    <xsd:annotation>
+      <xsd:documentation>Definition of an LDAP shared resource entry (identified by the LDAP alias) in an LDAP container. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ecore:name="attributemapping" id="XmlLdapSourceattribute-mapping"
+          form="unqualified" maxOccurs="unbounded" minOccurs="0" name="attribute-mapping"
+          type="XmlLdapAttributeMapping"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:name="ldapalias" id="XmlLdapSourceldap-alias" form="unqualified"
+        name="ldap-alias" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The name (or alias) by which a configured LDAP connection shared resource is identified. LDAP connection shared resource are named with the prefix &quot;ldap/de/&quot; in order to indicate that they are intended for Directory Engine use. The alias given here is that name without the &quot;ldap/de/&quot; prefix.
+
+An LDAP container can contain only one instance of an LDAP source for any alias. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="resourcenameattributes" id="XmlLdapSourceresource-name-attributes"
+        form="unqualified" name="resource-name-attributes" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>(Optional) A space-separated list of named LDAP attributes, whose values will be concatenated to generate a default display name for resources derived from entries in this LDAP source.
+When an LDAP container contains one or more secondary LDAP sources, and those LDAP sources also provide resource-name-attributes, those of the first entry encountered will be used. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlLdapAttributeMapping" id="com.tibco.bpm.de.api.baseXmlLdapAttributeMapping"
+      abstract="false" mixed="false" name="XmlLdapAttributeMapping">
+    <xsd:annotation>
+      <xsd:documentation>Mapping between a Resource Attribute, which is defined in the organization model and identified by its GUID, and an LDAP attribute, which is identified by its name. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute ecore:name="resourceattrguid" id="XmlLdapAttributeMappingresource-attr-guid"
+        form="unqualified" name="resource-attr-guid" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The GUID of the Resource Attribute as defined in the organization model. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="ldapattribute" id="XmlLdapAttributeMappingldap-attribute"
+        form="unqualified" name="ldap-attribute" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>LDAP attribute that is to be mapped to the identified resource attribute. Whenever a value is required for the resource attribute, it will be provided by this LDAP attribute. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlLdapGroupSource" id="com.tibco.bpm.de.api.baseXmlLdapGroupSource"
+      abstract="false" mixed="false" name="XmlLdapGroupSource">
+    <xsd:annotation>
+      <xsd:documentation>Definition of an LDAP Source entry (identified by the LDAP alias) in an LDAP container.
+            This class of LDAP Source is used to locate candidate entries using LDAP Groups. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlLdapSource">
+        <xsd:attribute ecore:name="groupdn" id="XmlLdapGroupSourcegroup-dn" form="unqualified"
+            name="group-dn" type="xsd:string" use="required">
+          <xsd:annotation>
+            <xsd:documentation>The Group DN uniquely identifies the directory entry that is the group. This can be derived by performing a search based upon the base-DN, search filter and scope parameters described above. Or, it can be manually entered (with verification) by the user. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:name="memberattribute" id="XmlLdapGroupSourcemember-attribute"
+            form="unqualified" name="member-attribute" type="xsd:string" use="required">
+          <xsd:annotation>
+            <xsd:documentation>The member attribute names the attribute within the group entry that holds the collection of member idenifiers - their DNs. This will give the final list of candidate resources. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlSecondaryLdapQuerySource" id="com.tibco.bpm.de.api.baseXmlSecondaryLdapQuerySource"
+      abstract="false" mixed="false" name="XmlSecondaryLdapQuerySource">
+    <xsd:annotation>
+      <xsd:documentation>Extension of XmlLdapSource, which identifies a secondary LDAP Source entry within an LDAP container.
+
+An LDAP container can hold a single primary LDAP Source and any number of secondary LDAP Sources. Secondary LDAP Sources hold &quot;foreign-key&quot; references that map their entries to those of the primary LDAP Source by named attribute values. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlLdapQuerySource">
+        <xsd:sequence>
+          <xsd:element ecore:name="primarylink" id="XmlSecondaryLdapQuerySourceprimary-link"
+              form="unqualified" maxOccurs="unbounded" minOccurs="1" name="primary-link"
+              type="XmlLdapSourceLink"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlLdapSourceLink" id="com.tibco.bpm.de.api.baseXmlLdapSourceLink"
+      abstract="false" mixed="false" name="XmlLdapSourceLink">
+    <xsd:annotation>
+      <xsd:documentation>Definition of a foreign key mapping between the primary LDAP source and a secondary LDAP source for an LDAP container.
+
+Each element names an attribute within each LDAP source that, for a given entry in each LDAP source, holds the same value and thus provides an association between the two entries.
+
+For example, if a resource has an entry of &quot;UID=Clint Hill&quot; in the primary LDAP source, and is uniquely identified in the secondary LDAP source as &quot;CN=Clint Hill&quot;. The mappping would map the &quot;UID&quot; attribute in the primary LDAP source to the &quot;CN&quot; attribute in the secondary LDAP source.
+
+In order to uniquely identify an entry in each LDAP source many of these elements may be required, naming several attributes in each LDAP source. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute ecore:name="primaryattribute" id="XmlLdapSourceLinkprimary-attribute"
+        form="unqualified" name="primary-attribute" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The LDAP attribute in the primary LDAP source that is to be mapped to the LDAP attribute in the secondary LDAP source (name in the secondary-attribute). </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="secondaryattribute" id="XmlLdapSourceLinksecondary-attribute"
+        form="unqualified" name="secondary-attribute" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The LDAP attribute in this secondary LDAP source that is to be mapped to from the LDAP attribute in the primary LDAP source (named in the primary-attribute) </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlSecondaryLdapGroupSource" id="com.tibco.bpm.de.api.baseXmlSecondaryLdapGroupSource"
+      abstract="false" mixed="false" name="XmlSecondaryLdapGroupSource">
+    <xsd:annotation>
+      <xsd:documentation>Extension of XmlLdapSource, which identifies a secondary LDAP Source entry within an LDAP container.
+
+An LDAP container can hold a single primary LDAP Source and any number of secondary LDAP Sources. Secondary LDAP Sources hold &quot;foreign-key&quot; references that map their entries to those of the primary LDAP Source by named attribute values. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlLdapGroupSource">
+        <xsd:sequence>
+          <xsd:element ecore:name="primarylink" id="XmlSecondaryLdapGroupSourceprimary-link"
+              form="unqualified" maxOccurs="unbounded" minOccurs="1" name="primary-link"
+              type="XmlLdapSourceLink"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlRestrictedOrg" id="com.tibco.bpm.de.api.baseXmlRestrictedOrg"
+      abstract="false" mixed="false" name="XmlRestrictedOrg">
+    <xsd:annotation>
+      <xsd:documentation>Identifies an organisation to which access is restricted to only those Resource derived  from the LDAP Container in which this element resides. It also restricts the Organizations to which Resources derived from the LDAP Container can be assigned.
+             </xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute ecore:name="orgguid" id="XmlRestrictedOrgorg-guid" form="unqualified"
+        name="org-guid" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Unique identifier of the organisation to be administered. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="name" id="XmlRestrictedOrgname" form="unqualified"
+        name="name" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Read-only - Name of the organization to be administered. Only supplied for display purposes. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlLdapEntry" id="com.tibco.bpm.de.api.baseXmlLdapEntry"
+      abstract="false" mixed="false" name="XmlLdapEntry">
+    <xsd:annotation>
+      <xsd:documentation>Details the properties of an LDAP entry; including its DN and attributes. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ecore:name="attribute" id="XmlLdapEntryattribute" form="unqualified"
+          maxOccurs="unbounded" minOccurs="0" name="attribute" type="XmlLdapAttributeValue"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:name="ldapdn" id="XmlLdapEntryldap-dn" form="unqualified"
+        name="ldap-dn" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The full Distinguished Name (DN) of the LDAP entry from which this element was constructed. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlLdapAttributeValue" id="com.tibco.bpm.de.api.baseXmlLdapAttributeValue"
+      abstract="false" mixed="false" name="XmlLdapAttributeValue">
+    <xsd:annotation>
+      <xsd:documentation>Names an LDAP Attribute and returns the values it holds. Includes an indication of whether its values are binary data. Binary values will be encoded in Base-64. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlLdapAttribute">
+        <xsd:sequence>
+          <xsd:element ecore:name="value" id="XmlLdapAttributeValuevalue" form="unqualified"
+              maxOccurs="unbounded" minOccurs="0" name="value" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlLdapAttribute" id="com.tibco.bpm.de.api.baseXmlLdapAttribute"
+      abstract="false" mixed="false" name="XmlLdapAttribute">
+    <xsd:annotation>
+      <xsd:documentation>Names an LDAP attribute and indicates whether its values are binary data. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute ecore:name="name" id="XmlLdapAttributename" form="unqualified"
+        name="name" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The name of the LDAP attribute. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="binary" id="XmlLdapAttributebinary" default="false"
+        form="unqualified" name="binary" type="xsd:boolean" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Indicates whether the data of the named attribute is binary. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlLdapEntryId" id="com.tibco.bpm.de.api.baseXmlLdapEntryId"
+      abstract="false" mixed="false" name="XmlLdapEntryId">
+    <xsd:annotation>
+      <xsd:documentation>Identifies an LDAP entry by the alias of the LDAP connection shared resource and the Distinguished Name (DN) of the entry within that LDAP. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute ecore:name="ldapalias" id="XmlLdapEntryIdldap-alias" form="unqualified"
+        name="ldap-alias" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The name (or alias) by which a configured LDAP connection shared resource is identified.
+
+LDAP connection shared resources are named with the prefix &quot;ldap/de/&quot; in order to indicate that they are intended for Directory Engine use. The alias given here is that name without the &quot;ldap/de/&quot; prefix. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="ldapdn" id="XmlLdapEntryIdldap-dn" form="unqualified"
+        name="ldap-dn" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The full Distinguished Name (DN) of the LDAP entry identified by this element. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlLdapContainerEntry" id="com.tibco.bpm.de.api.baseXmlLdapContainerEntry"
+      abstract="false" mixed="false" name="XmlLdapContainerEntry">
+    <xsd:annotation>
+      <xsd:documentation>Identifies the LDAP entries (both primary and secondaries) from which a Resource can be (or has been) created. The ldap-alias and ldap-dn identify the LDAP Entry within the Primary LDAP Source the LDAP Container from which the candidate was derived.
+
+If the LDAP Container has any Secondary LDAP Sources, a &quot;secondary-ref&quot; identifies the LDAP Entry within each of those Secondary LDAP Sources. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlLdapEntryId">
+        <xsd:sequence>
+          <xsd:element ecore:name="secondaryref" id="XmlLdapContainerEntrysecondary-ref"
+              form="unqualified" maxOccurs="unbounded" minOccurs="0" name="secondary-ref"
+              type="XmlLdapEntryId"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlResourceCandidate" id="com.tibco.bpm.de.api.baseXmlResourceCandidate"
+      abstract="false" mixed="false" name="XmlResourceCandidate">
+    <xsd:annotation>
+      <xsd:documentation>Identifies the LDAP entries (both primary and secondaries) from which a Resource can be (or has been) created. The ldap-alias and ldap-dn identify the LDAP Entry within the Primary LDAP Source the LDAP Container from which the candidate was derived. If the LDAP Container has any Secondary LDAP Sources, a &quot;secondary-ref&quot; identifies the LDAP Entry within each of those Secondary LDAP Sources. If the candidate is an existing Resource, the GUID for that Resource will be included. If a Resource cannot be created from the candidate, an error code will indicate the reason. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlLdapContainerEntry">
+        <xsd:attribute ecore:name="guid" id="XmlResourceCandidateguid" form="unqualified"
+            name="guid" type="xsd:string" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>If the candidate is one for which a Resource already exists, the GUID of that existing resource is given. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:name="name" id="XmlResourceCandidatename" form="unqualified"
+            name="name" type="xsd:string" use="required">
+          <xsd:annotation>
+            <xsd:documentation>The name of the existing resource, or the name that will be assigned (by default) to the resource created from this candidate entry. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:name="error" id="XmlResourceCandidateerror" form="unqualified"
+            name="error" type="XmlCandidateError" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>Read-only - Indicates that the candidate is invalid, and provides a coded explanation why. If this attribute is not present, the candidate is valid. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlDeletedResource" id="com.tibco.bpm.de.api.baseXmlDeletedResource"
+      abstract="false" mixed="false" name="XmlDeletedResource">
+    <xsd:annotation>
+      <xsd:documentation>Identifies a resource that has been deleted but whose details have been recorded in order to allow the re-allocation of processes/work-items. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlLdapContainerEntry">
+        <xsd:attribute ecore:name="guid" id="XmlDeletedResourceguid" form="unqualified"
+            name="guid" type="xsd:string" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>The GUID originally assigned to the resource.. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:name="name" id="XmlDeletedResourcename" form="unqualified"
+            name="name" type="xsd:string" use="required">
+          <xsd:annotation>
+            <xsd:documentation>The name assigned to the resource. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:name="label" id="XmlDeletedResourcelabel" form="unqualified"
+            name="label" type="xsd:string" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>The alternative name assigned to the resource. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:name="containerid" id="XmlDeletedResourcecontainer-id"
+            form="unqualified" name="container-id" type="tns5:long_StudioGeneratedTemplate"
+            use="optional">
+          <xsd:annotation>
+            <xsd:documentation>Identifies the LDAP container from which the resource originated. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:name="datedeleted" id="XmlDeletedResourcedate-deleted"
+            form="unqualified" name="date-deleted" type="xsd:dateTime" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>The date and time on which the resource was deleted. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlMappedAttributeValue" id="com.tibco.bpm.de.api.baseXmlMappedAttributeValue"
+      abstract="false" mixed="false" name="XmlMappedAttributeValue">
+    <xsd:annotation>
+      <xsd:documentation>Names an LDAP attribute and returns the values it holds. Includes an indication of whether its values are binary data. Binary values will be encoded in Base-64. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlLdapAttributeValue">
+        <xsd:attribute ecore:name="resourceattrguid" id="XmlMappedAttributeValueresource-attr-guid"
+            form="unqualified" name="resource-attr-guid" type="xsd:string" use="required">
+          <xsd:annotation>
+            <xsd:documentation>The GUID of the resource attribute as defined in the organization model. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlSelectionMode" id="com.tibco.bpm.de.api.baseXmlSelectionMode"
+      abstract="false" mixed="false" name="XmlSelectionMode">
+    <xsd:annotation>
+      <xsd:documentation>Method used to select a resource from an identified collection of resources. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute ecore:name="method" id="XmlSelectionModemethod" form="unqualified"
+        name="method" type="XmlAllocationMethod" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Algorithm used to select a resource. One of:
+- ANY: use random selection.
+- NEXT: use iterative selection.
+- THIS: use the specifically identified resource.
+- PLUGIN: use the named plugin code (where the name is given separately) to perform the selection. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="plugin" id="XmlSelectionModeplugin" form="unqualified"
+        name="plugin" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Name of custom plugin implementation. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlModelEntity" id="com.tibco.bpm.de.api.baseXmlModelEntity"
+      abstract="false" mixed="false" name="XmlModelEntity">
+    <xsd:annotation>
+      <xsd:documentation>Identifies an Organizational Model Entity to which a Resource is associated. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute ecore:name="guid" id="XmlModelEntityguid" form="unqualified" name="guid"
+        type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The GUID that uniquely identifies the entity. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="name" id="XmlModelEntityname2" form="unqualified" name="name"
+        type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The name assigned to the entity. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="label" id="XmlModelEntitylabel" form="unqualified"
+        name="label" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>The optional label assigned to the entity. This is used for display purposes. If not given, the name is used for display. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlEntityAssignmentDated" id="com.tibco.bpm.de.api.baseXmlEntityAssignmentDated"
+      abstract="false" mixed="false" name="XmlEntityAssignmentDated">
+    <xsd:annotation>
+      <xsd:documentation>Identifies a position to which the resource is associated. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlModelEntity">
+        <xsd:attribute ecore:name="startdate" id="XmlEntityAssignmentDatedstart-date"
+            form="unqualified" name="start-date" type="xsd:dateTime" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>The optional date and time on which the resource's membership to this entity starts. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:name="enddate" id="XmlEntityAssignmentDatedend-date"
+            form="unqualified" name="end-date" type="xsd:dateTime" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>The optional date and time on which the resource's membership to this entity ends. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlEntityAssignmentQualified" id="com.tibco.bpm.de.api.baseXmlEntityAssignmentQualified"
+      abstract="false" mixed="false" name="XmlEntityAssignmentQualified">
+    <xsd:annotation>
+      <xsd:documentation>Identifies a capability to which the resource is associated. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlModelEntity">
+        <xsd:sequence>
+          <xsd:element ecore:name="qualifiervalue" id="XmlEntityAssignmentQualifiedqualifier-value"
+              form="unqualified" maxOccurs="unbounded" minOccurs="0" name="qualifier-value"
+              type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlPrivilegeAssignment" id="com.tibco.bpm.de.api.baseXmlPrivilegeAssignment"
+      abstract="false" mixed="false" name="XmlPrivilegeAssignment">
+    <xsd:annotation>
+      <xsd:documentation>Identifies a privilege to which the resource is associated. It also identifies the organizational model entity from which the resource inherits the privilege. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlEntityAssignmentQualified">
+        <xsd:choice>
+          <xsd:element ecore:name="position" id="XmlPrivilegeAssignmentposition" form="unqualified"
+              maxOccurs="1" minOccurs="1" name="position" type="XmlModelEntity"/>
+          <xsd:element ecore:name="orgunit" id="XmlPrivilegeAssignmentorg-unit" form="unqualified"
+              maxOccurs="1" minOccurs="1" name="org-unit" type="XmlModelEntity"/>
+          <xsd:element ecore:name="group" id="XmlPrivilegeAssignmentgroup" form="unqualified"
+              maxOccurs="1" minOccurs="1" name="group" type="XmlModelEntity"/>
+        </xsd:choice>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlResourceAttributeValue" id="com.tibco.bpm.de.api.baseXmlResourceAttributeValue"
+      abstract="false" mixed="false" name="XmlResourceAttributeValue">
+    <xsd:annotation>
+      <xsd:documentation>Identifies Resource Attribute and the values assigned to a Resource. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ecore:name="value" id="XmlResourceAttributeValuevalue" form="unqualified"
+          maxOccurs="unbounded" minOccurs="0" name="value" type="xsd:string"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:name="guid" id="XmlResourceAttributeValueguid" form="unqualified"
+        name="guid" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The GUID that uniquely identifies the resource attribute. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="name" id="XmlResourceAttributeValuename" form="unqualified"
+        name="name" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The name of the resource attribute. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="label" id="XmlResourceAttributeValuelabel" form="unqualified"
+        name="label" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>The name of the resource attribute used for display purposes. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="type" id="XmlResourceAttributeValuetype" form="unqualified"
+        name="type" type="tns4:XmlParameterType" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Indicates the data type of the attribute values. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="ldapalias" id="XmlResourceAttributeValueldap-alias"
+        form="unqualified" name="ldap-alias" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>If the resource attribute takes its value from an LDAP attribute, this names the LDAP shared resource from which the LDAP entry was retrieved. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="ldapdn" id="XmlResourceAttributeValueldap-dn" form="unqualified"
+        name="ldap-dn" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>If the resource attribute takes its value from an LDAP attribute, this is the DN of the LDAP entry from which the values were retrieved. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="ldapattribute" id="XmlResourceAttributeValueldap-attribute"
+        form="unqualified" name="ldap-attribute" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>If the resource attribute takes its value from an LDAP attribute, this names the LDAP attribute from which the values were retrieved. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="ldapbinary" id="XmlResourceAttributeValueldap-binary"
+        form="unqualified" name="ldap-binary" type="xsd:boolean" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>If the resource attribute takes its value from an LDAP attribute, this indicates whether its values are binary data. Binary values are encoded in Base-64. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlPushDestinationId" id="com.tibco.bpm.de.api.baseXmlPushDestinationId"
+      abstract="false" mixed="false" name="XmlPushDestinationId">
+    <xsd:annotation>
+      <xsd:documentation>Identifies a push destination. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute ecore:name="name" id="XmlPushDestinationIdname" form="unqualified"
+        name="name" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The name of the push destination. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="channeltype" id="XmlPushDestinationIdchannel-type"
+        form="unqualified" name="channel-type" type="tns6:ChannelType" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Enumerated type defining the presentation technology used by the channel associated with this push destination. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="channelid" id="XmlPushDestinationIdchannel-id" form="unqualified"
+        name="channel-id" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Unique ID of the channel associated with this push destination. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlPushDestination" id="com.tibco.bpm.de.api.baseXmlPushDestination"
+      abstract="false" mixed="false" name="XmlPushDestination">
+    <xsd:annotation>
+      <xsd:documentation>Definition of a push destination.
+
+When using these XML elements to set a push destination, if both the &quot;resource-attr-guid&quot; attribute and &quot;value&quot; elements are specified, the &quot;value&quot; elements will be ignored.
+The value elements are used to pass the values of the push destination. If the push destination:
+            - retrieves its value from an LDAP attribute (via a resource-attr-guid arameter descriptor) it can hold multiple values, so the value element can occur several times.
+            - does not take its value from an LDAP attribute, it can hold only one value. If multiple values are given when setting the push destination, only the first value is recorded. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlPushDestinationId">
+        <xsd:sequence>
+          <xsd:element ecore:name="value" id="XmlPushDestinationvalue" form="unqualified"
+              maxOccurs="unbounded" minOccurs="0" name="value" type="xsd:string"/>
+        </xsd:sequence>
+        <xsd:attribute ecore:name="enabled" id="XmlPushDestinationenabled" form="unqualified"
+            name="enabled" type="xsd:boolean" use="required">
+          <xsd:annotation>
+            <xsd:documentation>Boolean value indicating whether this push destination is currently enabled (TRUE) or not (FALSE). </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:name="resourceattrguid" id="XmlPushDestinationresource-attr-guid"
+            form="unqualified" name="resource-attr-guid" type="xsd:string" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>Unique ID of a resource attribute whose value should be used for the push destination. The parameter descriptor must be assigned to the organization model entity for whom the push destination is being set.  If a value is assigned to both this attribute and the &quot;value&quot; element, the value of this attribute will be used. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlResourceDetail" id="com.tibco.bpm.de.api.baseXmlResourceDetail"
+      abstract="false" mixed="false" name="XmlResourceDetail">
+    <xsd:sequence>
+      <xsd:element ecore:name="location" id="XmlResourceDetaillocation" form="unqualified"
+          maxOccurs="1" minOccurs="0" name="location" type="XmlModelEntity"/>
+      <xsd:element ecore:name="position" id="XmlResourceDetailposition2" form="unqualified"
+          maxOccurs="unbounded" minOccurs="0" name="position" type="XmlEntityAssignmentDated"/>
+      <xsd:element ecore:name="group" id="XmlResourceDetailgroup2" form="unqualified"
+          maxOccurs="unbounded" minOccurs="0" name="group" type="XmlEntityAssignmentDated"/>
+      <xsd:element ecore:name="capability" id="XmlResourceDetailcapability2" form="unqualified"
+          maxOccurs="unbounded" minOccurs="0" name="capability" type="XmlEntityAssignmentQualified"/>
+      <xsd:element ecore:name="privilege" id="XmlResourceDetailprivilege2" form="unqualified"
+          maxOccurs="unbounded" minOccurs="0" name="privilege" type="XmlPrivilegeAssignment"/>
+      <xsd:element ecore:name="attribute" id="XmlResourceDetailattribute2" form="unqualified"
+          maxOccurs="unbounded" minOccurs="0" name="attribute" type="XmlResourceAttributeValue"/>
+      <xsd:element ecore:name="pushdestination" id="XmlResourceDetailpush-destination"
+          form="unqualified" maxOccurs="unbounded" minOccurs="0" name="push-destination"
+          type="XmlPushDestination"/>
+      <xsd:element ecore:name="ldapreference" id="XmlResourceDetailldap-reference"
+          form="unqualified" maxOccurs="1" minOccurs="1" name="ldap-reference" type="XmlLdapContainerEntry"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:name="modelversion" id="XmlResourceDetailmodel-version" form="unqualified"
+        name="model-version" type="xsd:int" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Identifies the model major version from which the resource's organization model entity associations are taken. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="resourcetype" id="XmlResourceDetailresource-type" form="unqualified"
+        name="resource-type" type="tns4:ResourceType" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Identifies the model major version from which the resource's organization model entity associations are taken. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="guid" id="XmlResourceDetailguid" form="unqualified"
+        name="guid" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The GUID assigned to the resource. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="name" id="XmlResourceDetailname" form="unqualified"
+        name="name" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The name assigned to the resource. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="label" id="XmlResourceDetaillabel" form="unqualified"
+        name="label" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>The name assigned to the resource for display purposes. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="startdate" id="XmlResourceDetailstart-date" form="unqualified"
+        name="start-date" type="xsd:dateTime" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>The optional date and time on which the resource's presence should begin. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="enddate" id="XmlResourceDetailend-date" form="unqualified"
+        name="end-date" type="xsd:dateTime" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>The optional date and time on which the resource's presence should end. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="containerid" id="XmlResourceDetailcontainer-id" form="unqualified"
+        name="container-id" type="tns5:long_StudioGeneratedTemplate" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Identifies the LDAP container from which the candidate was resolved. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="containername" id="XmlResourceDetailcontainer-name"
+        form="unqualified" name="container-name" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>The name of LDAP container from which the candidate was resolved. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlOrgModelDeployment" id="com.tibco.bpm.de.api.baseXmlOrgModelDeployment"
+      abstract="false" mixed="false" name="XmlOrgModelDeployment">
+    <xsd:annotation>
+      <xsd:documentation>Lists all the properties of an organization-model deployment artefact. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute ecore:name="major" id="XmlOrgModelDeploymentmajor" form="unqualified"
+        name="major" type="xsd:int" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Major component of the version number. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="minor" id="XmlOrgModelDeploymentminor" form="unqualified"
+        name="minor" type="xsd:int" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Minor component of the version number. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="micro" id="XmlOrgModelDeploymentmicro" form="unqualified"
+        name="micro" type="xsd:int" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Micro component of the version number. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="qualifier" id="XmlOrgModelDeploymentqualifier" form="unqualified"
+        name="qualifier" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Qualifier component of the version number. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="name" id="XmlOrgModelDeploymentname" form="unqualified"
+        name="name" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Name of the organization model deployment artifact, as defined by TIBCO Business Studio. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="deployed" id="XmlOrgModelDeploymentdeployed" form="unqualified"
+        name="deployed" type="xsd:dateTime" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Timestamp on which the organization model deployment artifact was deployed. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlOrgModelVersionDetail" id="com.tibco.bpm.de.api.baseXmlOrgModelVersionDetail"
+      abstract="false" mixed="false" name="XmlOrgModelVersionDetail">
+    <xsd:annotation>
+      <xsd:documentation>Identifies a major version number of an organization model, detailing the deployment artifacts that make up that major version. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ecore:name="deployment" id="XmlOrgModelVersionDetaildeployment2"
+          form="unqualified" maxOccurs="unbounded" minOccurs="1" name="deployment"
+          type="XmlOrgModelDeployment"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:name="modelversion" id="XmlOrgModelVersionDetailmodel-version"
+        form="unqualified" name="model-version" type="xsd:int" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Major version number of the organization model. The contained organization model deployment records make up this version. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlOrgAttribute" id="com.tibco.bpm.de.api.baseXmlOrgAttribute"
+      abstract="false" mixed="false" name="XmlOrgAttribute">
+    <xsd:annotation>
+      <xsd:documentation>Describes an organization model attribute that may be assigned to organization model entities. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlModelEntity">
+        <xsd:sequence>
+          <xsd:element ecore:name="enumval" id="XmlOrgAttributeenum-val" form="unqualified"
+              maxOccurs="unbounded" minOccurs="0" name="enum-val" type="xsd:string"/>
+        </xsd:sequence>
+        <xsd:attribute ecore:name="type" id="XmlOrgAttributetype" form="unqualified"
+            name="type" type="tns4:XmlParameterType" use="required">
+          <xsd:annotation>
+            <xsd:documentation>Indicates the data type of the attribute values. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlOrgAttributeValue" id="com.tibco.bpm.de.api.baseXmlOrgAttributeValue"
+      abstract="false" mixed="false" name="XmlOrgAttributeValue">
+    <xsd:annotation>
+      <xsd:documentation>Records the values held by an organization model entity for an attribute. The attribute is described by its definition. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ecore:name="definition" id="XmlOrgAttributeValuedefinition" form="unqualified"
+          maxOccurs="1" minOccurs="1" name="definition" type="XmlOrgAttribute"/>
+      <xsd:element ecore:name="value" id="XmlOrgAttributeValuevalue" form="unqualified"
+          maxOccurs="unbounded" minOccurs="0" name="value" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlQualifiedEntity" id="com.tibco.bpm.de.api.baseXmlQualifiedEntity"
+      abstract="false" mixed="false" name="XmlQualifiedEntity">
+    <xsd:annotation>
+      <xsd:documentation>Describes an qualified org-model entity (i.e. Privilege or Capability). </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlModelEntity">
+        <xsd:sequence>
+          <xsd:element ecore:name="qualifier" id="XmlQualifiedEntityqualifier" form="unqualified"
+              maxOccurs="1" minOccurs="0" name="qualifier" type="XmlOrgAttribute"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlQueryEntity" id="com.tibco.bpm.de.api.baseXmlQueryEntity"
+      abstract="true" mixed="false" name="XmlQueryEntity">
+    <xsd:annotation>
+      <xsd:documentation>Describes registered Resource Query. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlModelEntity"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlCapability" id="com.tibco.bpm.de.api.baseXmlCapability"
+      abstract="false" mixed="false" name="XmlCapability">
+    <xsd:annotation>
+      <xsd:documentation>Describes an org-model Capability and any qualifier attribute. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlQualifiedEntity">
+        <xsd:attribute ecore:name="resourcecount" id="XmlCapabilityresource-count"
+            default="0" form="unqualified" name="resource-count" type="xsd:int" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>Reports the number of resources assigned with this capability. This information is only included if requested as part of the request parameters. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlPrivilege" id="com.tibco.bpm.de.api.baseXmlPrivilege"
+      abstract="false" mixed="false" name="XmlPrivilege">
+    <xsd:annotation>
+      <xsd:documentation>Describes an org-model Privilege and any qualifier attribute. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlQualifiedEntity"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlCapabilityCategory" id="com.tibco.bpm.de.api.baseXmlCapabilityCategory"
+      abstract="false" mixed="false" name="XmlCapabilityCategory">
+    <xsd:annotation>
+      <xsd:documentation>Defines sub-categories to this Category; creating a hierarchical structure. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlModelEntity">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element ecore:name="capabilitycategory" id="XmlCapabilityCategorycapability-category"
+              form="unqualified" maxOccurs="unbounded" minOccurs="0" name="capability-category"
+              type="XmlCapabilityCategory"/>
+          <xsd:element ecore:name="capability" id="XmlCapabilityCategorycapability"
+              form="unqualified" maxOccurs="unbounded" minOccurs="0" name="capability"
+              type="XmlCapability"/>
+        </xsd:choice>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlPrivilegeCategory" id="com.tibco.bpm.de.api.baseXmlPrivilegeCategory"
+      abstract="false" mixed="false" name="XmlPrivilegeCategory">
+    <xsd:annotation>
+      <xsd:documentation>Defines sub-categories to this Category; creating a hierarchical structure. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlModelEntity">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element ecore:name="privilegecategory" id="XmlPrivilegeCategoryprivilege-category"
+              form="unqualified" maxOccurs="unbounded" minOccurs="0" name="privilege-category"
+              type="XmlPrivilegeCategory"/>
+          <xsd:element ecore:name="privilege" id="XmlPrivilegeCategoryprivilege" form="unqualified"
+              maxOccurs="unbounded" minOccurs="0" name="privilege" type="XmlPrivilege"/>
+        </xsd:choice>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlGroup" id="com.tibco.bpm.de.api.baseXmlGroup" abstract="false"
+      mixed="false" name="XmlGroup">
+    <xsd:annotation>
+      <xsd:documentation>Creates a nested collection of sub-groups for this group. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlModelEntity">
+        <xsd:sequence>
+          <xsd:element ecore:name="allocationmethod" id="XmlGroupallocation-method"
+              form="unqualified" maxOccurs="1" minOccurs="0" name="allocation-method"
+              type="XmlSelectionMode"/>
+          <xsd:element ecore:name="group" id="XmlGroupgroup" form="unqualified" maxOccurs="unbounded"
+              minOccurs="0" name="group" type="XmlGroup"/>
+          <xsd:element ecore:name="reqcapability" id="XmlGroupreq-capability" form="unqualified"
+              maxOccurs="unbounded" minOccurs="0" name="req-capability" type="XmlEntityAssignmentQualified"/>
+          <xsd:element ecore:name="privilegeholding" id="XmlGroupprivilege-holding"
+              form="unqualified" maxOccurs="unbounded" minOccurs="0" name="privilege-holding"
+              type="XmlEntityAssignmentQualified"/>
+          <xsd:element ecore:name="pushdestination" id="XmlGrouppush-destination"
+              form="unqualified" maxOccurs="unbounded" minOccurs="0" name="push-destination"
+              type="XmlPushDestination"/>
+          <xsd:element ecore:name="candidatequery" id="XmlGroupcandidate-query2" form="unqualified"
+              maxOccurs="1" minOccurs="0" name="candidate-query" type="XmlCandidateQuery"/>
+        </xsd:sequence>
+        <xsd:attribute ecore:name="resourcecount" id="XmlGroupresource-count" default="0"
+            form="unqualified" name="resource-count" type="xsd:int" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>Reports the number of resources assigned to this group. This information is only included if requested as part of the request parameters. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:name="calendaralias" id="XmlGroupcalendar-alias" form="unqualified"
+            name="calendar-alias" type="xsd:string" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>The alias of the calendar that this group will use for deadline calculations. This information is only included if requested as part of the request parameters. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:name="candidatequery1" id="XmlGroupcandidate-query" form="unqualified"
+            name="candidate-query" type="xsd:boolean" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>Only used in the org-model drill-down API. Returns true if this Group holds a Candidate Query configuration.
+                         </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlLocation" id="com.tibco.bpm.de.api.baseXmlLocation"
+      abstract="false" mixed="false" name="XmlLocation">
+    <xsd:annotation>
+      <xsd:documentation>Describes an org-model Location and the associated entities. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlModelEntity">
+        <xsd:sequence>
+          <xsd:element ecore:name="schematype" id="XmlLocationschema-type" form="unqualified"
+              maxOccurs="1" minOccurs="0" name="schema-type" type="XmlModelEntity"/>
+          <xsd:element ecore:name="attribute" id="XmlLocationattribute" form="unqualified"
+              maxOccurs="unbounded" minOccurs="0" name="attribute" type="XmlOrgAttributeValue"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlBasePosition" id="com.tibco.bpm.de.api.baseXmlBasePosition"
+      abstract="true" mixed="false" name="XmlBasePosition">
+    <xsd:annotation>
+      <xsd:documentation>Describes an org-model Position and the associated entities. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlModelEntity">
+        <xsd:sequence>
+          <xsd:element ecore:name="schematype" id="XmlBasePositionschema-type" form="unqualified"
+              maxOccurs="1" minOccurs="0" name="schema-type" type="XmlModelEntity"/>
+          <xsd:element ecore:name="allocationmethod" id="XmlBasePositionallocation-method"
+              form="unqualified" maxOccurs="1" minOccurs="0" name="allocation-method"
+              type="XmlSelectionMode"/>
+          <xsd:element ecore:name="locationref" id="XmlBasePositionlocation-ref" form="unqualified"
+              maxOccurs="1" minOccurs="0" name="location-ref" type="XmlModelEntity"/>
+          <xsd:element ecore:name="reqcapability" id="XmlBasePositionreq-capability"
+              form="unqualified" maxOccurs="unbounded" minOccurs="0" name="req-capability"
+              type="XmlEntityAssignmentQualified"/>
+          <xsd:element ecore:name="privilegeholding" id="XmlBasePositionprivilege-holding"
+              form="unqualified" maxOccurs="unbounded" minOccurs="0" name="privilege-holding"
+              type="XmlEntityAssignmentQualified"/>
+          <xsd:element ecore:name="attribute" id="XmlBasePositionattribute" form="unqualified"
+              maxOccurs="unbounded" minOccurs="0" name="attribute" type="XmlOrgAttributeValue"/>
+          <xsd:element ecore:name="pushdestination" id="XmlBasePositionpush-destination"
+              form="unqualified" maxOccurs="unbounded" minOccurs="0" name="push-destination"
+              type="XmlPushDestination"/>
+          <xsd:element ecore:name="candidatequery" id="XmlBasePositioncandidate-query2"
+              form="unqualified" maxOccurs="1" minOccurs="0" name="candidate-query"
+              type="XmlCandidateQuery"/>
+        </xsd:sequence>
+        <xsd:attribute ecore:name="idealnumber" id="XmlBasePositionideal-number" form="unqualified"
+            name="ideal-number" type="xsd:int" use="required">
+          <xsd:annotation>
+            <xsd:documentation>For modelling purposes only, this returns the ideal number of resources that should be assigned to this Position.
+
+A position can be filled by any number of human resources, but an ideal number can be specified. This ideal number is merely an indication, and a lower or higher number of human resource assignments can be made. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:name="calendaralias" id="XmlBasePositioncalendar-alias"
+            form="unqualified" name="calendar-alias" type="xsd:string" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>The alias of the calendar that this position will use for deadline calculations. This information is only included if requested as part of the request parameters. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:name="candidatequery1" id="XmlBasePositioncandidate-query"
+            form="unqualified" name="candidate-query" type="xsd:boolean" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>Only used in the org-model drill-down API. Returns true if this Position holds a Candidate Query configuration.
+                         </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlPosition" id="com.tibco.bpm.de.api.baseXmlPosition"
+      abstract="false" mixed="false" name="XmlPosition">
+    <xsd:annotation>
+      <xsd:documentation>Describes an org-model Position and the associated entities. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlBasePosition">
+        <xsd:attribute ecore:name="resourcecount" id="XmlPositionresource-count" default="0"
+            form="unqualified" name="resource-count" type="xsd:int" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>Reports the number of resources assigned to this position. This information is only included if requested as part of the request parameters. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:name="dynamic" id="XmlPositiondynamic" form="unqualified"
+            name="dynamic" type="xsd:boolean" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>Returns true if this Position was dynamically generated as a result of an
+                        Organisational Model Extension Point; rather than part of an org-model deployment.
+                         </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlModelPosition" id="com.tibco.bpm.de.api.baseXmlModelPosition"
+      abstract="false" mixed="false" name="XmlModelPosition">
+    <xsd:annotation>
+      <xsd:documentation>Describes an org-model Position and the associated entities. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlBasePosition"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlBaseOrgUnit" id="com.tibco.bpm.de.api.baseXmlBaseOrgUnit"
+      abstract="true" mixed="false" name="XmlBaseOrgUnit">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlModelEntity">
+        <xsd:sequence>
+          <xsd:element ecore:name="schematype" id="XmlBaseOrgUnitschema-type" form="unqualified"
+              maxOccurs="1" minOccurs="0" name="schema-type" type="XmlModelEntity"/>
+          <xsd:element ecore:name="allocationmethod" id="XmlBaseOrgUnitallocation-method"
+              form="unqualified" maxOccurs="1" minOccurs="0" name="allocation-method"
+              type="XmlSelectionMode"/>
+          <xsd:element ecore:name="locationref" id="XmlBaseOrgUnitlocation-ref" form="unqualified"
+              maxOccurs="1" minOccurs="0" name="location-ref" type="XmlModelEntity"/>
+          <xsd:element ecore:name="privilegeholding" id="XmlBaseOrgUnitprivilege-holding"
+              form="unqualified" maxOccurs="unbounded" minOccurs="0" name="privilege-holding"
+              type="XmlEntityAssignmentQualified"/>
+          <xsd:element ecore:name="attribute" id="XmlBaseOrgUnitattribute" form="unqualified"
+              maxOccurs="unbounded" minOccurs="0" name="attribute" type="XmlOrgAttributeValue"/>
+          <xsd:element ecore:name="pushdestination" id="XmlBaseOrgUnitpush-destination"
+              form="unqualified" maxOccurs="unbounded" minOccurs="0" name="push-destination"
+              type="XmlPushDestination"/>
+        </xsd:sequence>
+        <xsd:attribute ecore:name="calendaralias" id="XmlBaseOrgUnitcalendar-alias"
+            form="unqualified" name="calendar-alias" type="xsd:string" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>The alias of the calendar that this org-unit will use for deadline calculations.
+                        This information is only included if requested as part of the request parameters. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlOrgUnit" id="com.tibco.bpm.de.api.baseXmlOrgUnit"
+      abstract="false" mixed="false" name="XmlOrgUnit">
+    <xsd:annotation>
+      <xsd:documentation>Describes the organization units contained within this organization unit (the sub-organization units). Each organization unit described may have further sub-organization units. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlBaseOrgUnit">
+        <xsd:sequence>
+          <xsd:element ecore:name="extensionpoint" id="XmlOrgUnitextension-point2"
+              form="unqualified" maxOccurs="1" minOccurs="0" name="extension-point"
+              type="XmlExtensionPointSetting"/>
+          <xsd:element ecore:name="instanceidattr" id="XmlOrgUnitinstance-id-attr"
+              form="unqualified" maxOccurs="unbounded" minOccurs="0" name="instance-id-attr"
+              type="XmlModelInstanceIdValue"/>
+          <xsd:element ecore:name="position" id="XmlOrgUnitposition" form="unqualified"
+              maxOccurs="unbounded" minOccurs="0" name="position" type="XmlPosition"/>
+          <xsd:element ecore:name="orgunit" id="XmlOrgUnitorg-unit" form="unqualified"
+              maxOccurs="unbounded" minOccurs="0" name="org-unit" type="XmlOrgUnit"/>
+        </xsd:sequence>
+        <xsd:attribute ecore:name="dynamic" id="XmlOrgUnitdynamic" form="unqualified"
+            name="dynamic" type="xsd:boolean" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>Returns true if this entity was dynamically generated as a result of an
+                        Organisational Model Extension Point; rather than part of an org-model deployment.
+                         </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:name="extensionpoint1" id="XmlOrgUnitextension-point"
+            form="unqualified" name="extension-point" type="xsd:boolean" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>Only used in the org-model drill-down API. Returns true if this Org-Unit has been designated as an Extension Point.
+                         </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlModelOrgUnit" id="com.tibco.bpm.de.api.baseXmlModelOrgUnit"
+      abstract="false" mixed="false" name="XmlModelOrgUnit">
+    <xsd:annotation>
+      <xsd:documentation>Describes the organization units contained within this organization unit (the sub-organization units). Each organization unit described may have further sub-organization units. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlBaseOrgUnit">
+        <xsd:sequence>
+          <xsd:element ecore:name="modelposition" id="XmlModelOrgUnitmodel-position"
+              form="unqualified" maxOccurs="unbounded" minOccurs="0" name="model-position"
+              type="XmlModelPosition"/>
+          <xsd:element ecore:name="modelorgunit" id="XmlModelOrgUnitmodel-org-unit"
+              form="unqualified" maxOccurs="unbounded" minOccurs="0" name="model-org-unit"
+              type="XmlModelOrgUnit"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlOrganization" id="com.tibco.bpm.de.api.baseXmlOrganization"
+      abstract="false" mixed="false" name="XmlOrganization">
+    <xsd:annotation>
+      <xsd:documentation>Describes an organization model organization and its associated entities. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlModelEntity">
+        <xsd:sequence>
+          <xsd:element ecore:name="schematype" id="XmlOrganizationschema-type" form="unqualified"
+              maxOccurs="1" minOccurs="0" name="schema-type" type="XmlModelEntity"/>
+          <xsd:element ecore:name="allocationmethod" id="XmlOrganizationallocation-method"
+              form="unqualified" maxOccurs="1" minOccurs="0" name="allocation-method"
+              type="XmlSelectionMode"/>
+          <xsd:element ecore:name="locationref" id="XmlOrganizationlocation-ref" form="unqualified"
+              maxOccurs="1" minOccurs="0" name="location-ref" type="XmlModelEntity"/>
+          <xsd:element ecore:name="orgunit" id="XmlOrganizationorg-unit" form="unqualified"
+              maxOccurs="unbounded" minOccurs="0" name="org-unit" type="XmlOrgUnit"/>
+          <xsd:element ecore:name="attribute" id="XmlOrganizationattribute" form="unqualified"
+              maxOccurs="unbounded" minOccurs="0" name="attribute" type="XmlOrgAttributeValue"/>
+          <xsd:element ecore:name="pushdestination" id="XmlOrganizationpush-destination"
+              form="unqualified" maxOccurs="unbounded" minOccurs="0" name="push-destination"
+              type="XmlPushDestination"/>
+        </xsd:sequence>
+        <xsd:attribute ecore:name="calendaralias" id="XmlOrganizationcalendar-alias"
+            form="unqualified" name="calendar-alias" type="xsd:string" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>The alias of the calendar that this organization will use for deadline calculations. This information is only included if requested as part of the request parameters. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlStringAttribute" id="com.tibco.bpm.de.api.baseXmlStringAttribute"
+      abstract="false" mixed="false" name="XmlStringAttribute">
+    <xsd:attribute ecore:name="value" id="XmlStringAttributevalue" form="unqualified"
+        name="value" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The text value of the attribute. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlOptionalStringAttribute" id="com.tibco.bpm.de.api.baseXmlOptionalStringAttribute"
+      abstract="false" mixed="false" name="XmlOptionalStringAttribute">
+    <xsd:attribute ecore:name="value" id="XmlOptionalStringAttributevalue" form="unqualified"
+        name="value" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>The optional text value of the attribute. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlOptionalEntityReference" id="com.tibco.bpm.de.api.baseXmlOptionalEntityReference"
+      abstract="false" mixed="false" name="XmlOptionalEntityReference">
+    <xsd:attribute ecore:name="guid" id="XmlOptionalEntityReferenceguid" form="unqualified"
+        name="guid" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>The optional GUID that uniquely identifies the entity. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlEntityReference" id="com.tibco.bpm.de.api.baseXmlEntityReference"
+      abstract="false" mixed="false" name="XmlEntityReference">
+    <xsd:attribute ecore:name="guid" id="XmlEntityReferenceguid" form="unqualified"
+        name="guid" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The GUID that uniquely identifies the entity. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlDateRangeAttribute" id="com.tibco.bpm.de.api.baseXmlDateRangeAttribute"
+      abstract="false" mixed="false" name="XmlDateRangeAttribute">
+    <xsd:attribute ecore:name="startdate" id="XmlDateRangeAttributestart-date" form="unqualified"
+        name="start-date" type="xsd:dateTime" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>The optional date and time on which the resource's presence should begin. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="enddate" id="XmlDateRangeAttributeend-date" form="unqualified"
+        name="end-date" type="xsd:dateTime" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>The optional date and time on which the resource's presence should end. If specified, a start-date must also be specified. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlEntityReferenceDateRange" id="com.tibco.bpm.de.api.baseXmlEntityReferenceDateRange"
+      abstract="false" mixed="false" name="XmlEntityReferenceDateRange">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlEntityReference">
+        <xsd:attribute ecore:name="startdate" id="XmlEntityReferenceDateRangestart-date"
+            form="unqualified" name="start-date" type="xsd:dateTime" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>The optional date and time on which the resource's presence should begin. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:name="enddate" id="XmlEntityReferenceDateRangeend-date"
+            form="unqualified" name="end-date" type="xsd:dateTime" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>The optional date and time on which the resource's presence should end. If specified, a start-date must also be specified. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlEntityReferenceQualified" id="com.tibco.bpm.de.api.baseXmlEntityReferenceQualified"
+      abstract="false" mixed="false" name="XmlEntityReferenceQualified">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlEntityReference">
+        <xsd:sequence>
+          <xsd:element ecore:name="qualifiervalue" id="XmlEntityReferenceQualifiedqualifier-value"
+              form="unqualified" maxOccurs="unbounded" minOccurs="0" name="qualifier-value"
+              type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlEntityReferenceAttributes" id="com.tibco.bpm.de.api.baseXmlEntityReferenceAttributes"
+      abstract="false" mixed="false" name="XmlEntityReferenceAttributes">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns5:XmlEntityReference">
+        <xsd:sequence>
+          <xsd:element ecore:name="value" id="XmlEntityReferenceAttributesvalue" form="unqualified"
+              maxOccurs="unbounded" minOccurs="0" name="value" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType name="long_StudioGeneratedTemplate">
+    <xsd:restriction base="xsd:integer">
+      <xsd:minInclusive value="-9223372036854775808"/>
+      <xsd:maxInclusive value="9223372036854775807"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element abstract="false" name="test" nillable="false" type="XmlContainer"/>
+</xsd:schema>

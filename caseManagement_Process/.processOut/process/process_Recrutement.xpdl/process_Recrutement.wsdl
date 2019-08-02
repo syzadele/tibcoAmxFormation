@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:ns="http://www.tibco.com/bs3.0/_nRPP0LLKEemV1ZxU_L0F9A" xmlns:tibex="http://www.tibco.com/bs3.2/extensions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="process_Recrutement" targetNamespace="http://www.tibco.com/bs3.0/_nRPP0LLKEemV1ZxU_L0F9A" tibex:XPDL="process_Recrutement.xpdl">
+    <partnerLinkType xmlns="http://docs.oasis-open.org/wsbpel/2.0/plnktype" name="process_ChargeDeRecrutement_PLT">
+    <role name="process_ChargeDeRecrutementProvider" portType="ns:process_ChargeDeRecrutement"/>
+  </partnerLinkType>
+    <property xmlns="http://docs.oasis-open.org/wsbpel/2.0/varprop" name="process_ChargeDeRecrutement_CandidatureIDcorrelation" type="xsd:integer"/>
+    <propertyAlias xmlns="http://docs.oasis-open.org/wsbpel/2.0/varprop" messageType="ns:process_ChargeDeRecrutement_Annulation_INPUT" part="CandidatureId" propertyName="ns:process_ChargeDeRecrutement_CandidatureIDcorrelation">
+    <query><![CDATA[.]]></query>
+  </propertyAlias>
+    <propertyAlias xmlns="http://docs.oasis-open.org/wsbpel/2.0/varprop" messageType="ns:process_ChargeDeRecrutement_DemarrerProcessusRecrutement_INPUT" part="CandidatureId" propertyName="ns:process_ChargeDeRecrutement_CandidatureIDcorrelation">
+    <query><![CDATA[.]]></query>
+  </propertyAlias>
+    <partnerLinkType name="PersonnePourEntretien_PLT" xmlns="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+    <role name="PersonnePourEntretienProvider" portType="ns:PersonnePourEntretien"/>
+  </partnerLinkType>
+    <property name="PersonnePourEntretien_nomCollaborateur" type="xsd:string" xmlns="http://docs.oasis-open.org/wsbpel/2.0/varprop"/>
+    <propertyAlias messageType="ns:PersonnePourEntretien_DemarrerProcessusEntretien_INPUT" part="NomCollaborateur" propertyName="ns:PersonnePourEntretien_nomCollaborateur" xmlns="http://docs.oasis-open.org/wsbpel/2.0/varprop">
+    <query><![CDATA[.]]></query>
+  </propertyAlias>
+    <propertyAlias messageType="ns:PersonnePourEntretien_SupprimerTacheEntretien_INPUT" part="NomCollaborateur" propertyName="ns:PersonnePourEntretien_nomCollaborateur" xmlns="http://docs.oasis-open.org/wsbpel/2.0/varprop">
+    <query><![CDATA[.]]></query>
+  </propertyAlias>
+    <wsdl:types>
+    <xsd:schema xmlns="http://www.tibco.com/bs3.0/_nRPP0LLKEemV1ZxU_L0F9A" targetNamespace="http://www.tibco.com/bs3.0/_nRPP0LLKEemV1ZxU_L0F9A">
+      <xsd:simpleType name="integer_9">
+        <xsd:restriction base="xsd:integer">
+          <xsd:totalDigits value="9"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="string_50">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="50"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="PersonnePourEntretien_DemarrerProcessusEntretien_INPUT">
+    <wsdl:part name="CandidatureId" type="ns:integer_9"/>
+    <wsdl:part name="NomCollaborateur" type="ns:string_50"/>
+  </wsdl:message>
+  <wsdl:message name="PersonnePourEntretien_SupprimerTacheEntretien_INPUT">
+    <wsdl:part name="CandidatureId" type="ns:integer_9"/>
+    <wsdl:part name="NomCollaborateur" type="ns:string_50"/>
+  </wsdl:message>
+  <wsdl:message name="process_ChargeDeRecrutement_Annulation_INPUT">
+    <wsdl:part name="CandidatureId" type="ns:integer_9"/>
+  </wsdl:message>
+  <wsdl:message name="process_ChargeDeRecrutement_DemarrerProcessusRecrutement_INPUT">
+    <wsdl:part name="CandidatureId" type="ns:integer_9"/>
+  </wsdl:message>
+  <wsdl:portType name="PersonnePourEntretien" tibex:FlowContainer="_LN-5ELLNEemV1ZxU_L0F9A">
+    <wsdl:operation name="DemarrerProcessusEntretien">
+      <wsdl:input message="ns:PersonnePourEntretien_DemarrerProcessusEntretien_INPUT" tibex:Event="_LOCjcrLNEemV1ZxU_L0F9A"/>
+    </wsdl:operation>
+    <wsdl:operation name="SupprimerTacheEntretien">
+      <wsdl:input message="ns:PersonnePourEntretien_SupprimerTacheEntretien_INPUT" tibex:Event="_x632ILR5Eem0F8GCydzZ8w"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="process_ChargeDeRecrutement" tibex:FlowContainer="_nRS6MLLKEemV1ZxU_L0F9A">
+    <wsdl:documentation>
+      <DocumentationElement Documentation=""/>
+    </wsdl:documentation>
+    <wsdl:operation name="Annulation">
+      <wsdl:input message="ns:process_ChargeDeRecrutement_Annulation_INPUT" tibex:Event="_EqKggLOuEemwHpDuGnRDDA"/>
+    </wsdl:operation>
+    <wsdl:operation name="DemarrerProcessusRecrutement">
+      <wsdl:input message="ns:process_ChargeDeRecrutement_DemarrerProcessusRecrutement_INPUT" tibex:Event="_slEg8rLKEemV1ZxU_L0F9A"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

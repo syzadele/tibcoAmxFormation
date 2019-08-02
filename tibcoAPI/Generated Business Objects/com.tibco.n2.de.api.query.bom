@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:PrimitiveTypeFacets="http:///schemas/PrimitiveTypeFacets/_8TmTUMtlEdy7K9XeCH7Hrw/0" xmlns:XsdNotationProfile="http:///schemas/XsdNotationProfile/_LmHW0PHtEd2z3-vLsCwuEg/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/PrimitiveTypeFacets/_8TmTUMtlEdy7K9XeCH7Hrw/0 pathmap://BOM_TYPES/PrimitiveTypeFacets.profile.uml#_8TmTUstlEdy7K9XeCH7Hrw http:///schemas/XsdNotationProfile/_LmHW0PHtEd2z3-vLsCwuEg/1 pathmap://XSD_NOTATION_TYPES/XsdNotation.profile.uml#_LmHW0fHtEd2z3-vLsCwuEg">
+  <uml:Model xmi:id="com.tibco.n2.de.api.query" name="com.tibco.n2.de.api.query">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oT62Qa1jEem1vK-kP1bIqQ" source="model.metadata">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oT62Qq1jEem1vK-kP1bIqQ" key="author" value="YSong"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oT62Q61jEem1vK-kP1bIqQ" key="created" value="1563897903012"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oT62RK1jEem1vK-kP1bIqQ" key="version" value="5"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_o9xEgK1jEem1vK-kP1bIqQ" key="checksum" value="2900175479"/>
+    </eAnnotations>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="com.tibco.n2.de.api.queryresetQueriesResponse" name="resetQueriesResponseType">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_oJ-3Ia1jEem1vK-kP1bIqQ" body="Response element for resetQueries operation. "/>
+      <generalization xmi:type="uml:Generalization" xmi:id="_oJ-QEa1jEem1vK-kP1bIqQ">
+        <general xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.queryregisterQueryType" name="registerQueryType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="registerQueryTypemodel-version" name="modelversion" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_oKOHsq1jEem1vK-kP1bIqQ" body="Major version number of the organization model in which an organization model entity resides. &#xA;&#xA;If not specified, the default value will be the latest version of the organization model.&#xA;&#xA;(Version numbers must be compatible with, and conform to, the OSGi version number schema. For Directory Engine, only the major part of the version number is significant.) "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_BRY7wHvBEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aInteger?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oKNgoq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oKNgo61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="registerQueryTypequery" name="query" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_oKcxMK1jEem1vK-kP1bIqQ" body="Resource query to be executed. The query must conform to the Resource Query Language (RQL) specification. See the product documentation for detailed information about RQL syntax. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oKcKIq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oKcKI61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.queryregisterQueryResponseType" name="registerQueryResponseType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="registerQueryResponseTypeunique" name="unique" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_oKso0K1jEem1vK-kP1bIqQ" body="Is the query unique? If not a n internal reference counter will have been incremented. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_pSJ7cHvAEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aBoolean?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oKsBwq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oKsBw61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="registerQueryResponseTypeentity" name="entity" aggregation="composite" association="com.tibco.n2.de.api.queryComposition168?com.tibco.n2.de.api.query%3a%3aComposition168?">
+        <type xmi:type="uml:Class" href="com.tibco.n2.common.organisation.api.bom#com.tibco.n2.common.organisation.apiXmlParticipantId?com.tibco.n2.common.organisation.api%3a%3aXmlParticipantId?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oK0ko61jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oK0kpK1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="com.tibco.n2.de.api.queryComposition168" name="Composition168" memberEnd="registerQueryResponseTypeentity?com.tibco.n2.de.api.query%3a%3aregisterQueryResponseType%3a%3aentity? Composition168registerqueryresponsetype?com.tibco.n2.de.api.query%3a%3aComposition168%3a%3aregisterqueryresponsetype?">
+      <ownedEnd xmi:type="uml:Property" xmi:id="Composition168registerqueryresponsetype" name="registerqueryresponsetype" type="com.tibco.n2.de.api.queryregisterQueryResponseType?com.tibco.n2.de.api.query%3a%3aregisterQueryResponseType?" association="com.tibco.n2.de.api.queryComposition168?com.tibco.n2.de.api.query%3a%3aComposition168?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oK0kpq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oK0kp61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.queryderegisterQueryType" name="deregisterQueryType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="deregisterQueryTypeidentifier" name="identifier" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_oLEcQa1jEem1vK-kP1bIqQ" body="Globally unique identifier for the organization model entity. &#xA;&#xA;This value is unique across all entities. However, if the entity exists within more than one major organization model version, it will share the same GUID. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oLD1Mq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oLD1M61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.queryderegisterQueryResponseType" name="deregisterQueryResponseType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="deregisterQueryResponseTypeidentifier" name="identifier" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_oLUT4a1jEem1vK-kP1bIqQ" body="Globally unique identifier for the organization model entity. &#xA;&#xA;This value is unique across all entities. However, if the entity exists within more than one major organization model version, it will share the same GUID. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oLTs0q1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oLTs061jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.queryresetQueriesType" name="resetQueriesType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="resetQueriesTypemodel-version" name="modelversion" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_oLkLga1jEem1vK-kP1bIqQ" body="Major version number of the organization model in which an organization model entity resides. &#xA;&#xA;If -1 is specified the value will be the latest version of the organization model.&#xA;&#xA;If not specified then all deployed versions of the model will have their corresponding queries reset.&#xA;&#xA;(Version numbers must be compatible with, and conform to, the OSGi version number schema. For Directory Engine, only the major part of the version number is significant.) "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_BRY7wHvBEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aInteger?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oLjkcq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oLjkc61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_oJ0fEa1jEem1vK-kP1bIqQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oJ0fEq1jEem1vK-kP1bIqQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://XSD_NOTATION_TYPES/XsdNotation.profile.uml#_LmHW0fHtEd2z3-vLsCwuEg"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://XSD_NOTATION_TYPES/XsdNotation.profile.uml#_rcgvMcXQEd24G-GaruVVqA?XsdNotationProfile?"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_oJ0fE61jEem1vK-kP1bIqQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oJ0fFK1jEem1vK-kP1bIqQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://BOM_TYPES/PrimitiveTypeFacets.profile.uml#_8TmTUstlEdy7K9XeCH7Hrw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://BOM_TYPES/PrimitiveTypeFacets.profile.uml#_3A574HcJEdytQ9AWEvOuug?PrimitiveTypeFacets?"/>
+    </profileApplication>
+  </uml:Model>
+  <XsdNotationProfile:XsdBasedModel xmi:id="_oJ1GIK1jEem1vK-kP1bIqQ" base_Package="com.tibco.n2.de.api.query?com.tibco.n2.de.api.query?" xsdTargetNamespace="http://query.api.de.n2.tibco.com" xsdSchemaLocation="de.wsdl;de-query-service.xsd" xsdAttributeForm="unqualified" xsdElementForm="unqualified" xsdStudioVersion="4.0.0.003" bomWsdlSources="de.wsdl"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_oJ-QEq1jEem1vK-kP1bIqQ" textLength="-1" base_PrimitiveType="com.tibco.n2.de.api.queryresetQueriesResponse?com.tibco.n2.de.api.query%3a%3aresetQueriesResponseType?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedPrimitiveType xmi:id="_oJ-3IK1jEem1vK-kP1bIqQ" base_PrimitiveType="com.tibco.n2.de.api.queryresetQueriesResponse?com.tibco.n2.de.api.query%3a%3aresetQueriesResponseType?" xsdSimpleTypeName="resetQueriesResponse" xsdRestrictionId="" xsdRestrictionBase="string"/>
+  <XsdNotationProfile:TopLevelElements xmi:id="_oJ_eMK1jEem1vK-kP1bIqQ" base_Package="com.tibco.n2.de.api.query?com.tibco.n2.de.api.query?">
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_oJ_eMa1jEem1vK-kP1bIqQ" name="resetQueriesResponse" type="com.tibco.n2.de.api.queryresetQueriesResponse?com.tibco.n2.de.api.query%3a%3aresetQueriesResponseType?" isBaseXSDType="true" targetNamespace="http://query.api.de.n2.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_oKd_UK1jEem1vK-kP1bIqQ" name="registerQuery" type="com.tibco.n2.de.api.queryregisterQueryType?com.tibco.n2.de.api.query%3a%3aregisterQueryType?" isAnonymous="true" targetNamespace="http://query.api.de.n2.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_oK2Z0K1jEem1vK-kP1bIqQ" name="registerQueryResponse" type="com.tibco.n2.de.api.queryregisterQueryResponseType?com.tibco.n2.de.api.query%3a%3aregisterQueryResponseType?" isAnonymous="true" targetNamespace="http://query.api.de.n2.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_oLGRcK1jEem1vK-kP1bIqQ" name="deregisterQuery" type="com.tibco.n2.de.api.queryderegisterQueryType?com.tibco.n2.de.api.query%3a%3aderegisterQueryType?" isAnonymous="true" targetNamespace="http://query.api.de.n2.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_oLViAK1jEem1vK-kP1bIqQ" name="deregisterQueryResponse" type="com.tibco.n2.de.api.queryderegisterQueryResponseType?com.tibco.n2.de.api.query%3a%3aderegisterQueryResponseType?" isAnonymous="true" targetNamespace="http://query.api.de.n2.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_oLkykK1jEem1vK-kP1bIqQ" name="resetQueries" type="com.tibco.n2.de.api.queryresetQueriesType?com.tibco.n2.de.api.query%3a%3aresetQueriesType?" isAnonymous="true" targetNamespace="http://query.api.de.n2.tibco.com" substitutionGroup=""/>
+  </XsdNotationProfile:TopLevelElements>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_oKAFQK1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.queryregisterQueryType?com.tibco.n2.de.api.query%3a%3aregisterQueryType?" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true">
+    <xsdSequenceList xmi:type="XsdNotationProfile:XsdSequence" xmi:id="_oKdYQK1jEem1vK-kP1bIqQ" name="MS1_1_1"/>
+  </XsdNotationProfile:XsdBasedClass>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_oKNgoa1jEem1vK-kP1bIqQ" base_Property="registerQueryTypemodel-version?com.tibco.n2.de.api.query%3a%3aregisterQueryType%3a%3amodelversion?" xsdName="model-version" xsdForm="unqualified" xsdDefault="-1" xsdUse="optional" xsdType="int" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_oKOHsK1jEem1vK-kP1bIqQ" integerDefaultValue="-1" base_Property="registerQueryTypemodel-version?com.tibco.n2.de.api.query%3a%3aregisterQueryType%3a%3amodelversion?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedRestriction xmi:id="_oKOHsa1jEem1vK-kP1bIqQ" base_Property="registerQueryTypemodel-version?com.tibco.n2.de.api.query%3a%3aregisterQueryType%3a%3amodelversion?"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_oKcKIa1jEem1vK-kP1bIqQ" base_Property="registerQueryTypequery?com.tibco.n2.de.api.query%3a%3aregisterQueryType%3a%3aquery?" xsdName="query" xsdForm="unqualified" xsdType="string" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_oKdYQK1jEem1vK-kP1bIqQ"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_oKcKJK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="registerQueryTypequery?com.tibco.n2.de.api.query%3a%3aregisterQueryType%3a%3aquery?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_oKemYa1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.queryregisterQueryResponseType?com.tibco.n2.de.api.query%3a%3aregisterQueryResponseType?" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true">
+    <xsdSequenceList xmi:type="XsdNotationProfile:XsdSequence" xmi:id="_oK1ywK1jEem1vK-kP1bIqQ" name="MS1_1_1"/>
+  </XsdNotationProfile:XsdBasedClass>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_oKsBwa1jEem1vK-kP1bIqQ" base_Property="registerQueryResponseTypeunique?com.tibco.n2.de.api.query%3a%3aregisterQueryResponseType%3a%3aunique?" xsdName="unique" xsdForm="unqualified" xsdUse="required" xsdType="boolean" xsdIsAttribute="true"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_oK1LsK1jEem1vK-kP1bIqQ" base_Property="registerQueryResponseTypeentity?com.tibco.n2.de.api.query%3a%3aregisterQueryResponseType%3a%3aentity?" xsdName="entity" xsdForm="unqualified" xsdType="XmlParticipantId" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_oK1ywK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_oK3A4a1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.queryderegisterQueryType?com.tibco.n2.de.api.query%3a%3aderegisterQueryType?" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true">
+    <xsdSequenceList xmi:type="XsdNotationProfile:XsdSequence" xmi:id="_oLFDUK1jEem1vK-kP1bIqQ" name="MS1_1_1"/>
+  </XsdNotationProfile:XsdBasedClass>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_oLD1Ma1jEem1vK-kP1bIqQ" base_Property="deregisterQueryTypeidentifier?com.tibco.n2.de.api.query%3a%3aderegisterQueryType%3a%3aidentifier?" xsdName="identifier" xsdForm="unqualified" xsdType="string" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_oLFDUK1jEem1vK-kP1bIqQ"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_oLEcQK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="deregisterQueryTypeidentifier?com.tibco.n2.de.api.query%3a%3aderegisterQueryType%3a%3aidentifier?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_oLGRcq1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.queryderegisterQueryResponseType?com.tibco.n2.de.api.query%3a%3aderegisterQueryResponseType?" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true">
+    <xsdSequenceList xmi:type="XsdNotationProfile:XsdSequence" xmi:id="_oLU68K1jEem1vK-kP1bIqQ" name="MS1_1_1"/>
+  </XsdNotationProfile:XsdBasedClass>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_oLTs0a1jEem1vK-kP1bIqQ" base_Property="deregisterQueryResponseTypeidentifier?com.tibco.n2.de.api.query%3a%3aderegisterQueryResponseType%3a%3aidentifier?" xsdName="identifier" xsdForm="unqualified" xsdType="string" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_oLU68K1jEem1vK-kP1bIqQ"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_oLUT4K1jEem1vK-kP1bIqQ" textLength="-1" base_Property="deregisterQueryResponseTypeidentifier?com.tibco.n2.de.api.query%3a%3aderegisterQueryResponseType%3a%3aidentifier?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_oLWJEa1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.queryresetQueriesType?com.tibco.n2.de.api.query%3a%3aresetQueriesType?" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_oLjkca1jEem1vK-kP1bIqQ" base_Property="resetQueriesTypemodel-version?com.tibco.n2.de.api.query%3a%3aresetQueriesType%3a%3amodelversion?" xsdName="model-version" xsdForm="unqualified" xsdDefault="-1" xsdUse="optional" xsdType="int" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_oLjkdK1jEem1vK-kP1bIqQ" integerDefaultValue="-1" base_Property="resetQueriesTypemodel-version?com.tibco.n2.de.api.query%3a%3aresetQueriesType%3a%3amodelversion?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedRestriction xmi:id="_oLkLgK1jEem1vK-kP1bIqQ" base_Property="resetQueriesTypemodel-version?com.tibco.n2.de.api.query%3a%3aresetQueriesType%3a%3amodelversion?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNnZ8K1jEem1vK-kP1bIqQ" base_Element="_oLjkc61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNnZ8a1jEem1vK-kP1bIqQ" base_Element="_oK0kp61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNnZ8q1jEem1vK-kP1bIqQ" base_Element="registerQueryResponseTypeunique?com.tibco.n2.de.api.query%3a%3aregisterQueryResponseType%3a%3aunique?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNnZ861jEem1vK-kP1bIqQ" base_Element="_oJ-QEa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNnZ9K1jEem1vK-kP1bIqQ" base_Element="_oJ-3Ia1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNnZ9a1jEem1vK-kP1bIqQ" base_Element="_oKNgo61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNnZ9q1jEem1vK-kP1bIqQ" base_Element="_oLTs061jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNnZ961jEem1vK-kP1bIqQ" base_Element="resetQueriesTypemodel-version?com.tibco.n2.de.api.query%3a%3aresetQueriesType%3a%3amodelversion?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNnZ-K1jEem1vK-kP1bIqQ" base_Element="_oLD1Mq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNoBAK1jEem1vK-kP1bIqQ" base_Element="_oK0ko61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNoBAa1jEem1vK-kP1bIqQ" base_Element="Composition168registerqueryresponsetype?com.tibco.n2.de.api.query%3a%3aComposition168%3a%3aregisterqueryresponsetype?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNoBAq1jEem1vK-kP1bIqQ" base_Element="_oK0kpK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNoBA61jEem1vK-kP1bIqQ" base_Element="_oKsBwq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNoBBK1jEem1vK-kP1bIqQ" base_Element="_oKso0K1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNoBBa1jEem1vK-kP1bIqQ" base_Element="_oKNgoq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNoBBq1jEem1vK-kP1bIqQ" base_Element="_oKcxMK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNoBB61jEem1vK-kP1bIqQ" base_Element="_oKcKI61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNoBCK1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.queryregisterQueryResponseType?com.tibco.n2.de.api.query%3a%3aregisterQueryResponseType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNoBCa1jEem1vK-kP1bIqQ" base_Element="_oLEcQa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNoBCq1jEem1vK-kP1bIqQ" base_Element="_oJ0fEa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNoBC61jEem1vK-kP1bIqQ" base_Element="_oKOHsq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNoBDK1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.queryresetQueriesResponse?com.tibco.n2.de.api.query%3a%3aresetQueriesResponseType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNoBDa1jEem1vK-kP1bIqQ" base_Element="deregisterQueryResponseTypeidentifier?com.tibco.n2.de.api.query%3a%3aderegisterQueryResponseType%3a%3aidentifier?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNoBDq1jEem1vK-kP1bIqQ" base_Element="_oK0kpq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNooEK1jEem1vK-kP1bIqQ" base_Element="registerQueryTypemodel-version?com.tibco.n2.de.api.query%3a%3aregisterQueryType%3a%3amodelversion?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNooEa1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.queryresetQueriesType?com.tibco.n2.de.api.query%3a%3aresetQueriesType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNooEq1jEem1vK-kP1bIqQ" base_Element="registerQueryResponseTypeentity?com.tibco.n2.de.api.query%3a%3aregisterQueryResponseType%3a%3aentity?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNooE61jEem1vK-kP1bIqQ" base_Element="deregisterQueryTypeidentifier?com.tibco.n2.de.api.query%3a%3aderegisterQueryType%3a%3aidentifier?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNooFK1jEem1vK-kP1bIqQ" base_Element="_oLD1M61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNooFa1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.queryregisterQueryType?com.tibco.n2.de.api.query%3a%3aregisterQueryType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNooFq1jEem1vK-kP1bIqQ" base_Element="_oLkLga1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNooF61jEem1vK-kP1bIqQ" base_Element="_oKcKIq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNooGK1jEem1vK-kP1bIqQ" base_Element="_oKsBw61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNooGa1jEem1vK-kP1bIqQ" base_Element="_oLUT4a1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNpPIK1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.queryderegisterQueryType?com.tibco.n2.de.api.query%3a%3aderegisterQueryType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNpPIa1jEem1vK-kP1bIqQ" base_Element="_oLTs0q1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNpPIq1jEem1vK-kP1bIqQ" base_Element="registerQueryTypequery?com.tibco.n2.de.api.query%3a%3aregisterQueryType%3a%3aquery?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNpPI61jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.queryderegisterQueryResponseType?com.tibco.n2.de.api.query%3a%3aderegisterQueryResponseType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNpPJK1jEem1vK-kP1bIqQ" base_Element="_oJ0fE61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNpPJa1jEem1vK-kP1bIqQ" base_Element="_oLjkcq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_oNpPJq1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.queryComposition168?com.tibco.n2.de.api.query%3a%3aComposition168?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oT3L4K1jEem1vK-kP1bIqQ" displayLabel="deregisterQueryType" base_NamedElement="com.tibco.n2.de.api.queryderegisterQueryType?com.tibco.n2.de.api.query%3a%3aderegisterQueryType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oT3y8K1jEem1vK-kP1bIqQ" displayLabel="deregisterQueryResponseType" base_NamedElement="com.tibco.n2.de.api.queryderegisterQueryResponseType?com.tibco.n2.de.api.query%3a%3aderegisterQueryResponseType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oT3y8a1jEem1vK-kP1bIqQ" displayLabel="registerQueryType" base_NamedElement="com.tibco.n2.de.api.queryregisterQueryType?com.tibco.n2.de.api.query%3a%3aregisterQueryType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oT4aAK1jEem1vK-kP1bIqQ" displayLabel="registerQueryResponseType" base_NamedElement="com.tibco.n2.de.api.queryregisterQueryResponseType?com.tibco.n2.de.api.query%3a%3aregisterQueryResponseType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oT4aAa1jEem1vK-kP1bIqQ" displayLabel="resetQueriesType" base_NamedElement="com.tibco.n2.de.api.queryresetQueriesType?com.tibco.n2.de.api.query%3a%3aresetQueriesType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oT4aAq1jEem1vK-kP1bIqQ" displayLabel="resetQueriesResponse" base_NamedElement="com.tibco.n2.de.api.queryresetQueriesResponse?com.tibco.n2.de.api.query%3a%3aresetQueriesResponseType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oT5BEK1jEem1vK-kP1bIqQ" displayLabel="identifier" base_NamedElement="deregisterQueryTypeidentifier?com.tibco.n2.de.api.query%3a%3aderegisterQueryType%3a%3aidentifier?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oT5BEa1jEem1vK-kP1bIqQ" displayLabel="identifier" base_NamedElement="deregisterQueryResponseTypeidentifier?com.tibco.n2.de.api.query%3a%3aderegisterQueryResponseType%3a%3aidentifier?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oT5oIK1jEem1vK-kP1bIqQ" displayLabel="query" base_NamedElement="registerQueryTypequery?com.tibco.n2.de.api.query%3a%3aregisterQueryType%3a%3aquery?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oT5oIa1jEem1vK-kP1bIqQ" displayLabel="model-version" base_NamedElement="registerQueryTypemodel-version?com.tibco.n2.de.api.query%3a%3aregisterQueryType%3a%3amodelversion?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oT6PMK1jEem1vK-kP1bIqQ" displayLabel="entity" base_NamedElement="registerQueryResponseTypeentity?com.tibco.n2.de.api.query%3a%3aregisterQueryResponseType%3a%3aentity?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oT6PMa1jEem1vK-kP1bIqQ" displayLabel="unique" base_NamedElement="registerQueryResponseTypeunique?com.tibco.n2.de.api.query%3a%3aregisterQueryResponseType%3a%3aunique?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oT62QK1jEem1vK-kP1bIqQ" displayLabel="model-version" base_NamedElement="resetQueriesTypemodel-version?com.tibco.n2.de.api.query%3a%3aresetQueriesType%3a%3amodelversion?"/>
+  <notation:Diagram xmi:id="_oT62Ra1jEem1vK-kP1bIqQ" type="Business Object Model" element="com.tibco.n2.de.api.query?com.tibco.n2.de.api.query?" name="com.tibco.n2.de.api.query" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_oT62Rq1jEem1vK-kP1bIqQ"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_oT62R61jEem1vK-kP1bIqQ"/>
+  </notation:Diagram>
+</xmi:XMI>

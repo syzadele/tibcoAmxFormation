@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:PrimitiveTypeFacets="http:///schemas/PrimitiveTypeFacets/_8TmTUMtlEdy7K9XeCH7Hrw/0" xmlns:XsdNotationProfile="http:///schemas/XsdNotationProfile/_LmHW0PHtEd2z3-vLsCwuEg/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/PrimitiveTypeFacets/_8TmTUMtlEdy7K9XeCH7Hrw/0 pathmap://BOM_TYPES/PrimitiveTypeFacets.profile.uml#_8TmTUstlEdy7K9XeCH7Hrw http:///schemas/XsdNotationProfile/_LmHW0PHtEd2z3-vLsCwuEg/1 pathmap://XSD_NOTATION_TYPES/XsdNotation.profile.uml#_LmHW0fHtEd2z3-vLsCwuEg">
+  <uml:Model xmi:id="com.tibco.n2.de.api.attribute" name="com.tibco.n2.de.api.attribute">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oWHOoK1jEem1vK-kP1bIqQ" source="model.metadata">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oWHOoa1jEem1vK-kP1bIqQ" key="author" value="YSong"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oWHOoq1jEem1vK-kP1bIqQ" key="created" value="1563897903242"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oWHOo61jEem1vK-kP1bIqQ" key="version" value="5"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_pAdzMK1jEem1vK-kP1bIqQ" key="checksum" value="243282348"/>
+    </eAnnotations>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.attributeParameterList" name="ParameterList">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_n4ISIK1jEem1vK-kP1bIqQ" body="Identifies an organization model entity and lists the parameter values assigned (or to be assigned) to that entity.&#xA;       "/>
+      <generalization xmi:type="uml:Generalization" xmi:id="_n4JgQK1jEem1vK-kP1bIqQ">
+        <general xmi:type="uml:Class" href="com.tibco.n2.common.organisation.api.bom#com.tibco.n2.common.organisation.apiXmlModelEntityId?com.tibco.n2.common.organisation.api%3a%3aXmlModelEntityId?"/>
+      </generalization>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="ParameterListparameter" name="parameter" aggregation="composite" association="com.tibco.n2.de.api.attributeComposition140?com.tibco.n2.de.api.attribute%3a%3aComposition140?">
+        <type xmi:type="uml:Class" href="com.tibco.n2.de.api.bom#com.tibco.n2.de.apiXmlLdapAttribute?com.tibco.n2.de.api%3a%3aXmlLdapAttribute?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_n4HEA61jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_n4HEBK1jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="com.tibco.n2.de.api.attributeComposition140" name="Composition140" memberEnd="ParameterListparameter?com.tibco.n2.de.api.attribute%3a%3aParameterList%3a%3aparameter? Composition140parameterlist?com.tibco.n2.de.api.attribute%3a%3aComposition140%3a%3aparameterlist?">
+      <ownedEnd xmi:type="uml:Property" xmi:id="Composition140parameterlist" name="parameterlist" type="com.tibco.n2.de.api.attributeParameterList?com.tibco.n2.de.api.attribute%3a%3aParameterList?" association="com.tibco.n2.de.api.attributeComposition140?com.tibco.n2.de.api.attribute%3a%3aComposition140?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_n4HEBq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_n4HEB61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.attributeXmlPushDestinationList" name="XmlPushDestinationList">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_n5N3QK1jEem1vK-kP1bIqQ" body="Identifies an organization model entity and and the push destinations that it currently holds.&#xA;       "/>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_n5yfAK1jEem1vK-kP1bIqQ" body="Definition of an organization model entity and its currently defined push destinations. "/>
+      <generalization xmi:type="uml:Generalization" xmi:id="_n5OeUK1jEem1vK-kP1bIqQ">
+        <general xmi:type="uml:Class" href="com.tibco.n2.common.organisation.api.bom#com.tibco.n2.common.organisation.apiXmlModelEntityId?com.tibco.n2.common.organisation.api%3a%3aXmlModelEntityId?"/>
+      </generalization>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="XmlPushDestinationListXmlPushDestination" name="xmlPushDestination" type="com.tibco.n2.de.api.attributeXmlPushDestinationType?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationType?" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_n5NQMa1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_n5NQMq1jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.attributeXmlPushDestinationType" name="XmlPushDestinationType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="XmlPushDestinationTypename" name="name" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_n4W7pK1jEem1vK-kP1bIqQ" body="Unique name of this push destination. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_n4W7oa1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_n4W7oq1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="XmlPushDestinationTypechannel-type" name="channeltype" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_n4YJxK1jEem1vK-kP1bIqQ" body="Enumerated type defining the presentation technology used by the channel associated with this push destination. "/>
+        <type xmi:type="uml:Enumeration" href="com.tibco.n2.common.channeltype.bom#com.tibco.n2.common.channeltypeChannelType?com.tibco.n2.common.channeltype%3a%3aChannelType?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_n4YJwq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_n4YJw61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="XmlPushDestinationTypechannel-id" name="channelid" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_n4k-EK1jEem1vK-kP1bIqQ" body="Unique ID of the channel associated with this push destination. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_n4kXAa1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_n4kXAq1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="XmlPushDestinationTypeenabled" name="enabled" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_n4xLUa1jEem1vK-kP1bIqQ" body="Boolean value indicating whether this push destination is currently enabled (TRUE) or not (FALSE). "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_pSJ7cHvAEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aBoolean?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_n4wkQq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_n4xLUK1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="XmlPushDestinationTypedesc-guid" name="descguid" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_n49YkK1jEem1vK-kP1bIqQ" body="Unique ID of a prameter descriptor whose value should be used for the push destination. The parameter descriptor must be assigned to the organization model entity for whom the push destination is being set.&#xA;&#xA; If a value is assigned to both this attribute and the &quot;value&quot; element below, the value of this element will be used. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_n48xga1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_n48xgq1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="XmlPushDestinationTypevalue" name="value" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_n5MCEK1jEem1vK-kP1bIqQ" body="Value to be used for this push destination. &#xA;&#xA;For a:&#xA;&#xA;- setPushDestinations operation, this value is only used if no desc-guid attribute is supplied.&#xA;&#xA;- getPushDestinations operation, this value is the current value of the desc-guid attribute. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_n5LbAq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_n5LbA61jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.attributelistBusinessParametersType" name="listBusinessParametersType">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_n5SvwK1jEem1vK-kP1bIqQ" body="Identifies the model version from which parameter definitions are to be listed. "/>
+      <generalization xmi:type="uml:Generalization" xmi:id="_n5TW0a1jEem1vK-kP1bIqQ">
+        <general xmi:type="uml:Class" href="com.tibco.n2.common.organisation.api.bom#com.tibco.n2.common.organisation.apiXmlOrgModelVersion?com.tibco.n2.common.organisation.api%3a%3aXmlOrgModelVersion?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.attributelistBusinessParametersResponseType" name="listBusinessParametersResponseType">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_n5eV8K1jEem1vK-kP1bIqQ" body="&#xA;          A collection of attribute definitions that describe the attributes that can be&#xA;          assigned to resources.&#xA;         "/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="listBusinessParametersResponseTypeparam-desc" name="paramdesc" aggregation="composite" association="com.tibco.n2.de.api.attributeComposition141?com.tibco.n2.de.api.attribute%3a%3aComposition141?">
+        <type xmi:type="uml:Class" href="com.tibco.n2.de.api.bom#com.tibco.n2.de.apiXmlParamDescriptor?com.tibco.n2.de.api%3a%3aXmlParamDescriptor?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_n5dH0q1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_n5dH061jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="com.tibco.n2.de.api.attributeComposition141" name="Composition141" memberEnd="listBusinessParametersResponseTypeparam-desc?com.tibco.n2.de.api.attribute%3a%3alistBusinessParametersResponseType%3a%3aparamdesc? Composition141listbusinessparametersresponsetype?com.tibco.n2.de.api.attribute%3a%3aComposition141%3a%3alistbusinessparametersresponsetype?">
+      <ownedEnd xmi:type="uml:Property" xmi:id="Composition141listbusinessparametersresponsetype" name="listbusinessparametersresponsetype" type="com.tibco.n2.de.api.attributelistBusinessParametersResponseType?com.tibco.n2.de.api.attribute%3a%3alistBusinessParametersResponseType?" association="com.tibco.n2.de.api.attributeComposition141?com.tibco.n2.de.api.attribute%3a%3aComposition141?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_n5dH1a1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_n5dH1q1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.attributegetBusinessParametersType" name="getBusinessParametersType">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_n5fkEK1jEem1vK-kP1bIqQ" body="&#xA;          Identifies the organization model entity for which the parameters values are to be retrieved.&#xA;         "/>
+      <generalization xmi:type="uml:Generalization" xmi:id="_n5gLIa1jEem1vK-kP1bIqQ">
+        <general xmi:type="uml:Class" href="com.tibco.n2.common.organisation.api.bom#com.tibco.n2.common.organisation.apiXmlModelEntityId?com.tibco.n2.common.organisation.api%3a%3aXmlModelEntityId?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.attributesetBusinessParametersResponseType" name="setBusinessParametersResponseType">
+      <generalization xmi:type="uml:Generalization" xmi:id="_n5iAUa1jEem1vK-kP1bIqQ">
+        <general xmi:type="uml:Class" href="com.tibco.n2.de.api.bom#com.tibco.n2.de.apiSuccessFailureResponse?com.tibco.n2.de.api%3a%3aSuccessFailureResponse?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.attributegetPushDestinationsType" name="getPushDestinationsType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="getPushDestinationsTypeorg-entity" name="orgentity" aggregation="composite" association="com.tibco.n2.de.api.attributeComposition142?com.tibco.n2.de.api.attribute%3a%3aComposition142?">
+        <type xmi:type="uml:Class" href="com.tibco.n2.common.organisation.api.bom#com.tibco.n2.common.organisation.apiXmlModelEntityId?com.tibco.n2.common.organisation.api%3a%3aXmlModelEntityId?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_n5p8Ia1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_n5p8Iq1jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="com.tibco.n2.de.api.attributeComposition142" name="Composition142" memberEnd="getPushDestinationsTypeorg-entity?com.tibco.n2.de.api.attribute%3a%3agetPushDestinationsType%3a%3aorgentity? Composition142getpushdestinationstype?com.tibco.n2.de.api.attribute%3a%3aComposition142%3a%3agetpushdestinationstype?">
+      <ownedEnd xmi:type="uml:Property" xmi:id="Composition142getpushdestinationstype" name="getpushdestinationstype" type="com.tibco.n2.de.api.attributegetPushDestinationsType?com.tibco.n2.de.api.attribute%3a%3agetPushDestinationsType?" association="com.tibco.n2.de.api.attributeComposition142?com.tibco.n2.de.api.attribute%3a%3aComposition142?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_n5p8JK1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_n5p8Ja1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.attributegetPushDestinationsResponseType" name="getPushDestinationsResponseType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="getPushDestinationsResponseTypeorg-entity" name="orgentity" type="com.tibco.n2.de.api.attributeXmlPushDestinationList?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationList?" aggregation="composite" association="com.tibco.n2.de.api.attributeComposition143?com.tibco.n2.de.api.attribute%3a%3aComposition143?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_n5yfA61jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_n5yfBK1jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="com.tibco.n2.de.api.attributeComposition143" name="Composition143" memberEnd="getPushDestinationsResponseTypeorg-entity?com.tibco.n2.de.api.attribute%3a%3agetPushDestinationsResponseType%3a%3aorgentity? Composition143getpushdestinationsresponsetype?com.tibco.n2.de.api.attribute%3a%3aComposition143%3a%3agetpushdestinationsresponsetype?">
+      <ownedEnd xmi:type="uml:Property" xmi:id="Composition143getpushdestinationsresponsetype" name="getpushdestinationsresponsetype" type="com.tibco.n2.de.api.attributegetPushDestinationsResponseType?com.tibco.n2.de.api.attribute%3a%3agetPushDestinationsResponseType?" association="com.tibco.n2.de.api.attributeComposition143?com.tibco.n2.de.api.attribute%3a%3aComposition143?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_n5yfBq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_n5yfB61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.attributesetPushDestinationsResponseType" name="setPushDestinationsResponseType">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_n507QK1jEem1vK-kP1bIqQ" body=" Whether the update was successful "/>
+      <generalization xmi:type="uml:Generalization" xmi:id="_n51iUK1jEem1vK-kP1bIqQ">
+        <general xmi:type="uml:Class" href="com.tibco.n2.de.api.bom#com.tibco.n2.de.apiSuccessFailureResponse?com.tibco.n2.de.api%3a%3aSuccessFailureResponse?"/>
+      </generalization>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_n3y68a1jEem1vK-kP1bIqQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_n3y68q1jEem1vK-kP1bIqQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://XSD_NOTATION_TYPES/XsdNotation.profile.uml#_LmHW0fHtEd2z3-vLsCwuEg"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://XSD_NOTATION_TYPES/XsdNotation.profile.uml#_rcgvMcXQEd24G-GaruVVqA?XsdNotationProfile?"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_n3y6861jEem1vK-kP1bIqQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_n3y69K1jEem1vK-kP1bIqQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://BOM_TYPES/PrimitiveTypeFacets.profile.uml#_8TmTUstlEdy7K9XeCH7Hrw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://BOM_TYPES/PrimitiveTypeFacets.profile.uml#_3A574HcJEdytQ9AWEvOuug?PrimitiveTypeFacets?"/>
+    </profileApplication>
+  </uml:Model>
+  <XsdNotationProfile:XsdBasedModel xmi:id="_n3y69a1jEem1vK-kP1bIqQ" base_Package="com.tibco.n2.de.api.attribute?com.tibco.n2.de.api.attribute?" xsdTargetNamespace="http://attribute.api.de.n2.tibco.com" xsdSchemaLocation="de.wsdl;de-attribute-service.xsd" xsdAttributeForm="unqualified" xsdElementForm="unqualified" xsdStudioVersion="4.0.0.003" bomWsdlSources="de.wsdl"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_n3-hIa1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.attributeParameterList?com.tibco.n2.de.api.attribute%3a%3aParameterList?" xsdName="ParameterList" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true">
+    <xsdSequenceList xmi:type="XsdNotationProfile:XsdSequence" xmi:id="_n4HrEK1jEem1vK-kP1bIqQ" name="MS1_1_1" minOccurs="0" maxOccurs="-1"/>
+  </XsdNotationProfile:XsdBasedClass>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_n4HECK1jEem1vK-kP1bIqQ" base_Property="ParameterListparameter?com.tibco.n2.de.api.attribute%3a%3aParameterList%3a%3aparameter?" xsdName="parameter" xsdForm="unqualified" xsdType="XmlLdapAttribute" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_n4HrEK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_n4KHUK1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.attributeXmlPushDestinationList?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationList?" xsdName="XmlPushDestinationList" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true">
+    <xsdSequenceList xmi:type="XsdNotationProfile:XsdSequence" xmi:id="_n5NQM61jEem1vK-kP1bIqQ" name="MS1_1_1"/>
+  </XsdNotationProfile:XsdBasedClass>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_n4LVca1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.attributeXmlPushDestinationType?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationType?" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true">
+    <xsdSequenceList xmi:type="XsdNotationProfile:XsdSequence" xmi:id="_n5MCEa1jEem1vK-kP1bIqQ" name="MS1_1_1" isChoice="true"/>
+  </XsdNotationProfile:XsdBasedClass>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_n4W7oK1jEem1vK-kP1bIqQ" base_Property="XmlPushDestinationTypename?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationType%3a%3aname?" xsdName="name" xsdForm="unqualified" xsdUse="required" xsdType="string" xsdIsAttribute="true"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_n4W7o61jEem1vK-kP1bIqQ" textLength="-1" base_Property="XmlPushDestinationTypename?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationType%3a%3aname?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_n4YJwa1jEem1vK-kP1bIqQ" base_Property="XmlPushDestinationTypechannel-type?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationType%3a%3achanneltype?" xsdName="channel-type" xsdForm="unqualified" xsdUse="required" xsdType="ChannelType" xsdIsAttribute="true"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_n4kXAK1jEem1vK-kP1bIqQ" base_Property="XmlPushDestinationTypechannel-id?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationType%3a%3achannelid?" xsdName="channel-id" xsdForm="unqualified" xsdUse="required" xsdType="string" xsdIsAttribute="true"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_n4kXA61jEem1vK-kP1bIqQ" textLength="-1" base_Property="XmlPushDestinationTypechannel-id?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationType%3a%3achannelid?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_n4wkQa1jEem1vK-kP1bIqQ" base_Property="XmlPushDestinationTypeenabled?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationType%3a%3aenabled?" xsdName="enabled" xsdForm="unqualified" xsdUse="required" xsdType="boolean" xsdIsAttribute="true"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_n48xgK1jEem1vK-kP1bIqQ" base_Property="XmlPushDestinationTypedesc-guid?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationType%3a%3adescguid?" xsdName="desc-guid" xsdForm="unqualified" xsdUse="optional" xsdType="string" xsdIsAttribute="true" xsdMinOccurs="0"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_n48xg61jEem1vK-kP1bIqQ" textLength="-1" base_Property="XmlPushDestinationTypedesc-guid?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationType%3a%3adescguid?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_n5LbAa1jEem1vK-kP1bIqQ" base_Property="XmlPushDestinationTypevalue?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationType%3a%3avalue?" xsdName="value" xsdForm="unqualified" xsdType="string" xsdExplicitGroupHierarchy="C1" xsdParentSequence="_n5MCEa1jEem1vK-kP1bIqQ" xsdMaxOccurs="*"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_n5LbBK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="XmlPushDestinationTypevalue?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationType%3a%3avalue?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:TopLevelElements xmi:id="_n5MpIK1jEem1vK-kP1bIqQ" base_Package="com.tibco.n2.de.api.attribute?com.tibco.n2.de.api.attribute?">
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_n5MpIa1jEem1vK-kP1bIqQ" name="XmlPushDestination" type="com.tibco.n2.de.api.attributeXmlPushDestinationType?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationType?" isAnonymous="true" targetNamespace="http://attribute.api.de.n2.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_n5QTgK1jEem1vK-kP1bIqQ" name="getBusinessParametersResponse" type="com.tibco.n2.de.api.attributeParameterList?com.tibco.n2.de.api.attribute%3a%3aParameterList?" targetNamespace="http://attribute.api.de.n2.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_n5Q6kK1jEem1vK-kP1bIqQ" name="setBusinessParameters" type="com.tibco.n2.de.api.attributeParameterList?com.tibco.n2.de.api.attribute%3a%3aParameterList?" targetNamespace="http://attribute.api.de.n2.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_n5RhoK1jEem1vK-kP1bIqQ" name="setPushDestinations" type="com.tibco.n2.de.api.attributeXmlPushDestinationList?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationList?" targetNamespace="http://attribute.api.de.n2.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_n5TW0q1jEem1vK-kP1bIqQ" name="listBusinessParameters" type="com.tibco.n2.de.api.attributelistBusinessParametersType?com.tibco.n2.de.api.attribute%3a%3alistBusinessParametersType?" isAnonymous="true" targetNamespace="http://attribute.api.de.n2.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_n5e9AK1jEem1vK-kP1bIqQ" name="listBusinessParametersResponse" type="com.tibco.n2.de.api.attributelistBusinessParametersResponseType?com.tibco.n2.de.api.attribute%3a%3alistBusinessParametersResponseType?" isAnonymous="true" targetNamespace="http://attribute.api.de.n2.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_n5gyMK1jEem1vK-kP1bIqQ" name="getBusinessParameters" type="com.tibco.n2.de.api.attributegetBusinessParametersType?com.tibco.n2.de.api.attribute%3a%3agetBusinessParametersType?" isAnonymous="true" targetNamespace="http://attribute.api.de.n2.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_n5inYK1jEem1vK-kP1bIqQ" name="setBusinessParametersResponse" type="com.tibco.n2.de.api.attributesetBusinessParametersResponseType?com.tibco.n2.de.api.attribute%3a%3asetBusinessParametersResponseType?" isAnonymous="true" targetNamespace="http://attribute.api.de.n2.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_n5rKQK1jEem1vK-kP1bIqQ" name="getPushDestinations" type="com.tibco.n2.de.api.attributegetPushDestinationsType?com.tibco.n2.de.api.attribute%3a%3agetPushDestinationsType?" isAnonymous="true" targetNamespace="http://attribute.api.de.n2.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_n5ztIK1jEem1vK-kP1bIqQ" name="getPushDestinationsResponse" type="com.tibco.n2.de.api.attributegetPushDestinationsResponseType?com.tibco.n2.de.api.attribute%3a%3agetPushDestinationsResponseType?" isAnonymous="true" targetNamespace="http://attribute.api.de.n2.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_n51iUa1jEem1vK-kP1bIqQ" name="setPushDestinationsResponse" type="com.tibco.n2.de.api.attributesetPushDestinationsResponseType?com.tibco.n2.de.api.attribute%3a%3asetPushDestinationsResponseType?" isAnonymous="true" targetNamespace="http://attribute.api.de.n2.tibco.com" substitutionGroup=""/>
+  </XsdNotationProfile:TopLevelElements>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_n5NQMK1jEem1vK-kP1bIqQ" base_Property="XmlPushDestinationListXmlPushDestination?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationList%3a%3axmlPushDestination?" xsdName="XmlPushDestination" xsdRef="http://attribute.api.de.n2.tibco.com:XmlPushDestination" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_n5NQM61jEem1vK-kP1bIqQ" xsdMinOccurs="0" xsdMaxOccurs="*"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_n5SIsa1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.attributelistBusinessParametersType?com.tibco.n2.de.api.attribute%3a%3alistBusinessParametersType?" xsdName="listBusinessParameters" xsdMixed="false" xsdIsComplexType="true" xsdIsAnonType="true"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_n5T94a1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.attributelistBusinessParametersResponseType?com.tibco.n2.de.api.attribute%3a%3alistBusinessParametersResponseType?" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true">
+    <xsdSequenceList xmi:type="XsdNotationProfile:XsdSequence" xmi:id="_n5du4K1jEem1vK-kP1bIqQ" name="MS1_1_1" minOccurs="0" maxOccurs="-1"/>
+  </XsdNotationProfile:XsdBasedClass>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_n5dH161jEem1vK-kP1bIqQ" base_Property="listBusinessParametersResponseTypeparam-desc?com.tibco.n2.de.api.attribute%3a%3alistBusinessParametersResponseType%3a%3aparamdesc?" xsdName="param-desc" xsdForm="unqualified" xsdType="XmlParamDescriptor" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_n5du4K1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_n5e9Aq1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.attributegetBusinessParametersType?com.tibco.n2.de.api.attribute%3a%3agetBusinessParametersType?" xsdName="getBusinessParameters" xsdMixed="false" xsdIsComplexType="true" xsdIsAnonType="true"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_n5gyMq1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.attributesetBusinessParametersResponseType?com.tibco.n2.de.api.attribute%3a%3asetBusinessParametersResponseType?" xsdName="setBusinessParametersResponse" xsdMixed="false" xsdIsComplexType="true" xsdIsAnonType="true"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_n5inYq1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.attributegetPushDestinationsType?com.tibco.n2.de.api.attribute%3a%3agetPushDestinationsType?" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true">
+    <xsdSequenceList xmi:type="XsdNotationProfile:XsdSequence" xmi:id="_n5qjMK1jEem1vK-kP1bIqQ" name="MS1_1_1"/>
+  </XsdNotationProfile:XsdBasedClass>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_n5p8Jq1jEem1vK-kP1bIqQ" base_Property="getPushDestinationsTypeorg-entity?com.tibco.n2.de.api.attribute%3a%3agetPushDestinationsType%3a%3aorgentity?" xsdName="org-entity" xsdForm="unqualified" xsdType="XmlModelEntityId" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_n5qjMK1jEem1vK-kP1bIqQ" xsdMaxOccurs="-1"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_n5rxUa1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.attributegetPushDestinationsResponseType?com.tibco.n2.de.api.attribute%3a%3agetPushDestinationsResponseType?" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true">
+    <xsdSequenceList xmi:type="XsdNotationProfile:XsdSequence" xmi:id="_n5zGEK1jEem1vK-kP1bIqQ" name="MS1_1_1"/>
+  </XsdNotationProfile:XsdBasedClass>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_n5yfCK1jEem1vK-kP1bIqQ" base_Property="getPushDestinationsResponseTypeorg-entity?com.tibco.n2.de.api.attribute%3a%3agetPushDestinationsResponseType%3a%3aorgentity?" xsdName="org-entity" xsdForm="unqualified" xsdType="XmlPushDestinationList" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_n5zGEK1jEem1vK-kP1bIqQ" xsdMaxOccurs="-1"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_n50UMa1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.attributesetPushDestinationsResponseType?com.tibco.n2.de.api.attribute%3a%3asetPushDestinationsResponseType?" xsdName="setPushDestinationsResponse" xsdMixed="false" xsdIsComplexType="true" xsdIsAnonType="true"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7kAoK1jEem1vK-kP1bIqQ" base_Element="_n5yfB61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7kAoa1jEem1vK-kP1bIqQ" base_Element="_n4HEA61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7knsK1jEem1vK-kP1bIqQ" base_Element="XmlPushDestinationTypedesc-guid?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationType%3a%3adescguid?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7knsa1jEem1vK-kP1bIqQ" base_Element="_n5MCEK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7knsq1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.attributeXmlPushDestinationList?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationList?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7kns61jEem1vK-kP1bIqQ" base_Element="_n4HEBK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7kntK1jEem1vK-kP1bIqQ" base_Element="_n48xga1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7knta1jEem1vK-kP1bIqQ" base_Element="_n3y68a1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7kntq1jEem1vK-kP1bIqQ" base_Element="ParameterListparameter?com.tibco.n2.de.api.attribute%3a%3aParameterList%3a%3aparameter?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7knt61jEem1vK-kP1bIqQ" base_Element="XmlPushDestinationTypechannel-id?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationType%3a%3achannelid?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7knuK1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.attributesetPushDestinationsResponseType?com.tibco.n2.de.api.attribute%3a%3asetPushDestinationsResponseType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7knua1jEem1vK-kP1bIqQ" base_Element="_n5dH1q1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7knuq1jEem1vK-kP1bIqQ" base_Element="_n49YkK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7knu61jEem1vK-kP1bIqQ" base_Element="Composition141listbusinessparametersresponsetype?com.tibco.n2.de.api.attribute%3a%3aComposition141%3a%3alistbusinessparametersresponsetype?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7knvK1jEem1vK-kP1bIqQ" base_Element="_n5p8Iq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7knva1jEem1vK-kP1bIqQ" base_Element="_n5dH061jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7lOwK1jEem1vK-kP1bIqQ" base_Element="_n48xgq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7lOwa1jEem1vK-kP1bIqQ" base_Element="_n4YJxK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7lOwq1jEem1vK-kP1bIqQ" base_Element="_n5yfAK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7lOw61jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.attributelistBusinessParametersResponseType?com.tibco.n2.de.api.attribute%3a%3alistBusinessParametersResponseType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7lOxK1jEem1vK-kP1bIqQ" base_Element="_n4JgQK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7lOxa1jEem1vK-kP1bIqQ" base_Element="Composition140parameterlist?com.tibco.n2.de.api.attribute%3a%3aComposition140%3a%3aparameterlist?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7lOxq1jEem1vK-kP1bIqQ" base_Element="_n4W7oa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7lOx61jEem1vK-kP1bIqQ" base_Element="_n4W7pK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7lOyK1jEem1vK-kP1bIqQ" base_Element="_n4k-EK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7lOya1jEem1vK-kP1bIqQ" base_Element="_n4W7oq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7lOyq1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.attributesetBusinessParametersResponseType?com.tibco.n2.de.api.attribute%3a%3asetBusinessParametersResponseType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7lOy61jEem1vK-kP1bIqQ" base_Element="_n5iAUa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7lOzK1jEem1vK-kP1bIqQ" base_Element="_n5NQMq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7lOza1jEem1vK-kP1bIqQ" base_Element="_n5TW0a1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7lOzq1jEem1vK-kP1bIqQ" base_Element="_n4YJwq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7l10K1jEem1vK-kP1bIqQ" base_Element="_n4kXAa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7l10a1jEem1vK-kP1bIqQ" base_Element="_n5p8Ia1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7l10q1jEem1vK-kP1bIqQ" base_Element="_n5gLIa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7l1061jEem1vK-kP1bIqQ" base_Element="getPushDestinationsTypeorg-entity?com.tibco.n2.de.api.attribute%3a%3agetPushDestinationsType%3a%3aorgentity?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7l11K1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.attributelistBusinessParametersType?com.tibco.n2.de.api.attribute%3a%3alistBusinessParametersType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7l11a1jEem1vK-kP1bIqQ" base_Element="_n5p8Ja1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7l11q1jEem1vK-kP1bIqQ" base_Element="XmlPushDestinationListXmlPushDestination?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationList%3a%3axmlPushDestination?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7l1161jEem1vK-kP1bIqQ" base_Element="XmlPushDestinationTypename?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationType%3a%3aname?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7l12K1jEem1vK-kP1bIqQ" base_Element="_n5dH1a1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7l12a1jEem1vK-kP1bIqQ" base_Element="Composition143getpushdestinationsresponsetype?com.tibco.n2.de.api.attribute%3a%3aComposition143%3a%3agetpushdestinationsresponsetype?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7l12q1jEem1vK-kP1bIqQ" base_Element="_n51iUK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7l1261jEem1vK-kP1bIqQ" base_Element="_n4HEB61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7l13K1jEem1vK-kP1bIqQ" base_Element="_n5yfA61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7l13a1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.attributeComposition141?com.tibco.n2.de.api.attribute%3a%3aComposition141?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7mc4K1jEem1vK-kP1bIqQ" base_Element="_n5N3QK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7mc4a1jEem1vK-kP1bIqQ" base_Element="_n4kXAq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7mc4q1jEem1vK-kP1bIqQ" base_Element="getPushDestinationsResponseTypeorg-entity?com.tibco.n2.de.api.attribute%3a%3agetPushDestinationsResponseType%3a%3aorgentity?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7mc461jEem1vK-kP1bIqQ" base_Element="_n4YJw61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7mc5K1jEem1vK-kP1bIqQ" base_Element="_n5OeUK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7mc5a1jEem1vK-kP1bIqQ" base_Element="_n5NQMa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7mc5q1jEem1vK-kP1bIqQ" base_Element="_n507QK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7mc561jEem1vK-kP1bIqQ" base_Element="_n4xLUa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7mc6K1jEem1vK-kP1bIqQ" base_Element="_n5yfBq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7mc6a1jEem1vK-kP1bIqQ" base_Element="_n5eV8K1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7mc6q1jEem1vK-kP1bIqQ" base_Element="XmlPushDestinationTypechannel-type?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationType%3a%3achanneltype?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7mc661jEem1vK-kP1bIqQ" base_Element="_n3y6861jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7mc7K1jEem1vK-kP1bIqQ" base_Element="_n5dH0q1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7mc7a1jEem1vK-kP1bIqQ" base_Element="_n4HEBq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7mc7q1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.attributeComposition143?com.tibco.n2.de.api.attribute%3a%3aComposition143?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7nD8K1jEem1vK-kP1bIqQ" base_Element="listBusinessParametersResponseTypeparam-desc?com.tibco.n2.de.api.attribute%3a%3alistBusinessParametersResponseType%3a%3aparamdesc?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7nD8a1jEem1vK-kP1bIqQ" base_Element="_n5fkEK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7nD8q1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.attributeComposition140?com.tibco.n2.de.api.attribute%3a%3aComposition140?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7nD861jEem1vK-kP1bIqQ" base_Element="Composition142getpushdestinationstype?com.tibco.n2.de.api.attribute%3a%3aComposition142%3a%3agetpushdestinationstype?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7nD9K1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.attributegetPushDestinationsType?com.tibco.n2.de.api.attribute%3a%3agetPushDestinationsType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7nD9a1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.attributeParameterList?com.tibco.n2.de.api.attribute%3a%3aParameterList?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7nD9q1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.attributeComposition142?com.tibco.n2.de.api.attribute%3a%3aComposition142?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7nD961jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.attributeXmlPushDestinationType?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7nD-K1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.attributegetBusinessParametersType?com.tibco.n2.de.api.attribute%3a%3agetBusinessParametersType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7nD-a1jEem1vK-kP1bIqQ" base_Element="_n5LbAq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7nD-q1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.attributegetPushDestinationsResponseType?com.tibco.n2.de.api.attribute%3a%3agetPushDestinationsResponseType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7nD-61jEem1vK-kP1bIqQ" base_Element="_n4wkQq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7nD_K1jEem1vK-kP1bIqQ" base_Element="_n5yfBK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7nD_a1jEem1vK-kP1bIqQ" base_Element="_n5SvwK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7nrAK1jEem1vK-kP1bIqQ" base_Element="XmlPushDestinationTypeenabled?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationType%3a%3aenabled?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7nrAa1jEem1vK-kP1bIqQ" base_Element="XmlPushDestinationTypevalue?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationType%3a%3avalue?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7nrAq1jEem1vK-kP1bIqQ" base_Element="_n4xLUK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7nrA61jEem1vK-kP1bIqQ" base_Element="_n5LbA61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7nrBK1jEem1vK-kP1bIqQ" base_Element="_n4ISIK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_n7nrBa1jEem1vK-kP1bIqQ" base_Element="_n5p8JK1jEem1vK-kP1bIqQ"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oWAg8K1jEem1vK-kP1bIqQ" displayLabel="ParameterList" base_NamedElement="com.tibco.n2.de.api.attributeParameterList?com.tibco.n2.de.api.attribute%3a%3aParameterList?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oWBIAK1jEem1vK-kP1bIqQ" displayLabel="XmlPushDestinationList" base_NamedElement="com.tibco.n2.de.api.attributeXmlPushDestinationList?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationList?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oWBIAa1jEem1vK-kP1bIqQ" displayLabel="XmlPushDestinationType" base_NamedElement="com.tibco.n2.de.api.attributeXmlPushDestinationType?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oWBvEK1jEem1vK-kP1bIqQ" displayLabel="getBusinessParametersType" base_NamedElement="com.tibco.n2.de.api.attributegetBusinessParametersType?com.tibco.n2.de.api.attribute%3a%3agetBusinessParametersType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oWBvEa1jEem1vK-kP1bIqQ" displayLabel="getPushDestinationsType" base_NamedElement="com.tibco.n2.de.api.attributegetPushDestinationsType?com.tibco.n2.de.api.attribute%3a%3agetPushDestinationsType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oWCWIK1jEem1vK-kP1bIqQ" displayLabel="getPushDestinationsResponseType" base_NamedElement="com.tibco.n2.de.api.attributegetPushDestinationsResponseType?com.tibco.n2.de.api.attribute%3a%3agetPushDestinationsResponseType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oWCWIa1jEem1vK-kP1bIqQ" displayLabel="listBusinessParametersType" base_NamedElement="com.tibco.n2.de.api.attributelistBusinessParametersType?com.tibco.n2.de.api.attribute%3a%3alistBusinessParametersType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oWC9MK1jEem1vK-kP1bIqQ" displayLabel="listBusinessParametersResponseType" base_NamedElement="com.tibco.n2.de.api.attributelistBusinessParametersResponseType?com.tibco.n2.de.api.attribute%3a%3alistBusinessParametersResponseType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oWC9Ma1jEem1vK-kP1bIqQ" displayLabel="setBusinessParametersResponseType" base_NamedElement="com.tibco.n2.de.api.attributesetBusinessParametersResponseType?com.tibco.n2.de.api.attribute%3a%3asetBusinessParametersResponseType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oWDkQK1jEem1vK-kP1bIqQ" displayLabel="setPushDestinationsResponseType" base_NamedElement="com.tibco.n2.de.api.attributesetPushDestinationsResponseType?com.tibco.n2.de.api.attribute%3a%3asetPushDestinationsResponseType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oWDkQa1jEem1vK-kP1bIqQ" displayLabel="parameter" base_NamedElement="ParameterListparameter?com.tibco.n2.de.api.attribute%3a%3aParameterList%3a%3aparameter?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oWELUK1jEem1vK-kP1bIqQ" displayLabel="XmlPushDestination" base_NamedElement="XmlPushDestinationListXmlPushDestination?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationList%3a%3axmlPushDestination?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oWEyYK1jEem1vK-kP1bIqQ" displayLabel="value" base_NamedElement="XmlPushDestinationTypevalue?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationType%3a%3avalue?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oWEyYa1jEem1vK-kP1bIqQ" displayLabel="channel-id" base_NamedElement="XmlPushDestinationTypechannel-id?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationType%3a%3achannelid?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oWFZcK1jEem1vK-kP1bIqQ" displayLabel="channel-type" base_NamedElement="XmlPushDestinationTypechannel-type?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationType%3a%3achanneltype?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oWFZca1jEem1vK-kP1bIqQ" displayLabel="desc-guid" base_NamedElement="XmlPushDestinationTypedesc-guid?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationType%3a%3adescguid?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oWFZcq1jEem1vK-kP1bIqQ" displayLabel="enabled" base_NamedElement="XmlPushDestinationTypeenabled?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationType%3a%3aenabled?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oWGAgK1jEem1vK-kP1bIqQ" displayLabel="name" base_NamedElement="XmlPushDestinationTypename?com.tibco.n2.de.api.attribute%3a%3aXmlPushDestinationType%3a%3aname?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oWGnkK1jEem1vK-kP1bIqQ" displayLabel="org-entity" base_NamedElement="getPushDestinationsTypeorg-entity?com.tibco.n2.de.api.attribute%3a%3agetPushDestinationsType%3a%3aorgentity?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oWGnka1jEem1vK-kP1bIqQ" displayLabel="org-entity" base_NamedElement="getPushDestinationsResponseTypeorg-entity?com.tibco.n2.de.api.attribute%3a%3agetPushDestinationsResponseType%3a%3aorgentity?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oWGnkq1jEem1vK-kP1bIqQ" displayLabel="param-desc" base_NamedElement="listBusinessParametersResponseTypeparam-desc?com.tibco.n2.de.api.attribute%3a%3alistBusinessParametersResponseType%3a%3aparamdesc?"/>
+  <notation:Diagram xmi:id="_oWHOpK1jEem1vK-kP1bIqQ" type="Business Object Model" element="com.tibco.n2.de.api.attribute?com.tibco.n2.de.api.attribute?" name="com.tibco.n2.de.api.attribute" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_oWHOpa1jEem1vK-kP1bIqQ"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_oWHOpq1jEem1vK-kP1bIqQ"/>
+  </notation:Diagram>
+</xmi:XMI>

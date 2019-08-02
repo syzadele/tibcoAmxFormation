@@ -1,0 +1,15 @@
+{"pane_ListeDesEntretiens_property_rowLabel":"{0}","pane_content_label":
+  "Plannifier Entretien",
+  "control_entretienPlannifie_avis_property_choiceLabels_0":"Accepte",
+  "control_entretienPlannifie_avis_property_choiceLabels_1":"Refuse",
+  "pane_toolbar_label":"Toolbar","pane_messages_label":"Invalid Entries",
+  "pane_ListeDesEntretiens_label":"Liste des entretiens",
+  "control_listCollaborateur_label":"listCollaborateur",
+  "control_entretienPlannifie_avis_label":"avis",
+  "control_entretienPlannifie_date_label":"date",
+  "form_validation_error_message":
+  "Error in script for validation {0} of Control {1} ({2}): {3}",
+  "form_action_error_message":"Error in script for action {0} ({1}): {2}",
+  "control_cancel_label":"Cancel","form_required_message":
+  "{0} is a required field.","control_submit_label":"Submit",
+  "control_entretienPlannifie_nomCollaborateur_label":"nomCollaborateur"}

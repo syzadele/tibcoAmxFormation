@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://orgmodel.api.de.bpm.tibco.com" xmlns:tns19="http://orgmodel.api.de.bpm.tibco.com"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:tns3="http://api.organisation.common.n2.tibco.com"
+    xmlns:tns5="http://base.api.de.bpm.tibco.com" xmlns:tns6="http://channeltype.common.n2.tibco.com"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://orgmodel.api.de.bpm.tibco.com">
+  <xsd:annotation>
+    <xsd:documentation>BOMORIGIN::/tibcoAPI/Generated Business Objects/com.tibco.bpm.de.api.orgmodel.bom</xsd:documentation>
+  </xsd:annotation>
+  <xsd:import namespace="http://api.organisation.common.n2.tibco.com" schemaLocation="com.tibco.n2.common.organisation.api.xsd"/>
+  <xsd:import namespace="http://base.api.de.bpm.tibco.com" schemaLocation="com.tibco.bpm.de.api.base.xsd"/>
+  <xsd:import namespace="http://channeltype.common.n2.tibco.com" schemaLocation="com.tibco.n2.common.channeltype.xsd"/>
+  <xsd:complexType ecore:name="XmlCalendarAssignments" id="com.tibco.bpm.de.api.orgmodelXmlCalendarAssignments"
+      abstract="false" mixed="false" name="XmlCalendarAssignments">
+    <xsd:sequence>
+      <xsd:element ecore:name="assignment" id="XmlCalendarAssignmentsassignment" form="unqualified"
+          maxOccurs="unbounded" minOccurs="1" name="assignment" type="tns3:XmlCalendarAssignment"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlUpdatePushDestinations" id="com.tibco.bpm.de.api.orgmodelXmlUpdatePushDestinations"
+      abstract="false" mixed="false" name="XmlUpdatePushDestinations">
+    <xsd:annotation>
+      <xsd:documentation>Modifies the push destination for an identified entity. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns3:XmlModelEntityId">
+        <xsd:sequence>
+          <xsd:element ecore:name="setdestination" id="XmlUpdatePushDestinationsset-destination"
+              form="unqualified" maxOccurs="unbounded" minOccurs="0" name="set-destination"
+              type="tns5:XmlPushDestination"/>
+          <xsd:element ecore:name="removedestination" id="XmlUpdatePushDestinationsremove-destination"
+              form="unqualified" maxOccurs="unbounded" minOccurs="0" name="remove-destination"
+              type="tns5:XmlPushDestinationId"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="XmlPushDestinationList" id="com.tibco.bpm.de.api.orgmodelXmlPushDestinationList"
+      abstract="false" mixed="false" name="XmlPushDestinationList">
+    <xsd:annotation>
+      <xsd:documentation>Identifies an organization model entity and and the push destinations that it currently holds.
+       </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns3:XmlModelEntityId">
+        <xsd:sequence>
+          <xsd:element ecore:name="xmlPushDestination" id="XmlPushDestinationListXmlPushDestination"
+              maxOccurs="unbounded" minOccurs="0" ref="tns19:XmlPushDestination"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="false" name="XmlPushDestination" nillable="false">
+    <xsd:complexType ecore:name="XmlPushDestinationType" id="com.tibco.bpm.de.api.orgmodelXmlPushDestinationType"
+        mixed="false">
+      <xsd:choice>
+        <xsd:element ecore:name="value" form="unqualified" maxOccurs="unbounded" minOccurs="1"
+            name="value" type="xsd:string"/>
+      </xsd:choice>
+      <xsd:attribute ecore:name="name" id="XmlPushDestinationTypename" form="unqualified"
+          name="name" type="xsd:string" use="required">
+        <xsd:annotation>
+          <xsd:documentation>Unique name of this push destination. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="channeltype" id="XmlPushDestinationTypechannel-type"
+          form="unqualified" name="channel-type" type="tns6:ChannelType" use="required">
+        <xsd:annotation>
+          <xsd:documentation>Enumerated type defining the presentation technology used by the channel associated with this push destination. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="channelid" id="XmlPushDestinationTypechannel-id"
+          form="unqualified" name="channel-id" type="xsd:string" use="required">
+        <xsd:annotation>
+          <xsd:documentation>Unique ID of the channel associated with this push destination. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="enabled" id="XmlPushDestinationTypeenabled" form="unqualified"
+          name="enabled" type="xsd:boolean" use="required">
+        <xsd:annotation>
+          <xsd:documentation>Boolean value indicating whether this push destination is currently enabled (TRUE) or not (FALSE). </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="descguid" id="XmlPushDestinationTypedesc-guid" form="unqualified"
+          name="desc-guid" type="xsd:string" use="optional">
+        <xsd:annotation>
+          <xsd:documentation>Unique ID of a prameter descriptor whose value should be used for the push destination. The parameter descriptor must be assigned to the organization model entity for whom the push destination is being set.
+
+ If a value is assigned to both this attribute and the &quot;value&quot; element below, the value of this element will be used. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="listOrgModelVersions" nillable="false" type="xsd:anyType"/>
+  <xsd:element abstract="false" name="setCalendarReferencesResponse" nillable="false"
+      type="xsd:anyType"/>
+  <xsd:element abstract="false" name="updatePushDestinationsResponse" nillable="false"
+      type="xsd:anyType"/>
+  <xsd:element abstract="false" name="setCandidateQueriesResponse" nillable="false"
+      type="xsd:anyType"/>
+  <xsd:element abstract="false" name="setExtensionPointsResponse" nillable="false"
+      type="xsd:anyType"/>
+  <xsd:element abstract="false" name="processDynamicOrg" nillable="false" type="xsd:anyType"/>
+  <xsd:element abstract="false" name="processDynamicOrgResponse" nillable="false"
+      type="xsd:anyType"/>
+  <xsd:element abstract="false" name="getCalendarReferences" nillable="false" type="tns3:XmlModelEntityId"/>
+  <xsd:element abstract="false" name="setCalendarReferences" nillable="false" type="XmlCalendarAssignments"/>
+  <xsd:element abstract="false" name="updatePushDestinations" nillable="false" type="XmlUpdatePushDestinations"/>
+  <xsd:element abstract="false" name="listOrgModelVersionsResponse" nillable="false">
+    <xsd:complexType ecore:name="listOrgModelVersionsResponseType" id="com.tibco.bpm.de.api.orgmodellistOrgModelVersionsResponseType"
+        mixed="false">
+      <xsd:sequence>
+        <xsd:element ecore:name="version" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="version" type="tns5:XmlOrgModelVersionDetail"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="getOrgModelRoots" nillable="false">
+    <xsd:complexType ecore:name="getOrgModelRootsType" id="com.tibco.bpm.de.api.orgmodelgetOrgModelRootsType"
+        mixed="false">
+      <xsd:attribute ecore:name="modelversion" id="getOrgModelRootsTypemodel-version"
+          default="-1" form="unqualified" name="model-version" type="xsd:int" use="optional">
+        <xsd:annotation>
+          <xsd:documentation>Specifies the major organization model version from which entities are to be returned. A value of -1 returns entities from the highest major organization model version. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="includecategories" id="getOrgModelRootsTypeinclude-categories"
+          default="false" form="unqualified" name="include-categories" type="xsd:boolean"
+          use="optional">
+        <xsd:annotation>
+          <xsd:documentation>Specifies whether the capabilities and privileges should be grouped in the nested categories in which they were deployed. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="getOrgModelRootsResponse" nillable="false">
+    <xsd:complexType ecore:name="getOrgModelRootsResponseType" id="com.tibco.bpm.de.api.orgmodelgetOrgModelRootsResponseType"
+        mixed="false">
+      <xsd:sequence>
+        <xsd:element ecore:name="capabilitycategory" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="capability-category" type="tns5:XmlCapabilityCategory"/>
+        <xsd:element ecore:name="capability" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="capability" type="tns5:XmlCapability"/>
+        <xsd:element ecore:name="privilegecategory" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="privilege-category" type="tns5:XmlPrivilegeCategory"/>
+        <xsd:element ecore:name="privilege" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="privilege" type="tns5:XmlPrivilege"/>
+        <xsd:element ecore:name="group" form="unqualified" maxOccurs="unbounded" minOccurs="0"
+            name="group" type="tns5:XmlGroup"/>
+        <xsd:element ecore:name="location" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="location" type="tns5:XmlLocation"/>
+        <xsd:element ecore:name="organization" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="organization" type="tns5:XmlOrganization"/>
+        <xsd:element ecore:name="modeltemplate" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="model-template" type="tns5:XmlModelOrgUnit"/>
+        <xsd:element ecore:name="resourceattribute" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="resource-attribute" type="tns5:XmlOrgAttribute"/>
+      </xsd:sequence>
+      <xsd:attribute ecore:name="modelversion" id="getOrgModelRootsResponseTypemodel-version"
+          form="unqualified" name="model-version" type="xsd:int" use="required">
+        <xsd:annotation>
+          <xsd:documentation>Major version number of the organization model. The contained organization model deployment records make up this version. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="getOrgModelEntity" nillable="false">
+    <xsd:complexType ecore:name="getOrgModelEntityType" id="com.tibco.bpm.de.api.orgmodelgetOrgModelEntityType"
+        mixed="false">
+      <xsd:sequence>
+        <xsd:element ecore:name="guid" form="unqualified" maxOccurs="unbounded" minOccurs="1"
+            name="guid" type="xsd:string"/>
+      </xsd:sequence>
+      <xsd:attribute ecore:name="modelversion" id="getOrgModelEntityTypemodel-version"
+          default="-1" form="unqualified" name="model-version" type="xsd:int" use="optional">
+        <xsd:annotation>
+          <xsd:documentation>Specifies the major organization model version from which entities are to be returned. A value of -1 returns entities from the highest major organization model version. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="getOrgModelEntityResponse" nillable="false">
+    <xsd:complexType ecore:name="getOrgModelEntityResponseType" id="com.tibco.bpm.de.api.orgmodelgetOrgModelEntityResponseType"
+        mixed="false">
+      <xsd:choice>
+        <xsd:element ecore:name="capabilitycategory" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="capability-category" type="tns5:XmlCapabilityCategory"/>
+        <xsd:element ecore:name="capability" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="capability" type="tns5:XmlCapability"/>
+        <xsd:element ecore:name="privilegecategory" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="privilege-category" type="tns5:XmlPrivilegeCategory"/>
+        <xsd:element ecore:name="privilege" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="privilege" type="tns5:XmlPrivilege"/>
+        <xsd:element ecore:name="group" form="unqualified" maxOccurs="unbounded" minOccurs="0"
+            name="group" type="tns5:XmlGroup"/>
+        <xsd:element ecore:name="location" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="location" type="tns5:XmlLocation"/>
+        <xsd:element ecore:name="organization" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="organization" type="tns5:XmlOrganization"/>
+        <xsd:element ecore:name="orgunit" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="org-unit" type="tns5:XmlOrgUnit"/>
+        <xsd:element ecore:name="position" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="position" type="tns5:XmlPosition"/>
+        <xsd:element ecore:name="modelorgunit" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="model-org-unit" type="tns5:XmlModelOrgUnit"/>
+        <xsd:element ecore:name="modelposition" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="model-position" type="tns5:XmlModelPosition"/>
+        <xsd:element ecore:name="resourceattribute" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="resource-attribute" type="tns5:XmlOrgAttribute"/>
+        <xsd:element ecore:name="query" form="unqualified" maxOccurs="unbounded" minOccurs="0"
+            name="query" type="tns5:XmlQueryEntity"/>
+      </xsd:choice>
+      <xsd:attribute ecore:name="modelversion" id="getOrgModelEntityResponseTypemodel-version"
+          form="unqualified" name="model-version" type="xsd:int" use="required">
+        <xsd:annotation>
+          <xsd:documentation>Major version number of the organization model. The contained organization model deployment records make up this version. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="getOrgModel" nillable="false">
+    <xsd:complexType ecore:name="getOrgModelType" id="com.tibco.bpm.de.api.orgmodelgetOrgModelType"
+        mixed="false">
+      <xsd:attribute ecore:name="modelversion" id="getOrgModelTypemodel-version" default="-1"
+          form="unqualified" name="model-version" type="xsd:int" use="optional">
+        <xsd:annotation>
+          <xsd:documentation>Specifies the major organization model version from which entities are to be returned. A value of -1 returns entities from the highest major organization model version. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="includeresourcecounts" id="getOrgModelTypeinclude-resource-counts"
+          default="false" form="unqualified" name="include-resource-counts" type="xsd:boolean"
+          use="optional">
+        <xsd:annotation>
+          <xsd:documentation>Specifies whether the number of resources assigned to positions, groups and capabilities should be included in the response. For performance, it may be preferable not to include this information. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="includecalendaralias" id="getOrgModelTypeinclude-calendar-alias"
+          default="false" form="unqualified" name="include-calendar-alias" type="xsd:boolean"
+          use="optional">
+        <xsd:annotation>
+          <xsd:documentation>Specifies whether the calendar aliases assigned to positions, groups, organizaiton units, and organizations should be included in the response. For performance, it may be preferable not to include this information. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="includecandidatequeries" id="getOrgModelTypeinclude-candidate-queries"
+          default="false" form="unqualified" name="include-candidate-queries" type="xsd:boolean"
+          use="optional">
+        <xsd:annotation>
+          <xsd:documentation>Specifies whether the candidate queries assigned to positions and groups should be included in the response. For performance, it may be preferable not to include this information. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="includeextpoints" id="getOrgModelTypeinclude-ext-points"
+          default="false" form="unqualified" name="include-ext-points" type="xsd:boolean"
+          use="optional">
+        <xsd:annotation>
+          <xsd:documentation>Specifies whether the extension point and model template configurations should be included in the response. For performance, it may be preferable not to include this information. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ecore:name="includecategories" id="getOrgModelTypeinclude-categories"
+          default="false" form="unqualified" name="include-categories" type="xsd:boolean"
+          use="optional">
+        <xsd:annotation>
+          <xsd:documentation>Specifies whether the capabilities and privileges should be grouped in the nested categories in which they were deployed. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="getOrgModelResponse" nillable="false">
+    <xsd:complexType ecore:name="getOrgModelResponseType" id="com.tibco.bpm.de.api.orgmodelgetOrgModelResponseType"
+        mixed="false">
+      <xsd:sequence>
+        <xsd:element ecore:name="capabilitycategory" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="capability-category" type="tns5:XmlCapabilityCategory"/>
+        <xsd:element ecore:name="capability" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="capability" type="tns5:XmlCapability"/>
+        <xsd:element ecore:name="privilegecategory" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="privilege-category" type="tns5:XmlPrivilegeCategory"/>
+        <xsd:element ecore:name="privilege" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="privilege" type="tns5:XmlPrivilege"/>
+        <xsd:element ecore:name="group" form="unqualified" maxOccurs="unbounded" minOccurs="0"
+            name="group" type="tns5:XmlGroup"/>
+        <xsd:element ecore:name="location" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="location" type="tns5:XmlLocation"/>
+        <xsd:element ecore:name="organization" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="organization" type="tns5:XmlOrganization"/>
+        <xsd:element ecore:name="modeltemplate" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="model-template" type="tns5:XmlModelOrgUnit"/>
+        <xsd:element ecore:name="resourceattribute" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="resource-attribute" type="tns5:XmlOrgAttribute"/>
+      </xsd:sequence>
+      <xsd:attribute ecore:name="modelversion" id="getOrgModelResponseTypemodel-version"
+          form="unqualified" name="model-version" type="xsd:int" use="required">
+        <xsd:annotation>
+          <xsd:documentation>Major version number of the organization model. The contained organization model deployment records make up this version. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="getCalendarReferencesResponse" nillable="false">
+    <xsd:complexType ecore:name="getCalendarReferencesResponseType" id="com.tibco.bpm.de.api.orgmodelgetCalendarReferencesResponseType"
+        mixed="false">
+      <xsd:sequence>
+        <xsd:element ecore:name="calendar" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="calendar" type="tns3:XmlCalendarRef"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="setCandidateQueries" nillable="false">
+    <xsd:complexType ecore:name="setCandidateQueriesType" id="com.tibco.bpm.de.api.orgmodelsetCandidateQueriesType"
+        mixed="false">
+      <xsd:sequence>
+        <xsd:element ecore:name="assignment" form="unqualified" maxOccurs="unbounded"
+            minOccurs="0" name="assignment" type="tns5:XmlCandidateQueryAssignment"/>
+        <xsd:element ecore:name="remove" form="unqualified" maxOccurs="1" minOccurs="0"
+            name="remove">
+          <xsd:complexType ecore:name="removeType" id="com.tibco.bpm.de.api.orgmodelremoveType"
+              mixed="false">
+            <xsd:choice>
+              <xsd:element ecore:name="position" form="unqualified" maxOccurs="unbounded"
+                  minOccurs="1" name="position" type="xsd:string"/>
+              <xsd:element ecore:name="group" form="unqualified" maxOccurs="unbounded"
+                  minOccurs="1" name="group" type="xsd:string"/>
+            </xsd:choice>
+            <xsd:attribute ecore:name="removeresources" id="removeTyperemove-resources"
+                default="false" form="unqualified" name="remove-resources" type="xsd:boolean"
+                use="optional">
+              <xsd:annotation>
+                <xsd:documentation>Indicates whether existing Resource assignments, to the identified positions or groups, should also be removed. </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="setExtensionPoints" nillable="false">
+    <xsd:complexType ecore:name="setExtensionPointsType" id="com.tibco.bpm.de.api.orgmodelsetExtensionPointsType"
+        mixed="false">
+      <xsd:choice>
+        <xsd:element ecore:name="removeextpoint" form="unqualified" maxOccurs="unbounded"
+            minOccurs="1" name="remove-ext-point" type="tns5:XmlExtensionPointRemoval"/>
+        <xsd:element ecore:name="extpoint" form="unqualified" maxOccurs="unbounded"
+            minOccurs="1" name="ext-point" type="tns5:XmlExtensionPointAssignment"/>
+      </xsd:choice>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="getPushDestinations" nillable="false">
+    <xsd:complexType ecore:name="getPushDestinationsType" id="com.tibco.bpm.de.api.orgmodelgetPushDestinationsType"
+        mixed="false">
+      <xsd:sequence>
+        <xsd:element ecore:name="orgentity" form="unqualified" maxOccurs="unbounded"
+            minOccurs="1" name="org-entity" type="tns3:XmlModelEntityId"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="getPushDestinationsResponse" nillable="false">
+    <xsd:complexType ecore:name="getPushDestinationsResponseType" id="com.tibco.bpm.de.api.orgmodelgetPushDestinationsResponseType"
+        mixed="false">
+      <xsd:sequence>
+        <xsd:element ecore:name="orgentity" form="unqualified" maxOccurs="unbounded"
+            minOccurs="1" name="org-entity" type="XmlPushDestinationList"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

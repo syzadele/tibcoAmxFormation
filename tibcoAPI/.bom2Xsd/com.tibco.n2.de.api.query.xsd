@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://query.api.de.n2.tibco.com" xmlns:tns20="http://query.api.de.n2.tibco.com"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:tns3="http://api.organisation.common.n2.tibco.com"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://query.api.de.n2.tibco.com">
+  <xsd:annotation>
+    <xsd:documentation>BOMORIGIN::/tibcoAPI/Generated Business Objects/com.tibco.n2.de.api.query.bom</xsd:documentation>
+  </xsd:annotation>
+  <xsd:import namespace="http://api.organisation.common.n2.tibco.com" schemaLocation="com.tibco.n2.common.organisation.api.xsd"/>
+  <xsd:element abstract="false" name="resetQueriesResponse" nillable="false" type="xsd:string"/>
+  <xsd:element abstract="false" name="registerQuery" nillable="false">
+    <xsd:complexType ecore:name="registerQueryType" id="com.tibco.n2.de.api.queryregisterQueryType"
+        mixed="false">
+      <xsd:sequence>
+        <xsd:element ecore:name="query" form="unqualified" maxOccurs="1" minOccurs="1"
+            name="query" type="xsd:string"/>
+      </xsd:sequence>
+      <xsd:attribute ecore:name="modelversion" id="registerQueryTypemodel-version"
+          default="-1" form="unqualified" name="model-version" type="xsd:int" use="optional">
+        <xsd:annotation>
+          <xsd:documentation>Major version number of the organization model in which an organization model entity resides. 
+
+If not specified, the default value will be the latest version of the organization model.
+
+(Version numbers must be compatible with, and conform to, the OSGi version number schema. For Directory Engine, only the major part of the version number is significant.) </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="registerQueryResponse" nillable="false">
+    <xsd:complexType ecore:name="registerQueryResponseType" id="com.tibco.n2.de.api.queryregisterQueryResponseType"
+        mixed="false">
+      <xsd:sequence>
+        <xsd:element ecore:name="entity" form="unqualified" maxOccurs="1" minOccurs="1"
+            name="entity" type="tns3:XmlParticipantId"/>
+      </xsd:sequence>
+      <xsd:attribute ecore:name="unique" id="registerQueryResponseTypeunique" form="unqualified"
+          name="unique" type="xsd:boolean" use="required">
+        <xsd:annotation>
+          <xsd:documentation>Is the query unique? If not a n internal reference counter will have been incremented. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="deregisterQuery" nillable="false">
+    <xsd:complexType ecore:name="deregisterQueryType" id="com.tibco.n2.de.api.queryderegisterQueryType"
+        mixed="false">
+      <xsd:sequence>
+        <xsd:element ecore:name="identifier" form="unqualified" maxOccurs="1" minOccurs="1"
+            name="identifier" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="deregisterQueryResponse" nillable="false">
+    <xsd:complexType ecore:name="deregisterQueryResponseType" id="com.tibco.n2.de.api.queryderegisterQueryResponseType"
+        mixed="false">
+      <xsd:sequence>
+        <xsd:element ecore:name="identifier" form="unqualified" maxOccurs="1" minOccurs="1"
+            name="identifier" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element abstract="false" name="resetQueries" nillable="false">
+    <xsd:complexType ecore:name="resetQueriesType" id="com.tibco.n2.de.api.queryresetQueriesType"
+        mixed="false">
+      <xsd:attribute ecore:name="modelversion" id="resetQueriesTypemodel-version"
+          default="-1" form="unqualified" name="model-version" type="xsd:int" use="optional">
+        <xsd:annotation>
+          <xsd:documentation>Major version number of the organization model in which an organization model entity resides. 
+
+If -1 is specified the value will be the latest version of the organization model.
+
+If not specified then all deployed versions of the model will have their corresponding queries reset.
+
+(Version numbers must be compatible with, and conform to, the OSGi version number schema. For Directory Engine, only the major part of the version number is significant.) </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

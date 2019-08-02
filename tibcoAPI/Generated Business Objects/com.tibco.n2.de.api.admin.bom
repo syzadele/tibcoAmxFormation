@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:PrimitiveTypeFacets="http:///schemas/PrimitiveTypeFacets/_8TmTUMtlEdy7K9XeCH7Hrw/0" xmlns:XsdNotationProfile="http:///schemas/XsdNotationProfile/_LmHW0PHtEd2z3-vLsCwuEg/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/PrimitiveTypeFacets/_8TmTUMtlEdy7K9XeCH7Hrw/0 pathmap://BOM_TYPES/PrimitiveTypeFacets.profile.uml#_8TmTUstlEdy7K9XeCH7Hrw http:///schemas/XsdNotationProfile/_LmHW0PHtEd2z3-vLsCwuEg/1 pathmap://XSD_NOTATION_TYPES/XsdNotation.profile.uml#_LmHW0fHtEd2z3-vLsCwuEg">
+  <uml:Model xmi:id="com.tibco.n2.de.api.admin" name="com.tibco.n2.de.api.admin">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oW1nYq1jEem1vK-kP1bIqQ" source="model.metadata">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oW1nY61jEem1vK-kP1bIqQ" key="author" value="YSong"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oW1nZK1jEem1vK-kP1bIqQ" key="created" value="1563897903318"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oW1nZa1jEem1vK-kP1bIqQ" key="version" value="5"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ovnTwK1jEem1vK-kP1bIqQ" key="checksum" value="1487955362"/>
+    </eAnnotations>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.admindeleteOrphanReferencesType" name="deleteOrphanReferencesType"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.admindeleteOrphanReferencesResponseType" name="deleteOrphanReferencesResponseType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="deleteOrphanReferencesResponseTypegroup-guid" name="groupguid" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nRwOoK1jEem1vK-kP1bIqQ" body="The GUID of a non-existent Group identified as belonging to an association. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nRvnkq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nRvnk61jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="deleteOrphanReferencesResponseTypeorg-guid" name="orgguid" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nR5Yka1jEem1vK-kP1bIqQ" body="The GUID of a non-existent Organization identified as belonging to an association. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nR4xgq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nR4xg61jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="deleteOrphanReferencesResponseTypeposition-guid" name="positionguid" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nSVdcK1jEem1vK-kP1bIqQ" body="The GUID of a non-existent Position identified as belonging to an association. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nSU2Yq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nSU2Y61jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="deleteOrphanReferencesResponseTypecapability-guid" name="capabilityguid" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nSfOcK1jEem1vK-kP1bIqQ" body="The GUID of a non-existent Capability identified as belonging to an association. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nSenYq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nSenY61jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="deleteOrphanReferencesResponseTypeattribute-guid" name="attributeguid" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nSoYYK1jEem1vK-kP1bIqQ" body="The GUID of a non-existent Attribute identified as belonging to an association. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nSnxUq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nSnxU61jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="deleteOrphanReferencesResponseTypecandidate-query-guid" name="candidatequeryguid" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nSxiUK1jEem1vK-kP1bIqQ" body="The GUID of the holder of a non-existent Candidate Query identified as belonging to an association. "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nSw7Qq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nSw7Q61jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="deleteOrphanReferencesResponseTypeextension-point-guidType" name="extensionpointguid" type="com.tibco.n2.de.api.adminextension-point-guidType?com.tibco.n2.de.api.admin%3a%3aextensionpointguidType?" aggregation="composite" association="com.tibco.n2.de.api.adminComposition101?com.tibco.n2.de.api.admin%3a%3aComposition101?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nTG5gq1jEem1vK-kP1bIqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nTG5g61jEem1vK-kP1bIqQ" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="com.tibco.n2.de.api.adminextension-point-guidType" name="extensionpointguidType">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="extension-point-guidTypemodel-version" name="modelversion" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nS76YK1jEem1vK-kP1bIqQ" body="Major version number of the organization model in which the extension point resided.  "/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_BRY7wHvBEdy0U8_1u7Q20g?BomPrimitiveTypes%3a%3aInteger?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nS7TUa1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nS7TUq1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="extension-point-guidTypevalue" name="value" aggregation="composite">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://BOM_TYPES/BomPrimitiveTypes.library.uml#_AGoC4HcNEdytQ9AWEvOuug?BomPrimitiveTypes%3a%3aText?"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nTEdQq1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nTEdQ61jEem1vK-kP1bIqQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="com.tibco.n2.de.api.adminComposition101" name="Composition101" memberEnd="deleteOrphanReferencesResponseTypeextension-point-guidType?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType%3a%3aextensionpointguid? Composition101deleteorphanreferencesresponsetype?com.tibco.n2.de.api.admin%3a%3aComposition101%3a%3adeleteorphanreferencesresponsetype?">
+      <ownedEnd xmi:type="uml:Property" xmi:id="Composition101deleteorphanreferencesresponsetype" name="deleteorphanreferencesresponsetype" type="com.tibco.n2.de.api.admindeleteOrphanReferencesResponseType?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType?" association="com.tibco.n2.de.api.adminComposition101?com.tibco.n2.de.api.admin%3a%3aComposition101?">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nTG5ha1jEem1vK-kP1bIqQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nTG5hq1jEem1vK-kP1bIqQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_nRbega1jEem1vK-kP1bIqQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_nRbegq1jEem1vK-kP1bIqQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://XSD_NOTATION_TYPES/XsdNotation.profile.uml#_LmHW0fHtEd2z3-vLsCwuEg"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://XSD_NOTATION_TYPES/XsdNotation.profile.uml#_rcgvMcXQEd24G-GaruVVqA?XsdNotationProfile?"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_nRbeg61jEem1vK-kP1bIqQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_nRbehK1jEem1vK-kP1bIqQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://BOM_TYPES/PrimitiveTypeFacets.profile.uml#_8TmTUstlEdy7K9XeCH7Hrw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://BOM_TYPES/PrimitiveTypeFacets.profile.uml#_3A574HcJEdytQ9AWEvOuug?PrimitiveTypeFacets?"/>
+    </profileApplication>
+  </uml:Model>
+  <XsdNotationProfile:XsdBasedModel xmi:id="_nRcFkK1jEem1vK-kP1bIqQ" base_Package="com.tibco.n2.de.api.admin?com.tibco.n2.de.api.admin?" xsdTargetNamespace="http://admin.api.de.n2.tibco.com" xsdSchemaLocation="de.wsdl;de-admin-service.xsd" xsdAttributeForm="unqualified" xsdElementForm="unqualified" xsdStudioVersion="4.0.0.003" bomWsdlSources="de.wsdl"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_nRjaUa1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.admindeleteOrphanReferencesType?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesType?" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true"/>
+  <XsdNotationProfile:TopLevelElements xmi:id="_nRkBYK1jEem1vK-kP1bIqQ" base_Package="com.tibco.n2.de.api.admin?com.tibco.n2.de.api.admin?">
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_nRkocK1jEem1vK-kP1bIqQ" name="deleteOrphanReferences" type="com.tibco.n2.de.api.admindeleteOrphanReferencesType?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesType?" isAnonymous="true" targetNamespace="http://admin.api.de.n2.tibco.com" substitutionGroup=""/>
+    <elements xmi:type="XsdNotationProfile:TopLevelElement" xmi:id="_nTJVwK1jEem1vK-kP1bIqQ" name="deleteOrphanReferencesResponse" type="com.tibco.n2.de.api.admindeleteOrphanReferencesResponseType?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType?" isAnonymous="true" targetNamespace="http://admin.api.de.n2.tibco.com" substitutionGroup=""/>
+  </XsdNotationProfile:TopLevelElements>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_nRkocq1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.admindeleteOrphanReferencesResponseType?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType?" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true">
+    <xsdSequenceList xmi:type="XsdNotationProfile:XsdSequence" xmi:id="_nTHgkK1jEem1vK-kP1bIqQ" name="MS1_1_1"/>
+  </XsdNotationProfile:XsdBasedClass>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nRvnka1jEem1vK-kP1bIqQ" base_Property="deleteOrphanReferencesResponseTypegroup-guid?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType%3a%3agroupguid?" xsdName="group-guid" xsdForm="unqualified" xsdType="string" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_nTHgkK1jEem1vK-kP1bIqQ" xsdMinOccurs="0" xsdMaxOccurs="*"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nRvnlK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="deleteOrphanReferencesResponseTypegroup-guid?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType%3a%3agroupguid?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nR4xga1jEem1vK-kP1bIqQ" base_Property="deleteOrphanReferencesResponseTypeorg-guid?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType%3a%3aorgguid?" xsdName="org-guid" xsdForm="unqualified" xsdType="string" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_nTHgkK1jEem1vK-kP1bIqQ" xsdMinOccurs="0" xsdMaxOccurs="*"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nR5YkK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="deleteOrphanReferencesResponseTypeorg-guid?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType%3a%3aorgguid?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nSU2Ya1jEem1vK-kP1bIqQ" base_Property="deleteOrphanReferencesResponseTypeposition-guid?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType%3a%3apositionguid?" xsdName="position-guid" xsdForm="unqualified" xsdType="string" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_nTHgkK1jEem1vK-kP1bIqQ" xsdMinOccurs="0" xsdMaxOccurs="*"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nSU2ZK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="deleteOrphanReferencesResponseTypeposition-guid?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType%3a%3apositionguid?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nSenYa1jEem1vK-kP1bIqQ" base_Property="deleteOrphanReferencesResponseTypecapability-guid?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType%3a%3acapabilityguid?" xsdName="capability-guid" xsdForm="unqualified" xsdType="string" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_nTHgkK1jEem1vK-kP1bIqQ" xsdMinOccurs="0" xsdMaxOccurs="*"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nSenZK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="deleteOrphanReferencesResponseTypecapability-guid?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType%3a%3acapabilityguid?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nSnxUa1jEem1vK-kP1bIqQ" base_Property="deleteOrphanReferencesResponseTypeattribute-guid?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType%3a%3aattributeguid?" xsdName="attribute-guid" xsdForm="unqualified" xsdType="string" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_nTHgkK1jEem1vK-kP1bIqQ" xsdMinOccurs="0" xsdMaxOccurs="*"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nSnxVK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="deleteOrphanReferencesResponseTypeattribute-guid?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType%3a%3aattributeguid?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nSw7Qa1jEem1vK-kP1bIqQ" base_Property="deleteOrphanReferencesResponseTypecandidate-query-guid?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType%3a%3acandidatequeryguid?" xsdName="candidate-query-guid" xsdForm="unqualified" xsdType="string" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_nTHgkK1jEem1vK-kP1bIqQ" xsdMinOccurs="0" xsdMaxOccurs="*"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nSw7RK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="deleteOrphanReferencesResponseTypecandidate-query-guid?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType%3a%3acandidatequeryguid?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedClass xmi:id="_nSyJYa1jEem1vK-kP1bIqQ" base_Class="com.tibco.n2.de.api.adminextension-point-guidType?com.tibco.n2.de.api.admin%3a%3aextensionpointguidType?" xsdName="extension-point-guid" xsdMixed="false" xsdAbstract="false" xsdIsComplexType="true" xsdIsAnonType="true"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nS7TUK1jEem1vK-kP1bIqQ" base_Property="extension-point-guidTypemodel-version?com.tibco.n2.de.api.admin%3a%3aextensionpointguidType%3a%3amodelversion?" xsdName="model-version" xsdForm="unqualified" xsdUse="required" xsdType="int" xsdIsAttribute="true"/>
+  <XsdNotationProfile:XsdBasedRestriction xmi:id="_nS7TU61jEem1vK-kP1bIqQ" base_Property="extension-point-guidTypemodel-version?com.tibco.n2.de.api.admin%3a%3aextensionpointguidType%3a%3amodelversion?"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nS7TVK1jEem1vK-kP1bIqQ" base_Property="extension-point-guidTypemodel-version?com.tibco.n2.de.api.admin%3a%3aextensionpointguidType%3a%3amodelversion?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nTEdQa1jEem1vK-kP1bIqQ" base_Property="extension-point-guidTypevalue?com.tibco.n2.de.api.admin%3a%3aextensionpointguidType%3a%3avalue?" xsdName="value" xsdType="string" xsdIsSimpleContentExtension="true"/>
+  <PrimitiveTypeFacets:RestrictedType xmi:id="_nTEdRK1jEem1vK-kP1bIqQ" textLength="-1" base_Property="extension-point-guidTypevalue?com.tibco.n2.de.api.admin%3a%3aextensionpointguidType%3a%3avalue?" booleanDefaultValue="false"/>
+  <XsdNotationProfile:XsdBasedProperty xmi:id="_nTG5h61jEem1vK-kP1bIqQ" base_Property="deleteOrphanReferencesResponseTypeextension-point-guidType?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType%3a%3aextensionpointguid?" xsdName="extension-point-guid" xsdForm="unqualified" xsdExplicitGroupHierarchy="S1" xsdParentSequence="_nTHgkK1jEem1vK-kP1bIqQ" xsdMinOccurs="0" xsdMaxOccurs="-1"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUbIIK1jEem1vK-kP1bIqQ" base_Element="extension-point-guidTypemodel-version?com.tibco.n2.de.api.admin%3a%3aextensionpointguidType%3a%3amodelversion?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUbvMK1jEem1vK-kP1bIqQ" base_Element="deleteOrphanReferencesResponseTypecandidate-query-guid?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType%3a%3acandidatequeryguid?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUbvMa1jEem1vK-kP1bIqQ" base_Element="_nSxiUK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUbvMq1jEem1vK-kP1bIqQ" base_Element="_nTEdQ61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUbvM61jEem1vK-kP1bIqQ" base_Element="_nSoYYK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUbvNK1jEem1vK-kP1bIqQ" base_Element="_nS7TUa1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUbvNa1jEem1vK-kP1bIqQ" base_Element="_nRbeg61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUbvNq1jEem1vK-kP1bIqQ" base_Element="_nSfOcK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUbvN61jEem1vK-kP1bIqQ" base_Element="_nSU2Yq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUbvOK1jEem1vK-kP1bIqQ" base_Element="_nRvnkq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUbvOa1jEem1vK-kP1bIqQ" base_Element="_nRbega1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUbvOq1jEem1vK-kP1bIqQ" base_Element="deleteOrphanReferencesResponseTypeattribute-guid?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType%3a%3aattributeguid?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUbvO61jEem1vK-kP1bIqQ" base_Element="_nSw7Qq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUbvPK1jEem1vK-kP1bIqQ" base_Element="_nSnxU61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUbvPa1jEem1vK-kP1bIqQ" base_Element="deleteOrphanReferencesResponseTypeorg-guid?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType%3a%3aorgguid?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUcWQK1jEem1vK-kP1bIqQ" base_Element="_nSenYq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUcWQa1jEem1vK-kP1bIqQ" base_Element="_nSnxUq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUcWQq1jEem1vK-kP1bIqQ" base_Element="_nR5Yka1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUcWQ61jEem1vK-kP1bIqQ" base_Element="_nTG5ha1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUcWRK1jEem1vK-kP1bIqQ" base_Element="deleteOrphanReferencesResponseTypeextension-point-guidType?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType%3a%3aextensionpointguid?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUcWRa1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.admindeleteOrphanReferencesResponseType?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUcWRq1jEem1vK-kP1bIqQ" base_Element="_nRwOoK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUcWR61jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.adminComposition101?com.tibco.n2.de.api.admin%3a%3aComposition101?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUcWSK1jEem1vK-kP1bIqQ" base_Element="_nR4xgq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUcWSa1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.admindeleteOrphanReferencesType?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUcWSq1jEem1vK-kP1bIqQ" base_Element="_nR4xg61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUcWS61jEem1vK-kP1bIqQ" base_Element="_nRvnk61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUcWTK1jEem1vK-kP1bIqQ" base_Element="extension-point-guidTypevalue?com.tibco.n2.de.api.admin%3a%3aextensionpointguidType%3a%3avalue?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUcWTa1jEem1vK-kP1bIqQ" base_Element="_nTG5hq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUc9UK1jEem1vK-kP1bIqQ" base_Element="deleteOrphanReferencesResponseTypegroup-guid?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType%3a%3agroupguid?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUc9Ua1jEem1vK-kP1bIqQ" base_Element="_nTG5gq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUc9Uq1jEem1vK-kP1bIqQ" base_Element="com.tibco.n2.de.api.adminextension-point-guidType?com.tibco.n2.de.api.admin%3a%3aextensionpointguidType?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUc9U61jEem1vK-kP1bIqQ" base_Element="_nSw7Q61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUc9VK1jEem1vK-kP1bIqQ" base_Element="_nTEdQq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUc9Va1jEem1vK-kP1bIqQ" base_Element="Composition101deleteorphanreferencesresponsetype?com.tibco.n2.de.api.admin%3a%3aComposition101%3a%3adeleteorphanreferencesresponsetype?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUc9Vq1jEem1vK-kP1bIqQ" base_Element="_nS76YK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUc9V61jEem1vK-kP1bIqQ" base_Element="deleteOrphanReferencesResponseTypecapability-guid?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType%3a%3acapabilityguid?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUc9WK1jEem1vK-kP1bIqQ" base_Element="_nSenY61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUc9Wa1jEem1vK-kP1bIqQ" base_Element="_nS7TUq1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUc9Wq1jEem1vK-kP1bIqQ" base_Element="deleteOrphanReferencesResponseTypeposition-guid?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType%3a%3apositionguid?"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUc9W61jEem1vK-kP1bIqQ" base_Element="_nSVdcK1jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUc9XK1jEem1vK-kP1bIqQ" base_Element="_nTG5g61jEem1vK-kP1bIqQ"/>
+  <XsdNotationProfile:XsdBasedElement xmi:id="_nUc9Xa1jEem1vK-kP1bIqQ" base_Element="_nSU2Y61jEem1vK-kP1bIqQ"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oWykEK1jEem1vK-kP1bIqQ" displayLabel="deleteOrphanReferencesType" base_NamedElement="com.tibco.n2.de.api.admindeleteOrphanReferencesType?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oWykEa1jEem1vK-kP1bIqQ" displayLabel="deleteOrphanReferencesResponseType" base_NamedElement="com.tibco.n2.de.api.admindeleteOrphanReferencesResponseType?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oWzLIK1jEem1vK-kP1bIqQ" displayLabel="attribute-guid" base_NamedElement="deleteOrphanReferencesResponseTypeattribute-guid?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType%3a%3aattributeguid?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oWzyMK1jEem1vK-kP1bIqQ" displayLabel="candidate-query-guid" base_NamedElement="deleteOrphanReferencesResponseTypecandidate-query-guid?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType%3a%3acandidatequeryguid?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oWzyMa1jEem1vK-kP1bIqQ" displayLabel="capability-guid" base_NamedElement="deleteOrphanReferencesResponseTypecapability-guid?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType%3a%3acapabilityguid?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oWzyMq1jEem1vK-kP1bIqQ" displayLabel="extension-point-guid" base_NamedElement="deleteOrphanReferencesResponseTypeextension-point-guidType?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType%3a%3aextensionpointguid?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oW0ZQK1jEem1vK-kP1bIqQ" displayLabel="group-guid" base_NamedElement="deleteOrphanReferencesResponseTypegroup-guid?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType%3a%3agroupguid?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oW0ZQa1jEem1vK-kP1bIqQ" displayLabel="org-guid" base_NamedElement="deleteOrphanReferencesResponseTypeorg-guid?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType%3a%3aorgguid?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oW1AUK1jEem1vK-kP1bIqQ" displayLabel="position-guid" base_NamedElement="deleteOrphanReferencesResponseTypeposition-guid?com.tibco.n2.de.api.admin%3a%3adeleteOrphanReferencesResponseType%3a%3apositionguid?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oW1AUa1jEem1vK-kP1bIqQ" displayLabel="extensionpointguidType" base_NamedElement="com.tibco.n2.de.api.adminextension-point-guidType?com.tibco.n2.de.api.admin%3a%3aextensionpointguidType?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oW1nYK1jEem1vK-kP1bIqQ" displayLabel="value" base_NamedElement="extension-point-guidTypevalue?com.tibco.n2.de.api.admin%3a%3aextensionpointguidType%3a%3avalue?"/>
+  <PrimitiveTypeFacets:LabeledElement xmi:id="_oW1nYa1jEem1vK-kP1bIqQ" displayLabel="model-version" base_NamedElement="extension-point-guidTypemodel-version?com.tibco.n2.de.api.admin%3a%3aextensionpointguidType%3a%3amodelversion?"/>
+  <notation:Diagram xmi:id="_oW1nZq1jEem1vK-kP1bIqQ" type="Business Object Model" element="com.tibco.n2.de.api.admin?com.tibco.n2.de.api.admin?" name="com.tibco.n2.de.api.admin" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_oW1nZ61jEem1vK-kP1bIqQ"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_oW1naK1jEem1vK-kP1bIqQ"/>
+  </notation:Diagram>
+</xmi:XMI>

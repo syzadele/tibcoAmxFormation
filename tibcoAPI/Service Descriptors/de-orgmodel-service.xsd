@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- edited with XMLSpy v2014 sp1 (x64) (http://www.altova.com) by Paul Raby (Tibco Software Limited) --><xs:schema xmlns="http://orgmodel.api.de.bpm.tibco.com" xmlns:channel="http://channeltype.common.n2.tibco.com" xmlns:de="http://base.api.de.bpm.tibco.com" xmlns:orgdto="http://api.organisation.common.n2.tibco.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://orgmodel.api.de.bpm.tibco.com" version="1.0">
+	<xs:import namespace="http://api.organisation.common.n2.tibco.com" schemaLocation="organisation.xsd"/>
+	<xs:import namespace="http://base.api.de.bpm.tibco.com" schemaLocation="de-base.xsd"/>
+	<xs:import namespace="http://channeltype.common.n2.tibco.com" schemaLocation="channeltype.xsd"/>
+	<xs:element name="listOrgModelVersions">
+		<xs:annotation>
+			<xs:documentation>Request element for listOrgModelVersions operation. This operation lists the available organization model major versions. 
+
+For each major version, the organization model deployments that make up that version are detailed, giving their full version number, name and date deployed.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="listOrgModelVersionsResponse">
+		<xs:annotation>
+			<xs:documentation>Response element for listOrgModelVersions operation.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="version" type="de:XmlOrgModelVersionDetail">
+					<xs:annotation>
+						<xs:documentation>Major version number(s) of the organization model. Each element lists the details of the deployment artifact that makes up that major version.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="getOrgModelRoots">
+		<xs:annotation>
+			<xs:documentation>Requests the details of the model root entities identified by the given major version.
+			These will include; Organisations, Groups, Locations, Capabilities, Privileges, Resource Attributes and Model Templates.
+			Using these root entities, it will be possible for the client to navgate the entire org-model in a "drill-down" fashion.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute default="-1" name="model-version" type="xs:int" use="optional">
+				<xs:annotation>
+					<xs:documentation>Specifies the major organization model version from which entities are to be returned. A value of -1 returns entities from the highest major organization model version.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute default="false" name="include-categories" type="xs:boolean" use="optional">
+				<xs:annotation>
+					<xs:documentation>Specifies whether the capabilities and privileges should be grouped in the nested categories in which they were deployed.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="getOrgModelRootsResponse">
+		<xs:annotation>
+			<xs:documentation>Response element for the getOrgModelRoots operation.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="capability-category" type="de:XmlCapabilityCategory"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="capability" type="de:XmlCapability"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="privilege-category" type="de:XmlPrivilegeCategory"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="privilege" type="de:XmlPrivilege"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="group" type="de:XmlGroup"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="location" type="de:XmlLocation"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="organization" type="de:XmlOrganization"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="model-template" type="de:XmlModelOrgUnit"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="resource-attribute" type="de:XmlOrgAttribute"/>
+			</xs:sequence>
+			<xs:attribute name="model-version" type="xs:int" use="required">
+				<xs:annotation>
+					<xs:documentation>Major version number of the organization model. The contained organization model deployment records make up this version.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="getOrgModelEntity">
+		<xs:annotation>
+			<xs:documentation>Requests the details of the model entities identified by the given major version and their GUID.
+			If the identified entity has associations with other entities (e.g. positions associated with an org-unit), the GUID of those entities will be included in the response.
+			This allows details of those entities to be retrieved.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="1" name="guid" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>The collection of GUIDs that uniquely identify the entities to be retrieved.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute default="-1" name="model-version" type="xs:int" use="optional">
+				<xs:annotation>
+					<xs:documentation>Specifies the major organization model version from which entities are to be returned. A value of -1 returns entities from the highest major organization model version.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="getOrgModelEntityResponse">
+		<xs:annotation>
+			<xs:documentation>Response element for the getOrgModelEntity operation.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="capability-category" type="de:XmlCapabilityCategory"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="capability" type="de:XmlCapability"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="privilege-category" type="de:XmlPrivilegeCategory"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="privilege" type="de:XmlPrivilege"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="group" type="de:XmlGroup"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="location" type="de:XmlLocation"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="organization" type="de:XmlOrganization"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="org-unit" type="de:XmlOrgUnit"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="position" type="de:XmlPosition"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="model-org-unit" type="de:XmlModelOrgUnit"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="model-position" type="de:XmlModelPosition"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="resource-attribute" type="de:XmlOrgAttribute"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="query" type="de:XmlQueryEntity"/>
+			</xs:choice>
+			<xs:attribute name="model-version" type="xs:int" use="required">
+				<xs:annotation>
+					<xs:documentation>Major version number of the organization model. The contained organization model deployment records make up this version.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="getOrgModel">
+		<xs:annotation>
+			<xs:documentation>Requests the details of the entities that form the organzational model identified by the given major version.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute default="-1" name="model-version" type="xs:int" use="optional">
+				<xs:annotation>
+					<xs:documentation>Specifies the major organization model version from which entities are to be returned. A value of -1 returns entities from the highest major organization model version.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute default="false" name="include-resource-counts" type="xs:boolean" use="optional">
+				<xs:annotation>
+					<xs:documentation>Specifies whether the number of resources assigned to positions, groups and capabilities should be included in the response. For performance, it may be preferable not to include this information.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute default="false" name="include-calendar-alias" type="xs:boolean" use="optional">
+				<xs:annotation>
+					<xs:documentation>Specifies whether the calendar aliases assigned to positions, groups, organizaiton units, and organizations should be included in the response. For performance, it may be preferable not to include this information.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute default="false" name="include-candidate-queries" type="xs:boolean" use="optional">
+				<xs:annotation>
+					<xs:documentation>Specifies whether the candidate queries assigned to positions and groups should be included in the response. For performance, it may be preferable not to include this information.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute default="false" name="include-ext-points" type="xs:boolean" use="optional">
+				<xs:annotation>
+					<xs:documentation>Specifies whether the extension point and model template configurations should be included in the response. For performance, it may be preferable not to include this information.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute default="false" name="include-categories" type="xs:boolean" use="optional">
+				<xs:annotation>
+					<xs:documentation>Specifies whether the capabilities and privileges should be grouped in the nested categories in which they were deployed.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="getOrgModelResponse">
+		<xs:annotation>
+			<xs:documentation>Response element for the getOrgModel operation.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="capability-category" type="de:XmlCapabilityCategory"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="capability" type="de:XmlCapability"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="privilege-category" type="de:XmlPrivilegeCategory"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="privilege" type="de:XmlPrivilege"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="group" type="de:XmlGroup"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="location" type="de:XmlLocation"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="organization" type="de:XmlOrganization"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="model-template" type="de:XmlModelOrgUnit"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="resource-attribute" type="de:XmlOrgAttribute"/>
+			</xs:sequence>
+			<xs:attribute name="model-version" type="xs:int" use="required">
+				<xs:annotation>
+					<xs:documentation>Major version number of the organization model. The contained organization model deployment records make up this version.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="getCalendarReferences" type="orgdto:XmlModelEntityId">
+		<xs:annotation>
+			<xs:documentation>Request to obtain the calendar references for the identified model entity. The response is an ordered collection of calendar references obtained by navigating the organization model hierarchy to which the identified model entity belongs. Each entry identifies the organization model entity that holds the calendar reference.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="getCalendarReferencesResponse">
+		<xs:annotation>
+			<xs:documentation>Response element returning the calendar references for the identified model entity. The result is an ordered collection of calendar references obtained by navigating the organization model hierarchy to which the identified model entity belongs. Each entry identifies the organization model entity that holds the calendar reference.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="calendar" type="orgdto:XmlCalendarRef"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="XmlCalendarAssignments">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="1" name="assignment" type="orgdto:XmlCalendarAssignment"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="setCalendarReferences" type="XmlCalendarAssignments">
+		<xs:annotation>
+			<xs:documentation>Request to assign calendar references to organization model entities. The assignments overwrite any existing assignments to the same model entities.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:element name="setCalendarReferencesResponse">
+		<xs:annotation>
+			<xs:documentation>Response element for the setCalendarReferences operation. An unsuccessful assignment will be indicated with a fault.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="XmlUpdatePushDestinations">
+		<xs:annotation>
+			<xs:documentation>Modifies the push destination for an identified entity.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="orgdto:XmlModelEntityId">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="set-destination" type="de:XmlPushDestination">
+						<xs:annotation>
+							<xs:documentation>Assigns a new, or updates an existing, push destination to the identified entity.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="remove-destination" type="de:XmlPushDestinationId">
+						<xs:annotation>
+							<xs:documentation>Removes the identified push destination from the identified entity. If no such push destination exists, no action is taken.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="XmlPushDestination">
+		<xs:annotation>
+			<xs:documentation>Definition of a push destination. When using these XML elements to set a push destination, if both the "desc-guid" attribute and "value" elements are specified, the "value" elements will be ignored. The value elements are used to pass the values of the push destination. If the push destination:
+
+- retrieves its value from an LDAP attribute (via a desc-guid parameter descriptor) it can hold multiple values, so the value element can occur several times.
+
+- does not take its value from an LDAP attribute, it can hold only one value.
+
+If multiple values are given when setting the push destination, only the first value is recorded.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:element maxOccurs="unbounded" name="value" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Value to be used for this push destination. 
+
+For a:
+
+- setPushDestinations operation, this value is only used if no desc-guid attribute is supplied.
+
+- getPushDestinations operation, this value is the current value of the desc-guid attribute.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+			<xs:attribute name="name" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>Unique name of this push destination.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="channel-type" type="channel:ChannelType" use="required">
+				<xs:annotation>
+					<xs:documentation>Enumerated type defining the presentation technology used by the channel associated with this push destination.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="channel-id" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>Unique ID of the channel associated with this push destination.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="enabled" type="xs:boolean" use="required">
+				<xs:annotation>
+					<xs:documentation>Boolean value indicating whether this push destination is currently enabled (TRUE) or not (FALSE).</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="desc-guid" type="xs:string" use="optional">
+				<xs:annotation>
+					<xs:documentation>Unique ID of a prameter descriptor whose value should be used for the push destination. The parameter descriptor must be assigned to the organization model entity for whom the push destination is being set.
+
+ If a value is assigned to both this attribute and the "value" element below, the value of this element will be used.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="XmlPushDestinationList">
+		<xs:annotation>
+			<xs:documentation>Identifies an organization model entity and and the push destinations that it currently holds.
+      </xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="orgdto:XmlModelEntityId">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" ref="XmlPushDestination"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="updatePushDestinations" type="XmlUpdatePushDestinations"/>
+	<xs:element name="updatePushDestinationsResponse">
+		<xs:annotation>
+			<xs:documentation>Response element. An unsuccessful update will be indicated with a fault.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="setCandidateQueries">
+		<xs:annotation>
+			<xs:documentation>Sets, or updates, the Candidate Query assignments to identified org-model entities. Each org-model entity may only hold one Candidate Query. Any existing assignment will be ovewritten by a new assignment.
+Candidate Queries span all org-model versions in which the identified org-model entity exists. Therefore, the request does not include a model version.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="assignment" type="de:XmlCandidateQueryAssignment">
+					<xs:annotation>
+						<xs:documentation>Identifies an org-model entity and the LDAP query to be assigned to that entity.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element maxOccurs="1" minOccurs="0" name="remove">
+					<xs:annotation>
+						<xs:documentation>Identifies one or more org-model entitoes from which any existing Candidate Query is to be removed.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:choice>
+							<xs:element maxOccurs="unbounded" minOccurs="1" name="position" type="xs:string">
+								<xs:annotation>
+									<xs:documentation>Identifies the position, by its guid, to which the Candidate Query is assigned.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" minOccurs="1" name="group" type="xs:string">
+								<xs:annotation>
+									<xs:documentation>Identifies the group, by its guid, to which the Candidate Query is assigned.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:choice>
+						<xs:attribute default="false" name="remove-resources" type="xs:boolean">
+							<xs:annotation>
+								<xs:documentation>Indicates whether existing Resource assignments, to the identified positions or groups, should also be removed.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="setCandidateQueriesResponse">
+		<xs:annotation>
+			<xs:documentation>Response element. An unsuccessful update will be indicated with a fault.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="setExtensionPoints">
+		<xs:annotation>
+			<xs:documentation>Sets, removes or updates, the Extension Point configurations assigned to identified organisations or organisation units. Removes are processed before sets and updates.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:element maxOccurs="unbounded" name="remove-ext-point" type="de:XmlExtensionPointRemoval">
+					<xs:annotation>
+						<xs:documentation>Identifies a Extension Point model entity to be removed. Missing entities are ignored.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element maxOccurs="unbounded" name="ext-point" type="de:XmlExtensionPointAssignment">
+					<xs:annotation>
+						<xs:documentation>Identifies a Extension Point model entity and provides the configuration to be set against it.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="setExtensionPointsResponse">
+		<xs:annotation>
+			<xs:documentation>Response element. An unsuccessful update will be indicated with a fault.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="processDynamicOrg">
+		<xs:annotation>
+			<xs:documentation>Requests that the processing of the Extension Points and Candidate Queries is performed as soon as possible.
+            The request will be placed on a queue for 'immediate' processing.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="processDynamicOrgResponse">
+		<xs:annotation>
+			<xs:documentation>Response element. An unsuccessful request will be indicated with a fault.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="getPushDestinations">
+		<xs:annotation>
+			<xs:documentation>Request element for getPushDestinations. Specify the organization model entities for whom push destinations should be retrieved.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" name="org-entity" type="orgdto:XmlModelEntityId">
+					<xs:annotation>
+						<xs:documentation>Definition of an organization model entity for whom push destinations should be retrieved.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="getPushDestinationsResponse">
+		<xs:annotation>
+			<xs:documentation>Response element for getPushDestinations. Lists the currently defined push destinations for each specified organization model entity.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" name="org-entity" type="XmlPushDestinationList">
+					<xs:annotation>
+						<xs:documentation>Definition of an organization model entity and its currently defined push destinations.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

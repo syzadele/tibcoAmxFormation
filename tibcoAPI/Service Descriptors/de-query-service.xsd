@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- edited with XMLSpy v2014 (x64) (http://www.altova.com) by Paul Raby (Tibco Software Limited) --><xs:schema xmlns="http://query.api.de.n2.tibco.com" xmlns:orgdto="http://api.organisation.common.n2.tibco.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://query.api.de.n2.tibco.com" version="1.0">
+	<xs:import namespace="http://api.organisation.common.n2.tibco.com" schemaLocation="organisation.xsd"/>
+	<xs:element name="registerQuery">
+		<xs:annotation>
+			<xs:documentation>Request element for registerQuery operation.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="query" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Resource query to be executed. The query must conform to the Resource Query Language (RQL) specification. See the product documentation for detailed information about RQL syntax.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute default="-1" name="model-version" type="xs:int" use="optional">
+				<xs:annotation>
+					<xs:documentation>Major version number of the organization model in which an organization model entity resides. 
+
+If not specified, the default value will be the latest version of the organization model.
+
+(Version numbers must be compatible with, and conform to, the OSGi version number schema. For Directory Engine, only the major part of the version number is significant.)</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="registerQueryResponse">
+		<xs:annotation>
+			<xs:documentation>Response element for registerQuery operation.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="entity" type="orgdto:XmlParticipantId">
+					<xs:annotation>
+						<xs:documentation>Identifier for a participant, by either GUID or name. 
+
+Extension of XmlOrgModelVersion, which provides the organization model version in which the participant resides.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="unique" type="xs:boolean" use="required">
+				<xs:annotation>
+					<xs:documentation>Is the query unique? If not a n internal reference counter will have been incremented.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="deregisterQuery">
+		<xs:annotation>
+			<xs:documentation>Request element for deregisterQuery operation.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="identifier" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Globally unique identifier for the organization model entity. 
+
+This value is unique across all entities. However, if the entity exists within more than one major organization model version, it will share the same GUID.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="deregisterQueryResponse">
+		<xs:annotation>
+			<xs:documentation>Response element for deregisterQuery operation.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="identifier" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Globally unique identifier for the organization model entity. 
+
+This value is unique across all entities. However, if the entity exists within more than one major organization model version, it will share the same GUID.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="resetQueries">
+		<xs:annotation>
+			<xs:documentation>Request element for resetQueries operation.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute default="-1" name="model-version" type="xs:int" use="optional">
+				<xs:annotation>
+					<xs:documentation>Major version number of the organization model in which an organization model entity resides. 
+
+If -1 is specified the value will be the latest version of the organization model.
+
+If not specified then all deployed versions of the model will have their corresponding queries reset.
+
+(Version numbers must be compatible with, and conform to, the OSGi version number schema. For Directory Engine, only the major part of the version number is significant.)</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="resetQueriesResponse" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Response element for resetQueries operation.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

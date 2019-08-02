@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_xgymkK1EEem1vK-kP1bIqQ" name="com.example.tibcoapi">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xgymka1EEem1vK-kP1bIqQ" source="model.metadata">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xgymkq1EEem1vK-kP1bIqQ" key="author" value="YSong"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xgymk61EEem1vK-kP1bIqQ" key="created" value="1563884650361"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xgymlK1EEem1vK-kP1bIqQ" key="version" value="5"/>
+    </eAnnotations>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_xw9JgK1EEem1vK-kP1bIqQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xxCCAK1EEem1vK-kP1bIqQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://GLOBALDATA_PROFILES/BOMGlobalData.profile.uml#_-r7KEXyPEeCumvZ6xHSUiw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://GLOBALDATA_PROFILES/BOMGlobalData.profile.uml#_20kHsWs1EeC_hvle0zpSaA?BOM%20Global%20Data%20Profile?"/>
+    </profileApplication>
+  </uml:Model>
+  <notation:Diagram xmi:id="_xhOEYK1EEem1vK-kP1bIqQ" type="Business Object Model" element="_xgymkK1EEem1vK-kP1bIqQ?com.example.tibcoapi?" name="tibcoAPI.bom" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_xhOEYa1EEem1vK-kP1bIqQ"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_xhOEYq1EEem1vK-kP1bIqQ"/>
+  </notation:Diagram>
+</xmi:XMI>

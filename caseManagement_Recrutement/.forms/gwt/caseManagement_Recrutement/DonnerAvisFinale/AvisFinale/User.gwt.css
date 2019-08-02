@@ -1,0 +1,16 @@
+
+/**
+ * Forms 3.1.0 V12 compliant.
+ */
+    .f07735481-9b6c-4394-81a0-f18d5f2143aa .pane_Candidature_entretiens__add_delete > .label {
+        display:none !important;
+    }
+    .f07735481-9b6c-4394-81a0-f18d5f2143aa .pane_content > .label {
+        
+display:block !important;    }
+    .f07735481-9b6c-4394-81a0-f18d5f2143aa .pane_messages > .label {
+        display:none !important;
+    }
+    .f07735481-9b6c-4394-81a0-f18d5f2143aa .pane_toolbar > .label {
+        display:none !important;
+    }

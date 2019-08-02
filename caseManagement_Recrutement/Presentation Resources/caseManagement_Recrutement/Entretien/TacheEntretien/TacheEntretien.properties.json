@@ -1,0 +1,13 @@
+{"pane_content_label":"Tâche Entretien","control_thisEntretien_date_label":
+  "date","pane_toolbar_label":"Toolbar","pane_messages_label":
+  "Invalid Entries","control_thisEntretien_nomCollaborateur_label":
+  "nomCollaborateur","control_thisEntretien_avis_property_choiceLabels_1":
+  "Negative","control_thisEntretien_avis_property_choiceLabels_0":
+  "Positive","form_validation_error_message":
+  "Error in script for validation {0} of Control {1} ({2}): {3}",
+  "form_action_error_message":"Error in script for action {0} ({1}): {2}",
+  "control_thisEntretien_avis_property_choiceLabels_2":"Indecise",
+  "pane_thisEntretien_label":"thisEntretien",
+  "control_thisEntretien_avis_label":"avis","control_cancel_label":
+  "Cancel","form_required_message":"{0} is a required field.",
+  "control_submit_label":"Submit"}
